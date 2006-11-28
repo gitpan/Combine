@@ -1,0 +1,1070 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Crawler operation</TITLE>
+<META NAME="description" CONTENT="Crawler operation">
+<META NAME="keywords" CONTENT="DocMain">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="DocMain.css">
+
+<LINK REL="next" HREF="node7.html">
+<LINK REL="previous" HREF="node5.html">
+<LINK REL="up" HREF="node2.html">
+<LINK REL="next" HREF="node7.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html317"
+  HREF="node7.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html313"
+  HREF="node2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html307"
+  HREF="node5.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html315"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html318"
+  HREF="node7.html">Evaluation of automated subject</A>
+<B> Up:</B> <A NAME="tex2html314"
+  HREF="node2.html">Overview</A>
+<B> Previous:</B> <A NAME="tex2html308"
+  HREF="node5.html">Configuration</A>
+ &nbsp; <B>  <A NAME="tex2html316"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html319"
+  HREF="node6.html#SECTION02041000000000000000">URL selection criteria</A>
+<LI><A NAME="tex2html320"
+  HREF="node6.html#SECTION02042000000000000000">Document parsing</A>
+<LI><A NAME="tex2html321"
+  HREF="node6.html#SECTION02043000000000000000">URL filtering</A>
+<LI><A NAME="tex2html322"
+  HREF="node6.html#SECTION02044000000000000000">Link selection/scheduling policy</A>
+<LI><A NAME="tex2html323"
+  HREF="node6.html#SECTION02045000000000000000">Built in topic filter - automated subject classification</A>
+<UL>
+<LI><A NAME="tex2html324"
+  HREF="node6.html#SECTION02045100000000000000">Topic definition</A>
+<LI><A NAME="tex2html325"
+  HREF="node6.html#SECTION02045200000000000000">Topic definition (term triplets) BNF grammar</A>
+<LI><A NAME="tex2html326"
+  HREF="node6.html#SECTION02045300000000000000">Term triplet examples</A>
+<LI><A NAME="tex2html327"
+  HREF="node6.html#SECTION02045400000000000000">Algorithm 1: plain matching</A>
+<LI><A NAME="tex2html328"
+  HREF="node6.html#SECTION02045500000000000000">Algorithm 2: position weighted matching</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html329"
+  HREF="node6.html#SECTION02046000000000000000">Topic filter Plug-In API</A>
+<LI><A NAME="tex2html330"
+  HREF="node6.html#SECTION02047000000000000000">Analysis</A>
+<LI><A NAME="tex2html331"
+  HREF="node6.html#SECTION02048000000000000000">URL recycling</A>
+<LI><A NAME="tex2html332"
+  HREF="node6.html#SECTION02049000000000000000">Complete application - SearchEngine in a Box</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION02040000000000000000"></A>
+<A NAME="operation"></A>
+<BR>
+Crawler operation
+</H1>
+The system is designed for continuous operation.
+The harvester processes an URL in several steps as is detailed
+in figure <A HREF="#combinearch">2</A>.  As a start-up initialization the
+frontier has to be seeded with some relevant URLs. All URLs are
+normalized before they are entered in the database.
+Data can be exported in various formats including the <A NAME="tex2html12"
+  HREF="http://www.alvis.info/alvis/architecture">ALVIS XML
+document format</A>
+as well as <A NAME="tex2html13"
+  HREF="http://dublincore.org/">Dublin Core</A>
+records.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="combinearch"></A><A NAME="537"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 2:</STRONG>
+Architecture for the Combine focused crawler.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="327" HEIGHT="687" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.png"
+ ALT="\includegraphics[height=0.6\textheight]{CrawlerArchitecture.xfig.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The steps taken during crawling (numbers refer to figure <A HREF="#combinearch">2</A>):
+
+<OL>
+<LI>The next URL is fetched from the scheduler.
+
+<P>
+</LI>
+<LI>Combine obeys the the <A NAME="tex2html14"
+  HREF="http://www.robotstxt.org/wc/exclusion.html">Robots
+  Exclusion Protocol</A>.
+Rules are cached locally.
+
+<P>
+</LI>
+<LI>The page is retrieved using a GET, GET-IF-MODIFIED, or HEAD HTTP request.
+
+<P>
+</LI>
+<LI>The HTML code is cleaned and normalized.
+
+<P>
+</LI>
+<LI>The character-set is detected and normalized to UTF-8.
+
+<P>
+</LI>
+<LI><P>
+
+<OL>
+<LI>The page (in any of the formats PDF, PostScript, MS Word, MSExcel, PowerPoint, RTF and TeX/LaTeX) is converted to HTML (or plain 
+text) by an external program.
+
+<P>
+</LI>
+<LI>Internal parsers handles HTML, plain text and images.
+This step extracts structured information like metadata (title, keywords, description, ...), HTML links,
+  and text without markup.
+</LI>
+</OL>
+
+<P>
+</LI>
+<LI>The document is sent to the <A HREF="#autoclass">topic filter</A>. If the 
+Web-page is relevant with respect to the focus topic,
+processing continues with:
+
+<P>
+
+<OL>
+<LI>Heuristics like score propagation
+
+<P>
+</LI>
+<LI>Further analysis, like genre and language
+  identification.
+
+<P>
+</LI>
+<LI>Update the record database 
+<P>
+</LI>
+<LI>Update the frontier database with HTML links and URLs
+  extracted from plain text.
+<P>
+</LI>
+</OL>
+
+<P>
+</LI>
+</OL>
+
+<P>
+Depending on several factors like configuration, hardware, network,
+workload, etc, the crawler normally processes between 50 and 250
+URLs per minute. In general focused crawling using 'reasonable'
+topic definitions can do 100 - 150 URLs per minute.
+
+<P>
+
+<H2><A NAME="SECTION02041000000000000000">
+URL selection criteria</A>
+</H2>
+In order to successfully select and crawl one URL the following conditions
+have to be meet:
+
+<OL>
+<LI>The URL have to be selected by the scheduling algorithm (section
+<A HREF="#sched">4.4</A>).
+<BR>
+<P>
+<EM>Relevant configuration variables:</EM>
+WaitIntervalHost (section <A HREF="node13.html#WaitIntervalHost">9.1.32</A>),
+WaitIntervalHarvesterLockRobotRules (section <A HREF="node13.html#WaitIntervalHarvesterLockRobotRules">9.1.29</A>),
+WaitIntervalHarvesterLockSuccess (section <A HREF="node13.html#WaitIntervalHarvesterLockSuccess">9.1.30</A>)
+
+<P>
+</LI>
+<LI>The URL have to pass the allow test
+
+<P>
+<EM>Relevant configuration variables:</EM> allow (section <A HREF="node13.html#allow">9.2.1</A>)
+
+<P>
+</LI>
+<LI>The URL is not be excluded by the exclude test (see section
+<A HREF="#urlfilt">4.3</A>).
+
+<P>
+<EM>Relevant configuration variables:</EM> exclude (section <A HREF="node13.html#exclude">9.2.4</A>)
+
+<P>
+</LI>
+<LI>The Robot Exclusion Protocol have to allow crawling of the URL
+
+<P>
+</LI>
+<LI>Optionally the document at the URL location have to pass the topic filter
+(section <A HREF="#autoclass">4.5</A>).
+
+<P>
+<EM>Relevant configuration variables:</EM>
+classifyPlugIn (section <A HREF="node13.html#classifyPlugIn">9.1.3</A>),
+doCheckRecord (section <A HREF="node13.html#doCheckRecord">9.1.6</A>).
+
+<P>
+</LI>
+</OL>
+
+<P>
+
+<H2><A NAME="SECTION02042000000000000000">
+Document parsing</A>
+</H2>
+
+<P>
+The system selects a document parser based on the Mime-Type together
+with available parsers and converter programs
+
+<OL>
+<LI>For some mime-types an external program
+is called in order to convert the document to a format handled internally (HTML or plain text).
+
+<P>
+<EM>Relevant configuration variables:</EM> converters (section <A HREF="node13.html#converters">9.2.3</A>)
+
+<P>
+</LI>
+<LI>Internal parsers handle HTML, plain text, TeX, and Image.
+
+<P>
+<EM>Relevant configuration variables:</EM> converters (section <A HREF="node13.html#converters">9.2.3</A>)
+
+<P>
+</LI>
+</OL>
+
+<P>
+Supporting a new document format is as easy as providing a program
+that can convert a document in this format to HTML or plain text.
+Configuration of the mapping between document format (Mime-Type) and converter program is done in the complex configuration variable 'converters' (section  <A HREF="node13.html#converters">9.2.3</A>). 
+
+<P>
+
+<H2><A NAME="SECTION02043000000000000000"></A>
+<A NAME="urlfilt"></A>
+<BR>
+URL filtering
+</H2>
+Before an URL is accepted for scheduling (either by manual loading or
+recycling) it is normalized and validated. This process comprises a
+number of steps:
+
+<UL>
+<LI>Normalization
+
+<UL>
+<LI>General practice: host-name lowercasing, port-number
+substitution, canonical URL
+
+<P>
+</LI>
+<LI>Remove fragments (ie '#' and everything after that)
+
+<P>
+</LI>
+<LI>Clean CGI repetitions of parameters
+
+<P>
+</LI>
+<LI>Collapse dots ('./', '../') in the path
+
+<P>
+</LI>
+<LI>Remove CGI parameters that are session ids, as identified by
+patterns in the configuration variable sessionids (section <A HREF="node13.html#sessionids">9.2.6</A>)
+
+<P>
+</LI>
+<LI>Normalize WWW-server names by resolving aliases. Identified by
+patterns in the configuration variable serveralias (section <A HREF="node13.html#serveralias">9.2.5</A>).
+These patterns can be generated by using the program
+<TT>combineUtil</TT> to analyze a crawled corpus.
+</LI>
+</UL>
+
+<P>
+</LI>
+<LI>Validation: A URL have to pass all three validation steps
+outlined below.
+
+<UL>
+<LI>URL length have to be less than configuration variable
+maxUrlLength (section <A HREF="node13.html#maxUrlLength">9.1.14</A>)
+
+<P>
+</LI>
+<LI>Allow test: one of the Perl regular expressions in the
+configuration variable
+allow (section <A HREF="node13.html#allow">9.2.1</A>) must match the URL
+
+<P>
+</LI>
+<LI>Exclude test: none of the Perl regular expressions in the
+configuration variable
+ exclude (section <A HREF="node13.html#exclude">9.2.4</A>) must match the URL
+
+<P>
+</LI>
+</UL>
+Both allow and exclude can contain two types of regular expressions
+identified by either '<TT>HOST:</TT>' or '<TT>URL</TT>' in front of the
+regular expression. The '<TT>HOST:</TT>' regular expressions are matched only against the
+WWW-server part of the URL while the '<TT>URL</TT>' regular expressions
+are matched against the entire URL.
+</LI>
+</UL>
+
+<P>
+
+<H2><A NAME="SECTION02044000000000000000"></A>
+<A NAME="sched"></A>
+<BR>
+Link selection/scheduling policy
+</H2>
+All links from a relevant document are extracted, normalized and stored
+in the structured record. Those links that pass the selection/validation
+criteria outlined below are marked for crawling.
+
+<P>
+To mark a URL for crawling requires
+
+<UL>
+<LI>The URL should be from a page that is relevant (ie pass the focus filter)
+</LI>
+<LI>The URL scheme must be one of HTTP, HTTPS, or FTP
+</LI>
+<LI>The URL must not exceed the maximum length (configurable, default 250 characters)
+</LI>
+<LI>It should pass the 'allow' test (configurable, default all URLs passes)
+</LI>
+<LI>It should pass the 'exclude' test (configurable, default excludes malformed URLs, some CGI pages, and URLs with file-extensions for binary formats)
+</LI>
+</UL>
+
+<P>
+At each scheduling point one URL from each available (unlocked) host is selected to 
+generate a ready queue, which is then processed completely 
+before a new scheduling is done.
+Each selected URL in the ready queue thus fulfills these requirements:
+
+<UL>
+<LI>URL must be marked for crawling (see above)
+</LI>
+<LI>URL must be unlocked (each successful access to a URL lock it for
+a configurable time <A HREF="node13.html#WaitIntervalHarvesterLockSuccess">WaitIntervalHarvesterLockSuccess</A>)
+</LI>
+<LI>Host of the URL must be unlocked (each access to a host locks it for a configurable time <A HREF="node13.html#WaitIntervalHost">WaitIntervalHost</A>)
+</LI>
+</UL>
+
+<P>
+
+<H2><A NAME="SECTION02045000000000000000"></A>
+<A NAME="autoclass"></A>
+<BR>
+Built in topic filter - automated subject classification
+</H2>
+The built in topic filter is a library science approach to automated classification,
+using a topic definition with a pre-defined controlled vocabulary of
+topical terms, to determine relevance judgement. Thus it does not rely
+on a particular set of seed pages, or a collection of pre-classified
+example pages to learn from. It does require that some of the seed pages
+are relevant and contain links into the topical area.
+One simple way of creating a set of seed pages would be to use terms
+from the controlled vocabulary as queries for a general purpose search
+engine and take the result as seed pages.
+
+<P>
+The system for automated topic classification (overview in figure <A HREF="#topicfilter">3</A>), that determines
+topical relevance in the topical filter, is based on matching subject
+terms from a controlled vocabulary in a topic
+definition with the text of the document to be classified
+[<A
+ HREF="node10.html#ardo99:_online99">1</A>]. The topic definition uses
+subject classes in a hierarchical classification system (corresponding
+to topics) and terms
+associated with each subject class. Terms can be single words, phrases,
+ or boolean AND-expressions connecting terms.
+Boolean OR-expressions are implicitly handled by having several
+different terms associated with the same subject class (see section <A HREF="#termlist">4.5.1</A>).
+
+<P>
+The algorithm works by string-to-string matching of terms and
+text in documents.
+Each time a match is found the document is awarded points based on
+which term is matched and in which structural part of the document
+(location) the match is found [<A
+ HREF="node10.html#ardo05:_ECDL">5</A>].  The points are summed to make the final
+relevance score of the document. If the score is above a cut-off value the
+document is saved in the database together with a (list of) subject
+classification(s) and term(s).
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="topicfilter"></A><A NAME="620"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 3:</STRONG>
+Overview of the automated topic classification algorithm</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="553" HEIGHT="283" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.png"
+ ALT="\includegraphics[width=\textwidth]{TopicFilter.xfig.eps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+By providing a list of known relevant sites in the configuration
+file <TT>sitesOK.txt</TT> (located in the job specific configuration directory) the above test can be bypassed. It works by checking the host
+part of the URL against the list of known relevant sites and if a
+match is found the page is validated and saved in the database
+regardless of the outcome of the algorithm.
+
+<P>
+
+<H3><A NAME="SECTION02045100000000000000"></A>
+<A NAME="topicdef"></A>
+<BR>
+Topic definition
+</H3>
+Located in <TT>/etc/combine/&lt;jobname&gt;/topicdefinition.txt</TT>.
+Topic definitions use triplets (term,
+relevance weight, topic-classes) as its basic entities. Weights
+are signed integers and indicate the relevance of the term with respect to
+the topic-classes. Higher values indicate more relevant terms. A large
+negative value can be used to exclude documents containing that term.
+
+<P>
+Terms can be:
+
+<UL>
+<LI>single words
+</LI>
+<LI>a phrase (ie all words in exact order)
+</LI>
+<LI>a boolean AND-expression connecting terms (ie all terms must
+      be present but in any order). The boolean AND operator is encoded as '@and'
+</LI>
+</UL>
+A boolean OR-expression has to be entered as separate term triplets.
+The boolean expression ``<TT>polymer AND (atactic OR syndiotactic)</TT>''
+thus have to be translated into two separate triplets, one containing
+the term ``<TT>polymer @and atactic</TT>'', and another with ``<TT>polymer @and syndiotactic</TT>''.
+
+<P>
+Terms can include (Perl) regular expressions like:
+
+<UL>
+<LI>a '<TT>?</TT>' makes the character immediately preceding optional, ie
+      the term ``<TT>coins?</TT>'' will match both ``<TT>coin</TT>'' and ``<TT>coins</TT>''
+</LI>
+<LI>a ``<TT>[^ <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$\backslash$"></SPAN>s]*</TT>'' is truncation (matches all
+      character sequences except space ' '),
+<BR>      ``<TT>glass art[^ <SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$\backslash$"></SPAN>s]*</TT>'' will match 
+      ``<TT>glass art</TT>'', ``<TT>glass arts</TT>'', ``<TT>glass
+      artists</TT>'', ``<TT>glass articles</TT>'', and so on.
+</LI>
+</UL>
+
+<P>
+It is important to understand that each triplet in the topic definition
+ is considered by itself
+without any context, so they must <B>each</B> be topic or sub-class specific in order to
+be useful. Subject neutral terms like ``use'', ``test'', ``history'' should
+not be used.
+If really needed they have to be qualified so that they become topic
+specific (see examples below).
+
+<P>
+Simple guidelines for creating the triplets and assigning weights
+
+<UL>
+<LI>Phrases or unique, topic specific terms, 
+ should be used if possible, and
+    assigned the highest weights, since they normally are most discriminatory.
+</LI>
+<LI>Boolean AND-expressions is the next best.
+</LI>
+<LI>Single words can be to general and/or have several meanings or uses
+    that make them less specific and those should thus be assigned
+    a small weights.
+</LI>
+<LI>Acronyms can be used as terms if they are unique
+</LI>
+<LI>Negative weights should be used in order to exclude concepts.
+</LI>
+</UL>
+
+<P>
+<A NAME="termlist"></A>
+<H3><A NAME="SECTION02045200000000000000">
+Topic definition (term triplets) BNF grammar</A>
+</H3>
+TERM-LIST :== TERM-ROW '<B><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$&lt;$"></SPAN>cr<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$&gt;$"></SPAN></B>' <code>||</code> '<B>#</B>' <B><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$&lt;$"></SPAN>char<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$&gt;$"></SPAN></B>+ '<B><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$&lt;$"></SPAN>cr<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$&gt;$"></SPAN></B>' <code>||</code> '<B><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$&lt;$"></SPAN>cr
+<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$&gt;$"></SPAN></B>' 
+<BR>
+TERM-ROW :== WEIGHT '<B>: </B>' TERMS '<B>=</B>' CLASS-LIST  
+<BR>
+WEIGHT :== ['<B>-</B>']<B><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$&lt;$"></SPAN>integer<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$&gt;$"></SPAN></B>  
+<BR>
+TERMS :== TERM [' <B>@and</B> ' TERMS]*  
+<BR>
+TERM :== WORD ' ' [WORD]*   
+<BR>
+WORD :== <B><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$&lt;$"></SPAN>char<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$&gt;$"></SPAN></B>+<code>||</code><B><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$&lt;$"></SPAN>char<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$&gt;$"></SPAN></B>+<B><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$&lt;$"></SPAN>perl-reg-exp<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$&gt;$"></SPAN></B>  
+<BR>
+CLASS-LIST :== CLASSID ['<B>,</B>' CLASS-LIST]  
+<BR>
+CLASSID :== <B><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$&lt;$"></SPAN>char<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$&gt;$"></SPAN></B>+  
+<BR>
+<P>
+A line that starts with '#' is ignored as are empty lines.
+
+<P>
+<B><SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$&lt;$"></SPAN>perl-reg-exp<SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$&gt;$"></SPAN></B> is only supported by the plain
+matching algorithm described in section <A HREF="#std">4.5.4</A>.
+
+<P>
+``CLASSID'' is a topic (sub-)class specifier, often from a hierarchical
+classification system like <A NAME="tex2html16"
+  HREF="http://www.ei.org/">Engineering Index</A>.
+
+<P>
+
+<H3><A NAME="SECTION02045300000000000000">
+Term triplet examples</A>
+</H3>
+
+<P>
+<PRE>
+50: optical glass=A.14.5, D.2.2
+30: glass @and fiberoptics=D.2.2.8
+50: glass @and technical @and history=D.2
+50: ceramic materials @and glass=D.2.1.7
+-10000: glass @and art=A
+</PRE>
+
+<P>
+The first line says that a document containing the term ``<TT>optical
+glass</TT>'' should be awarded 50 points for each of the two classes A.14.5 and
+D.2.2.
+
+<P>
+``<TT>glass</TT>'' as a single term is probably too general, qualify it with more terms
+  like: ``<TT>glass @and fiberoptics</TT>'' , or ``<TT>glass @and technical @and history</TT>''
+  or  use a phrase like ``<TT>glass fiber</TT>'' or ``<TT>optical glass</TT>''.
+
+<P>
+In order to exclude documents about artistic use of glass the term 
+  ``<TT>glass @and art</TT>'' can be used with a (high) negative score.
+
+<P>
+An example from the topic definition for 'Carnivorous Plants' using
+  regular expressions. 
+<PRE>
+#This is a comment
+75: D\.?\s*californica=CP.Drosophyllum
+10: pitcher[^\s]*=CP
+-10: pitcher[^\s]* @and baseball=CP
+</PRE>
+The term ``<TT>D<SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$\backslash$"></SPAN>.?<SPAN CLASS="MATH"><IMG
+ WIDTH="13" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$\backslash$"></SPAN>s*californica</TT>''
+ will match <TT>D californica, D. californica, D.californica</TT> etc.
+
+<P>
+The last two lines assures that a document containing ``<TT>pitcher</TT>'' gets
+10 points but if the document also contains ``<TT>baseball</TT>'' the points are removed.
+
+<P>
+
+<H3><A NAME="SECTION02045400000000000000"></A>
+<A NAME="std"></A>
+<BR>
+Algorithm 1: plain matching
+</H3>
+
+<P>
+Selected by setting the configuration parameter <TT>classifyPlugIn = Combine::Check_record</TT>
+
+<P>
+The algorithm produces a list of suggested topic-classes (subject classifications) and
+corresponding relevance scores using the algorithm:
+
+<P>
+
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+\mbox{Relevance\_score} =
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="144" HEIGHT="31" BORDER="0"
+ SRC="img8.png"
+ ALT="\begin{displaymath}\mbox{Relevance\_score} = \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+\sum_{\mbox{all locations}} \left( \sum_{\mbox{all terms}} (hits[\mbox{location}_{j}][\mbox{term
+}_{i}] * weight[\mbox{term}_{i}] * weight[\mbox{location}_{j}]) \right)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="626" HEIGHT="64" BORDER="0"
+ SRC="img9.png"
+ ALT="\begin{displaymath}\sum_{\mbox{all locations}} \left( \sum_{\mbox{all terms}} (h...
+...weight[\mbox{term}_{i}] * weight[\mbox{location}_{j}]) \right) \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+<DL>
+<DT><STRONG>term weight</STRONG></DT>
+<DD>(<!-- MATH
+ $weight[\mbox{term}_{i}]$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="107" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$weight[\mbox{term}_{i}]$"></SPAN>) is taken from the topic definition
+triplets. 
+</DD>
+<DT><STRONG>location weight</STRONG></DT>
+<DD>(<!-- MATH
+ $weight[\mbox{location}_{j}]$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="134" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.png"
+ ALT="$weight[\mbox{location}_{j}]$"></SPAN>) are
+defined ad hoc for locations like title, metadata, HTML headings, and plain
+text. However the exact values for these weights does not seem to play
+a large role in the precision of the algorithm [<A
+ HREF="node10.html#ardo05:_ECDL">5</A>].
+</DD>
+<DT><STRONG>hits</STRONG></DT>
+<DD>(<!-- MATH
+ $hits[\mbox{location}_{j}][\mbox{term}_{i}]$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="162" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$hits[\mbox{location}_{j}][\mbox{term}_{i}]$"></SPAN>) is the
+number of times <!-- MATH
+ $\mbox{term}_{i}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="45" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$\mbox{term}_{i}$"></SPAN> occur in the text of <!-- MATH
+ $\mbox{location}_{j}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="71" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$\mbox{location}_{j}$"></SPAN>
+</DD>
+</DL>
+
+<P>
+The summed relevance score might, for certain applications, have to be
+normalized with respect to text size of the document.
+
+<P>
+One problem with this algorithm is that a term that is found in the
+beginning of the text contributes as much as a term that is found at
+the end of a large document. Another problem is the distance and thus
+the coupling between two terms in a Boolean expression might be very
+large in a big document and this is not taken into account by the
+above algorithm.
+
+<P>
+
+<H3><A NAME="SECTION02045500000000000000"></A>
+<A NAME="pos"></A>
+<BR>
+Algorithm 2: position weighted matching
+</H3>
+Selected by setting the configuration parameter <TT>classifyPlugIn = Combine::PosCheck_record</TT>
+
+<P>
+In response to the problems cited above we developed a modified
+version of the algorithm that takes into account word position in the
+text and proximity for boolean terms. It also eliminates the need to
+assign ad hoc weights to locations. The new algorithm works as
+follows.
+
+<P>
+First all text from all locations are concatenated (in the natural importance order
+title, metadata, text) into one chunk of text. Matching of terms is done
+against this chunk. Relevance score is calculated as
+
+<P>
+
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+\mbox{Relevance\_score} =
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="144" HEIGHT="31" BORDER="0"
+ SRC="img8.png"
+ ALT="\begin{displaymath}\mbox{Relevance\_score} = \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+<BR><P></P>
+<DIV ALIGN="CENTER" CLASS="mathdisplay">
+<!-- MATH
+ \begin{displaymath}
+\sum_{\mbox{all terms}} \left( \sum_{\mbox{all matches}}
+\frac{weight[\mbox{term}_{i}]}{\log(k * position[\mbox{term}_{i}][\mbox{match}_{j}]) * proximity[\mbox{term}_{i}][\mbox{match}_{j}]} \right)
+\end{displaymath}
+ -->
+
+<IMG
+ WIDTH="632" HEIGHT="64" BORDER="0"
+ SRC="img15.png"
+ ALT="\begin{displaymath}\sum_{\mbox{all terms}} \left( \sum_{\mbox{all matches}}
+\fra...
+..._{j}]) * proximity[\mbox{term}_{i}][\mbox{match}_{j}]} \right) \end{displaymath}">
+</DIV>
+<BR CLEAR="ALL">
+<P></P>
+
+<P>
+<DL>
+<DT><STRONG>term weight</STRONG></DT>
+<DD>(<!-- MATH
+ $weight[\mbox{term}_{i}]$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="107" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$weight[\mbox{term}_{i}]$"></SPAN>) is taken from the topic
+ definition triplets
+
+<P>
+</DD>
+<DT><STRONG>position</STRONG></DT>
+<DD>(<!-- MATH
+ $position[\mbox{term}_{i}][\mbox{match}_{j}]$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="181" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="$position[\mbox{term}_{i}][\mbox{match}_{j}]$"></SPAN>) is the position
+in the text (starting from 1) for <!-- MATH
+ $\mbox{match}_{j}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="58" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$\mbox{match}_{j}$"></SPAN> of <!-- MATH
+ $\mbox{term}_{i}$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="45" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$\mbox{term}_{i}$"></SPAN>.
+The constant factor <SPAN CLASS="MATH"><IMG
+ WIDTH="14" HEIGHT="15" ALIGN="BOTTOM" BORDER="0"
+ SRC="img18.png"
+ ALT="$k$"></SPAN> is normally <SPAN CLASS="MATH"><IMG
+ WIDTH="27" HEIGHT="14" ALIGN="BOTTOM" BORDER="0"
+ SRC="img19.png"
+ ALT="$0.5$"></SPAN>
+
+<P>
+</DD>
+<DT><STRONG>proximity</STRONG></DT>
+<DD>(<!-- MATH
+ $proximity[\mbox{term}_{i}][\mbox{match}_{j}]$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="197" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img20.png"
+ ALT="$proximity[\mbox{term}_{i}][\mbox{match}_{j}]$"></SPAN>) is
+
+<P>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="CENTER">1</TD>
+<TD ALIGN="LEFT">for non boolean terms</TD>
+</TR>
+<TR><TD ALIGN="CENTER"><!-- MATH
+ $\log(distance\_between\_components)$
+ -->
+<SPAN CLASS="MATH"><IMG
+ WIDTH="286" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$\log(distance\_between\_components)$"></SPAN></TD>
+<TD ALIGN="LEFT">for boolean terms</TD>
+</TR>
+</TABLE>
+</DD>
+</DL>
+
+<P>
+In this algorithm a matched term close to the start of text contribute
+more to the relevance score than a match towards the end of the
+text. And for Boolean terms the closer the components are the higher
+the contribution to the relevance score.
+
+<P>
+
+<H2><A NAME="SECTION02046000000000000000">
+Topic filter Plug-In API</A>
+</H2>
+The configuration variable <A HREF="node13.html#classifyPlugIn">classifyPlugIn</A> is used to find
+the Perl module that implements the desired topic filter.
+The value should be formatted as a valid Perl module identifier (ie
+the module must be somewhere in the Perl module search path).
+Combine will call a subroutine named 'classify' in this module,
+providing a XWI-object as in parameter. The subroutine must
+return either 0 or 1, where
+<BR>
+0: means record fails to meet the classification criteria, ie ignore this record
+<BR>
+1: means record is OK and should be stored in the database, and links followed by the crawler
+
+<P>
+A XWI-object is a structured object holding all information from
+parsing a Web-page.
+
+<P>
+More details on how to write a Plug-In can be found in the example
+Plug-In <A HREF="node15.html#classifyPlugInTemplate">classifyPlugInTemplate.pm</A>.
+
+<P>
+
+<H2><A NAME="SECTION02047000000000000000">
+Analysis</A>
+</H2>
+Extra analysis is enabled by the configuration variable 
+doAnalyse (section <A HREF="node13.html#doAnalyse">9.1.5</A>). Among other things analysis tries to determine 
+the language of the text in the page. The URL is used to extract an
+indication of the category (University, Education, Research,
+Publication, Product, Top page, Personal
+page) of a page.
+
+<P>
+
+<H2><A NAME="SECTION02048000000000000000">
+URL recycling</A>
+</H2>
+URLs for recycling comes from 3 sources:
+
+<UL>
+<LI>Links extracted during HTML parsing
+</LI>
+<LI>Redirects (unless configuration variable <A HREF="node13.html#UserAgentFollowRedirects">UserAgentFollowRedirects</A> is set)
+</LI>
+<LI>URLs extracted from plain text (enabled by the configuration variable
+extractLinksFromText (section <A HREF="node13.html#extractLinksFromText">9.1.8</A>)).
+</LI>
+</UL>
+
+<P>
+Automatic recycling of URLs is enabled by the configuration variable
+AutoRecycleLinks (section <A HREF="node13.html#AutoRecycleLinks">9.1.1</A>). It can also be done
+manually with the command
+<BR><TT>combineCtrl -jobname XXXX recyclelinks</TT>
+
+<P>
+The command <TT>combineCtrl -jobname XXXX reharvest</TT> marks all
+pages in the database for harvesting again.
+
+<P>
+
+<H2><A NAME="SECTION02049000000000000000">
+Complete application - SearchEngine in a Box</A>
+</H2>
+
+<P>
+The
+ <A NAME="tex2html17"
+  HREF="http://combine.it.lth.se/SearchEngineBox/">SearchEngine-in-a-Box</A>
+system is based on the two systems Combine Focused Crawler and
+ <A NAME="tex2html18"
+  HREF="http://www.indexdata.dk/zebra/">Zebra text indexing and retrieval
+ engine</A>. This system allows you build
+
+a vertical search engine for your favorite topic in a few easy
+ steps.
+
+<P>
+The <A NAME="tex2html19"
+  HREF="http://combine.it.lth.se/SearchEngineBox/">SearchEngine-in-a-Box</A>
+web-site contains instructions and downloads
+to make this happen. Basically it makes use of the
+<A HREF="node13.html#ZebraHost">ZebraHost</A>
+configuration variable which enables direct communication between
+the crawler and the database system and thus indexes records as soon
+as they are crawled. Which also means that they are directly searchable.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html317"
+  HREF="node7.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html313"
+  HREF="node2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html307"
+  HREF="node5.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html315"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html318"
+  HREF="node7.html">Evaluation of automated subject</A>
+<B> Up:</B> <A NAME="tex2html314"
+  HREF="node2.html">Overview</A>
+<B> Previous:</B> <A NAME="tex2html308"
+  HREF="node5.html">Configuration</A>
+ &nbsp; <B>  <A NAME="tex2html316"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+root
+2006-11-08
+</ADDRESS>
+</BODY>
+</HTML>

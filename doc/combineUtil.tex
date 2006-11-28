@@ -1,0 +1,151 @@
+\paragraph{NAME\label{NAME}\index{NAME}}
+
+
+combineUtil - various operations on the Combine database
+
+\paragraph{SYNOPSIS\label{SYNOPSIS}\index{SYNOPSIS}}
+
+
+combineUtil  $<$action$>$ --jobname $<$name$>$
+
+
+
+where action can be one of stats, termstat, classtat,
+ sanity, all, serveralias, resetOAI, restoreSanity,
+ deleteNetLoc, deletePath, deleteMD5, deleteRecordid,
+ addAlias
+
+\paragraph{OPTIONS AND ARGUMENTS\label{OPTIONS_AND_ARGUMENTS}\index{OPTIONS AND ARGUMENTS}}
+
+
+jobname is used to find the appropriate configuration (mandatory)
+
+\subparagraph*{Actions listing statistics\label{Actions_listing_statistics}\index{Actions listing statistics}}
+\begin{description}
+
+\item[{stats}] \mbox{}
+
+Global statistics about the database
+
+
+\item[{termstat}] \mbox{}
+
+generates statistics about the terms from topic ontology matched in documents
+(can be long output)
+
+
+\item[{classtat}] \mbox{}
+
+generates statistics about the topic classes assigned to documents
+
+\end{description}
+\subparagraph*{Actions for sanity controlls\label{Actions_for_sanity_controlls}\index{Actions for sanity controlls}}
+\begin{description}
+
+\item[{sanity}] \mbox{}
+
+Performs various sanity checks on the database
+
+
+\item[{restoreSanity}] \mbox{}
+
+Deletes records which sanity checks finds insane
+
+
+\item[{resetOAI}] \mbox{}
+
+Removes all history (ie 'deleted' records) from the OAI
+table. This is done by removing the OAI table and
+recreating it from the existing database.
+
+\end{description}
+\subparagraph*{Action all\label{Action_all}\index{Action all}}
+
+
+Does the statistics generation actions: stats, sanity,
+classtat, termstat
+
+\subparagraph*{Actions for deleting records\label{Actions_for_deleting_records}\index{Actions for deleting records}}
+\begin{description}
+
+\item[{deleteNetLoc}] \mbox{}
+
+Deletes all records matching the ','-separated list of server net-locations
+(server-names optionally with port) in the switch --netlocstr.
+Net-locations can include SQL wild cards ('\%').
+
+
+\item[{deletePath}] \mbox{}
+
+Deletes all records matching the ','-separated list of URl
+paths (excluding net-locations) in the switch --pathsubstrs. Paths can include SQL wild cards ('\%').
+
+
+\item[{deleteMD5}] \mbox{}
+
+Delete the record which has the MD5 in switch --md5
+
+
+\item[{deleteRecordid}] \mbox{}
+
+Delete the record which has the recordid in switch --recordid
+
+\end{description}
+\subparagraph*{Actions for handling server aliases\label{Actions_for_handling_server_aliases}\index{Actions for handling server aliases}}
+\begin{description}
+
+\item[{serverAlias}] \mbox{}
+
+Detect server aliases in the current database and do
+a 'addAlias' on each detected alias.
+
+
+\item[{addAlias}] \mbox{}
+
+Manually add a serveralias to the system. Requires switches
+--aliases and --preferred
+
+\end{description}
+\paragraph{DESCRIPTION\label{DESCRIPTION}\index{DESCRIPTION}}
+
+
+Does various statistics generation as well as performing sanity checks on the database
+
+\paragraph{EXAMPLES\label{EXAMPLES}\index{EXAMPLES}}
+\begin{description}
+
+\item[{\texttt{combineUtil termstat --jobname aatest}}] \mbox{}
+
+Generate matched term statistics
+
+\end{description}
+\paragraph{SEE ALSO\label{SEE_ALSO}\index{SEE ALSO}}
+
+
+combine
+
+
+
+Combine configuration documentation in \emph{/usr/share/doc/combine/}.
+
+\paragraph{AUTHOR\label{AUTHOR}\index{AUTHOR}}
+
+
+Anders Ardö, $<$anders.ardo@it.lth.se$>$
+
+\paragraph{COPYRIGHT AND LICENSE\label{COPYRIGHT_AND_LICENSE}\index{COPYRIGHT AND LICENSE}}
+
+
+Copyright (C) 2005 Anders Ardö
+
+
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself, either Perl version 5.8.4 or,
+at your option, any later version of Perl 5 you may have available.
+
+
+
+See the file LICENCE included in the distribution at
+ \textsf{http://combine.it.lth.se/}
+

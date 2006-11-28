@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>System components</TITLE>
+<META NAME="description" CONTENT="System components">
+<META NAME="keywords" CONTENT="DocMain">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="DocMain.css">
+
+<LINK REL="previous" HREF="node8.html">
+<LINK REL="up" HREF="node2.html">
+<LINK REL="next" HREF="node10.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html365"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html361"
+  HREF="node2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html357"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html363"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html366"
+  HREF="node10.html">Bibliography</A>
+<B> Up:</B> <A NAME="tex2html362"
+  HREF="node2.html">Overview</A>
+<B> Previous:</B> <A NAME="tex2html358"
+  HREF="node8.html">Performance</A>
+ &nbsp; <B>  <A NAME="tex2html364"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html367"
+  HREF="node9.html#SECTION02071000000000000000">combineINIT</A>
+<LI><A NAME="tex2html368"
+  HREF="node9.html#SECTION02072000000000000000">combineCtrl</A>
+<LI><A NAME="tex2html369"
+  HREF="node9.html#SECTION02073000000000000000">combineUtil</A>
+<LI><A NAME="tex2html370"
+  HREF="node9.html#SECTION02074000000000000000">combineExport</A>
+<LI><A NAME="tex2html371"
+  HREF="node9.html#SECTION02075000000000000000">Internal executables and Library modules</A>
+<UL>
+<LI><A NAME="tex2html372"
+  HREF="node9.html#SECTION02075100000000000000">Library</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION02070000000000000000"></A>
+<A NAME="comp"></A>
+<BR>
+System components
+</H1>
+All executables take a mandatory switch <TT>-jobname</TT> which is used
+to identify the particular crawl job you want and as well the
+job-specific configuration directory.
+
+<P>
+Briefly <TT>combineINIT</TT> is used to initialize SQL database and the
+job specific configuration directory. <TT>combineCtrl</TT> controls a Combine crawling job (start, stop, etc) as well as printing some statistics. <TT>combineExport</TT> export records in various XML formats and 
+<TT>combineUtil</TT> provides various utility operations on the Combine database.
+
+<P>
+<A HREF="node14.html#moddep">Detailed dependency information</A> can be found in the 'Gory
+details' section.
+
+<P>
+
+<H2><A NAME="SECTION02071000000000000000">
+combineINIT</A>
+</H2>
+Creates a Mysql database, database tables and initializes it. If the database exists it is dropped and recreated. A job specific configuration directory is created in <TT>/etc/combine/</TT> and populated with a default configuration file.
+
+<P>
+If a topic definition filename is given, focused crawling using this topic defintion is enabled per default. Otherwise focused crawling is disabled, and Combine works as a general crawler.
+
+<P>
+
+<H2><A NAME="SECTION02072000000000000000">
+combineCtrl</A>
+</H2>
+
+<P>
+Implements various control functionality to administer a crawling job, like starting and stoping crawlers, injecting URLs into the crawl que, scheduling newly found links for crawling, controlling scheduling, etc.
+
+<P>
+This is the preferred way of controling a crawl job.
+
+<P>
+
+<H2><A NAME="SECTION02073000000000000000">
+combineUtil</A>
+</H2>
+Does various statistics generation as well as performing sanity checks on the database.
+
+<P>
+
+<H2><A NAME="SECTION02074000000000000000">
+combineExport</A>
+</H2>
+Export is done according to one of three profiles: <TT>alvis</TT>,
+<TT>dc</TT>, or <TT>combine</TT>. <TT>alvis</TT> and <TT>combine</TT> are
+very similar XML formats where <TT>combine</TT> is more compact with
+less redundancy and
+<TT>alvis</TT> contains some more information.
+<TT>dc</TT> is XML encoded Dublin Core data.
+
+<P>
+The <TT>alvis</TT> profile format is defined by the  <A NAME="tex2html22"
+  HREF="http://www.miketaylor.org.uk/tmp/alvis/d3.1/enriched-document.xsd">Alvis Enriched Document XML Schema</A>.
+
+<P>
+For convinience a switch <TT>-xsltscript</TT> adds the possibility
+to filter the output using a XSLT script. The script is feed
+a record according to the <TT>combine</TT> profile and the result
+is exported.
+
+<P>
+
+<H2><A NAME="SECTION02075000000000000000">
+Internal executables and Library modules</A>
+</H2>
+<TT>combine</TT> is the main crawling machine in the Combine system and 
+<TT>combineRun</TT> starts, monitors and restarts <TT>combine</TT> crawling processes.
+
+<P>
+
+<H3><A NAME="SECTION02075100000000000000">
+Library</A>
+</H3>
+
+<P>
+Main, crawler specific, library components are collected in the <TT>Combine::</TT> Perl namespace.
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html365"
+  HREF="node10.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html361"
+  HREF="node2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html357"
+  HREF="node8.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html363"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html366"
+  HREF="node10.html">Bibliography</A>
+<B> Up:</B> <A NAME="tex2html362"
+  HREF="node2.html">Overview</A>
+<B> Previous:</B> <A NAME="tex2html358"
+  HREF="node8.html">Performance</A>
+ &nbsp; <B>  <A NAME="tex2html364"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+root
+2006-11-08
+</ADDRESS>
+</BODY>
+</HTML>

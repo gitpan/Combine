@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Performance</TITLE>
+<META NAME="description" CONTENT="Performance">
+<META NAME="keywords" CONTENT="DocMain">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="DocMain.css">
+
+<LINK REL="next" HREF="node9.html">
+<LINK REL="previous" HREF="node7.html">
+<LINK REL="up" HREF="node2.html">
+<LINK REL="next" HREF="node9.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html355"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html351"
+  HREF="node2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html345"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html353"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html356"
+  HREF="node9.html">System components</A>
+<B> Up:</B> <A NAME="tex2html352"
+  HREF="node2.html">Overview</A>
+<B> Previous:</B> <A NAME="tex2html346"
+  HREF="node7.html">Evaluation of automated subject</A>
+ &nbsp; <B>  <A NAME="tex2html354"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION02060000000000000000">
+Performance</A>
+</H1>
+
+<P>
+Performance evaluation of the automated subject classification component is
+treated in section <A HREF="node7.html#autoclasseval">5</A>.
+Performance in terms of number of URLs treated per minute is of course
+highly dependent on a number of circumstances like network load,
+capacity of the machine, the selection of URLs to crawl, configuration
+details, number of crawlers used, etc.
+In general, within rather wide limits, you could expect the Combine
+system to handle up to 200 URLs per
+minute. Handle here means everything from scheduling of URLs, fetching
+of pages over the network, parsing the page,
+automated subject classification, recycling of new links, to storing the structured record in
+a relational database. This holds for small simple crawls starting
+from scratch to large complicated topic specific crawls with millions
+of records.
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="crawlspeed"></A><A NAME="1206"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 4:</STRONG>
+Combine crawler performance.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="624" HEIGHT="445" ALIGN="BOTTOM" BORDER="0"
+ SRC="img22.png"
+ ALT="\includegraphics[height=0.4\textheight]{CrawlerSpeed.ps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+The prime way of increasing performance is to use more than one
+crawler for a job. This is handled by the <TT>-harvesters </TT> switch
+used together with the <TT>combineCtrl start</TT> command (for example
+<BR><TT>combineCtrl -jobname MyCrawl -harvesters 5 start</TT>
+<BR>
+will start 5 crawlers working together on the job 'MyCrawl'. The
+effect of using more than one crawler on crawling speed is illustrated
+in figure <A HREF="#crawlspeed">4</A> below.
+
+<P>
+Configuration also have an effect on performance. In figure
+<A HREF="#config">5</A> performance improvements based on configuration changes are shown. The choice of
+algorithm for automated classification turns out to have biggest
+influence on performance, where <A HREF="node6.html#pos">algorithm 2</A> (<TT>classifyPlugIn = Combine::PosCheck_record</TT> - Pos in figure <A HREF="#config">5</A>) is much
+faster than <A HREF="node6.html#std">algorithm 1</A> (<TT>classifyPlugIn = Combine::Check_record</TT> - Std in figure <A HREF="#config">5</A>). Tweaking of other configuration variables also have an effect
+on performance but to a lesser degree. Tweaking consisted of not using
+Tidy to clean HTML (<TT>useTidy = 0</TT>) and not storing the original
+page in the database (<TT>saveHTML = 0</TT>).
+
+<P>
+
+<DIV ALIGN="CENTER"><A NAME="config"></A><A NAME="1232"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure 5:</STRONG>
+Effect of configuration changes on focused crawler performance.</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="621" HEIGHT="445" ALIGN="BOTTOM" BORDER="0"
+ SRC="img23.png"
+ ALT="\includegraphics[height=0.4\textheight]{Config.ps}">
+
+</DIV></TD></TR>
+</TABLE>
+</DIV>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html355"
+  HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html351"
+  HREF="node2.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html345"
+  HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html353"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html356"
+  HREF="node9.html">System components</A>
+<B> Up:</B> <A NAME="tex2html352"
+  HREF="node2.html">Overview</A>
+<B> Previous:</B> <A NAME="tex2html346"
+  HREF="node7.html">Evaluation of automated subject</A>
+ &nbsp; <B>  <A NAME="tex2html354"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+root
+2006-11-08
+</ADDRESS>
+</BODY>
+</HTML>

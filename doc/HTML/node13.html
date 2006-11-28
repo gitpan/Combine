@@ -1,0 +1,884 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2002-2-1 (1.70)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Configuration variables</TITLE>
+<META NAME="description" CONTENT="Configuration variables">
+<META NAME="keywords" CONTENT="DocMain">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v2002-2-1">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="DocMain.css">
+
+<LINK REL="next" HREF="node14.html">
+<LINK REL="previous" HREF="node12.html">
+<LINK REL="up" HREF="node11.html">
+<LINK REL="next" HREF="node14.html">
+</HEAD>
+
+<BODY >
+
+<DIV CLASS="navigation"><!--Navigation Panel-->
+<A NAME="tex2html526"
+  HREF="node14.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html522"
+  HREF="node11.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html516"
+  HREF="node12.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html524"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html527"
+  HREF="node14.html">Module dependences</A>
+<B> Up:</B> <A NAME="tex2html523"
+  HREF="node11.html">Gory details</A>
+<B> Previous:</B> <A NAME="tex2html517"
+  HREF="node12.html">Frequently asked questions</A>
+ &nbsp; <B>  <A NAME="tex2html525"
+  HREF="node1.html">Contents</A></B> 
+<BR>
+<BR></DIV>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
+
+<UL CLASS="ChildLinks">
+<LI><A NAME="tex2html528"
+  HREF="node13.html#SECTION04021000000000000000">Name/value configuration variables</A>
+<UL>
+<LI><A NAME="tex2html529"
+  HREF="node13.html#SECTION04021100000000000000">AutoRecycleLinks</A>
+<LI><A NAME="tex2html530"
+  HREF="node13.html#SECTION04021200000000000000">baseConfigDir</A>
+<LI><A NAME="tex2html531"
+  HREF="node13.html#SECTION04021300000000000000">classifyPlugIn</A>
+<LI><A NAME="tex2html532"
+  HREF="node13.html#SECTION04021400000000000000">configDir</A>
+<LI><A NAME="tex2html533"
+  HREF="node13.html#SECTION04021500000000000000">doAnalyse</A>
+<LI><A NAME="tex2html534"
+  HREF="node13.html#SECTION04021600000000000000">doCheckRecord</A>
+<LI><A NAME="tex2html535"
+  HREF="node13.html#SECTION04021700000000000000">doOAI</A>
+<LI><A NAME="tex2html536"
+  HREF="node13.html#SECTION04021800000000000000">extractLinksFromText</A>
+<LI><A NAME="tex2html537"
+  HREF="node13.html#SECTION04021900000000000000">HarvesterMaxMissions</A>
+<LI><A NAME="tex2html538"
+  HREF="node13.html#SECTION040211000000000000000">HarvestRetries</A>
+<LI><A NAME="tex2html539"
+  HREF="node13.html#SECTION040211100000000000000">httpProxy</A>
+<LI><A NAME="tex2html540"
+  HREF="node13.html#SECTION040211200000000000000">LogHandle</A>
+<LI><A NAME="tex2html541"
+  HREF="node13.html#SECTION040211300000000000000">Loglev</A>
+<LI><A NAME="tex2html542"
+  HREF="node13.html#SECTION040211400000000000000">maxUrlLength</A>
+<LI><A NAME="tex2html543"
+  HREF="node13.html#SECTION040211500000000000000">MySQLdatabase</A>
+<LI><A NAME="tex2html544"
+  HREF="node13.html#SECTION040211600000000000000">MySQLhandle</A>
+<LI><A NAME="tex2html545"
+  HREF="node13.html#SECTION040211700000000000000">Operator-Email</A>
+<LI><A NAME="tex2html546"
+  HREF="node13.html#SECTION040211800000000000000">Password</A>
+<LI><A NAME="tex2html547"
+  HREF="node13.html#SECTION040211900000000000000">saveHTML</A>
+<LI><A NAME="tex2html548"
+  HREF="node13.html#SECTION040212000000000000000">SdqRetries</A>
+<LI><A NAME="tex2html549"
+  HREF="node13.html#SECTION040212100000000000000">SummaryLength</A>
+<LI><A NAME="tex2html550"
+  HREF="node13.html#SECTION040212200000000000000">UAtimeout</A>
+<LI><A NAME="tex2html551"
+  HREF="node13.html#SECTION040212300000000000000">UserAgentFollowRedirects</A>
+<LI><A NAME="tex2html552"
+  HREF="node13.html#SECTION040212400000000000000">UserAgentGetIfModifiedSince</A>
+<LI><A NAME="tex2html553"
+  HREF="node13.html#SECTION040212500000000000000">useTidy</A>
+<LI><A NAME="tex2html554"
+  HREF="node13.html#SECTION040212600000000000000">WaitIntervalExpirationGuaranteed</A>
+<LI><A NAME="tex2html555"
+  HREF="node13.html#SECTION040212700000000000000">WaitIntervalHarvesterLockNotFound</A>
+<LI><A NAME="tex2html556"
+  HREF="node13.html#SECTION040212800000000000000">WaitIntervalHarvesterLockNotModified</A>
+<LI><A NAME="tex2html557"
+  HREF="node13.html#SECTION040212900000000000000">WaitIntervalHarvesterLockRobotRules</A>
+<LI><A NAME="tex2html558"
+  HREF="node13.html#SECTION040213000000000000000">WaitIntervalHarvesterLockSuccess</A>
+<LI><A NAME="tex2html559"
+  HREF="node13.html#SECTION040213100000000000000">WaitIntervalHarvesterLockUnavailable</A>
+<LI><A NAME="tex2html560"
+  HREF="node13.html#SECTION040213200000000000000">WaitIntervalHost</A>
+<LI><A NAME="tex2html561"
+  HREF="node13.html#SECTION040213300000000000000">WaitIntervalRrdLockDefault</A>
+<LI><A NAME="tex2html562"
+  HREF="node13.html#SECTION040213400000000000000">WaitIntervalRrdLockNotFound</A>
+<LI><A NAME="tex2html563"
+  HREF="node13.html#SECTION040213500000000000000">WaitIntervalRrdLockSuccess</A>
+<LI><A NAME="tex2html564"
+  HREF="node13.html#SECTION040213600000000000000">WaitIntervalSchedulerGetJcf</A>
+<LI><A NAME="tex2html565"
+  HREF="node13.html#SECTION040213700000000000000">ZebraHost</A>
+</UL>
+<BR>
+<LI><A NAME="tex2html566"
+  HREF="node13.html#SECTION04022000000000000000">Complex configuration variables</A>
+<UL>
+<LI><A NAME="tex2html567"
+  HREF="node13.html#SECTION04022100000000000000">allow</A>
+<LI><A NAME="tex2html568"
+  HREF="node13.html#SECTION04022200000000000000">binext</A>
+<LI><A NAME="tex2html569"
+  HREF="node13.html#SECTION04022300000000000000">converters</A>
+<LI><A NAME="tex2html570"
+  HREF="node13.html#SECTION04022400000000000000">exclude</A>
+<LI><A NAME="tex2html571"
+  HREF="node13.html#SECTION04022500000000000000">serveralias</A>
+<LI><A NAME="tex2html572"
+  HREF="node13.html#SECTION04022600000000000000">sessionids</A>
+<LI><A NAME="tex2html573"
+  HREF="node13.html#SECTION04022700000000000000">url</A>
+</UL></UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION04020000000000000000"></A>
+<A NAME="configvars"></A>
+<BR>
+Configuration variables
+</H1>
+
+<H2><A NAME="SECTION04021000000000000000">
+Name/value configuration variables</A>
+</H2>
+
+<H3><A NAME="SECTION04021100000000000000"></A>
+<A NAME="AutoRecycleLinks"></A>
+<BR>
+AutoRecycleLinks
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= 1
+</DD>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>Enable(1)/disable(0) automatic recycling of new links
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>SD_SQL.pm
+</DD>
+</DL>
+<H3><A NAME="SECTION04021200000000000000"></A>
+<A NAME="baseConfigDir"></A>
+<BR>
+baseConfigDir
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= /etc/combine
+</DD>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>Base directory for configuration files; initialized by Config.pm
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>FromHTML.pm; combineExport
+</DD>
+<DT><STRONG>Set by:</STRONG></DT>
+<DD>Config.pm
+</DD>
+</DL>
+<H3><A NAME="SECTION04021300000000000000"></A>
+<A NAME="classifyPlugIn"></A>
+<BR>
+classifyPlugIn
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= Combine::Check_record
+</DD>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>Which topic classification PlugIn module algorithm to use 
+<BR>
+Combine::Check_record and Combine::PosCheck_record included by default 
+<BR>
+see classifyPlugInTemplate.pm and documentation to write your own
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>combine
+</DD>
+</DL>
+<H3><A NAME="SECTION04021400000000000000"></A>
+<A NAME="configDir"></A>
+<BR>
+configDir
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= NoDefaultValue
+</DD>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>Directory for job specific configuration files; taken from 'jobname'
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>Check_record.pm; combineUtil; PosCheck_record.pm
+</DD>
+<DT><STRONG>Set by:</STRONG></DT>
+<DD>Config.pm
+</DD>
+</DL>
+<H3><A NAME="SECTION04021500000000000000"></A>
+<A NAME="doAnalyse"></A>
+<BR>
+doAnalyse
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= 1
+</DD>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>Enable(1)/disable(0) analysis of genre, language
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>combine
+</DD>
+</DL>
+<H3><A NAME="SECTION04021600000000000000"></A>
+<A NAME="doCheckRecord"></A>
+<BR>
+doCheckRecord
+</H3>
+<DL>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>Enable(1)/disable(0) topic classification (focused crawling) 
+<BR>
+Generated by combineINIT based on -topic parameter
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>combine
+</DD>
+</DL>
+<H3><A NAME="SECTION04021700000000000000"></A>
+<A NAME="doOAI"></A>
+<BR>
+doOAI
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= 1
+</DD>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>Use(1)/do not use(0) OAI record status keeping in SQL database
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>MySQLhdb.pm
+</DD>
+</DL>
+<H3><A NAME="SECTION04021800000000000000"></A>
+<A NAME="extractLinksFromText"></A>
+<BR>
+extractLinksFromText
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= 1
+</DD>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>Extract(1)/do not extract(0) links from plain text
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>combine
+</DD>
+</DL>
+<H3><A NAME="SECTION04021900000000000000"></A>
+<A NAME="HarvesterMaxMissions"></A>
+<BR>
+HarvesterMaxMissions
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= 500
+</DD>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>Number of pages to process before restarting the harvester
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>combine
+</DD>
+</DL>
+<H3><A NAME="SECTION040211000000000000000"></A>
+<A NAME="HarvestRetries"></A>
+<BR>
+HarvestRetries
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= 5
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>combine
+</DD>
+</DL>
+<H3><A NAME="SECTION040211100000000000000"></A>
+<A NAME="httpProxy"></A>
+<BR>
+httpProxy
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= NoDefaultValue
+</DD>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>Use a proxy server if this is defined (default no proxy)
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>UA.pm
+</DD>
+</DL>
+<H3><A NAME="SECTION040211200000000000000"></A>
+<A NAME="LogHandle"></A>
+<BR>
+LogHandle
+</H3>
+<DL>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>Check_record.pm; FromHTML.pm; PosCheck_record.pm
+</DD>
+<DT><STRONG>Set by:</STRONG></DT>
+<DD>combine
+</DD>
+</DL>
+<H3><A NAME="SECTION040211300000000000000"></A>
+<A NAME="Loglev"></A>
+<BR>
+Loglev
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= 10
+</DD>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>Logging level (0 (least) - 10 (most))
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>combine
+</DD>
+</DL>
+<H3><A NAME="SECTION040211400000000000000"></A>
+<A NAME="maxUrlLength"></A>
+<BR>
+maxUrlLength
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= 250
+</DD>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>Maximum length of a URL; longer will be silently discarded
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>selurl.pm
+</DD>
+</DL>
+<H3><A NAME="SECTION040211500000000000000"></A>
+<A NAME="MySQLdatabase"></A>
+<BR>
+MySQLdatabase
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= NoDefaultValue
+</DD>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>Identifies MySQL database name, user and host
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>Config.pm
+</DD>
+</DL>
+<H3><A NAME="SECTION040211600000000000000"></A>
+<A NAME="MySQLhandle"></A>
+<BR>
+MySQLhandle
+</H3>
+<DL>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>combineUtil; LogSQL.pm; combine; RobotRules.pm; combineExport; SD_SQL.pm; XWI2XML.pm; MySQLhdb.pm
+</DD>
+<DT><STRONG>Set by:</STRONG></DT>
+<DD>Config.pm
+</DD>
+</DL>
+<H3><A NAME="SECTION040211700000000000000"></A>
+<A NAME="Operator-Email"></A>
+<BR>
+Operator-Email
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= "YourEmailAdress@YourDomain"
+</DD>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>Please change
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>RobotRules.pm; UA.pm
+</DD>
+</DL>
+<H3><A NAME="SECTION040211800000000000000"></A>
+<A NAME="Password"></A>
+<BR>
+Password
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= "XxXxyYzZ"
+</DD>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>Password not used yet. (Please change)
+</DD>
+</DL>
+<H3><A NAME="SECTION040211900000000000000"></A>
+<A NAME="saveHTML"></A>
+<BR>
+saveHTML
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= 1
+</DD>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>Store(1)/do not store(0) the raw HTML in the database
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>MySQLhdb.pm
+</DD>
+</DL>
+<H3><A NAME="SECTION040212000000000000000"></A>
+<A NAME="SdqRetries"></A>
+<BR>
+SdqRetries
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= 5
+</DD>
+</DL>
+<H3><A NAME="SECTION040212100000000000000"></A>
+<A NAME="SummaryLength"></A>
+<BR>
+SummaryLength
+</H3>
+<DL>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>How long the summary should be. Use 0 to disable the summarization code
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>FromHTML.pm
+</DD>
+</DL>
+<H3><A NAME="SECTION040212200000000000000"></A>
+<A NAME="UAtimeout"></A>
+<BR>
+UAtimeout
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= 30
+</DD>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>Time in seconds to wait for a server to respond
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>UA.pm
+</DD>
+</DL>
+<H3><A NAME="SECTION040212300000000000000"></A>
+<A NAME="UserAgentFollowRedirects"></A>
+<BR>
+UserAgentFollowRedirects
+</H3>
+<DL>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>User agent handles redirects (1) or treat redirects as new links (0)
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>UA.pm
+</DD>
+</DL>
+<H3><A NAME="SECTION040212400000000000000"></A>
+<A NAME="UserAgentGetIfModifiedSince"></A>
+<BR>
+UserAgentGetIfModifiedSince
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= 1
+</DD>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>If we have seen this page before use Get-If-Modified (1) or not (0)
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>UA.pm
+</DD>
+</DL>
+<H3><A NAME="SECTION040212500000000000000"></A>
+<A NAME="useTidy"></A>
+<BR>
+useTidy
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= 1
+</DD>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>Use(1)/do not use(0) Tidy to clean the HTML before parsing it
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>FromHTML.pm
+</DD>
+</DL>
+<H3><A NAME="SECTION040212600000000000000"></A>
+<A NAME="WaitIntervalExpirationGuaranteed"></A>
+<BR>
+WaitIntervalExpirationGuaranteed
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= 315360000
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>UA.pm
+</DD>
+</DL>
+<H3><A NAME="SECTION040212700000000000000"></A>
+<A NAME="WaitIntervalHarvesterLockNotFound"></A>
+<BR>
+WaitIntervalHarvesterLockNotFound
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= 2592000
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>combine
+</DD>
+</DL>
+<H3><A NAME="SECTION040212800000000000000"></A>
+<A NAME="WaitIntervalHarvesterLockNotModified"></A>
+<BR>
+WaitIntervalHarvesterLockNotModified
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= 2592000
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>combine
+</DD>
+</DL>
+<H3><A NAME="SECTION040212900000000000000"></A>
+<A NAME="WaitIntervalHarvesterLockRobotRules"></A>
+<BR>
+WaitIntervalHarvesterLockRobotRules
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= 2592000
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>combine
+</DD>
+</DL>
+<H3><A NAME="SECTION040213000000000000000"></A>
+<A NAME="WaitIntervalHarvesterLockSuccess"></A>
+<BR>
+WaitIntervalHarvesterLockSuccess
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= 1000000
+</DD>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>Time in seconds after succesfull download before allowing a page to be downloaded again (around 11 days)
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>combine
+</DD>
+</DL>
+<H3><A NAME="SECTION040213100000000000000"></A>
+<A NAME="WaitIntervalHarvesterLockUnavailable"></A>
+<BR>
+WaitIntervalHarvesterLockUnavailable
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= 86400
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>combine
+</DD>
+</DL>
+<H3><A NAME="SECTION040213200000000000000"></A>
+<A NAME="WaitIntervalHost"></A>
+<BR>
+WaitIntervalHost
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= 60
+</DD>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>Minimum time between accesses to the same host. Must be positive
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>SD_SQL.pm
+</DD>
+</DL>
+<H3><A NAME="SECTION040213300000000000000"></A>
+<A NAME="WaitIntervalRrdLockDefault"></A>
+<BR>
+WaitIntervalRrdLockDefault
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= 86400
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>RobotRules.pm
+</DD>
+</DL>
+<H3><A NAME="SECTION040213400000000000000"></A>
+<A NAME="WaitIntervalRrdLockNotFound"></A>
+<BR>
+WaitIntervalRrdLockNotFound
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= 345600
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>RobotRules.pm
+</DD>
+</DL>
+<H3><A NAME="SECTION040213500000000000000"></A>
+<A NAME="WaitIntervalRrdLockSuccess"></A>
+<BR>
+WaitIntervalRrdLockSuccess
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= 345600
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>RobotRules.pm
+</DD>
+</DL>
+<H3><A NAME="SECTION040213600000000000000"></A>
+<A NAME="WaitIntervalSchedulerGetJcf"></A>
+<BR>
+WaitIntervalSchedulerGetJcf
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= 20
+</DD>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>Time in seconds to wait before making a new reschedule if a reschedule results in an empty ready que
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>combine
+</DD>
+</DL>
+<H3><A NAME="SECTION040213700000000000000"></A>
+<A NAME="ZebraHost"></A>
+<BR>
+ZebraHost
+</H3>
+<DL>
+<DT><STRONG>Default value</STRONG></DT>
+<DD>= NoDefaultValue
+</DD>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>Direct connection to Zebra indexing - for SearchEngine-in-a-box (default no connection)
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>MySQLhdb.pm
+</DD>
+</DL>
+<H2><A NAME="SECTION04022000000000000000">
+Complex configuration variables</A>
+</H2>
+
+<H3><A NAME="SECTION04022100000000000000"></A>
+<A NAME="allow"></A>
+<BR>
+allow
+</H3>
+<DL>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>use either URL or HOST: (obs ':') to match regular expressions to 
+<BR>
+either the full URL or the HOST part of a URL. 
+<BR>
+Allow crawl of URLs or hostnames that matches these regular expressions
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>selurl.pm
+</DD>
+</DL>
+<H3><A NAME="SECTION04022200000000000000"></A>
+<A NAME="binext"></A>
+<BR>
+binext
+</H3>
+<DL>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>Extensions of binary files
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>UA.pm
+</DD>
+</DL>
+<H3><A NAME="SECTION04022300000000000000"></A>
+<A NAME="converters"></A>
+<BR>
+converters
+</H3>
+<DL>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>Configure which converters can be used to produce a XWI object 
+<BR>
+Format: 
+<BR>
+1 line per entry 
+<BR>
+each entry consists of 3 ';' separated fields 
+<BR>
+Entries are processed in order and the first match is executed 
+<BR>
+external converters have to be found via PATH and executable to be considered a match 
+<BR>
+the external converter command should take a filename as parameter and convert that file 
+<BR>
+the result should be comming on STDOUT 
+<BR>
+mime-type   ;   External converter command ; Internal converter
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>UA.pm; combine
+</DD>
+</DL>
+<H3><A NAME="SECTION04022400000000000000"></A>
+<A NAME="exclude"></A>
+<BR>
+exclude
+</H3>
+<DL>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>Exclude URLs or hostnames that matches these regular expressions 
+<BR>
+default: CGI and maps 
+<BR>
+default: binary files 
+<BR>
+default: Unparsable documents 
+<BR>
+default: images 
+<BR>
+default: other binary formats 
+<BR>
+more excludes in the file config_exclude (automatically updated by other programs)
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>selurl.pm
+</DD>
+</DL>
+<H3><A NAME="SECTION04022500000000000000"></A>
+<A NAME="serveralias"></A>
+<BR>
+serveralias
+</H3>
+<DL>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>List of servernames that are aliases are in the file ./config_serveralias 
+<BR>(automatically updated by other programs) 
+<BR>
+use one server per line 
+<BR>
+example 
+<BR>
+www.100topwetland.com  www.100wetland.com 
+<BR>
+means that www.100wetland.com is replaced by www.100topwetland.com during URL normalization
+</DD>
+</DL>
+<H3><A NAME="SECTION04022600000000000000"></A>
+<A NAME="sessionids"></A>
+<BR>
+sessionids
+</H3>
+<DL>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>patterns to recognize and remove sessionids in URLs
+</DD>
+</DL>
+<H3><A NAME="SECTION04022700000000000000"></A>
+<A NAME="url"></A>
+<BR>
+url
+</H3>
+<DL>
+<DT><STRONG>Description:</STRONG></DT>
+<DD>url is just a conatiner for all URL related configuration patterns
+</DD>
+<DT><STRONG>Used by:</STRONG></DT>
+<DD>Config.pm; selurl.pm
+</DD>
+</DL>
+
+<P>
+
+<DIV CLASS="navigation"><HR>
+<!--Navigation Panel-->
+<A NAME="tex2html526"
+  HREF="node14.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
+<A NAME="tex2html522"
+  HREF="node11.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
+<A NAME="tex2html516"
+  HREF="node12.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
+<A NAME="tex2html524"
+  HREF="node1.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
+<BR>
+<B> Next:</B> <A NAME="tex2html527"
+  HREF="node14.html">Module dependences</A>
+<B> Up:</B> <A NAME="tex2html523"
+  HREF="node11.html">Gory details</A>
+<B> Previous:</B> <A NAME="tex2html517"
+  HREF="node12.html">Frequently asked questions</A>
+ &nbsp; <B>  <A NAME="tex2html525"
+  HREF="node1.html">Contents</A></B> </DIV>
+<!--End of Navigation Panel-->
+<ADDRESS>
+root
+2006-11-08
+</ADDRESS>
+</BODY>
+</HTML>

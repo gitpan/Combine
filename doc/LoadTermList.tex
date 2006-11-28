@@ -1,0 +1,59 @@
+\paragraph{NAME\label{NAME}\index{NAME}}
+
+
+LoadTermList
+
+\paragraph{DESCRIPTION\label{DESCRIPTION}\index{DESCRIPTION}}
+
+
+This a module in the DESIRE automatic classification system. Copyright 1999.
+
+
+
+LoadTermList - A class for loading and storing 
+      a stoplist with single words
+      a termlist with classifications and weights
+
+\begin{verbatim}
+ Subroutines:
+   LoadStopWordList(StopWordListFileName)
+      loads a list of stopwords, one per line, from 
+      the file StopWordListFileName.
+\end{verbatim}
+\begin{verbatim}
+   EraseStopWordList
+      clears the stopword list
+\end{verbatim}
+\begin{verbatim}
+ Subroutines:
+  LoadTermList(TermListFileName) - loads TermClass from file
+  LoadTermListStemmed(TermListFileName) - same plus stems terms
+\end{verbatim}
+\begin{verbatim}
+ Input: A formatted term-list including weights and classifications
+  Format:  <weight>: <term_reg_exp>=[<classification>, ]+
+  weight can be a positive or negative number
+  term_reg_exp can be words, phrases, boolean expressions (with @and
+     as operator) on term_reg_exp or Perl regular expressions
+\end{verbatim}
+\paragraph{AUTHOR\label{AUTHOR}\index{AUTHOR}}
+
+
+Anders Ardö $<$Anders.Ardo@it.lth.se$>$
+
+\paragraph{COPYRIGHT AND LICENSE\label{COPYRIGHT_AND_LICENSE}\index{COPYRIGHT AND LICENSE}}
+
+
+Copyright (C) 2005,2006 Anders Ardö
+
+
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself, either Perl version 5.8.4 or,
+at your option, any later version of Perl 5 you may have available.
+
+
+
+See the file LICENCE included in the distribution at
+ \textsf{http://combine.it.lth.se/}
+

@@ -1,0 +1,2991 @@
+make[1]: Entering directory `/dbkitnfs/Projects/Combine/DEBIANtmp/combine-3.4/doc'
+./genConfigDoc.pl > ConfigVars.tex
+./genDepGraph.pl > DepGraph.tex
+./genPod2latex.pl > ManPages.tex
+None of the supplied Pod files actually exist
+None of the supplied Pod files actually exist
+None of the supplied Pod files actually exist
+None of the supplied Pod files actually exist
+None of the supplied Pod files actually exist
+None of the supplied Pod files actually exist
+None of the supplied Pod files actually exist
+None of the supplied Pod files actually exist
+None of the supplied Pod files actually exist
+None of the supplied Pod files actually exist
+None of the supplied Pod files actually exist
+None of the supplied Pod files actually exist
+None of the supplied Pod files actually exist
+./extrSQLdoc.pl > SQL.tex
+./genInstTest.pl > InstallationTest.tex
+./genPlugInTemplate.pl > PlugInTemplate.tex
+latex DocMain.tex
+This is e-TeX, Version 3.14159-2.1 (Web2C 7.4.5)
+entering extended mode
+(./DocMain.tex
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size11.clo))
+(/usr/share/texmf/tex/latex/ntgclass/a4.sty)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+(/usr/share/texmf/tex/latex/graphics/trig.sty)
+(/usr/share/texmf/tex/latex/config/graphics.cfg)
+(/usr/share/texmf/tex/latex/graphics/dvips.def))
+(/usr/share/texmf/tex/latex/graphics/epsfig.sty
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+(/usr/share/texmf/tex/latex/graphics/keyval.sty)))
+(/usr/share/texmf/tex/latex/html/html.sty)
+(/usr/share/texmf/tex/latex/base/fontenc.sty
+(/usr/share/texmf/tex/latex/base/t1enc.def))
+(/usr/share/texmf/tex/latex/base/inputenc.sty
+(/usr/share/texmf/tex/latex/base/latin1.def))
+No file DocMain.aux.
+[1]
+No file DocMain.toc.
+[2] (./documentation.tex (./Intro.tex <focusedrobot.eps>
+(/usr/share/texmf/tex/latex/base/omscmr.fd) [3]
+
+LaTeX Warning: Reference `overview' on page 4 undefined on input line 43.
+
+
+LaTeX Warning: Reference `distr' on page 4 undefined on input line 53.
+
+
+LaTeX Warning: Reference `configuration' on page 4 undefined on input line 56.
+
+
+LaTeX Warning: Reference `operation' on page 4 undefined on input line 58.
+
+
+LaTeX Warning: Reference `comp' on page 4 undefined on input line 63.
+
+(/usr/share/texmf/tex/latex/base/t1cmtt.fd)
+
+LaTeX Warning: Reference `gory' on page 4 undefined on input line 68.
+
+
+LaTeX Warning: Reference `appendix' on page 4 undefined on input line 68.
+
+) (./OpenSourceDistr.tex
+
+LaTeX Warning: Reference `debian' on page 4 undefined on input line 21.
+
+[4]
+
+LaTeX Warning: Reference `extmods' on page 5 undefined on input line 47.
+
+[5]
+Overfull \hbox (4.39449pt too wide) in paragraph at lines 110--112
+[]\T1/cmr/m/n/10.95 '\T1/cmtt/m/n/10.95 conf\T1/cmr/m/n/10.95 ' con-tains the d
+e-fault con-fig-u-ra-tion files. Com-bine looks for them in \T1/cmtt/m/n/10.95 
+/etc/combine/
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
+
+
+Overfull \hbox (105.09554pt too wide) in paragraph at lines 132--132
+[]\T1/cmtt/m/n/10.95 combine --jobname aatest --harvest http://combine.it.lth.s
+e/CombineTests/InstallationTest.html[] 
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--134
+
+
+Overfull \hbox (14.5616pt too wide) in paragraph at lines 149--149
+[]\T1/cmtt/m/n/10.95 <documentCollection version="1.1" xmlns:dc="http://purl.or
+g/dc/elements/1.1/">[] 
+[6]
+Overfull \hbox (82.46205pt too wide) in paragraph at lines 149--149
+[]\T1/cmtt/m/n/10.95 <dc:identifier>http://combine.it.lth.se/CombineTests/Insta
+llationTest.html</dc:identifier>[] 
+
+LaTeX Warning: Reference `InstTest' on page 7 undefined on input line 152.
+
+
+LaTeX Warning: Reference `crawl' on page 7 undefined on input line 179.
+
+
+LaTeX Warning: Reference `gettingstarted' on page 7 undefined on input line 191
+.
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 205--207
+
+
+Overfull \hbox (36.27829pt too wide) in paragraph at lines 214--214
+ []\T1/cmtt/m/n/10.95 #use either URL or HOST: (obs ':') to match regular expre
+ssions to either the[] 
+
+Overfull \hbox (7.98643pt too wide) in paragraph at lines 214--214
+ []\T1/cmtt/m/n/10.95 #Allow crawl of URLs or hostnames that matches these regu
+lar expressions[] 
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
+
+
+Overfull \hbox (36.27829pt too wide) in paragraph at lines 224--224
+ []\T1/cmtt/m/n/10.95 #use either URL or HOST: (obs ':') to match regular expre
+ssions to either the[] 
+
+Overfull \hbox (7.98643pt too wide) in paragraph at lines 224--224
+ []\T1/cmtt/m/n/10.95 #Allow crawl of URLs or hostnames that matches these regu
+lar expressions[] 
+
+Overfull \hbox (2.32806pt too wide) in paragraph at lines 231--234
+\T1/cmtt/m/n/10.95 echo 'http://combine.it.lth.se/' | combineCtrl load []--jobn
+ame focustest 
+[8]
+
+LaTeX Warning: Reference `topicdef' on page 9 undefined on input line 250.
+
+) (./Configuration.tex
+
+LaTeX Warning: Reference `configvars' on page 9 undefined on input line 5.
+
+
+LaTeX Warning: Reference `sqlstruct' on page 9 undefined on input line 13.
+
+[9]
+
+LaTeX Warning: Reference `configvars' on page 10 undefined on input line 22.
+
+
+LaTeX Warning: Reference `conffiles' on page 10 undefined on input line 23.
+
+
+Overfull \hbox (0.48239pt too wide) in paragraph at lines 32--37
+\T1/cmr/m/n/10.95 sub-di-rec-tory in \T1/cmtt/m/n/10.95 /etc/combine \T1/cmr/m/
+n/10.95 and pop-u-lates it with some files in-clud-ing \T1/cmtt/m/n/10.95 combi
+ne.cfg
+
+LaTeX Warning: Reference `configvars' on page 10 undefined on input line 41.
+
+
+LaTeX Warning: Reference `conffiles' on page 10 undefined on input line 42.
+
+
+LaTeX Warning: Reference `topicdef' on page 10 undefined on input line 46.
+
+
+LaTeX Warning: Reference `autoclass' on page 10 undefined on input line 56.
+
+
+LaTeX Warning: Reference `urlfilt' on page 10 undefined on input line 77.
+
+
+LaTeX Warning: Reference `configvars' on page 10 undefined on input line 85.
+
+) (./CrawlerOperation.tex
+
+LaTeX Warning: Reference `combinearch' on page 10 undefined on input line 5.
+
+[10] <CrawlerArchitecture.xfig.eps>
+
+LaTeX Warning: Reference `combinearch' on page 11 undefined on input line 22.
+
+[11]
+
+LaTeX Warning: Reference `autoclass' on page 12 undefined on input line 68.
+
+
+LaTeX Warning: Reference `sched' on page 12 undefined on input line 106.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--107
+
+
+LaTeX Warning: Reference `WaitIntervalHost' on page 12 undefined on input line 
+109.
+
+
+LaTeX Warning: Reference `WaitIntervalHarvesterLockRobotRules' on page 12 undef
+ined on input line 110.
+
+
+LaTeX Warning: Reference `WaitIntervalHarvesterLockSuccess' on page 12 undefine
+d on input line 111.
+
+
+LaTeX Warning: Reference `allow' on page 12 undefined on input line 115.
+
+
+LaTeX Warning: Reference `urlfilt' on page 12 undefined on input line 118.
+
+
+LaTeX Warning: Reference `exclude' on page 12 undefined on input line 120.
+
+
+LaTeX Warning: Reference `autoclass' on page 12 undefined on input line 125.
+
+
+LaTeX Warning: Reference `classifyPlugIn' on page 12 undefined on input line 12
+9.
+
+
+LaTeX Warning: Reference `doCheckRecord' on page 12 undefined on input line 130
+.
+
+[12]
+
+LaTeX Warning: Reference `converters' on page 13 undefined on input line 142.
+
+
+LaTeX Warning: Reference `converters' on page 13 undefined on input line 146.
+
+
+LaTeX Warning: Reference `converters' on page 13 undefined on input line 152.
+
+
+LaTeX Warning: Reference `sessionids' on page 13 undefined on input line 186.
+
+
+LaTeX Warning: Reference `serveralias' on page 13 undefined on input line 189.
+
+
+LaTeX Warning: Reference `maxUrlLength' on page 13 undefined on input line 198.
+
+
+
+LaTeX Warning: Reference `allow' on page 13 undefined on input line 202.
+
+
+LaTeX Warning: Reference `exclude' on page 13 undefined on input line 206.
+
+[13]
+
+LaTeX Warning: Reference `WaitIntervalHarvesterLockSuccess' on page 14 undefine
+d on input line 238.
+
+
+LaTeX Warning: Reference `WaitIntervalHost' on page 14 undefined on input line 
+239.
+
+
+LaTeX Warning: Reference `topicfilter' on page 14 undefined on input line 254.
+
+
+LaTeX Warning: Citation `ardo99:_online99' on page 14 undefined on input line 2
+58.
+
+
+LaTeX Warning: Reference `termlist' on page 14 undefined on input line 264.
+
+
+LaTeX Warning: Citation `ardo05:_ECDL' on page 14 undefined on input line 270.
+
+<TopicFilter.xfig.eps> [14]
+Overfull \hbox (1.96063pt too wide) in paragraph at lines 293--299
+\T1/cmr/m/n/10.95 Located in \T1/cmtt/m/n/10.95 /etc/combine/<jobname>/topicdef
+inition.txt\T1/cmr/m/n/10.95 . Topic def-i-ni-tions use triplets
+[15]
+Overfull \hbox (3.35924pt too wide) in paragraph at lines 317--322
+\T1/cmr/m/n/10.95 ``\T1/cmtt/m/n/10.95 glass art[^^B$\OMS/cmsy/m/n/10.95 n$\T1/
+cmtt/m/n/10.95 s]*\T1/cmr/m/n/10.95 '' will match ``\T1/cmtt/m/n/10.95 glass ar
+t\T1/cmr/m/n/10.95 '', ``\T1/cmtt/m/n/10.95 glass arts\T1/cmr/m/n/10.95 '', ``\
+T1/cmtt/m/n/10.95 glass artists\T1/cmr/m/n/10.95 '', ``\T1/cmtt/m/n/10.95 glass
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 347--356
+
+
+LaTeX Warning: Reference `std' on page 16 undefined on input line 360.
+
+[16]
+Overfull \hbox (32.24867pt too wide) in paragraph at lines 394--396
+\T1/cmr/m/n/10.95 The term ``\T1/cmtt/m/n/10.95 D$\OMS/cmsy/m/n/10.95 n$\T1/cmt
+t/m/n/10.95 .?$\OMS/cmsy/m/n/10.95 n$\T1/cmtt/m/n/10.95 s*californica\T1/cmr/m/
+n/10.95 '' will match \T1/cmtt/m/n/10.95 D californica, D. californica, D.calif
+ornica
+
+Overfull \hbox (10.91055pt too wide) in paragraph at lines 403--405
+\T1/cmr/m/n/10.95 Selected by set-ting the con-fig-u-ra-tion pa-ram-e-ter \T1/c
+mtt/m/n/10.95 classifyPlugIn = Combine::Check_record 
+
+LaTeX Warning: Citation `ardo05:_ECDL' on page 17 undefined on input line 420.
+
+
+Overfull \hbox (27.88567pt too wide) in paragraph at lines 437--439
+\T1/cmr/m/n/10.95 Selected by set-ting the con-fig-u-ra-tion pa-ram-e-ter \T1/c
+mtt/m/n/10.95 classifyPlugIn = Combine::PosCheck_record 
+[17]
+
+LaTeX Warning: Reference `classifyPlugIn' on page 18 undefined on input line 47
+7.
+
+
+LaTeX Warning: Reference `classifyPlugInTemplate' on page 18 undefined on input
+ line 491.
+
+
+LaTeX Warning: Reference `doAnalyse' on page 18 undefined on input line 495.
+
+[18]
+
+LaTeX Warning: Reference `UserAgentFollowRedirects' on page 19 undefined on inp
+ut line 505.
+
+
+LaTeX Warning: Reference `extractLinksFromText' on page 19 undefined on input l
+ine 507.
+
+
+LaTeX Warning: Reference `AutoRecycleLinks' on page 19 undefined on input line 
+511.
+
+
+Overfull \hbox (4.6943pt too wide) in paragraph at lines 515--517
+[]\T1/cmr/m/n/10.95 The com-mand \T1/cmtt/m/n/10.95 combineCtrl --jobname XXXX 
+reharvest \T1/cmr/m/n/10.95 marks all pages in the database
+
+LaTeX Warning: Reference `ZebraHost' on page 19 undefined on input line 530.
+
+) (./ClassificationEval.tex
+
+LaTeX Warning: Reference `autoclass' on page 19 undefined on input line 4.
+
+
+LaTeX Warning: Citation `Golub_Review' on page 19 undefined on input line 4.
+
+
+LaTeX Warning: Citation `ardo06:_ECDL' on page 19 undefined on input line 6.
+
+
+LaTeX Warning: Citation `GolubRole' on page 19 undefined on input line 8.
+
+[19]
+
+LaTeX Warning: Citation `ardo05:_ECDL' on page 20 undefined on input line 10.
+
+
+LaTeX Warning: Citation `GolubChall' on page 20 undefined on input line 12.
+
+) (./ExpectedPerformance.tex
+
+LaTeX Warning: Reference `autoclasseval' on page 20 undefined on input line 4.
+
+<CrawlerSpeed.ps>
+
+LaTeX Warning: Reference `crawlspeed' on page 20 undefined on input line 32.
+
+
+LaTeX Warning: Reference `config' on page 20 undefined on input line 35.
+
+
+LaTeX Warning: Reference `pos' on page 20 undefined on input line 37.
+
+
+LaTeX Warning: Reference `config' on page 20 undefined on input line 37.
+
+
+LaTeX Warning: Reference `std' on page 20 undefined on input line 38.
+
+
+LaTeX Warning: Reference `config' on page 20 undefined on input line 38.
+
+[20] <Config.ps>) (./SystemComponents.tex
+
+LaTeX Warning: Reference `moddep' on page 21 undefined on input line 12.
+
+[21])
+No file DocMain.bbl.
+) [22] [23] (./FAQ.tex
+Overfull \hbox (16.99898pt too wide) in paragraph at lines 8--10
+[]\T1/cmr/m/n/10.95 I can't fig-ure out how to re-strict the crawler to pages b
+e-low '\T1/cmtt/m/n/10.95 http://www.foo.com/bar/\T1/cmr/m/n/10.95 '? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--44
+
+[24]
+
+LaTeX Warning: Reference `topicdef' on page 25 undefined on input line 88.
+
+
+Overfull \hbox (32.56029pt too wide) in paragraph at lines 97--101
+\T1/cmr/m/n/10.95 the file is "nu-meric_importance: term=TopicClass" e.g. "\T1/
+cmtt/m/n/10.95 100: icecream=YahooIce\T1/cmr/m/n/10.95 "
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--101
+
+
+Overfull \hbox (60.36832pt too wide) in paragraph at lines 120--120
+ []\T1/cmtt/m/n/10.95 #use either URL or HOST: (obs ':') to match regular expre
+ssions to either the[] 
+
+Overfull \hbox (32.07646pt too wide) in paragraph at lines 120--120
+ []\T1/cmtt/m/n/10.95 #Allow crawl of URLs or hostnames that matches these regu
+lar expressions[] 
+
+Overfull \hbox (60.36832pt too wide) in paragraph at lines 131--131
+ []\T1/cmtt/m/n/10.95 #use either URL or HOST: (obs ':') to match regular expre
+ssions to either the[] 
+
+Overfull \hbox (32.07646pt too wide) in paragraph at lines 131--131
+ []\T1/cmtt/m/n/10.95 #Allow crawl of URLs or hostnames that matches these regu
+lar expressions[] 
+[25]
+Overfull \hbox (116.95203pt too wide) in paragraph at lines 169--170
+[][]\T1/cmtt/m/n/10.95 | 5409 | HARVPARS 1_zltest | 2006-07-14 15:08:52 | M500;
+ SD empty, sleep 20 second... | 
+
+Overfull \hbox (230.11945pt too wide) in paragraph at lines 176--177
+[][]\T1/cmtt/m/n/10.95 | 7352 | HARVPARS 1_wctest | 2006-07-14 17:00:59 | M500;
+ urlid=1; netlocid=1; http://www.shanghaidaily.com/ 
+
+Overfull \hbox (18.42393pt too wide) in paragraph at lines 178--183
+[]\T1/cmr/m/n/10.95 Crawler pro-cess 7352 got a url (http://www.shanghaidaily.c
+om/) to check (1_wctest
+
+Overfull \hbox (43.3932pt too wide) in paragraph at lines 185--186
+[][]\T1/cmtt/m/n/10.95 | 7352 | HARVPARS 1_wctest | 2006-07-14 17:01:10 | M500;
+ RobotRules OK, OK 
+
+Overfull \hbox (77.34343pt too wide) in paragraph at lines 190--191
+[][]\T1/cmtt/m/n/10.95 | 7352 | HARVPARS 1_wctest | 2006-07-14 17:01:10 | M500;
+ HTTP(200 = "OK")  => OK 
+
+Overfull \hbox (309.33664pt too wide) in paragraph at lines 195--196
+[][]\T1/cmtt/m/n/10.95 | 7352 | HARVPARS 1_wctest | 2006-07-14 17:01:10 | M500;
+ Doing: text/html;200;0F061033DAF69587170F8E285E950120;Not used | 
+[26]
+Overfull \hbox (126.0513pt too wide) in paragraph at lines 224--228
+\T1/cmr/m/n/10.95 to www.yahoo.com) but also not go-ing higher in po-si-tion (i
+.e. www.geocities.com/boulevar/atlanta/index.html). 
+
+LaTeX Warning: Reference `urlfilt' on page 27 undefined on input line 233.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--236
+
+
+Overfull \hbox (7.98643pt too wide) in paragraph at lines 241--241
+ []\T1/cmtt/m/n/10.95 #Allow crawl of URLs or hostnames that matches these regu
+lar expressions[] 
+
+Overfull \hbox (7.98643pt too wide) in paragraph at lines 249--249
+ []\T1/cmtt/m/n/10.95 #Allow crawl of URLs or hostnames that matches these regu
+lar expressions[] 
+) (./ConfigVars.tex [27] [28] [29]
+Overfull \hbox (21.22935pt too wide) in paragraph at lines 112--113
+[]\T1/cmr/m/n/10.95 combineUtil; LogSQL.pm; com-bine; RobotRules.pm; com-bi-ne-
+Ex-port; SD_SQL.pm;
+[30] [31] [32] [33]) (./DepGraph.tex
+Overfull \hbox (38.5834pt too wide) in paragraph at lines 7--8
+[]\T1/cmr/m/n/10.95 Combine::Config; Com-bine::XWI; Com-bine::UA; Com-bine::Rob
+otRules; Com-bine::LogSQL;
+
+Overfull \hbox (14.76175pt too wide) in paragraph at lines 7--8
+\T1/cmr/m/n/10.95 Com-bine::FromHTML; Com-bine::FromImage; Com-bine::FromTeX; C
+om-bine::DataBase;
+[34]
+Overfull \hbox (64.03035pt too wide) in paragraph at lines 49--50
+[]\T1/cmr/m/n/10.95 combineCtrl; com-bine; com-bi-ne-Ex-port; com-bineINIT; com
+-bineU-til; Com-bine::Check_record;
+
+Overfull \hbox (48.63322pt too wide) in paragraph at lines 49--50
+\T1/cmr/m/n/10.95 Com-bine::FromHTML; Com-bine::LogSQL; Com-bine::MySQLhdb; Com
+-bine::PosCheck_record;
+
+Overfull \hbox (10.96867pt too wide) in paragraph at lines 49--50
+\T1/cmr/m/n/10.95 Com-bine::RobotRules; Com-bine::SD_SQL; Com-bine::UA; Com-bin
+e::XWI2XML; Com-
+
+Overfull \hbox (35.75717pt too wide) in paragraph at lines 61--62
+[]\T1/cmr/m/n/10.95 Combine::Config; HTTP::Date; URI; URI::Escape; HTML::Entiti
+es; En-code; HTML::Tidy;
+[35]
+Overfull \hbox (6.58516pt too wide) in paragraph at lines 147--148
+[]\T1/cmr/m/n/10.95 combine; Com-bine::Check_record; Com-bine::MySQLhdb; Com-bi
+ne::XWI2XML; 
+[36]) [37] (./InstallationTest.tex
+Overfull \hbox (105.09554pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 system("combineINIT --jobname $jobname --topic /etc/combin
+e/Topic_carnivor.txt >& /dev/null");[] 
+
+Overfull \hbox (178.65436pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 system("combine --jobname $jobname --harvest http://combin
+e.it.lth.se/CombineTests/InstallationTest.html");[] 
+[38]
+Overfull \hbox (172.99599pt too wide) in paragraph at lines 130--130
+[]  \T1/cmtt/m/n/10.95 if (length($orec) == length($rec)) { print "Size of XML 
+match (after removal of 'originalDocument')\n";}[] 
+
+Overfull \hbox (14.5616pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 else { print "There might be some problem with your Combin
+e Installation\n"; }[] 
+
+Overfull \hbox (93.7788pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 <originalDocument mimeType="text/html" compression="gzip" 
+encoding="base64" charSet="UTF-8">[] 
+
+Overfull \hbox (3.24486pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 H4sIAAAAAAAAA4WQsU7DMBCG9zzF4bmpBV2QcDKQVKJSKR2CEKObXBSrjm
+3sSyFvT0yCQGJgusG/[] 
+
+Overfull \hbox (3.24486pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 //u+E1flU1G9HrfwUD3u4fh8v98VwFLOXzYF52VVzg+b9Q3n2wPLE9FRr+
+NA2UyDFGnMdyaQ1FqS[] 
+
+Overfull \hbox (3.24486pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 sgYIA0FrPRS2PymDgs+hRPRIEozsMWNnHN+tbwKD2hpCQxkrpDfqYr0dAj
+gtDYUVlN4G9HIFB3RT[] 
+
+Overfull \hbox (3.24486pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 qMPAvns6Ipfi26Au09e5I61Gh78aCT+IR947qDvpA1I2UJvexg6+CJxsM0
+ad6/8kpkQiXB5XSWUC[] 
+
+Overfull \hbox (3.24486pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 BNsj/GGG4LBWrarhSw+0OiOIidZjmzGPeh15WL6ICS7zFUjT/AiuBXeRbw
+Hj870/AeRYaTupAQAA[] 
+
+Overfull \hbox (540.7901pt too wide) in paragraph at lines 130--130
+[]      \T1/cmtt/m/n/10.95 <section>Contains some Carnivorous plant specific wo
+rds like <ulink url="rel.html">Drosera </ulink>, and Nepenthes.</section></sect
+ion></section></canonicalDocument>[] 
+[39]) (./PlugInTemplate.tex
+Overfull \hbox (37.19508pt too wide) in paragraph at lines 86--86
+[]\T1/cmtt/m/n/10.95 use Combine::Config; #Optional if you want to use the Comb
+ine configuration system[] 
+
+Overfull \hbox (42.85345pt too wide) in paragraph at lines 86--86
+[]\T1/cmtt/m/n/10.95 #        0: record fails to meet the classification criter
+ia, ie ignore this record[] 
+
+Overfull \hbox (116.41228pt too wide) in paragraph at lines 86--86
+[]\T1/cmtt/m/n/10.95 #        1: record is OK and should be stored in the datab
+ase, and links followed by the crawler[] 
+[40]
+Overfull \hbox (122.07065pt too wide) in paragraph at lines 86--86
+[]  \T1/cmtt/m/n/10.95 #utility routines for saving detailed results (optional)
+ in the database. These data may appear[] 
+
+Overfull \hbox (223.92133pt too wide) in paragraph at lines 86--86
+[]  \T1/cmtt/m/n/10.95 # $xwi->topic_add(topic_class_notation, topic_absolute_s
+core, topic_normalized_score, topic_terms, algorithm_id);[] 
+[41]
+Overfull \hbox (139.04576pt too wide) in paragraph at lines 86--86
+[]  \T1/cmtt/m/n/10.95 #  topic_normalized_score and topic_terms are optional a
+nd may be replaced with 0, '' respectively[] 
+) (./defaultConfig.tex
+Overfull \hbox (71.14531pt too wide) in paragraph at lines 181--181
+[]\T1/cmtt/m/n/10.95 #Direct connection to Zebra indexing - for SearchEngine-in
+-a-box (default no connection)[] 
+[42] [43]
+Overfull \hbox (167.33762pt too wide) in paragraph at lines 181--181
+[]\T1/cmtt/m/n/10.95 #Time in seconds after succesfull download before allowing
+ a page to be downloaded again (around 11 days)[] 
+
+Overfull \hbox (144.70413pt too wide) in paragraph at lines 181--181
+[]\T1/cmtt/m/n/10.95 #Time in seconds to wait before making a new reschedule if
+ a reschedule results in an empty ready que[] 
+[44]
+Overfull \hbox (71.14531pt too wide) in paragraph at lines 181--181
+[]\T1/cmtt/m/n/10.95 #  external converters have to be found via PATH and execu
+table to be considered a match[] 
+
+Overfull \hbox (88.12042pt too wide) in paragraph at lines 181--181
+[]\T1/cmtt/m/n/10.95 #  the external converter command should take a filename a
+s parameter and convert that file[] 
+[45]
+Overfull \hbox (71.14531pt too wide) in paragraph at lines 261--261
+[]\T1/cmtt/m/n/10.95 #  external converters have to be found via PATH and execu
+table to be considered a match[] 
+
+Overfull \hbox (88.12042pt too wide) in paragraph at lines 261--261
+[]\T1/cmtt/m/n/10.95 #  the external converter command should take a filename a
+s parameter and convert that file[] 
+
+Overfull \hbox (105.09554pt too wide) in paragraph at lines 261--261
+[]\T1/cmtt/m/n/10.95 #  means that www.100wetland.com is replaced by www.100top
+wetland.com during URL normalization[] 
+[46]
+Overfull \hbox (156.02087pt too wide) in paragraph at lines 261--261
+[]\T1/cmtt/m/n/10.95 URL \.gif$|\.jpg$|\.jpeg$|\.xpm$|\.tif$|\.tiff$|\.mpg$|\.m
+peg$|\.mov$|\.wav$|\.au$|\.pcx$|\.xbm$|\.tga$[] 
+
+Overfull \hbox (156.02087pt too wide) in paragraph at lines 261--261
+[]\T1/cmtt/m/n/10.95 URL \.GIF$|\.JPG$|\.JPEG$|\.XPM$|\.TIF$|\.TIFF$|\.MPG$|\.M
+PEG$|\.MOV$|\.WAV$|\.AU$|\.PCX$|\.XBM$|\.TGA$[] 
+
+Overfull \hbox (42.85345pt too wide) in paragraph at lines 261--261
+[]\T1/cmtt/m/n/10.95 #more excludes in the file config_exclude (automatically u
+pdated by other programs)[] 
+) (./SQL.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--7
+
+
+Overfull \hbox (116.41228pt too wide) in paragraph at lines 8--32
+[]\T1/cmtt/m/n/10.95 TABLE links: recordid*, mynetlocid*, urlid*, netlocid*, li
+nktype, anchor  (netlocid for urlid!!) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--32
+
+[47]
+Overfull \hbox (59.82857pt too wide) in paragraph at lines 49--49
+[]\T1/cmtt/m/n/10.95 ) ENGINE=MyISAM AVG_ROW_LENGTH = 20000 MAX_ROWS = 10000000
+ DEFAULT CHARACTER SET=utf8;[] 
+
+Overfull \hbox (59.82857pt too wide) in paragraph at lines 57--57
+[]\T1/cmtt/m/n/10.95 ) ENGINE=MyISAM AVG_ROW_LENGTH = 20000 MAX_ROWS = 10000000
+ DEFAULT CHARACTER SET=utf8;[] 
+[48] [49]
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
+
+[50]
+Overfull \hbox (14.5616pt too wide) in paragraph at lines 202--202
+[]  \T1/cmtt/m/n/10.95 schedulealgorithm enum('default','bigdefault','advanced'
+) default 'default',[] 
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--206
+
+[51]) (./ManPages.tex (./combineCtrl.tex [52] [53]
+(/usr/share/texmf/tex/latex/base/t1cmss.fd)) (./combine.tex [54])
+(./combineExport.tex
+Overfull \hbox (33.20009pt too wide) in paragraph at lines 9--10
+ \T1/cmr/bx/n/10.95 SYN-OP-SIS[][] \T1/cmr/m/n/10.95 com-bi-ne-Ex-port --jobnam
+e $\OML/cmm/m/it/10.95 <$\T1/cmr/m/n/10.95 name$\OML/cmm/m/it/10.95 >$ \T1/cmr/
+m/n/10.95 [--profile alvis$\OMS/cmsy/m/n/10.95 j$\T1/cmr/m/n/10.95 dc$\OMS/cmsy
+/m/n/10.95 j$\T1/cmr/m/n/10.95 combine --charset utf8$\OMS/cmsy/m/n/10.95 j$\T1
+/cmr/m/n/10.95 isolatin
+
+Overfull \hbox (16.45427pt too wide) in paragraph at lines 9--10
+\T1/cmr/m/n/10.95 --number $\OML/cmm/m/it/10.95 <$\T1/cmr/m/n/10.95 n$\OML/cmm/
+m/it/10.95 >$ \T1/cmr/m/n/10.95 --recordid $\OML/cmm/m/it/10.95 <$\T1/cmr/m/n/1
+0.95 n$\OML/cmm/m/it/10.95 >$ \T1/cmr/m/n/10.95 --md5 $\OML/cmm/m/it/10.95 <$\T
+1/cmr/m/n/10.95 MD5$\OML/cmm/m/it/10.95 >$ \T1/cmr/m/n/10.95 --pipehost $\OML/c
+mm/m/it/10.95 <$\T1/cmr/m/n/10.95 server$\OML/cmm/m/it/10.95 >$ \T1/cmr/m/n/10.
+95 --pipeport $\OML/cmm/m/it/10.95 <$\T1/cmr/m/n/10.95 n$\OML/cmm/m/it/10.95 >$
+ \T1/cmr/m/n/10.95 --incremental
+[55]
+Overfull \hbox (11.58833pt too wide) in paragraph at lines 66--67
+[]\T1/cmr/m/n/10.95 Exports in-cre-men-tally, ie all changes since last call to
+ com-bi-ne-Ex-port us-ing --incremental 
+
+Overfull \hbox (31.53671pt too wide) in paragraph at lines 88--88
+[]   \T1/cmtt/m/n/10.95 combineExport --jobname atest --profile combine --chars
+et utf8 > Zebrarecs.xml[] 
+
+Overfull \hbox (71.14531pt too wide) in paragraph at lines 93--93
+[] \T1/cmtt/m/n/10.95 Incremental export of all changes from last call using lo
+calhost at port 6234 using the[] 
+
+Overfull \hbox (32.1283pt too wide) in paragraph at lines 101--103
+[]\T1/cmr/m/n/10.95 Alvis XML schema (--profile alvis) at \T1/cmss/m/n/10.95 ht
+tp://project.alvis.info/alvis_docs/enriched-document.xsd 
+) (./combineRun.tex [56]) (./combineUtil.tex [57]
+Overfull \hbox (7.17664pt too wide) in paragraph at lines 80--82
+[]\T1/cmr/m/n/10.95 Deletes all records match-ing the ','-separated list of URl
+ paths (ex-clud-ing net-locations)
+[58]) (./FromHTML.tex) (./FromTeX.tex) (./HTMLExtractor.tex)
+(./LoadTermList.tex [59]) (./Matcher.tex
+Overfull \hbox (31.53671pt too wide) in paragraph at lines 31--31
+[]        \T1/cmtt/m/n/10.95 $stoplist: object pointer to a LoadTermList object
+ with a stoplist loaded[] 
+
+Overfull \hbox (14.5616pt too wide) in paragraph at lines 31--31
+[]        \T1/cmtt/m/n/10.95 $simple: 1=do simple loading; 0=advanced loading (
+might induce errors)[] 
+[60]) (./PosMatcher.tex
+Overfull \hbox (31.53671pt too wide) in paragraph at lines 30--30
+[]        \T1/cmtt/m/n/10.95 $stoplist: object pointer to a LoadTermList object
+ with a stoplist loaded[] 
+
+Overfull \hbox (14.5616pt too wide) in paragraph at lines 30--30
+[]        \T1/cmtt/m/n/10.95 $simple: 1=do simple loading; 0=advanced loading (
+might induce errors)[] 
+[61]) (./RobotRules.tex) (./SD_SQL.tex
+Overfull \hbox (10.15337pt too wide) in paragraph at lines 33--47
+[]\T1/cmr/m/n/10.95 ########################## #Ques-tions, ideas, TO-DOs, etc 
+#Split
+[62]) (./XWI.tex) (./selurl.tex [63])) [64] (./DocMain.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ )
+(see the transcript file for additional information)
+Output written on DocMain.dvi (64 pages, 143352 bytes).
+Transcript written on DocMain.log.
+bibtex DocMain
+This is BibTeX, Version 0.99c (Web2C 7.4.5)
+The top-level auxiliary file: DocMain.aux
+The style file: abbrv.bst
+Database file #1: myalvis.bib
+latex DocMain.tex
+This is e-TeX, Version 3.14159-2.1 (Web2C 7.4.5)
+entering extended mode
+(./DocMain.tex
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size11.clo))
+(/usr/share/texmf/tex/latex/ntgclass/a4.sty)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+(/usr/share/texmf/tex/latex/graphics/trig.sty)
+(/usr/share/texmf/tex/latex/config/graphics.cfg)
+(/usr/share/texmf/tex/latex/graphics/dvips.def))
+(/usr/share/texmf/tex/latex/graphics/epsfig.sty
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+(/usr/share/texmf/tex/latex/graphics/keyval.sty)))
+(/usr/share/texmf/tex/latex/html/html.sty)
+(/usr/share/texmf/tex/latex/base/fontenc.sty
+(/usr/share/texmf/tex/latex/base/t1enc.def))
+(/usr/share/texmf/tex/latex/base/inputenc.sty
+(/usr/share/texmf/tex/latex/base/latin1.def)) (./DocMain.aux
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `SYNOPSIS' multiply defined.
+
+
+LaTeX Warning: Label `OPTIONS_AND_ARGUMENTS' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `SEE_ALSO' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `COPYRIGHT_AND_LICENSE' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `SYNOPSIS' multiply defined.
+
+
+LaTeX Warning: Label `OPTIONS_AND_ARGUMENTS' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `EXAMPLES' multiply defined.
+
+
+LaTeX Warning: Label `SEE_ALSO' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `COPYRIGHT_AND_LICENSE' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `SYNOPSIS' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `SEE_ALSO' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `COPYRIGHT_AND_LICENSE' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `SYNOPSIS' multiply defined.
+
+
+LaTeX Warning: Label `OPTIONS_AND_ARGUMENTS' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `EXAMPLES' multiply defined.
+
+
+LaTeX Warning: Label `SEE_ALSO' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `COPYRIGHT_AND_LICENSE' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `COPYRIGHT_AND_LICENSE' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `COPYRIGHT_AND_LICENSE' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `COPYRIGHT_AND_LICENSE' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `COPYRIGHT_AND_LICENSE' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `COPYRIGHT_AND_LICENSE' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+) [1] (./DocMain.toc [2] [3] [4]) [5] (./documentation.tex (./Intro.tex
+<focusedrobot.eps> (/usr/share/texmf/tex/latex/base/omscmr.fd) [6]
+(/usr/share/texmf/tex/latex/base/t1cmtt.fd)) (./OpenSourceDistr.tex [7]
+[8]
+Overfull \hbox (4.39449pt too wide) in paragraph at lines 110--112
+[]\T1/cmr/m/n/10.95 '\T1/cmtt/m/n/10.95 conf\T1/cmr/m/n/10.95 ' con-tains the d
+e-fault con-fig-u-ra-tion files. Com-bine looks for them in \T1/cmtt/m/n/10.95 
+/etc/combine/
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
+
+
+Overfull \hbox (105.09554pt too wide) in paragraph at lines 132--132
+[]\T1/cmtt/m/n/10.95 combine --jobname aatest --harvest http://combine.it.lth.s
+e/CombineTests/InstallationTest.html[] 
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--134
+
+
+Overfull \hbox (14.5616pt too wide) in paragraph at lines 149--149
+[]\T1/cmtt/m/n/10.95 <documentCollection version="1.1" xmlns:dc="http://purl.or
+g/dc/elements/1.1/">[] 
+[9]
+Overfull \hbox (82.46205pt too wide) in paragraph at lines 149--149
+[]\T1/cmtt/m/n/10.95 <dc:identifier>http://combine.it.lth.se/CombineTests/Insta
+llationTest.html</dc:identifier>[] 
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 205--207
+
+
+Overfull \hbox (36.27829pt too wide) in paragraph at lines 214--214
+ []\T1/cmtt/m/n/10.95 #use either URL or HOST: (obs ':') to match regular expre
+ssions to either the[] 
+
+Overfull \hbox (7.98643pt too wide) in paragraph at lines 214--214
+ []\T1/cmtt/m/n/10.95 #Allow crawl of URLs or hostnames that matches these regu
+lar expressions[] 
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
+
+
+Overfull \hbox (36.27829pt too wide) in paragraph at lines 224--224
+ []\T1/cmtt/m/n/10.95 #use either URL or HOST: (obs ':') to match regular expre
+ssions to either the[] 
+
+Overfull \hbox (7.98643pt too wide) in paragraph at lines 224--224
+ []\T1/cmtt/m/n/10.95 #Allow crawl of URLs or hostnames that matches these regu
+lar expressions[] 
+
+Overfull \hbox (2.32806pt too wide) in paragraph at lines 231--234
+\T1/cmtt/m/n/10.95 echo 'http://combine.it.lth.se/' | combineCtrl load []--jobn
+ame focustest 
+[11]) (./Configuration.tex [12]
+Overfull \hbox (0.48239pt too wide) in paragraph at lines 32--37
+\T1/cmr/m/n/10.95 sub-di-rec-tory in \T1/cmtt/m/n/10.95 /etc/combine \T1/cmr/m/
+n/10.95 and pop-u-lates it with some files in-clud-ing \T1/cmtt/m/n/10.95 combi
+ne.cfg
+) (./CrawlerOperation.tex [13] <CrawlerArchitecture.xfig.eps> [14]
+Underfull \hbox (badness 10000) in paragraph at lines 105--107
+
+[15] [16]
+
+LaTeX Warning: Citation `ardo99:_online99' on page 17 undefined on input line 2
+58.
+
+
+LaTeX Warning: Citation `ardo05:_ECDL' on page 17 undefined on input line 270.
+
+<TopicFilter.xfig.eps> [17]
+Overfull \hbox (1.96063pt too wide) in paragraph at lines 293--299
+\T1/cmr/m/n/10.95 Located in \T1/cmtt/m/n/10.95 /etc/combine/<jobname>/topicdef
+inition.txt\T1/cmr/m/n/10.95 . Topic def-i-ni-tions use triplets
+[18]
+Overfull \hbox (3.35924pt too wide) in paragraph at lines 317--322
+\T1/cmr/m/n/10.95 ``\T1/cmtt/m/n/10.95 glass art[^^B$\OMS/cmsy/m/n/10.95 n$\T1/
+cmtt/m/n/10.95 s]*\T1/cmr/m/n/10.95 '' will match ``\T1/cmtt/m/n/10.95 glass ar
+t\T1/cmr/m/n/10.95 '', ``\T1/cmtt/m/n/10.95 glass arts\T1/cmr/m/n/10.95 '', ``\
+T1/cmtt/m/n/10.95 glass artists\T1/cmr/m/n/10.95 '', ``\T1/cmtt/m/n/10.95 glass
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 347--356
+
+[19]
+Overfull \hbox (32.24867pt too wide) in paragraph at lines 394--396
+\T1/cmr/m/n/10.95 The term ``\T1/cmtt/m/n/10.95 D$\OMS/cmsy/m/n/10.95 n$\T1/cmt
+t/m/n/10.95 .?$\OMS/cmsy/m/n/10.95 n$\T1/cmtt/m/n/10.95 s*californica\T1/cmr/m/
+n/10.95 '' will match \T1/cmtt/m/n/10.95 D californica, D. californica, D.calif
+ornica
+
+Overfull \hbox (10.91055pt too wide) in paragraph at lines 403--405
+\T1/cmr/m/n/10.95 Selected by set-ting the con-fig-u-ra-tion pa-ram-e-ter \T1/c
+mtt/m/n/10.95 classifyPlugIn = Combine::Check_record 
+
+LaTeX Warning: Citation `ardo05:_ECDL' on page 20 undefined on input line 420.
+
+
+Overfull \hbox (27.88567pt too wide) in paragraph at lines 437--439
+\T1/cmr/m/n/10.95 Selected by set-ting the con-fig-u-ra-tion pa-ram-e-ter \T1/c
+mtt/m/n/10.95 classifyPlugIn = Combine::PosCheck_record 
+[20] [21]
+Overfull \hbox (4.6943pt too wide) in paragraph at lines 515--517
+[]\T1/cmr/m/n/10.95 The com-mand \T1/cmtt/m/n/10.95 combineCtrl --jobname XXXX 
+reharvest \T1/cmr/m/n/10.95 marks all pages in the database
+) (./ClassificationEval.tex
+
+LaTeX Warning: Citation `Golub_Review' on page 22 undefined on input line 4.
+
+
+LaTeX Warning: Citation `ardo06:_ECDL' on page 22 undefined on input line 6.
+
+
+LaTeX Warning: Citation `GolubRole' on page 22 undefined on input line 8.
+
+[22]
+
+LaTeX Warning: Citation `ardo05:_ECDL' on page 23 undefined on input line 10.
+
+
+LaTeX Warning: Citation `GolubChall' on page 23 undefined on input line 12.
+
+) (./ExpectedPerformance.tex <CrawlerSpeed.ps> [23] <Config.ps>)
+(./SystemComponents.tex [24]) (./DocMain.bbl [25])) [26] (./FAQ.tex
+Overfull \hbox (16.99898pt too wide) in paragraph at lines 8--10
+[]\T1/cmr/m/n/10.95 I can't fig-ure out how to re-strict the crawler to pages b
+e-low '\T1/cmtt/m/n/10.95 http://www.foo.com/bar/\T1/cmr/m/n/10.95 '? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--44
+
+[27]
+Overfull \hbox (32.56029pt too wide) in paragraph at lines 97--101
+\T1/cmr/m/n/10.95 the file is "nu-meric_importance: term=TopicClass" e.g. "\T1/
+cmtt/m/n/10.95 100: icecream=YahooIce\T1/cmr/m/n/10.95 "
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--101
+
+
+Overfull \hbox (60.36832pt too wide) in paragraph at lines 120--120
+ []\T1/cmtt/m/n/10.95 #use either URL or HOST: (obs ':') to match regular expre
+ssions to either the[] 
+
+Overfull \hbox (32.07646pt too wide) in paragraph at lines 120--120
+ []\T1/cmtt/m/n/10.95 #Allow crawl of URLs or hostnames that matches these regu
+lar expressions[] 
+
+Overfull \hbox (60.36832pt too wide) in paragraph at lines 131--131
+ []\T1/cmtt/m/n/10.95 #use either URL or HOST: (obs ':') to match regular expre
+ssions to either the[] 
+
+Overfull \hbox (32.07646pt too wide) in paragraph at lines 131--131
+ []\T1/cmtt/m/n/10.95 #Allow crawl of URLs or hostnames that matches these regu
+lar expressions[] 
+[28]
+Overfull \hbox (116.95203pt too wide) in paragraph at lines 169--170
+[][]\T1/cmtt/m/n/10.95 | 5409 | HARVPARS 1_zltest | 2006-07-14 15:08:52 | M500;
+ SD empty, sleep 20 second... | 
+
+Overfull \hbox (230.11945pt too wide) in paragraph at lines 176--177
+[][]\T1/cmtt/m/n/10.95 | 7352 | HARVPARS 1_wctest | 2006-07-14 17:00:59 | M500;
+ urlid=1; netlocid=1; http://www.shanghaidaily.com/ 
+
+Overfull \hbox (18.42393pt too wide) in paragraph at lines 178--183
+[]\T1/cmr/m/n/10.95 Crawler pro-cess 7352 got a url (http://www.shanghaidaily.c
+om/) to check (1_wctest
+
+Overfull \hbox (43.3932pt too wide) in paragraph at lines 185--186
+[][]\T1/cmtt/m/n/10.95 | 7352 | HARVPARS 1_wctest | 2006-07-14 17:01:10 | M500;
+ RobotRules OK, OK 
+
+Overfull \hbox (77.34343pt too wide) in paragraph at lines 190--191
+[][]\T1/cmtt/m/n/10.95 | 7352 | HARVPARS 1_wctest | 2006-07-14 17:01:10 | M500;
+ HTTP(200 = "OK")  => OK 
+
+Overfull \hbox (309.33664pt too wide) in paragraph at lines 195--196
+[][]\T1/cmtt/m/n/10.95 | 7352 | HARVPARS 1_wctest | 2006-07-14 17:01:10 | M500;
+ Doing: text/html;200;0F061033DAF69587170F8E285E950120;Not used | 
+[29]
+Overfull \hbox (126.0513pt too wide) in paragraph at lines 224--228
+\T1/cmr/m/n/10.95 to www.yahoo.com) but also not go-ing higher in po-si-tion (i
+.e. www.geocities.com/boulevar/atlanta/index.html). 
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--236
+
+
+Overfull \hbox (7.98643pt too wide) in paragraph at lines 241--241
+ []\T1/cmtt/m/n/10.95 #Allow crawl of URLs or hostnames that matches these regu
+lar expressions[] 
+
+Overfull \hbox (7.98643pt too wide) in paragraph at lines 249--249
+ []\T1/cmtt/m/n/10.95 #Allow crawl of URLs or hostnames that matches these regu
+lar expressions[] 
+) (./ConfigVars.tex [30] [31] [32]
+Overfull \hbox (21.22935pt too wide) in paragraph at lines 112--113
+[]\T1/cmr/m/n/10.95 combineUtil; LogSQL.pm; com-bine; RobotRules.pm; com-bi-ne-
+Ex-port; SD_SQL.pm;
+[33] [34] [35] [36]) (./DepGraph.tex
+Overfull \hbox (38.5834pt too wide) in paragraph at lines 7--8
+[]\T1/cmr/m/n/10.95 Combine::Config; Com-bine::XWI; Com-bine::UA; Com-bine::Rob
+otRules; Com-bine::LogSQL;
+
+Overfull \hbox (14.76175pt too wide) in paragraph at lines 7--8
+\T1/cmr/m/n/10.95 Com-bine::FromHTML; Com-bine::FromImage; Com-bine::FromTeX; C
+om-bine::DataBase;
+[37]
+Overfull \hbox (64.03035pt too wide) in paragraph at lines 49--50
+[]\T1/cmr/m/n/10.95 combineCtrl; com-bine; com-bi-ne-Ex-port; com-bineINIT; com
+-bineU-til; Com-bine::Check_record;
+
+Overfull \hbox (48.63322pt too wide) in paragraph at lines 49--50
+\T1/cmr/m/n/10.95 Com-bine::FromHTML; Com-bine::LogSQL; Com-bine::MySQLhdb; Com
+-bine::PosCheck_record;
+
+Overfull \hbox (10.96867pt too wide) in paragraph at lines 49--50
+\T1/cmr/m/n/10.95 Com-bine::RobotRules; Com-bine::SD_SQL; Com-bine::UA; Com-bin
+e::XWI2XML; Com-
+
+Overfull \hbox (35.75717pt too wide) in paragraph at lines 61--62
+[]\T1/cmr/m/n/10.95 Combine::Config; HTTP::Date; URI; URI::Escape; HTML::Entiti
+es; En-code; HTML::Tidy;
+[38]
+Overfull \hbox (6.58516pt too wide) in paragraph at lines 147--148
+[]\T1/cmr/m/n/10.95 combine; Com-bine::Check_record; Com-bine::MySQLhdb; Com-bi
+ne::XWI2XML; 
+[39]) [40] (./InstallationTest.tex
+Overfull \hbox (105.09554pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 system("combineINIT --jobname $jobname --topic /etc/combin
+e/Topic_carnivor.txt >& /dev/null");[] 
+
+Overfull \hbox (178.65436pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 system("combine --jobname $jobname --harvest http://combin
+e.it.lth.se/CombineTests/InstallationTest.html");[] 
+[41]
+Overfull \hbox (172.99599pt too wide) in paragraph at lines 130--130
+[]  \T1/cmtt/m/n/10.95 if (length($orec) == length($rec)) { print "Size of XML 
+match (after removal of 'originalDocument')\n";}[] 
+
+Overfull \hbox (14.5616pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 else { print "There might be some problem with your Combin
+e Installation\n"; }[] 
+
+Overfull \hbox (93.7788pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 <originalDocument mimeType="text/html" compression="gzip" 
+encoding="base64" charSet="UTF-8">[] 
+
+Overfull \hbox (3.24486pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 H4sIAAAAAAAAA4WQsU7DMBCG9zzF4bmpBV2QcDKQVKJSKR2CEKObXBSrjm
+3sSyFvT0yCQGJgusG/[] 
+
+Overfull \hbox (3.24486pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 //u+E1flU1G9HrfwUD3u4fh8v98VwFLOXzYF52VVzg+b9Q3n2wPLE9FRr+
+NA2UyDFGnMdyaQ1FqS[] 
+
+Overfull \hbox (3.24486pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 sgYIA0FrPRS2PymDgs+hRPRIEozsMWNnHN+tbwKD2hpCQxkrpDfqYr0dAj
+gtDYUVlN4G9HIFB3RT[] 
+
+Overfull \hbox (3.24486pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 qMPAvns6Ipfi26Au09e5I61Gh78aCT+IR947qDvpA1I2UJvexg6+CJxsM0
+ad6/8kpkQiXB5XSWUC[] 
+
+Overfull \hbox (3.24486pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 BNsj/GGG4LBWrarhSw+0OiOIidZjmzGPeh15WL6ICS7zFUjT/AiuBXeRbw
+Hj870/AeRYaTupAQAA[] 
+
+Overfull \hbox (540.7901pt too wide) in paragraph at lines 130--130
+[]      \T1/cmtt/m/n/10.95 <section>Contains some Carnivorous plant specific wo
+rds like <ulink url="rel.html">Drosera </ulink>, and Nepenthes.</section></sect
+ion></section></canonicalDocument>[] 
+[42]) (./PlugInTemplate.tex
+Overfull \hbox (37.19508pt too wide) in paragraph at lines 86--86
+[]\T1/cmtt/m/n/10.95 use Combine::Config; #Optional if you want to use the Comb
+ine configuration system[] 
+
+Overfull \hbox (42.85345pt too wide) in paragraph at lines 86--86
+[]\T1/cmtt/m/n/10.95 #        0: record fails to meet the classification criter
+ia, ie ignore this record[] 
+
+Overfull \hbox (116.41228pt too wide) in paragraph at lines 86--86
+[]\T1/cmtt/m/n/10.95 #        1: record is OK and should be stored in the datab
+ase, and links followed by the crawler[] 
+[43]
+Overfull \hbox (122.07065pt too wide) in paragraph at lines 86--86
+[]  \T1/cmtt/m/n/10.95 #utility routines for saving detailed results (optional)
+ in the database. These data may appear[] 
+
+Overfull \hbox (223.92133pt too wide) in paragraph at lines 86--86
+[]  \T1/cmtt/m/n/10.95 # $xwi->topic_add(topic_class_notation, topic_absolute_s
+core, topic_normalized_score, topic_terms, algorithm_id);[] 
+[44]
+Overfull \hbox (139.04576pt too wide) in paragraph at lines 86--86
+[]  \T1/cmtt/m/n/10.95 #  topic_normalized_score and topic_terms are optional a
+nd may be replaced with 0, '' respectively[] 
+) (./defaultConfig.tex
+Overfull \hbox (71.14531pt too wide) in paragraph at lines 181--181
+[]\T1/cmtt/m/n/10.95 #Direct connection to Zebra indexing - for SearchEngine-in
+-a-box (default no connection)[] 
+[45] [46]
+Overfull \hbox (167.33762pt too wide) in paragraph at lines 181--181
+[]\T1/cmtt/m/n/10.95 #Time in seconds after succesfull download before allowing
+ a page to be downloaded again (around 11 days)[] 
+
+Overfull \hbox (144.70413pt too wide) in paragraph at lines 181--181
+[]\T1/cmtt/m/n/10.95 #Time in seconds to wait before making a new reschedule if
+ a reschedule results in an empty ready que[] 
+[47]
+Overfull \hbox (71.14531pt too wide) in paragraph at lines 181--181
+[]\T1/cmtt/m/n/10.95 #  external converters have to be found via PATH and execu
+table to be considered a match[] 
+
+Overfull \hbox (88.12042pt too wide) in paragraph at lines 181--181
+[]\T1/cmtt/m/n/10.95 #  the external converter command should take a filename a
+s parameter and convert that file[] 
+[48]
+Overfull \hbox (71.14531pt too wide) in paragraph at lines 261--261
+[]\T1/cmtt/m/n/10.95 #  external converters have to be found via PATH and execu
+table to be considered a match[] 
+
+Overfull \hbox (88.12042pt too wide) in paragraph at lines 261--261
+[]\T1/cmtt/m/n/10.95 #  the external converter command should take a filename a
+s parameter and convert that file[] 
+
+Overfull \hbox (105.09554pt too wide) in paragraph at lines 261--261
+[]\T1/cmtt/m/n/10.95 #  means that www.100wetland.com is replaced by www.100top
+wetland.com during URL normalization[] 
+[49]
+Overfull \hbox (156.02087pt too wide) in paragraph at lines 261--261
+[]\T1/cmtt/m/n/10.95 URL \.gif$|\.jpg$|\.jpeg$|\.xpm$|\.tif$|\.tiff$|\.mpg$|\.m
+peg$|\.mov$|\.wav$|\.au$|\.pcx$|\.xbm$|\.tga$[] 
+
+Overfull \hbox (156.02087pt too wide) in paragraph at lines 261--261
+[]\T1/cmtt/m/n/10.95 URL \.GIF$|\.JPG$|\.JPEG$|\.XPM$|\.TIF$|\.TIFF$|\.MPG$|\.M
+PEG$|\.MOV$|\.WAV$|\.AU$|\.PCX$|\.XBM$|\.TGA$[] 
+
+Overfull \hbox (42.85345pt too wide) in paragraph at lines 261--261
+[]\T1/cmtt/m/n/10.95 #more excludes in the file config_exclude (automatically u
+pdated by other programs)[] 
+) (./SQL.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--7
+
+
+Overfull \hbox (116.41228pt too wide) in paragraph at lines 8--32
+[]\T1/cmtt/m/n/10.95 TABLE links: recordid*, mynetlocid*, urlid*, netlocid*, li
+nktype, anchor  (netlocid for urlid!!) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--32
+
+[50]
+Overfull \hbox (59.82857pt too wide) in paragraph at lines 49--49
+[]\T1/cmtt/m/n/10.95 ) ENGINE=MyISAM AVG_ROW_LENGTH = 20000 MAX_ROWS = 10000000
+ DEFAULT CHARACTER SET=utf8;[] 
+
+Overfull \hbox (59.82857pt too wide) in paragraph at lines 57--57
+[]\T1/cmtt/m/n/10.95 ) ENGINE=MyISAM AVG_ROW_LENGTH = 20000 MAX_ROWS = 10000000
+ DEFAULT CHARACTER SET=utf8;[] 
+[51] [52]
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
+
+[53]
+Overfull \hbox (14.5616pt too wide) in paragraph at lines 202--202
+[]  \T1/cmtt/m/n/10.95 schedulealgorithm enum('default','bigdefault','advanced'
+) default 'default',[] 
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--206
+
+[54]) (./ManPages.tex (./combineCtrl.tex [55] [56]
+(/usr/share/texmf/tex/latex/base/t1cmss.fd)) (./combine.tex [57])
+(./combineExport.tex
+Overfull \hbox (33.20009pt too wide) in paragraph at lines 9--10
+ \T1/cmr/bx/n/10.95 SYN-OP-SIS[][] \T1/cmr/m/n/10.95 com-bi-ne-Ex-port --jobnam
+e $\OML/cmm/m/it/10.95 <$\T1/cmr/m/n/10.95 name$\OML/cmm/m/it/10.95 >$ \T1/cmr/
+m/n/10.95 [--profile alvis$\OMS/cmsy/m/n/10.95 j$\T1/cmr/m/n/10.95 dc$\OMS/cmsy
+/m/n/10.95 j$\T1/cmr/m/n/10.95 combine --charset utf8$\OMS/cmsy/m/n/10.95 j$\T1
+/cmr/m/n/10.95 isolatin
+
+Overfull \hbox (16.45427pt too wide) in paragraph at lines 9--10
+\T1/cmr/m/n/10.95 --number $\OML/cmm/m/it/10.95 <$\T1/cmr/m/n/10.95 n$\OML/cmm/
+m/it/10.95 >$ \T1/cmr/m/n/10.95 --recordid $\OML/cmm/m/it/10.95 <$\T1/cmr/m/n/1
+0.95 n$\OML/cmm/m/it/10.95 >$ \T1/cmr/m/n/10.95 --md5 $\OML/cmm/m/it/10.95 <$\T
+1/cmr/m/n/10.95 MD5$\OML/cmm/m/it/10.95 >$ \T1/cmr/m/n/10.95 --pipehost $\OML/c
+mm/m/it/10.95 <$\T1/cmr/m/n/10.95 server$\OML/cmm/m/it/10.95 >$ \T1/cmr/m/n/10.
+95 --pipeport $\OML/cmm/m/it/10.95 <$\T1/cmr/m/n/10.95 n$\OML/cmm/m/it/10.95 >$
+ \T1/cmr/m/n/10.95 --incremental
+[58]
+Overfull \hbox (11.58833pt too wide) in paragraph at lines 66--67
+[]\T1/cmr/m/n/10.95 Exports in-cre-men-tally, ie all changes since last call to
+ com-bi-ne-Ex-port us-ing --incremental 
+
+Overfull \hbox (31.53671pt too wide) in paragraph at lines 88--88
+[]   \T1/cmtt/m/n/10.95 combineExport --jobname atest --profile combine --chars
+et utf8 > Zebrarecs.xml[] 
+
+Overfull \hbox (71.14531pt too wide) in paragraph at lines 93--93
+[] \T1/cmtt/m/n/10.95 Incremental export of all changes from last call using lo
+calhost at port 6234 using the[] 
+
+Overfull \hbox (32.1283pt too wide) in paragraph at lines 101--103
+[]\T1/cmr/m/n/10.95 Alvis XML schema (--profile alvis) at \T1/cmss/m/n/10.95 ht
+tp://project.alvis.info/alvis_docs/enriched-document.xsd 
+) (./combineRun.tex [59]) (./combineUtil.tex [60]
+Overfull \hbox (7.17664pt too wide) in paragraph at lines 80--82
+[]\T1/cmr/m/n/10.95 Deletes all records match-ing the ','-separated list of URl
+ paths (ex-clud-ing net-locations)
+[61]) (./FromHTML.tex) (./FromTeX.tex) (./HTMLExtractor.tex)
+(./LoadTermList.tex [62]) (./Matcher.tex
+Overfull \hbox (31.53671pt too wide) in paragraph at lines 31--31
+[]        \T1/cmtt/m/n/10.95 $stoplist: object pointer to a LoadTermList object
+ with a stoplist loaded[] 
+
+Overfull \hbox (14.5616pt too wide) in paragraph at lines 31--31
+[]        \T1/cmtt/m/n/10.95 $simple: 1=do simple loading; 0=advanced loading (
+might induce errors)[] 
+[63]) (./PosMatcher.tex
+Overfull \hbox (31.53671pt too wide) in paragraph at lines 30--30
+[]        \T1/cmtt/m/n/10.95 $stoplist: object pointer to a LoadTermList object
+ with a stoplist loaded[] 
+
+Overfull \hbox (14.5616pt too wide) in paragraph at lines 30--30
+[]        \T1/cmtt/m/n/10.95 $simple: 1=do simple loading; 0=advanced loading (
+might induce errors)[] 
+[64]) (./RobotRules.tex) (./SD_SQL.tex
+Overfull \hbox (10.15337pt too wide) in paragraph at lines 33--47
+[]\T1/cmr/m/n/10.95 ########################## #Ques-tions, ideas, TO-DOs, etc 
+#Split
+[65]) (./XWI.tex) (./selurl.tex [66])) [67] (./DocMain.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ )
+(see the transcript file for additional information)
+Output written on DocMain.dvi (67 pages, 192172 bytes).
+Transcript written on DocMain.log.
+latex DocMain.tex
+This is e-TeX, Version 3.14159-2.1 (Web2C 7.4.5)
+entering extended mode
+(./DocMain.tex
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size11.clo))
+(/usr/share/texmf/tex/latex/ntgclass/a4.sty)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+(/usr/share/texmf/tex/latex/graphics/trig.sty)
+(/usr/share/texmf/tex/latex/config/graphics.cfg)
+(/usr/share/texmf/tex/latex/graphics/dvips.def))
+(/usr/share/texmf/tex/latex/graphics/epsfig.sty
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+(/usr/share/texmf/tex/latex/graphics/keyval.sty)))
+(/usr/share/texmf/tex/latex/html/html.sty)
+(/usr/share/texmf/tex/latex/base/fontenc.sty
+(/usr/share/texmf/tex/latex/base/t1enc.def))
+(/usr/share/texmf/tex/latex/base/inputenc.sty
+(/usr/share/texmf/tex/latex/base/latin1.def)) (./DocMain.aux
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `SYNOPSIS' multiply defined.
+
+
+LaTeX Warning: Label `OPTIONS_AND_ARGUMENTS' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `SEE_ALSO' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `COPYRIGHT_AND_LICENSE' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `SYNOPSIS' multiply defined.
+
+
+LaTeX Warning: Label `OPTIONS_AND_ARGUMENTS' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `EXAMPLES' multiply defined.
+
+
+LaTeX Warning: Label `SEE_ALSO' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `COPYRIGHT_AND_LICENSE' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `SYNOPSIS' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `SEE_ALSO' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `COPYRIGHT_AND_LICENSE' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `SYNOPSIS' multiply defined.
+
+
+LaTeX Warning: Label `OPTIONS_AND_ARGUMENTS' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `EXAMPLES' multiply defined.
+
+
+LaTeX Warning: Label `SEE_ALSO' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `COPYRIGHT_AND_LICENSE' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `COPYRIGHT_AND_LICENSE' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `COPYRIGHT_AND_LICENSE' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `COPYRIGHT_AND_LICENSE' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `COPYRIGHT_AND_LICENSE' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `COPYRIGHT_AND_LICENSE' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+) [1] (./DocMain.toc [2] [3] [4]) [5] (./documentation.tex (./Intro.tex
+<focusedrobot.eps> (/usr/share/texmf/tex/latex/base/omscmr.fd) [6]
+(/usr/share/texmf/tex/latex/base/t1cmtt.fd)) (./OpenSourceDistr.tex [7]
+[8]
+Overfull \hbox (4.39449pt too wide) in paragraph at lines 110--112
+[]\T1/cmr/m/n/10.95 '\T1/cmtt/m/n/10.95 conf\T1/cmr/m/n/10.95 ' con-tains the d
+e-fault con-fig-u-ra-tion files. Com-bine looks for them in \T1/cmtt/m/n/10.95 
+/etc/combine/
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
+
+
+Overfull \hbox (105.09554pt too wide) in paragraph at lines 132--132
+[]\T1/cmtt/m/n/10.95 combine --jobname aatest --harvest http://combine.it.lth.s
+e/CombineTests/InstallationTest.html[] 
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--134
+
+
+Overfull \hbox (14.5616pt too wide) in paragraph at lines 149--149
+[]\T1/cmtt/m/n/10.95 <documentCollection version="1.1" xmlns:dc="http://purl.or
+g/dc/elements/1.1/">[] 
+[9]
+Overfull \hbox (82.46205pt too wide) in paragraph at lines 149--149
+[]\T1/cmtt/m/n/10.95 <dc:identifier>http://combine.it.lth.se/CombineTests/Insta
+llationTest.html</dc:identifier>[] 
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 205--207
+
+
+Overfull \hbox (36.27829pt too wide) in paragraph at lines 214--214
+ []\T1/cmtt/m/n/10.95 #use either URL or HOST: (obs ':') to match regular expre
+ssions to either the[] 
+
+Overfull \hbox (7.98643pt too wide) in paragraph at lines 214--214
+ []\T1/cmtt/m/n/10.95 #Allow crawl of URLs or hostnames that matches these regu
+lar expressions[] 
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
+
+
+Overfull \hbox (36.27829pt too wide) in paragraph at lines 224--224
+ []\T1/cmtt/m/n/10.95 #use either URL or HOST: (obs ':') to match regular expre
+ssions to either the[] 
+
+Overfull \hbox (7.98643pt too wide) in paragraph at lines 224--224
+ []\T1/cmtt/m/n/10.95 #Allow crawl of URLs or hostnames that matches these regu
+lar expressions[] 
+
+Overfull \hbox (2.32806pt too wide) in paragraph at lines 231--234
+\T1/cmtt/m/n/10.95 echo 'http://combine.it.lth.se/' | combineCtrl load []--jobn
+ame focustest 
+[11]) (./Configuration.tex [12]
+Overfull \hbox (0.48239pt too wide) in paragraph at lines 32--37
+\T1/cmr/m/n/10.95 sub-di-rec-tory in \T1/cmtt/m/n/10.95 /etc/combine \T1/cmr/m/
+n/10.95 and pop-u-lates it with some files in-clud-ing \T1/cmtt/m/n/10.95 combi
+ne.cfg
+) (./CrawlerOperation.tex [13] <CrawlerArchitecture.xfig.eps> [14]
+Underfull \hbox (badness 10000) in paragraph at lines 105--107
+
+[15] [16] <TopicFilter.xfig.eps> [17]
+Overfull \hbox (1.96063pt too wide) in paragraph at lines 293--299
+\T1/cmr/m/n/10.95 Located in \T1/cmtt/m/n/10.95 /etc/combine/<jobname>/topicdef
+inition.txt\T1/cmr/m/n/10.95 . Topic def-i-ni-tions use triplets
+[18]
+Overfull \hbox (3.35924pt too wide) in paragraph at lines 317--322
+\T1/cmr/m/n/10.95 ``\T1/cmtt/m/n/10.95 glass art[^^B$\OMS/cmsy/m/n/10.95 n$\T1/
+cmtt/m/n/10.95 s]*\T1/cmr/m/n/10.95 '' will match ``\T1/cmtt/m/n/10.95 glass ar
+t\T1/cmr/m/n/10.95 '', ``\T1/cmtt/m/n/10.95 glass arts\T1/cmr/m/n/10.95 '', ``\
+T1/cmtt/m/n/10.95 glass artists\T1/cmr/m/n/10.95 '', ``\T1/cmtt/m/n/10.95 glass
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 347--356
+
+[19]
+Overfull \hbox (32.24867pt too wide) in paragraph at lines 394--396
+\T1/cmr/m/n/10.95 The term ``\T1/cmtt/m/n/10.95 D$\OMS/cmsy/m/n/10.95 n$\T1/cmt
+t/m/n/10.95 .?$\OMS/cmsy/m/n/10.95 n$\T1/cmtt/m/n/10.95 s*californica\T1/cmr/m/
+n/10.95 '' will match \T1/cmtt/m/n/10.95 D californica, D. californica, D.calif
+ornica
+
+Overfull \hbox (10.91055pt too wide) in paragraph at lines 403--405
+\T1/cmr/m/n/10.95 Selected by set-ting the con-fig-u-ra-tion pa-ram-e-ter \T1/c
+mtt/m/n/10.95 classifyPlugIn = Combine::Check_record 
+
+Overfull \hbox (27.88567pt too wide) in paragraph at lines 437--439
+\T1/cmr/m/n/10.95 Selected by set-ting the con-fig-u-ra-tion pa-ram-e-ter \T1/c
+mtt/m/n/10.95 classifyPlugIn = Combine::PosCheck_record 
+[20] [21]
+Overfull \hbox (4.6943pt too wide) in paragraph at lines 515--517
+[]\T1/cmr/m/n/10.95 The com-mand \T1/cmtt/m/n/10.95 combineCtrl --jobname XXXX 
+reharvest \T1/cmr/m/n/10.95 marks all pages in the database
+) (./ClassificationEval.tex [22]) (./ExpectedPerformance.tex <CrawlerSpeed.ps>
+[23] <Config.ps>) (./SystemComponents.tex [24]) (./DocMain.bbl [25])) [26]
+(./FAQ.tex
+Overfull \hbox (16.99898pt too wide) in paragraph at lines 8--10
+[]\T1/cmr/m/n/10.95 I can't fig-ure out how to re-strict the crawler to pages b
+e-low '\T1/cmtt/m/n/10.95 http://www.foo.com/bar/\T1/cmr/m/n/10.95 '? 
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--44
+
+[27]
+Overfull \hbox (32.56029pt too wide) in paragraph at lines 97--101
+\T1/cmr/m/n/10.95 the file is "nu-meric_importance: term=TopicClass" e.g. "\T1/
+cmtt/m/n/10.95 100: icecream=YahooIce\T1/cmr/m/n/10.95 "
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--101
+
+
+Overfull \hbox (60.36832pt too wide) in paragraph at lines 120--120
+ []\T1/cmtt/m/n/10.95 #use either URL or HOST: (obs ':') to match regular expre
+ssions to either the[] 
+
+Overfull \hbox (32.07646pt too wide) in paragraph at lines 120--120
+ []\T1/cmtt/m/n/10.95 #Allow crawl of URLs or hostnames that matches these regu
+lar expressions[] 
+
+Overfull \hbox (60.36832pt too wide) in paragraph at lines 131--131
+ []\T1/cmtt/m/n/10.95 #use either URL or HOST: (obs ':') to match regular expre
+ssions to either the[] 
+
+Overfull \hbox (32.07646pt too wide) in paragraph at lines 131--131
+ []\T1/cmtt/m/n/10.95 #Allow crawl of URLs or hostnames that matches these regu
+lar expressions[] 
+[28]
+Overfull \hbox (116.95203pt too wide) in paragraph at lines 169--170
+[][]\T1/cmtt/m/n/10.95 | 5409 | HARVPARS 1_zltest | 2006-07-14 15:08:52 | M500;
+ SD empty, sleep 20 second... | 
+
+Overfull \hbox (230.11945pt too wide) in paragraph at lines 176--177
+[][]\T1/cmtt/m/n/10.95 | 7352 | HARVPARS 1_wctest | 2006-07-14 17:00:59 | M500;
+ urlid=1; netlocid=1; http://www.shanghaidaily.com/ 
+
+Overfull \hbox (18.42393pt too wide) in paragraph at lines 178--183
+[]\T1/cmr/m/n/10.95 Crawler pro-cess 7352 got a url (http://www.shanghaidaily.c
+om/) to check (1_wctest
+
+Overfull \hbox (43.3932pt too wide) in paragraph at lines 185--186
+[][]\T1/cmtt/m/n/10.95 | 7352 | HARVPARS 1_wctest | 2006-07-14 17:01:10 | M500;
+ RobotRules OK, OK 
+
+Overfull \hbox (77.34343pt too wide) in paragraph at lines 190--191
+[][]\T1/cmtt/m/n/10.95 | 7352 | HARVPARS 1_wctest | 2006-07-14 17:01:10 | M500;
+ HTTP(200 = "OK")  => OK 
+
+Overfull \hbox (309.33664pt too wide) in paragraph at lines 195--196
+[][]\T1/cmtt/m/n/10.95 | 7352 | HARVPARS 1_wctest | 2006-07-14 17:01:10 | M500;
+ Doing: text/html;200;0F061033DAF69587170F8E285E950120;Not used | 
+[29]
+Overfull \hbox (126.0513pt too wide) in paragraph at lines 224--228
+\T1/cmr/m/n/10.95 to www.yahoo.com) but also not go-ing higher in po-si-tion (i
+.e. www.geocities.com/boulevar/atlanta/index.html). 
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--236
+
+
+Overfull \hbox (7.98643pt too wide) in paragraph at lines 241--241
+ []\T1/cmtt/m/n/10.95 #Allow crawl of URLs or hostnames that matches these regu
+lar expressions[] 
+
+Overfull \hbox (7.98643pt too wide) in paragraph at lines 249--249
+ []\T1/cmtt/m/n/10.95 #Allow crawl of URLs or hostnames that matches these regu
+lar expressions[] 
+) (./ConfigVars.tex [30] [31] [32]
+Overfull \hbox (21.22935pt too wide) in paragraph at lines 112--113
+[]\T1/cmr/m/n/10.95 combineUtil; LogSQL.pm; com-bine; RobotRules.pm; com-bi-ne-
+Ex-port; SD_SQL.pm;
+[33] [34] [35] [36]) (./DepGraph.tex
+Overfull \hbox (38.5834pt too wide) in paragraph at lines 7--8
+[]\T1/cmr/m/n/10.95 Combine::Config; Com-bine::XWI; Com-bine::UA; Com-bine::Rob
+otRules; Com-bine::LogSQL;
+
+Overfull \hbox (14.76175pt too wide) in paragraph at lines 7--8
+\T1/cmr/m/n/10.95 Com-bine::FromHTML; Com-bine::FromImage; Com-bine::FromTeX; C
+om-bine::DataBase;
+[37]
+Overfull \hbox (64.03035pt too wide) in paragraph at lines 49--50
+[]\T1/cmr/m/n/10.95 combineCtrl; com-bine; com-bi-ne-Ex-port; com-bineINIT; com
+-bineU-til; Com-bine::Check_record;
+
+Overfull \hbox (48.63322pt too wide) in paragraph at lines 49--50
+\T1/cmr/m/n/10.95 Com-bine::FromHTML; Com-bine::LogSQL; Com-bine::MySQLhdb; Com
+-bine::PosCheck_record;
+
+Overfull \hbox (10.96867pt too wide) in paragraph at lines 49--50
+\T1/cmr/m/n/10.95 Com-bine::RobotRules; Com-bine::SD_SQL; Com-bine::UA; Com-bin
+e::XWI2XML; Com-
+
+Overfull \hbox (35.75717pt too wide) in paragraph at lines 61--62
+[]\T1/cmr/m/n/10.95 Combine::Config; HTTP::Date; URI; URI::Escape; HTML::Entiti
+es; En-code; HTML::Tidy;
+[38]
+Overfull \hbox (6.58516pt too wide) in paragraph at lines 147--148
+[]\T1/cmr/m/n/10.95 combine; Com-bine::Check_record; Com-bine::MySQLhdb; Com-bi
+ne::XWI2XML; 
+[39]) [40] (./InstallationTest.tex
+Overfull \hbox (105.09554pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 system("combineINIT --jobname $jobname --topic /etc/combin
+e/Topic_carnivor.txt >& /dev/null");[] 
+
+Overfull \hbox (178.65436pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 system("combine --jobname $jobname --harvest http://combin
+e.it.lth.se/CombineTests/InstallationTest.html");[] 
+[41]
+Overfull \hbox (172.99599pt too wide) in paragraph at lines 130--130
+[]  \T1/cmtt/m/n/10.95 if (length($orec) == length($rec)) { print "Size of XML 
+match (after removal of 'originalDocument')\n";}[] 
+
+Overfull \hbox (14.5616pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 else { print "There might be some problem with your Combin
+e Installation\n"; }[] 
+
+Overfull \hbox (93.7788pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 <originalDocument mimeType="text/html" compression="gzip" 
+encoding="base64" charSet="UTF-8">[] 
+
+Overfull \hbox (3.24486pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 H4sIAAAAAAAAA4WQsU7DMBCG9zzF4bmpBV2QcDKQVKJSKR2CEKObXBSrjm
+3sSyFvT0yCQGJgusG/[] 
+
+Overfull \hbox (3.24486pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 //u+E1flU1G9HrfwUD3u4fh8v98VwFLOXzYF52VVzg+b9Q3n2wPLE9FRr+
+NA2UyDFGnMdyaQ1FqS[] 
+
+Overfull \hbox (3.24486pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 sgYIA0FrPRS2PymDgs+hRPRIEozsMWNnHN+tbwKD2hpCQxkrpDfqYr0dAj
+gtDYUVlN4G9HIFB3RT[] 
+
+Overfull \hbox (3.24486pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 qMPAvns6Ipfi26Au09e5I61Gh78aCT+IR947qDvpA1I2UJvexg6+CJxsM0
+ad6/8kpkQiXB5XSWUC[] 
+
+Overfull \hbox (3.24486pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 BNsj/GGG4LBWrarhSw+0OiOIidZjmzGPeh15WL6ICS7zFUjT/AiuBXeRbw
+Hj870/AeRYaTupAQAA[] 
+
+Overfull \hbox (540.7901pt too wide) in paragraph at lines 130--130
+[]      \T1/cmtt/m/n/10.95 <section>Contains some Carnivorous plant specific wo
+rds like <ulink url="rel.html">Drosera </ulink>, and Nepenthes.</section></sect
+ion></section></canonicalDocument>[] 
+[42]) (./PlugInTemplate.tex
+Overfull \hbox (37.19508pt too wide) in paragraph at lines 86--86
+[]\T1/cmtt/m/n/10.95 use Combine::Config; #Optional if you want to use the Comb
+ine configuration system[] 
+
+Overfull \hbox (42.85345pt too wide) in paragraph at lines 86--86
+[]\T1/cmtt/m/n/10.95 #        0: record fails to meet the classification criter
+ia, ie ignore this record[] 
+
+Overfull \hbox (116.41228pt too wide) in paragraph at lines 86--86
+[]\T1/cmtt/m/n/10.95 #        1: record is OK and should be stored in the datab
+ase, and links followed by the crawler[] 
+[43]
+Overfull \hbox (122.07065pt too wide) in paragraph at lines 86--86
+[]  \T1/cmtt/m/n/10.95 #utility routines for saving detailed results (optional)
+ in the database. These data may appear[] 
+
+Overfull \hbox (223.92133pt too wide) in paragraph at lines 86--86
+[]  \T1/cmtt/m/n/10.95 # $xwi->topic_add(topic_class_notation, topic_absolute_s
+core, topic_normalized_score, topic_terms, algorithm_id);[] 
+[44]
+Overfull \hbox (139.04576pt too wide) in paragraph at lines 86--86
+[]  \T1/cmtt/m/n/10.95 #  topic_normalized_score and topic_terms are optional a
+nd may be replaced with 0, '' respectively[] 
+) (./defaultConfig.tex
+Overfull \hbox (71.14531pt too wide) in paragraph at lines 181--181
+[]\T1/cmtt/m/n/10.95 #Direct connection to Zebra indexing - for SearchEngine-in
+-a-box (default no connection)[] 
+[45] [46]
+Overfull \hbox (167.33762pt too wide) in paragraph at lines 181--181
+[]\T1/cmtt/m/n/10.95 #Time in seconds after succesfull download before allowing
+ a page to be downloaded again (around 11 days)[] 
+
+Overfull \hbox (144.70413pt too wide) in paragraph at lines 181--181
+[]\T1/cmtt/m/n/10.95 #Time in seconds to wait before making a new reschedule if
+ a reschedule results in an empty ready que[] 
+[47]
+Overfull \hbox (71.14531pt too wide) in paragraph at lines 181--181
+[]\T1/cmtt/m/n/10.95 #  external converters have to be found via PATH and execu
+table to be considered a match[] 
+
+Overfull \hbox (88.12042pt too wide) in paragraph at lines 181--181
+[]\T1/cmtt/m/n/10.95 #  the external converter command should take a filename a
+s parameter and convert that file[] 
+[48]
+Overfull \hbox (71.14531pt too wide) in paragraph at lines 261--261
+[]\T1/cmtt/m/n/10.95 #  external converters have to be found via PATH and execu
+table to be considered a match[] 
+
+Overfull \hbox (88.12042pt too wide) in paragraph at lines 261--261
+[]\T1/cmtt/m/n/10.95 #  the external converter command should take a filename a
+s parameter and convert that file[] 
+
+Overfull \hbox (105.09554pt too wide) in paragraph at lines 261--261
+[]\T1/cmtt/m/n/10.95 #  means that www.100wetland.com is replaced by www.100top
+wetland.com during URL normalization[] 
+[49]
+Overfull \hbox (156.02087pt too wide) in paragraph at lines 261--261
+[]\T1/cmtt/m/n/10.95 URL \.gif$|\.jpg$|\.jpeg$|\.xpm$|\.tif$|\.tiff$|\.mpg$|\.m
+peg$|\.mov$|\.wav$|\.au$|\.pcx$|\.xbm$|\.tga$[] 
+
+Overfull \hbox (156.02087pt too wide) in paragraph at lines 261--261
+[]\T1/cmtt/m/n/10.95 URL \.GIF$|\.JPG$|\.JPEG$|\.XPM$|\.TIF$|\.TIFF$|\.MPG$|\.M
+PEG$|\.MOV$|\.WAV$|\.AU$|\.PCX$|\.XBM$|\.TGA$[] 
+
+Overfull \hbox (42.85345pt too wide) in paragraph at lines 261--261
+[]\T1/cmtt/m/n/10.95 #more excludes in the file config_exclude (automatically u
+pdated by other programs)[] 
+) (./SQL.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--7
+
+
+Overfull \hbox (116.41228pt too wide) in paragraph at lines 8--32
+[]\T1/cmtt/m/n/10.95 TABLE links: recordid*, mynetlocid*, urlid*, netlocid*, li
+nktype, anchor  (netlocid for urlid!!) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--32
+
+[50]
+Overfull \hbox (59.82857pt too wide) in paragraph at lines 49--49
+[]\T1/cmtt/m/n/10.95 ) ENGINE=MyISAM AVG_ROW_LENGTH = 20000 MAX_ROWS = 10000000
+ DEFAULT CHARACTER SET=utf8;[] 
+
+Overfull \hbox (59.82857pt too wide) in paragraph at lines 57--57
+[]\T1/cmtt/m/n/10.95 ) ENGINE=MyISAM AVG_ROW_LENGTH = 20000 MAX_ROWS = 10000000
+ DEFAULT CHARACTER SET=utf8;[] 
+[51] [52]
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
+
+[53]
+Overfull \hbox (14.5616pt too wide) in paragraph at lines 202--202
+[]  \T1/cmtt/m/n/10.95 schedulealgorithm enum('default','bigdefault','advanced'
+) default 'default',[] 
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--206
+
+[54]) (./ManPages.tex (./combineCtrl.tex [55] [56]
+(/usr/share/texmf/tex/latex/base/t1cmss.fd)) (./combine.tex [57])
+(./combineExport.tex
+Overfull \hbox (33.20009pt too wide) in paragraph at lines 9--10
+ \T1/cmr/bx/n/10.95 SYN-OP-SIS[][] \T1/cmr/m/n/10.95 com-bi-ne-Ex-port --jobnam
+e $\OML/cmm/m/it/10.95 <$\T1/cmr/m/n/10.95 name$\OML/cmm/m/it/10.95 >$ \T1/cmr/
+m/n/10.95 [--profile alvis$\OMS/cmsy/m/n/10.95 j$\T1/cmr/m/n/10.95 dc$\OMS/cmsy
+/m/n/10.95 j$\T1/cmr/m/n/10.95 combine --charset utf8$\OMS/cmsy/m/n/10.95 j$\T1
+/cmr/m/n/10.95 isolatin
+
+Overfull \hbox (16.45427pt too wide) in paragraph at lines 9--10
+\T1/cmr/m/n/10.95 --number $\OML/cmm/m/it/10.95 <$\T1/cmr/m/n/10.95 n$\OML/cmm/
+m/it/10.95 >$ \T1/cmr/m/n/10.95 --recordid $\OML/cmm/m/it/10.95 <$\T1/cmr/m/n/1
+0.95 n$\OML/cmm/m/it/10.95 >$ \T1/cmr/m/n/10.95 --md5 $\OML/cmm/m/it/10.95 <$\T
+1/cmr/m/n/10.95 MD5$\OML/cmm/m/it/10.95 >$ \T1/cmr/m/n/10.95 --pipehost $\OML/c
+mm/m/it/10.95 <$\T1/cmr/m/n/10.95 server$\OML/cmm/m/it/10.95 >$ \T1/cmr/m/n/10.
+95 --pipeport $\OML/cmm/m/it/10.95 <$\T1/cmr/m/n/10.95 n$\OML/cmm/m/it/10.95 >$
+ \T1/cmr/m/n/10.95 --incremental
+[58]
+Overfull \hbox (11.58833pt too wide) in paragraph at lines 66--67
+[]\T1/cmr/m/n/10.95 Exports in-cre-men-tally, ie all changes since last call to
+ com-bi-ne-Ex-port us-ing --incremental 
+
+Overfull \hbox (31.53671pt too wide) in paragraph at lines 88--88
+[]   \T1/cmtt/m/n/10.95 combineExport --jobname atest --profile combine --chars
+et utf8 > Zebrarecs.xml[] 
+
+Overfull \hbox (71.14531pt too wide) in paragraph at lines 93--93
+[] \T1/cmtt/m/n/10.95 Incremental export of all changes from last call using lo
+calhost at port 6234 using the[] 
+
+Overfull \hbox (32.1283pt too wide) in paragraph at lines 101--103
+[]\T1/cmr/m/n/10.95 Alvis XML schema (--profile alvis) at \T1/cmss/m/n/10.95 ht
+tp://project.alvis.info/alvis_docs/enriched-document.xsd 
+) (./combineRun.tex [59]) (./combineUtil.tex [60]
+Overfull \hbox (7.17664pt too wide) in paragraph at lines 80--82
+[]\T1/cmr/m/n/10.95 Deletes all records match-ing the ','-separated list of URl
+ paths (ex-clud-ing net-locations)
+[61]) (./FromHTML.tex) (./FromTeX.tex) (./HTMLExtractor.tex)
+(./LoadTermList.tex [62]) (./Matcher.tex
+Overfull \hbox (31.53671pt too wide) in paragraph at lines 31--31
+[]        \T1/cmtt/m/n/10.95 $stoplist: object pointer to a LoadTermList object
+ with a stoplist loaded[] 
+
+Overfull \hbox (14.5616pt too wide) in paragraph at lines 31--31
+[]        \T1/cmtt/m/n/10.95 $simple: 1=do simple loading; 0=advanced loading (
+might induce errors)[] 
+[63]) (./PosMatcher.tex
+Overfull \hbox (31.53671pt too wide) in paragraph at lines 30--30
+[]        \T1/cmtt/m/n/10.95 $stoplist: object pointer to a LoadTermList object
+ with a stoplist loaded[] 
+
+Overfull \hbox (14.5616pt too wide) in paragraph at lines 30--30
+[]        \T1/cmtt/m/n/10.95 $simple: 1=do simple loading; 0=advanced loading (
+might induce errors)[] 
+[64]) (./RobotRules.tex) (./SD_SQL.tex
+Overfull \hbox (10.15337pt too wide) in paragraph at lines 33--47
+[]\T1/cmr/m/n/10.95 ########################## #Ques-tions, ideas, TO-DOs, etc 
+#Split
+[65]) (./XWI.tex) (./selurl.tex [66])) [67] (./DocMain.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ )
+(see the transcript file for additional information)
+Output written on DocMain.dvi (67 pages, 192172 bytes).
+Transcript written on DocMain.log.
+dvipdf DocMain.dvi DocMain.pdf
+/home/anders/texmf/dvips/psfonts/frutiger.map:56:dvips: strange line
+ (	  )
+dvips: Font ecrm1728 at 8000 not found; scaling 600 instead.
+dvips: Such scaling will generate extremely poor output.
+dvips: Font ecrm1200 at 8000 not found; scaling 600 instead.
+dvips: Font ecrm1095 at 8000 not found; scaling 600 instead.
+dvips: Font ecbx1440 at 8000 not found; scaling 600 instead.
+dvips: Font ecbx1200 at 8000 not found; scaling 600 instead.
+dvips: Font ecbx1095 at 8000 not found; scaling 600 instead.
+dvips: Font ecbx2074 at 8000 not found; scaling 600 instead.
+dvips: Font ecrm0800 at 8000 not found; scaling 600 instead.
+dvips: Font ecrm0600 at 8000 not found; scaling 600 instead.
+dvips: Font ecrm0900 at 8000 not found; scaling 600 instead.
+dvips: Font ectt1095 at 8000 not found; scaling 600 instead.
+dvips: Font ecti1095 at 8000 not found; scaling 600 instead.
+dvips: Font HelveticaNarrow used in file CrawlerSpeed.ps is not in the mapping file.
+dvips: Font ecss1095 at 8000 not found; scaling 600 instead.
+dvips -o DocMain.ps DocMain.dvi
+/home/anders/texmf/dvips/psfonts/frutiger.map:56:dvips: strange line
+ (	  )
+This is dvips(k) 5.92b Copyright 2002 Radical Eye Software (www.radicaleye.com)
+' TeX output 2006.11.08:1418' -> DocMain.ps
+dvips: Font HelveticaNarrow used in file CrawlerSpeed.ps is not in the mapping file.
+<texc.pro><bbad153f.enc><aae443f0.enc><f7b6d320.enc><texps.pro><special.pro>
+. <cmmi8.pfb><cmex10.pfb><cmr10.pfb><cmmi10.pfb><cmsy10.pfb>[1] [2] [3] [4] 
+[5] [6<focusedrobot.eps>] [7] [8] [9] [10] [11] [12] [13] [14
+<CrawlerArchitecture.xfig.eps>] [15] [16] [17] [18<TopicFilter.xfig.eps>] 
+[19] [20] [21] [22] [23] [24<CrawlerSpeed.ps>] [25<Config.ps>] [26] [27] [28] 
+[29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] 
+[44] [45] [46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] 
+[59] [60] [61] [62] [63] [64] [65] [66] [67] 
+latex2html --split 4 --local_icons DocMain.tex
+This is LaTeX2HTML Version 2002-2-1 (1.70)
+by Nikos Drakos, Computer Based Learning Unit, University of Leeds.
+
+Revised and extended by:
+ Marcus Hennecke, Ross Moore, Herb Swan and others
+...producing markup for HTML version 4.0  
+
+
+
+Extension: loading /usr/share/latex2html/versions/latin1.pl
+HTML version: loading /usr/share/latex2html/versions/html4_0.pl
+
+ *** processing declarations ***
+
+OPENING /dbkitnfs/Projects/Combine/DEBIANtmp/combine-3.4/doc/DocMain.tex 
+
+Note: Working directory is /dbkitnfs/Projects/Combine/DEBIANtmp/combine-3.4/doc/DocMain
+Note: Images will be generated in /tmp/l2h18667
+
+texexpand V2002-2-1 (Revision 1.11)
+
+
+
+Loading /usr/share/latex2html/styles/texdefs.perl...
+Package: loading /usr/share/latex2html/styles/article.perl
+Package: loading /usr/share/latex2html/styles/graphics.perl
+Package: loading /usr/share/latex2html/styles/graphics-support.perl
+Package: loading /usr/share/latex2html/styles/getimagesize.perl
+Package: loading /usr/share/latex2html/styles/epsfig.perl
+Package: loading /usr/share/latex2html/styles/html.perl
+Warning: No implementation found for option: `T1' for `fontenc' package
+
+Package: loading /usr/share/latex2html/styles/inputenc.perl
+Reading ...
+++
+@@@@@@@@
+
+Doing ./documentation.tex 
+
+Processing macros ...++
+
+Doing ./Intro.tex 
+%%%%%%%
+Processing macros ...++
+@@@@@@@@@@@@@@
+
+Doing ./OpenSourceDistr.tex 
+%%%%%%%%%%%%%%'''''''
+Processing macros ...++
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Doing ./Configuration.tex 
+
+Processing macros ...++
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Doing ./CrawlerOperation.tex 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%''
+Processing macros ...++
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Doing ./ClassificationEval.tex 
+%%
+Processing macros ...++
+@@@
+
+Doing ./ExpectedPerformance.tex 
+
+Processing macros ...++
+@@@@@@@@@@@@@@@
+
+Doing ./SystemComponents.tex 
+%%%
+Processing macros ...++
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Doing ./FAQ.tex 
+%''''''
+Processing macros ...++
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Doing ./ConfigVars.tex 
+
+Processing macros ...++
+@
+
+Doing ./DepGraph.tex 
+'
+Processing macros ...++
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Doing ./InstallationTest.tex 
+'
+Processing macros ...++
+@@@@
+
+Doing ./PlugInTemplate.tex 
+'
+Processing macros ...++
+@@
+
+Doing ./defaultConfig.tex 
+%%''
+Processing macros ...++
+@@@
+
+Doing ./SQL.tex 
+''''''''''''''''''''''
+Processing macros ...++
+@@@@@@@@@@@@@@@@@@@@@@
+
+Doing ./ManPages.tex 
+
+Processing macros ...++
+
+Doing ./combineCtrl.tex 
+
+Processing macros ...++
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Doing ./combine.tex 
+'''
+Processing macros ...++
+@@@@@@@@@@@@@@@@@@@@
+
+Doing ./combineExport.tex 
+'''''
+Processing macros ...++
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Doing ./combineRun.tex 
+
+Processing macros ...++
+@@@@@@@@@@@@@
+
+Doing ./combineUtil.tex 
+
+Processing macros ...++
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Doing ./FromHTML.tex 
+
+Processing macros ...++
+@@@
+
+Doing ./FromTeX.tex 
+'
+Processing macros ...++
+@@
+
+Doing ./HTMLExtractor.tex 
+
+Processing macros ...++
+@@@@@@@@
+
+Doing ./LoadTermList.tex 
+''''
+Processing macros ...++
+@@@@@@@@@@
+
+Doing ./Matcher.tex 
+'''
+Processing macros ...++
+@@@@@@@@@@@@
+
+Doing ./PosMatcher.tex 
+''''
+Processing macros ...++
+@@@@@@@@@@@@@
+
+Doing ./RobotRules.tex 
+
+Processing macros ...++
+@@@
+
+Doing ./SD_SQL.tex 
+'''
+Processing macros ...++
+@@@@@@@@@@@@
+
+Doing ./XWI.tex 
+'
+Processing macros ...++
+@@@@@@@@
+
+Doing ./selurl.tex 
+%
+Processing macros ...++
+@@@@@@@@@@@@@@
+
+Reading aux file: /dbkitnfs/Projects/Combine/DEBIANtmp/combine-3.4/doc/DocMain.aux ...
+Processing macros ...++.............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+Translating ...
+0/231:top of DocMain: for DocMain.html
+
+ *** translating preamble ***
+..
+Warning: No implementation found for package: a4....
+Warning: No implementation found for package: fontenc.....
+ *** preamble done ***
+;......;...
+
+1/231:tableofcontents:.."Contents" for node1.html
+;..;..
+
+2/231:part:.."Overview" for node2.html
+;;
+
+3/231:section:.."Introduction" for node3.html
+;..,,....,..........;..........
+
+4/231:section:..."Open Source distribution, Installation" for node4.html
+;..;.
+
+5/231:subsection:..."Installation" for node4.html
+;..;.
+
+6/231:subsubsection:...."Installation from source for the impatient" for node4.html
+;,...;..
+
+7/231:subsubsection:...."Porting to not supported operating systems - dependencies" for node4.html
+;,,.....,.;....
+
+8/231:subsubsection:....."Automated Debian/Ubuntu installation" for node4.html
+;,....;..
+
+9/231:subsubsection:...."Manual installation" for node4.html
+;..................,.;..
+
+10/231:subsubsection:...."Installation test" for node4.html
+;,,....;...
+
+11/231:subsection:...."Getting started" for node4.html
+;.,..............;.........
+
+12/231:subsection:..."Detailed documentation" for node4.html
+;.;.
+
+13/231:subsection:..."Use scenarios" for node4.html
+;;
+
+14/231:subsubsection:...."General crawling without restrictions" for node4.html
+;.;.
+
+15/231:subsubsection:...."Focused crawling - domain restrictions" for node4.html
+;,....,,..........;...........
+
+16/231:subsubsection:...."Focused crawling - topic specific" for node4.html
+;..,.....,..............;........
+
+17/231:section:..."Configuration" for node5.html
+;;
+
+18/231:subsection:..."Configuration files" for node5.html
+;..,......,..........,........................;...........
+
+19/231:section:..."Crawler operation" for node6.html
+;.,,....,......,...,.......;......
+
+20/231:subsection:..."URL selection criteria" for node6.html
+;,..............;...........
+
+21/231:subsection:..."Document parsing" for node6.html
+;.,........;...
+
+22/231:subsection:...."URL filtering" for node6.html
+;,,.......,........;......
+
+23/231:subsection:...."Link selection/scheduling policy" for node6.html
+;.,.,.;..
+
+24/231:subsection:...."Built in topic filter - automated subject classification" for node6.html
+;...,,......;....
+
+25/231:subsubsection:....."Topic definition" for node6.html
+;..,....,.....,..,........,.;..
+
+26/231:subsubsection:...."Topic definition (term triplets) BNF grammar" for node6.html
+;.,,...,,.,,.,,....,,..,,.,,.,,..,,...,,..;...........
+
+27/231:subsubsection:...."Term triplet examples" for node6.html
+;.,...........,.,,.....;
+
+28/231:subsubsection:....."Algorithm 1: plain matching" for node6.html
+;.....,,.,,,,,,...;...
+
+29/231:subsubsection:....."Algorithm 2: position weighted matching" for node6.html
+;.....,,.,,.,,,,,.,.,,...;...
+
+30/231:subsection:..."Topic filter Plug-In API" for node6.html
+;...;....
+
+31/231:subsection:..."Analysis" for node6.html
+;.;.
+
+32/231:subsection:..."URL recycling" for node6.html
+;,.....;....
+
+33/231:subsection:..."Complete application - SearchEngine in a Box" for node6.html
+;...;....
+
+34/231:section:..."Evaluation of automated subject classification" for node7.html
+;...;......
+
+35/231:section:.."Performance" for node8.html
+;..,,...............,,....;.........
+
+36/231:section:..."System components" for node9.html
+;........;.
+
+37/231:subsection:..."combineINIT" for node9.html
+;...;
+
+38/231:subsection:..."combineCtrl" for node9.html
+;...;
+
+39/231:subsection:..."combineUtil" for node9.html
+;.;
+
+40/231:subsection:..."combineExport" for node9.html
+;..............;.
+
+41/231:subsection:..."Internal executables and Library modules" for node9.html
+;....;
+
+42/231:subsubsection:...."Library" for node9.html
+;...;.
+
+43/231:bibliography:..
+Reading bbl file: /dbkitnfs/Projects/Combine/DEBIANtmp/combine-3.4/doc/DocMain.bbl ...%
+Processing macros ...++
+@@@@@@@@,...................................
+"Bibliography" for node10.html
+;..;.
+
+44/231:part:..."Gory details" for node11.html
+;;
+
+45/231:section:.."Frequently asked questions" for node12.html
+;,...........................,...,.,....,..,......,....,....................,.,...;...........
+
+46/231:section:..."Configuration variables" for node13.html
+;;
+
+47/231:subsection:..."Name/value configuration variables" for node13.html
+;;
+
+48/231:subsubsection:....."AutoRecycleLinks" for node13.html
+;,;.
+
+49/231:subsubsection:....."baseConfigDir" for node13.html
+;,;
+
+50/231:subsubsection:....."classifyPlugIn" for node13.html
+;,;.....
+
+51/231:subsubsection:....."configDir" for node13.html
+;,;..
+
+52/231:subsubsection:....."doAnalyse" for node13.html
+;,;
+
+53/231:subsubsection:....."doCheckRecord" for node13.html
+;,;.
+
+54/231:subsubsection:....."doOAI" for node13.html
+;,;
+
+55/231:subsubsection:....."extractLinksFromText" for node13.html
+;,;
+
+56/231:subsubsection:....."HarvesterMaxMissions" for node13.html
+;,;
+
+57/231:subsubsection:....."HarvestRetries" for node13.html
+;,;
+
+58/231:subsubsection:....."httpProxy" for node13.html
+;,;
+
+59/231:subsubsection:....."LogHandle" for node13.html
+;,;..
+
+60/231:subsubsection:....."Loglev" for node13.html
+;,;
+
+61/231:subsubsection:....."maxUrlLength" for node13.html
+;,;
+
+62/231:subsubsection:....."MySQLdatabase" for node13.html
+;,;
+
+63/231:subsubsection:....."MySQLhandle" for node13.html
+;,;.
+
+64/231:subsubsection:....."Operator-Email" for node13.html
+;,;
+
+65/231:subsubsection:....."Password" for node13.html
+;,;
+
+66/231:subsubsection:....."saveHTML" for node13.html
+;,;
+
+67/231:subsubsection:....."SdqRetries" for node13.html
+;,;
+
+68/231:subsubsection:....."SummaryLength" for node13.html
+;,;
+
+69/231:subsubsection:....."UAtimeout" for node13.html
+;,;
+
+70/231:subsubsection:....."UserAgentFollowRedirects" for node13.html
+;,;
+
+71/231:subsubsection:....."UserAgentGetIfModifiedSince" for node13.html
+;,;
+
+72/231:subsubsection:....."useTidy" for node13.html
+;,;
+
+73/231:subsubsection:....."WaitIntervalExpirationGuaranteed" for node13.html
+;,;
+
+74/231:subsubsection:....."WaitIntervalHarvesterLockNotFound" for node13.html
+;,;
+
+75/231:subsubsection:....."WaitIntervalHarvesterLockNotModified" for node13.html
+;,;
+
+76/231:subsubsection:....."WaitIntervalHarvesterLockRobotRules" for node13.html
+;,;
+
+77/231:subsubsection:....."WaitIntervalHarvesterLockSuccess" for node13.html
+;,;
+
+78/231:subsubsection:....."WaitIntervalHarvesterLockUnavailable" for node13.html
+;,;
+
+79/231:subsubsection:....."WaitIntervalHost" for node13.html
+;,;.
+
+80/231:subsubsection:....."WaitIntervalRrdLockDefault" for node13.html
+;,;
+
+81/231:subsubsection:....."WaitIntervalRrdLockNotFound" for node13.html
+;,;
+
+82/231:subsubsection:....."WaitIntervalRrdLockSuccess" for node13.html
+;,;
+
+83/231:subsubsection:....."WaitIntervalSchedulerGetJcf" for node13.html
+;,;
+
+84/231:subsubsection:....."ZebraHost" for node13.html
+;,;
+
+85/231:subsection:..."Complex configuration variables" for node13.html
+;;
+
+86/231:subsubsection:....."allow" for node13.html
+;,;..
+
+87/231:subsubsection:....."binext" for node13.html
+;,;
+
+88/231:subsubsection:....."converters" for node13.html
+;,;........
+
+89/231:subsubsection:....."exclude" for node13.html
+;,;.......
+
+90/231:subsubsection:....."serveralias" for node13.html
+;,;......
+
+91/231:subsubsection:....."sessionids" for node13.html
+;,;
+
+92/231:subsubsection:....."url" for node13.html
+;,.;
+
+93/231:section:..."Module dependences" for node14.html
+;;
+
+94/231:subsection:..."Programs" for node14.html
+;;
+
+95/231:subsubsection:...."combine" for node14.html
+;,.;.
+
+96/231:subsubsection:...."combineCtrl" for node14.html
+;,.;.
+
+97/231:subsubsection:...."combineExport" for node14.html
+;,.;
+
+98/231:subsubsection:...."combineINIT" for node14.html
+;,.;
+
+99/231:subsubsection:...."combineUtil" for node14.html
+;,.;.
+
+100/231:subsection:..."Library modules" for node14.html
+;;
+
+101/231:subsubsection:....."Check_record.pm" for node14.html
+;,..;
+
+102/231:subsubsection:...."CleanXML2CanDoc.pm" for node14.html
+;,..;
+
+103/231:subsubsection:...."Config.pm" for node14.html
+;,..;...
+
+104/231:subsubsection:...."DataBase.pm" for node14.html
+;,..;
+
+105/231:subsubsection:...."FromHTML.pm" for node14.html
+;,..;
+
+106/231:subsubsection:...."FromImage.pm" for node14.html
+;,..;
+
+107/231:subsubsection:...."HTMLExtractor.pm" for node14.html
+;,..;
+
+108/231:subsubsection:...."LoadTermList.pm" for node14.html
+;,..;..
+
+109/231:subsubsection:...."LogSQL.pm" for node14.html
+;,..;
+
+110/231:subsubsection:...."Matcher.pm" for node14.html
+;,..;.
+
+111/231:subsubsection:...."MySQLhdb.pm" for node14.html
+;,..;
+
+112/231:subsubsection:....."PosCheck_record.pm" for node14.html
+;,..;
+
+113/231:subsubsection:...."PosMatcher.pm" for node14.html
+;,..;.
+
+114/231:subsubsection:...."RobotRules.pm" for node14.html
+;,..;
+
+115/231:subsubsection:....."SD_SQL.pm" for node14.html
+;,..;
+
+116/231:subsubsection:...."UA.pm" for node14.html
+;,..;
+
+117/231:subsubsection:...."XWI.pm" for node14.html
+;,..;.
+
+118/231:subsubsection:...."XWI2XML.pm" for node14.html
+;,..;
+
+119/231:subsubsection:...."Zebra.pm" for node14.html
+;,..;
+
+120/231:subsubsection:...."selurl.pm" for node14.html
+;,..;.
+
+121/231:subsection:...."External modules" for node14.html
+;.,..;..
+
+122/231:section:..."APPENDIX" for node15.html
+;;
+
+123/231:subsection:...."Simple installation test" for node15.html
+;....;
+
+124/231:subsubsection:...."InstallationTest.pl" for node15.html
+;,;
+
+125/231:subsection:...."Example topic filter plug in" for node15.html
+;..;
+
+126/231:subsubsection:...."classifyPlugInTemplate.pm" for node15.html
+;,;
+
+127/231:subsection:..."Default configuration files" for node15.html
+;.;.
+
+128/231:subsubsection:...."Global" for node15.html
+;.,;
+
+129/231:subsubsection:...."Job specific" for node15.html
+;.,;
+
+130/231:subsection:...."SQL database" for node15.html
+;;
+
+131/231:subsubsection:...."Create database" for node15.html
+;;...
+
+132/231:subsubsection:...."Creating MySQL tables" for node15.html
+;;........................
+
+133/231:subsubsection:...."Data tables" for node15.html
+;,.,.,.,.,.,.;
+
+134/231:subsubsection:...."Administrative tables" for node15.html
+;,.,.,.,.,.,.,.,.,.,.,.,.,.,.;...
+
+135/231:subsubsection:...."Create user dbuser with required priviligies" for node15.html
+;,.,.;
+
+136/231:subsection:..."Manual pages" for node15.html
+;;
+
+137/231:subsubsection:...."combineCtrl" for node15.html
+;;
+
+138/231:paragraph:......."NAME" for node15.html
+;..;
+
+139/231:paragraph:......."SYNOPSIS" for node15.html
+;.,,,,..;.
+
+140/231:paragraph:......."OPTIONS AND ARGUMENTS" for node15.html
+;..;
+
+141/231:subparagraphstar:..."Actions starting/killing crawlers" for node15.html
+;,....;....
+
+142/231:subparagraphstar:..."Actions loading or recycling URLs for crawling" for node15.html
+;,......;...
+
+143/231:subparagraphstar:..."Actions for controlling scheduling of URLs" for node15.html
+;,........;....
+
+144/231:subparagraphstar:..."Misc actions" for node15.html
+;,..........;.....
+
+145/231:paragraph:......."DESCRIPTION" for node15.html
+;...;
+
+146/231:paragraph:......."EXAMPLES" for node15.html
+;,,.............;......
+
+147/231:paragraph:......."SEE ALSO" for node15.html
+;...;.
+
+148/231:paragraph:......."AUTHOR" for node15.html
+;.,,.;.
+
+149/231:paragraph:......."COPYRIGHT AND LICENSE" for node15.html
+;...;..
+
+150/231:subsubsection:...."combine" for node15.html
+;;
+
+151/231:paragraph:......."NAME" for node15.html
+;..;
+
+152/231:paragraph:......."SYNOPSIS" for node15.html
+;.,,,,.;.
+
+153/231:paragraph:......."OPTIONS AND ARGUMENTS" for node15.html
+;...;
+
+154/231:paragraph:......."DESCRIPTION" for node15.html
+;...,,,..;..
+
+155/231:paragraph:......."SEE ALSO" for node15.html
+;...;.
+
+156/231:paragraph:......."AUTHOR" for node15.html
+;.,,.;.
+
+157/231:paragraph:......."COPYRIGHT AND LICENSE" for node15.html
+;...;..
+
+158/231:subsubsection:...."combineExport" for node15.html
+;;
+
+159/231:paragraph:......."NAME" for node15.html
+;..;
+
+160/231:paragraph:......."SYNOPSIS" for node15.html
+;.,,,,,,,,,,,,,,,.;......
+
+161/231:paragraph:......."OPTIONS AND ARGUMENTS" for node15.html
+;..,...................;........
+
+162/231:paragraph:......."DESCRIPTION" for node15.html
+;;
+
+163/231:paragraph:......."EXAMPLES" for node15.html
+;,,,,;
+
+164/231:paragraph:......."SEE ALSO" for node15.html
+;....;..
+
+165/231:paragraph:......."AUTHOR" for node15.html
+;.,,.;.
+
+166/231:paragraph:......."COPYRIGHT AND LICENSE" for node15.html
+;...,;.
+
+167/231:subsubsection:...."combineRun" for node15.html
+;;
+
+168/231:paragraph:......."NAME" for node15.html
+;..;
+
+169/231:paragraph:......."SYNOPSIS" for node15.html
+;.,,,,.;.
+
+170/231:paragraph:......."DESCRIPTION" for node15.html
+;..;.
+
+171/231:paragraph:......."SEE ALSO" for node15.html
+;..;
+
+172/231:paragraph:......."AUTHOR" for node15.html
+;.,,.;.
+
+173/231:paragraph:......."COPYRIGHT AND LICENSE" for node15.html
+;...;..
+
+174/231:subsubsection:...."combineUtil" for node15.html
+;;
+
+175/231:paragraph:......."NAME" for node15.html
+;..;
+
+176/231:paragraph:......."SYNOPSIS" for node15.html
+;.,,,,..;.
+
+177/231:paragraph:......."OPTIONS AND ARGUMENTS" for node15.html
+;..;
+
+178/231:subparagraphstar:..."Actions listing statistics" for node15.html
+;,......;...
+
+179/231:subparagraphstar:..."Actions for sanity controlls" for node15.html
+;,......;...
+
+180/231:subparagraphstar:..."Action all" for node15.html
+;..;
+
+181/231:subparagraphstar:..."Actions for deleting records" for node15.html
+;,........;......
+
+182/231:subparagraphstar:..."Actions for handling server aliases" for node15.html
+;,....;..
+
+183/231:paragraph:......."DESCRIPTION" for node15.html
+;..;
+
+184/231:paragraph:......."EXAMPLES" for node15.html
+;,...;.
+
+185/231:paragraph:......."SEE ALSO" for node15.html
+;...;.
+
+186/231:paragraph:......."AUTHOR" for node15.html
+;.,,.;.
+
+187/231:paragraph:......."COPYRIGHT AND LICENSE" for node15.html
+;...;..
+
+188/231:subsubsection:...."Combine::FromHTML" for node15.html
+;;
+
+189/231:paragraph:......."NAME" for node15.html
+;..;
+
+190/231:paragraph:......."AUTHOR" for node15.html
+;.,,,,,,,,,,,;......
+
+191/231:subsubsection:...."Combine::FromTeX" for node15.html
+;;
+
+192/231:paragraph:......."NAME" for node15.html
+;..;
+
+193/231:paragraph:......."AUTHOR" for node15.html
+;,;
+
+194/231:subsubsection:...."Combine::HTMLExtractor" for node15.html
+;;
+
+195/231:paragraph:......."NAME" for node15.html
+;..;
+
+196/231:paragraph:......."DESCRIPTION" for node15.html
+;..;
+
+197/231:paragraph:......."AUTHOR Anders Ardo" for node15.html
+;..;
+
+198/231:paragraph:......."LICENSE" for node15.html
+;..;
+
+199/231:subsubsection:...."Combine::LoadTermList" for node15.html
+;;
+
+200/231:paragraph:......."NAME" for node15.html
+;..;
+
+201/231:paragraph:......."DESCRIPTION" for node15.html
+;...,,,,;
+
+202/231:paragraph:......."AUTHOR" for node15.html
+;.,,.;.
+
+203/231:paragraph:......."COPYRIGHT AND LICENSE" for node15.html
+;...;..
+
+204/231:subsubsection:...."Combine::Matcher" for node15.html
+;;
+
+205/231:paragraph:......."NAME" for node15.html
+;..;
+
+206/231:paragraph:......."DESCRIPTION" for node15.html
+;...,,,..;.................
+
+207/231:paragraph:......."AUTHOR" for node15.html
+;.,,.;.
+
+208/231:paragraph:......."COPYRIGHT AND LICENSE" for node15.html
+;...;..
+
+209/231:subsubsection:...."Combine::PosMatcher" for node15.html
+;;
+
+210/231:paragraph:......."NAME" for node15.html
+;..;
+
+211/231:paragraph:......."DESCRIPTION" for node15.html
+;...,,,,...;...................
+
+212/231:paragraph:......."AUTHOR" for node15.html
+;.,,.;.
+
+213/231:paragraph:......."COPYRIGHT AND LICENSE" for node15.html
+;...;..
+
+214/231:subsubsection:...."Combine::RobotRules" for node15.html
+;;
+
+215/231:paragraph:......."NAME" for node15.html
+;..;
+
+216/231:paragraph:......."AUTHOR" for node15.html
+;.;
+
+217/231:subsubsection:....."Combine::SD_SQL" for node15.html
+;;
+
+218/231:paragraph:......."NAME" for node15.html
+;..;.
+
+219/231:paragraph:......."DESCRIPTION" for node15.html
+;..,,...,,,;......................................................
+
+220/231:paragraph:......."AUTHOR" for node15.html
+;.,,.;.
+
+221/231:paragraph:......."COPYRIGHT AND LICENSE" for node15.html
+;...;..
+
+222/231:subsubsection:...."Combine::XWI" for node15.html
+;;
+
+223/231:paragraph:......."NAME" for node15.html
+;..;
+
+224/231:paragraph:......."DESCRIPTION" for node15.html
+;,;
+
+225/231:paragraph:......."AUTHOR" for node15.html
+;.,,.,,.;..
+
+226/231:paragraph:......."COPYRIGHT AND LICENSE" for node15.html
+;...;..
+
+227/231:subsubsection:...."Combine::selurl" for node15.html
+;;
+
+228/231:paragraph:......."NAME" for node15.html
+;..;
+
+229/231:paragraph:......."INTRODUCTION" for node15.html
+;.....;...
+
+230/231:paragraph:......."BUGS" for node15.html
+;.......;......
+
+231/231:partstar:.."About this document ..." for node16.html
+;;.
+
+Writing image file ...
+
+This is e-TeX, Version 3.14159-2.1 (Web2C 7.4.5)
+entering extended mode
+(./images.tex
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, nohyphenation, loaded.
+
+
+ *** processing 24 images ***
+
+Generating postscript images using dvips ...
+/home/anders/texmf/dvips/psfonts/frutiger.map:56:/usr/bin/dvips: strange line
+ (	  )
+This is dvips(k) 5.92b Copyright 2002 Radical Eye Software (www.radicaleye.com)
+' TeX output 2006.11.08:1419' -> /tmp/l2h18667/image
+kpathsea: Running mktexpk --mfmode ljfour --bdpi 8000 --mag 1+0/8000 --dpi 8000 ecrm1095
+mktexpk: Mismatched mode ljfour and resolution 8000; ignoring mode.
+mktexpk: Can't guess mode for 8000 dpi devices.
+mktexpk: Use a config file, or update me.
+kpathsea: Appending font creation commands to missfont.log.
+/usr/bin/dvips: Font ecrm1095 at 8000 not found; scaling 600 instead.
+/usr/bin/dvips: Such scaling will generate extremely poor output.
+/usr/bin/dvips: Font HelveticaNarrow used in file CrawlerSpeed.ps is not in the mapping file.
+(-> /tmp/l2h18667/image001) <tex.pro><alt-rule.pro><texc.pro><bbad153f.enc>
+<aae443f0.enc><f7b6d320.enc><texps.pro><special.pro><color.pro>[1
+<focusedrobot.eps>] (-> /tmp/l2h18667/image002) <tex.pro><alt-rule.pro>
+<texc.pro><bbad153f.enc><aae443f0.enc><f7b6d320.enc><texps.pro><special.pro>
+<color.pro><cmsy10.pfb>[2] (-> /tmp/l2h18667/image003) <tex.pro>
+<alt-rule.pro><texc.pro><bbad153f.enc><aae443f0.enc><f7b6d320.enc><texps.pro>
+<special.pro><color.pro>[3<CrawlerArchitecture.xfig.eps>] 
+(-> /tmp/l2h18667/image004) <tex.pro><alt-rule.pro><texc.pro><bbad153f.enc>
+<aae443f0.enc><f7b6d320.enc><texps.pro><special.pro><color.pro>[4
+<TopicFilter.xfig.eps>] (-> /tmp/l2h18667/image005) <tex.pro><alt-rule.pro>
+<texc.pro><bbad153f.enc><aae443f0.enc><f7b6d320.enc><texps.pro><special.pro>
+<color.pro><cmsy10.pfb>[5] (-> /tmp/l2h18667/image006) <tex.pro>
+<alt-rule.pro><texc.pro><bbad153f.enc><aae443f0.enc><f7b6d320.enc><texps.pro>
+<special.pro><color.pro><cmmi10.pfb>[6] (-> /tmp/l2h18667/image007) <tex.pro>
+<alt-rule.pro><texc.pro><bbad153f.enc><aae443f0.enc><f7b6d320.enc><texps.pro>
+<special.pro><color.pro><cmmi10.pfb>[7] (-> /tmp/l2h18667/image008) <tex.pro>
+<alt-rule.pro><texc.pro><bbad153f.enc><aae443f0.enc><f7b6d320.enc><texps.pro>
+<special.pro><color.pro><cmr10.pfb>[8] (-> /tmp/l2h18667/image009) <tex.pro>
+<alt-rule.pro><texc.pro><bbad153f.enc><aae443f0.enc><f7b6d320.enc><texps.pro>
+<special.pro><color.pro><cmmi8.pfb><cmex10.pfb><cmr10.pfb><cmmi10.pfb>
+<cmsy10.pfb>[9] (-> /tmp/l2h18667/image010) <tex.pro><alt-rule.pro><texc.pro>
+<bbad153f.enc><aae443f0.enc><f7b6d320.enc><texps.pro><special.pro><color.pro>
+<cmmi8.pfb><cmr10.pfb><cmmi10.pfb>[10] (-> /tmp/l2h18667/image011) <tex.pro>
+<alt-rule.pro><texc.pro><bbad153f.enc><aae443f0.enc><f7b6d320.enc><texps.pro>
+<special.pro><color.pro><cmmi8.pfb><cmr10.pfb><cmmi10.pfb>[11] 
+(-> /tmp/l2h18667/image012) <tex.pro><alt-rule.pro><texc.pro><bbad153f.enc>
+<aae443f0.enc><f7b6d320.enc><texps.pro><special.pro><color.pro><cmmi8.pfb>
+<cmr10.pfb><cmmi10.pfb>[12] (-> /tmp/l2h18667/image013) <tex.pro>
+<alt-rule.pro><texc.pro><bbad153f.enc><aae443f0.enc><f7b6d320.enc><texps.pro>
+<special.pro><color.pro><cmmi8.pfb>[13] (-> /tmp/l2h18667/image014) <tex.pro>
+<alt-rule.pro><texc.pro><bbad153f.enc><aae443f0.enc><f7b6d320.enc><texps.pro>
+<special.pro><color.pro><cmmi8.pfb>[14] (-> /tmp/l2h18667/image015) <tex.pro>
+<alt-rule.pro><texc.pro><bbad153f.enc><aae443f0.enc><f7b6d320.enc><texps.pro>
+<special.pro><color.pro><cmmi8.pfb><cmex10.pfb><cmr10.pfb><cmmi10.pfb>
+<cmsy10.pfb>[15] (-> /tmp/l2h18667/image016) <tex.pro><alt-rule.pro>
+<texc.pro><bbad153f.enc><aae443f0.enc><f7b6d320.enc><texps.pro><special.pro>
+<color.pro><cmmi8.pfb><cmr10.pfb><cmmi10.pfb>[16] 
+(-> /tmp/l2h18667/image017) <tex.pro><alt-rule.pro><texc.pro><bbad153f.enc>
+<aae443f0.enc><f7b6d320.enc><texps.pro><special.pro><color.pro><cmmi8.pfb>
+[17] (-> /tmp/l2h18667/image018) <tex.pro><alt-rule.pro><texc.pro>
+<bbad153f.enc><aae443f0.enc><f7b6d320.enc><texps.pro><special.pro><color.pro>
+<cmmi10.pfb>[18] (-> /tmp/l2h18667/image019) <tex.pro><alt-rule.pro>
+<texc.pro><bbad153f.enc><aae443f0.enc><f7b6d320.enc><texps.pro><special.pro>
+<color.pro><cmr10.pfb><cmmi10.pfb>[19] (-> /tmp/l2h18667/image020) <tex.pro>
+<alt-rule.pro><texc.pro><bbad153f.enc><aae443f0.enc><f7b6d320.enc><texps.pro>
+<special.pro><color.pro><cmmi8.pfb><cmr10.pfb><cmmi10.pfb>[20] 
+(-> /tmp/l2h18667/image021) <tex.pro><alt-rule.pro><texc.pro><bbad153f.enc>
+<aae443f0.enc><f7b6d320.enc><texps.pro><special.pro><color.pro><cmr10.pfb>
+<cmmi10.pfb>[21] (-> /tmp/l2h18667/image022) <tex.pro><alt-rule.pro>
+<texc.pro><bbad153f.enc><aae443f0.enc><f7b6d320.enc><texps.pro><special.pro>
+<color.pro>[22<CrawlerSpeed.ps>] (-> /tmp/l2h18667/image023) <tex.pro>
+<alt-rule.pro><texc.pro><bbad153f.enc><aae443f0.enc><f7b6d320.enc><texps.pro>
+<special.pro><color.pro>[23<Config.ps>] (-> /tmp/l2h18667/image024) <tex.pro>
+<alt-rule.pro><texc.pro><bbad153f.enc><aae443f0.enc><f7b6d320.enc><texps.pro>
+<special.pro><color.pro><cmsy10.pfb>[24] 
+Converting image #6
+Converting image #20
+Converting image #7
+Converting image #23
+Converting image #16
+Converting image #5
+Converting image #14
+Converting image #18
+Converting image #13
+Converting image #21
+Converting image #2
+Converting image #1
+Converting image #24
+Converting image #8
+Converting image #10
+Converting image #4
+Converting image #19
+Converting image #3
+Converting image #9
+Converting image #22
+Converting image #11
+Converting image #15
+Converting image #17
+Converting image #12
+
+Doing section links ......
+Doing table of contents .........,,,,,,,,,,,,..,..,,,,,,,,,,,,,,......,,,,,,........,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,..,,,,,,,,,,,,,,,,,,,,,,,,,,,,..,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,...
+Copying navigation icons ...
+ *** Adding document-specific styles *** 
+
+*********** WARNINGS ***********  
+No implementation found for style `fontenc'
+
+Unknown commands: vbox
+Done.
+\rm -rf HTML
+mv DocMain HTML
+make[1]: Leaving directory `/dbkitnfs/Projects/Combine/DEBIANtmp/combine-3.4/doc'

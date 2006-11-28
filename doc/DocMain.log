@@ -1,0 +1,922 @@
+This is e-TeX, Version 3.14159-2.1 (Web2C 7.4.5) (format=latex 2005.11.29)  8 NOV 2006 14:18
+entering extended mode
+**DocMain.tex
+(./DocMain.tex
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size11.clo
+File: size11.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/ntgclass/a4.sty
+Package: a4 1999/03/03 v1.2f A4 based page layout
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2001/08/31 v1.1 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: dvips.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+(/usr/share/texmf/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+\epsfxsize=\dimen105
+\epsfysize=\dimen106
+)
+(/usr/share/texmf/tex/latex/html/html.sty
+Package: html 1999/07/19 v1.38 hypertext commands for latex2html (nd, hws, rrm)
+
+\c@lpart=\count87
+\c@lchapter=\count88
+\c@chapter=\count89
+\c@lsection=\count90
+\c@lsubsection=\count91
+\c@lsubsubsection=\count92
+\c@lparagraph=\count93
+\c@lsubparagraph=\count94
+\c@lsubsubparagraph=\count95
+\ptrfile=\write3
+)
+(/usr/share/texmf/tex/latex/base/fontenc.sty
+Package: fontenc 2001/06/05 v1.94 Standard LaTeX package
+
+(/usr/share/texmf/tex/latex/base/t1enc.def
+File: t1enc.def 2001/06/05 v1.94 Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 38.
+))
+(/usr/share/texmf/tex/latex/base/inputenc.sty
+Package: inputenc 2001/07/10 v0.99a Input encoding file 
+
+(/usr/share/texmf/tex/latex/base/latin1.def
+File: latin1.def 2001/07/10 v0.99a Input encoding file 
+)) (./DocMain.aux
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `SYNOPSIS' multiply defined.
+
+
+LaTeX Warning: Label `OPTIONS_AND_ARGUMENTS' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `SEE_ALSO' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `COPYRIGHT_AND_LICENSE' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `SYNOPSIS' multiply defined.
+
+
+LaTeX Warning: Label `OPTIONS_AND_ARGUMENTS' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `EXAMPLES' multiply defined.
+
+
+LaTeX Warning: Label `SEE_ALSO' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `COPYRIGHT_AND_LICENSE' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `SYNOPSIS' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `SEE_ALSO' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `COPYRIGHT_AND_LICENSE' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `SYNOPSIS' multiply defined.
+
+
+LaTeX Warning: Label `OPTIONS_AND_ARGUMENTS' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `EXAMPLES' multiply defined.
+
+
+LaTeX Warning: Label `SEE_ALSO' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `COPYRIGHT_AND_LICENSE' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `COPYRIGHT_AND_LICENSE' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `COPYRIGHT_AND_LICENSE' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `COPYRIGHT_AND_LICENSE' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `COPYRIGHT_AND_LICENSE' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+
+LaTeX Warning: Label `DESCRIPTION' multiply defined.
+
+
+LaTeX Warning: Label `AUTHOR' multiply defined.
+
+
+LaTeX Warning: Label `COPYRIGHT_AND_LICENSE' multiply defined.
+
+
+LaTeX Warning: Label `NAME' multiply defined.
+
+)
+\openout1 = `DocMain.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 17.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 17.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 17.
+ [1
+
+] (./DocMain.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 4.
+ [2] [3] [4])
+\tf@toc=\write4
+\openout4 = `DocMain.toc'.
+
+ [5] (./documentation.tex (./Intro.tex
+File: focusedrobot.eps Graphic file (type eps)
+
+<focusedrobot.eps>
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 21.
+ (/usr/share/texmf/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 21.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 21.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 21.
+ [6]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 63.
+
+(/usr/share/texmf/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)) (./OpenSourceDistr.tex [7]
+[8]
+Overfull \hbox (4.39449pt too wide) in paragraph at lines 110--112
+[]\T1/cmr/m/n/10.95 '\T1/cmtt/m/n/10.95 conf\T1/cmr/m/n/10.95 ' con-tains the d
+e-fault con-fig-u-ra-tion files. Com-bine looks for them in \T1/cmtt/m/n/10.95 
+/etc/combine/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
+
+ []
+
+
+Overfull \hbox (105.09554pt too wide) in paragraph at lines 132--132
+[]\T1/cmtt/m/n/10.95 combine --jobname aatest --harvest http://combine.it.lth.s
+e/CombineTests/InstallationTest.html[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--134
+
+ []
+
+
+Overfull \hbox (14.5616pt too wide) in paragraph at lines 149--149
+[]\T1/cmtt/m/n/10.95 <documentCollection version="1.1" xmlns:dc="http://purl.or
+g/dc/elements/1.1/">[] 
+ []
+
+[9]
+Overfull \hbox (82.46205pt too wide) in paragraph at lines 149--149
+[]\T1/cmtt/m/n/10.95 <dc:identifier>http://combine.it.lth.se/CombineTests/Insta
+llationTest.html</dc:identifier>[] 
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 205--207
+
+ []
+
+
+Overfull \hbox (36.27829pt too wide) in paragraph at lines 214--214
+ []\T1/cmtt/m/n/10.95 #use either URL or HOST: (obs ':') to match regular expre
+ssions to either the[] 
+ []
+
+
+Overfull \hbox (7.98643pt too wide) in paragraph at lines 214--214
+ []\T1/cmtt/m/n/10.95 #Allow crawl of URLs or hostnames that matches these regu
+lar expressions[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--216
+
+ []
+
+
+Overfull \hbox (36.27829pt too wide) in paragraph at lines 224--224
+ []\T1/cmtt/m/n/10.95 #use either URL or HOST: (obs ':') to match regular expre
+ssions to either the[] 
+ []
+
+
+Overfull \hbox (7.98643pt too wide) in paragraph at lines 224--224
+ []\T1/cmtt/m/n/10.95 #Allow crawl of URLs or hostnames that matches these regu
+lar expressions[] 
+ []
+
+
+Overfull \hbox (2.32806pt too wide) in paragraph at lines 231--234
+\T1/cmtt/m/n/10.95 echo 'http://combine.it.lth.se/' | combineCtrl load []--jobn
+ame focustest 
+ []
+
+[11]) (./Configuration.tex [12]
+Overfull \hbox (0.48239pt too wide) in paragraph at lines 32--37
+\T1/cmr/m/n/10.95 sub-di-rec-tory in \T1/cmtt/m/n/10.95 /etc/combine \T1/cmr/m/
+n/10.95 and pop-u-lates it with some files in-clud-ing \T1/cmtt/m/n/10.95 combi
+ne.cfg
+ []
+
+) (./CrawlerOperation.tex [13]
+File: CrawlerArchitecture.xfig.eps Graphic file (type eps)
+ <CrawlerArchitecture.xfig.eps> [14]
+Underfull \hbox (badness 10000) in paragraph at lines 105--107
+
+ []
+
+[15] [16]
+File: TopicFilter.xfig.eps Graphic file (type eps)
+ <TopicFilter.xfig.eps> [17]
+Overfull \hbox (1.96063pt too wide) in paragraph at lines 293--299
+\T1/cmr/m/n/10.95 Located in \T1/cmtt/m/n/10.95 /etc/combine/<jobname>/topicdef
+inition.txt\T1/cmr/m/n/10.95 . Topic def-i-ni-tions use triplets
+ []
+
+[18]
+Overfull \hbox (3.35924pt too wide) in paragraph at lines 317--322
+\T1/cmr/m/n/10.95 ``\T1/cmtt/m/n/10.95 glass art[^^B$\OMS/cmsy/m/n/10.95 n$\T1/
+cmtt/m/n/10.95 s]*\T1/cmr/m/n/10.95 '' will match ``\T1/cmtt/m/n/10.95 glass ar
+t\T1/cmr/m/n/10.95 '', ``\T1/cmtt/m/n/10.95 glass arts\T1/cmr/m/n/10.95 '', ``\
+T1/cmtt/m/n/10.95 glass artists\T1/cmr/m/n/10.95 '', ``\T1/cmtt/m/n/10.95 glass
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 347--356
+
+ []
+
+[19]
+Overfull \hbox (32.24867pt too wide) in paragraph at lines 394--396
+\T1/cmr/m/n/10.95 The term ``\T1/cmtt/m/n/10.95 D$\OMS/cmsy/m/n/10.95 n$\T1/cmt
+t/m/n/10.95 .?$\OMS/cmsy/m/n/10.95 n$\T1/cmtt/m/n/10.95 s*californica\T1/cmr/m/
+n/10.95 '' will match \T1/cmtt/m/n/10.95 D californica, D. californica, D.calif
+ornica
+ []
+
+
+Overfull \hbox (10.91055pt too wide) in paragraph at lines 403--405
+\T1/cmr/m/n/10.95 Selected by set-ting the con-fig-u-ra-tion pa-ram-e-ter \T1/c
+mtt/m/n/10.95 classifyPlugIn = Combine::Check_record 
+ []
+
+
+Overfull \hbox (27.88567pt too wide) in paragraph at lines 437--439
+\T1/cmr/m/n/10.95 Selected by set-ting the con-fig-u-ra-tion pa-ram-e-ter \T1/c
+mtt/m/n/10.95 classifyPlugIn = Combine::PosCheck_record 
+ []
+
+[20] [21]
+Overfull \hbox (4.6943pt too wide) in paragraph at lines 515--517
+[]\T1/cmr/m/n/10.95 The com-mand \T1/cmtt/m/n/10.95 combineCtrl --jobname XXXX 
+reharvest \T1/cmr/m/n/10.95 marks all pages in the database
+ []
+
+) (./ClassificationEval.tex [22]) (./ExpectedPerformance.tex
+File: CrawlerSpeed.ps Graphic file (type eps)
+ <CrawlerSpeed.ps>
+[23]
+File: Config.ps Graphic file (type eps)
+ <Config.ps>) (./SystemComponents.tex [24]) (./DocMain.bbl [25])) [26]
+(./FAQ.tex
+Overfull \hbox (16.99898pt too wide) in paragraph at lines 8--10
+[]\T1/cmr/m/n/10.95 I can't fig-ure out how to re-strict the crawler to pages b
+e-low '\T1/cmtt/m/n/10.95 http://www.foo.com/bar/\T1/cmr/m/n/10.95 '? 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--44
+
+ []
+
+[27]
+Overfull \hbox (32.56029pt too wide) in paragraph at lines 97--101
+\T1/cmr/m/n/10.95 the file is "nu-meric_importance: term=TopicClass" e.g. "\T1/
+cmtt/m/n/10.95 100: icecream=YahooIce\T1/cmr/m/n/10.95 "
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--101
+
+ []
+
+
+Overfull \hbox (60.36832pt too wide) in paragraph at lines 120--120
+ []\T1/cmtt/m/n/10.95 #use either URL or HOST: (obs ':') to match regular expre
+ssions to either the[] 
+ []
+
+
+Overfull \hbox (32.07646pt too wide) in paragraph at lines 120--120
+ []\T1/cmtt/m/n/10.95 #Allow crawl of URLs or hostnames that matches these regu
+lar expressions[] 
+ []
+
+
+Overfull \hbox (60.36832pt too wide) in paragraph at lines 131--131
+ []\T1/cmtt/m/n/10.95 #use either URL or HOST: (obs ':') to match regular expre
+ssions to either the[] 
+ []
+
+
+Overfull \hbox (32.07646pt too wide) in paragraph at lines 131--131
+ []\T1/cmtt/m/n/10.95 #Allow crawl of URLs or hostnames that matches these regu
+lar expressions[] 
+ []
+
+[28]
+Overfull \hbox (116.95203pt too wide) in paragraph at lines 169--170
+[][]\T1/cmtt/m/n/10.95 | 5409 | HARVPARS 1_zltest | 2006-07-14 15:08:52 | M500;
+ SD empty, sleep 20 second... | 
+ []
+
+
+Overfull \hbox (230.11945pt too wide) in paragraph at lines 176--177
+[][]\T1/cmtt/m/n/10.95 | 7352 | HARVPARS 1_wctest | 2006-07-14 17:00:59 | M500;
+ urlid=1; netlocid=1; http://www.shanghaidaily.com/ 
+ []
+
+
+Overfull \hbox (18.42393pt too wide) in paragraph at lines 178--183
+[]\T1/cmr/m/n/10.95 Crawler pro-cess 7352 got a url (http://www.shanghaidaily.c
+om/) to check (1_wctest
+ []
+
+
+Overfull \hbox (43.3932pt too wide) in paragraph at lines 185--186
+[][]\T1/cmtt/m/n/10.95 | 7352 | HARVPARS 1_wctest | 2006-07-14 17:01:10 | M500;
+ RobotRules OK, OK 
+ []
+
+
+Overfull \hbox (77.34343pt too wide) in paragraph at lines 190--191
+[][]\T1/cmtt/m/n/10.95 | 7352 | HARVPARS 1_wctest | 2006-07-14 17:01:10 | M500;
+ HTTP(200 = "OK")  => OK 
+ []
+
+
+Overfull \hbox (309.33664pt too wide) in paragraph at lines 195--196
+[][]\T1/cmtt/m/n/10.95 | 7352 | HARVPARS 1_wctest | 2006-07-14 17:01:10 | M500;
+ Doing: text/html;200;0F061033DAF69587170F8E285E950120;Not used | 
+ []
+
+[29]
+Overfull \hbox (126.0513pt too wide) in paragraph at lines 224--228
+\T1/cmr/m/n/10.95 to www.yahoo.com) but also not go-ing higher in po-si-tion (i
+.e. www.geocities.com/boulevar/atlanta/index.html). 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--236
+
+ []
+
+
+Overfull \hbox (7.98643pt too wide) in paragraph at lines 241--241
+ []\T1/cmtt/m/n/10.95 #Allow crawl of URLs or hostnames that matches these regu
+lar expressions[] 
+ []
+
+
+Overfull \hbox (7.98643pt too wide) in paragraph at lines 249--249
+ []\T1/cmtt/m/n/10.95 #Allow crawl of URLs or hostnames that matches these regu
+lar expressions[] 
+ []
+
+) (./ConfigVars.tex [30] [31] [32]
+Overfull \hbox (21.22935pt too wide) in paragraph at lines 112--113
+[]\T1/cmr/m/n/10.95 combineUtil; LogSQL.pm; com-bine; RobotRules.pm; com-bi-ne-
+Ex-port; SD_SQL.pm;
+ []
+
+[33] [34] [35] [36]) (./DepGraph.tex
+Overfull \hbox (38.5834pt too wide) in paragraph at lines 7--8
+[]\T1/cmr/m/n/10.95 Combine::Config; Com-bine::XWI; Com-bine::UA; Com-bine::Rob
+otRules; Com-bine::LogSQL;
+ []
+
+
+Overfull \hbox (14.76175pt too wide) in paragraph at lines 7--8
+\T1/cmr/m/n/10.95 Com-bine::FromHTML; Com-bine::FromImage; Com-bine::FromTeX; C
+om-bine::DataBase;
+ []
+
+[37]
+Overfull \hbox (64.03035pt too wide) in paragraph at lines 49--50
+[]\T1/cmr/m/n/10.95 combineCtrl; com-bine; com-bi-ne-Ex-port; com-bineINIT; com
+-bineU-til; Com-bine::Check_record;
+ []
+
+
+Overfull \hbox (48.63322pt too wide) in paragraph at lines 49--50
+\T1/cmr/m/n/10.95 Com-bine::FromHTML; Com-bine::LogSQL; Com-bine::MySQLhdb; Com
+-bine::PosCheck_record;
+ []
+
+
+Overfull \hbox (10.96867pt too wide) in paragraph at lines 49--50
+\T1/cmr/m/n/10.95 Com-bine::RobotRules; Com-bine::SD_SQL; Com-bine::UA; Com-bin
+e::XWI2XML; Com-
+ []
+
+
+Overfull \hbox (35.75717pt too wide) in paragraph at lines 61--62
+[]\T1/cmr/m/n/10.95 Combine::Config; HTTP::Date; URI; URI::Escape; HTML::Entiti
+es; En-code; HTML::Tidy;
+ []
+
+[38]
+Overfull \hbox (6.58516pt too wide) in paragraph at lines 147--148
+[]\T1/cmr/m/n/10.95 combine; Com-bine::Check_record; Com-bine::MySQLhdb; Com-bi
+ne::XWI2XML; 
+ []
+
+[39]) [40] (./InstallationTest.tex
+Overfull \hbox (105.09554pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 system("combineINIT --jobname $jobname --topic /etc/combin
+e/Topic_carnivor.txt >& /dev/null");[] 
+ []
+
+
+Overfull \hbox (178.65436pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 system("combine --jobname $jobname --harvest http://combin
+e.it.lth.se/CombineTests/InstallationTest.html");[] 
+ []
+
+[41]
+Overfull \hbox (172.99599pt too wide) in paragraph at lines 130--130
+[]  \T1/cmtt/m/n/10.95 if (length($orec) == length($rec)) { print "Size of XML 
+match (after removal of 'originalDocument')\n";}[] 
+ []
+
+
+Overfull \hbox (14.5616pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 else { print "There might be some problem with your Combin
+e Installation\n"; }[] 
+ []
+
+
+Overfull \hbox (93.7788pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 <originalDocument mimeType="text/html" compression="gzip" 
+encoding="base64" charSet="UTF-8">[] 
+ []
+
+
+Overfull \hbox (3.24486pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 H4sIAAAAAAAAA4WQsU7DMBCG9zzF4bmpBV2QcDKQVKJSKR2CEKObXBSrjm
+3sSyFvT0yCQGJgusG/[] 
+ []
+
+
+Overfull \hbox (3.24486pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 //u+E1flU1G9HrfwUD3u4fh8v98VwFLOXzYF52VVzg+b9Q3n2wPLE9FRr+
+NA2UyDFGnMdyaQ1FqS[] 
+ []
+
+
+Overfull \hbox (3.24486pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 sgYIA0FrPRS2PymDgs+hRPRIEozsMWNnHN+tbwKD2hpCQxkrpDfqYr0dAj
+gtDYUVlN4G9HIFB3RT[] 
+ []
+
+
+Overfull \hbox (3.24486pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 qMPAvns6Ipfi26Au09e5I61Gh78aCT+IR947qDvpA1I2UJvexg6+CJxsM0
+ad6/8kpkQiXB5XSWUC[] 
+ []
+
+
+Overfull \hbox (3.24486pt too wide) in paragraph at lines 130--130
+[]\T1/cmtt/m/n/10.95 BNsj/GGG4LBWrarhSw+0OiOIidZjmzGPeh15WL6ICS7zFUjT/AiuBXeRbw
+Hj870/AeRYaTupAQAA[] 
+ []
+
+
+Overfull \hbox (540.7901pt too wide) in paragraph at lines 130--130
+[]      \T1/cmtt/m/n/10.95 <section>Contains some Carnivorous plant specific wo
+rds like <ulink url="rel.html">Drosera </ulink>, and Nepenthes.</section></sect
+ion></section></canonicalDocument>[] 
+ []
+
+[42]) (./PlugInTemplate.tex
+Overfull \hbox (37.19508pt too wide) in paragraph at lines 86--86
+[]\T1/cmtt/m/n/10.95 use Combine::Config; #Optional if you want to use the Comb
+ine configuration system[] 
+ []
+
+
+Overfull \hbox (42.85345pt too wide) in paragraph at lines 86--86
+[]\T1/cmtt/m/n/10.95 #        0: record fails to meet the classification criter
+ia, ie ignore this record[] 
+ []
+
+
+Overfull \hbox (116.41228pt too wide) in paragraph at lines 86--86
+[]\T1/cmtt/m/n/10.95 #        1: record is OK and should be stored in the datab
+ase, and links followed by the crawler[] 
+ []
+
+[43]
+Overfull \hbox (122.07065pt too wide) in paragraph at lines 86--86
+[]  \T1/cmtt/m/n/10.95 #utility routines for saving detailed results (optional)
+ in the database. These data may appear[] 
+ []
+
+
+Overfull \hbox (223.92133pt too wide) in paragraph at lines 86--86
+[]  \T1/cmtt/m/n/10.95 # $xwi->topic_add(topic_class_notation, topic_absolute_s
+core, topic_normalized_score, topic_terms, algorithm_id);[] 
+ []
+
+[44]
+Overfull \hbox (139.04576pt too wide) in paragraph at lines 86--86
+[]  \T1/cmtt/m/n/10.95 #  topic_normalized_score and topic_terms are optional a
+nd may be replaced with 0, '' respectively[] 
+ []
+
+) (./defaultConfig.tex
+Overfull \hbox (71.14531pt too wide) in paragraph at lines 181--181
+[]\T1/cmtt/m/n/10.95 #Direct connection to Zebra indexing - for SearchEngine-in
+-a-box (default no connection)[] 
+ []
+
+[45] [46]
+Overfull \hbox (167.33762pt too wide) in paragraph at lines 181--181
+[]\T1/cmtt/m/n/10.95 #Time in seconds after succesfull download before allowing
+ a page to be downloaded again (around 11 days)[] 
+ []
+
+
+Overfull \hbox (144.70413pt too wide) in paragraph at lines 181--181
+[]\T1/cmtt/m/n/10.95 #Time in seconds to wait before making a new reschedule if
+ a reschedule results in an empty ready que[] 
+ []
+
+[47]
+Overfull \hbox (71.14531pt too wide) in paragraph at lines 181--181
+[]\T1/cmtt/m/n/10.95 #  external converters have to be found via PATH and execu
+table to be considered a match[] 
+ []
+
+
+Overfull \hbox (88.12042pt too wide) in paragraph at lines 181--181
+[]\T1/cmtt/m/n/10.95 #  the external converter command should take a filename a
+s parameter and convert that file[] 
+ []
+
+[48]
+Overfull \hbox (71.14531pt too wide) in paragraph at lines 261--261
+[]\T1/cmtt/m/n/10.95 #  external converters have to be found via PATH and execu
+table to be considered a match[] 
+ []
+
+
+Overfull \hbox (88.12042pt too wide) in paragraph at lines 261--261
+[]\T1/cmtt/m/n/10.95 #  the external converter command should take a filename a
+s parameter and convert that file[] 
+ []
+
+
+Overfull \hbox (105.09554pt too wide) in paragraph at lines 261--261
+[]\T1/cmtt/m/n/10.95 #  means that www.100wetland.com is replaced by www.100top
+wetland.com during URL normalization[] 
+ []
+
+[49]
+Overfull \hbox (156.02087pt too wide) in paragraph at lines 261--261
+[]\T1/cmtt/m/n/10.95 URL \.gif$|\.jpg$|\.jpeg$|\.xpm$|\.tif$|\.tiff$|\.mpg$|\.m
+peg$|\.mov$|\.wav$|\.au$|\.pcx$|\.xbm$|\.tga$[] 
+ []
+
+
+Overfull \hbox (156.02087pt too wide) in paragraph at lines 261--261
+[]\T1/cmtt/m/n/10.95 URL \.GIF$|\.JPG$|\.JPEG$|\.XPM$|\.TIF$|\.TIFF$|\.MPG$|\.M
+PEG$|\.MOV$|\.WAV$|\.AU$|\.PCX$|\.XBM$|\.TGA$[] 
+ []
+
+
+Overfull \hbox (42.85345pt too wide) in paragraph at lines 261--261
+[]\T1/cmtt/m/n/10.95 #more excludes in the file config_exclude (automatically u
+pdated by other programs)[] 
+ []
+
+) (./SQL.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--7
+
+ []
+
+
+Overfull \hbox (116.41228pt too wide) in paragraph at lines 8--32
+[]\T1/cmtt/m/n/10.95 TABLE links: recordid*, mynetlocid*, urlid*, netlocid*, li
+nktype, anchor  (netlocid for urlid!!) 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--32
+
+ []
+
+[50]
+Overfull \hbox (59.82857pt too wide) in paragraph at lines 49--49
+[]\T1/cmtt/m/n/10.95 ) ENGINE=MyISAM AVG_ROW_LENGTH = 20000 MAX_ROWS = 10000000
+ DEFAULT CHARACTER SET=utf8;[] 
+ []
+
+
+Overfull \hbox (59.82857pt too wide) in paragraph at lines 57--57
+[]\T1/cmtt/m/n/10.95 ) ENGINE=MyISAM AVG_ROW_LENGTH = 20000 MAX_ROWS = 10000000
+ DEFAULT CHARACTER SET=utf8;[] 
+ []
+
+[51] [52]
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
+
+ []
+
+[53]
+Overfull \hbox (14.5616pt too wide) in paragraph at lines 202--202
+[]  \T1/cmtt/m/n/10.95 schedulealgorithm enum('default','bigdefault','advanced'
+) default 'default',[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--206
+
+ []
+
+[54]) (./ManPages.tex (./combineCtrl.tex [55]
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10.95> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 120.
+ [56]
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 168.
+
+
+(/usr/share/texmf/tex/latex/base/t1cmss.fd
+File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)) (./combine.tex [57])
+(./combineExport.tex
+Overfull \hbox (33.20009pt too wide) in paragraph at lines 9--10
+ \T1/cmr/bx/n/10.95 SYN-OP-SIS[][] \T1/cmr/m/n/10.95 com-bi-ne-Ex-port --jobnam
+e $\OML/cmm/m/it/10.95 <$\T1/cmr/m/n/10.95 name$\OML/cmm/m/it/10.95 >$ \T1/cmr/
+m/n/10.95 [--profile alvis$\OMS/cmsy/m/n/10.95 j$\T1/cmr/m/n/10.95 dc$\OMS/cmsy
+/m/n/10.95 j$\T1/cmr/m/n/10.95 combine --charset utf8$\OMS/cmsy/m/n/10.95 j$\T1
+/cmr/m/n/10.95 isolatin
+ []
+
+
+Overfull \hbox (16.45427pt too wide) in paragraph at lines 9--10
+\T1/cmr/m/n/10.95 --number $\OML/cmm/m/it/10.95 <$\T1/cmr/m/n/10.95 n$\OML/cmm/
+m/it/10.95 >$ \T1/cmr/m/n/10.95 --recordid $\OML/cmm/m/it/10.95 <$\T1/cmr/m/n/1
+0.95 n$\OML/cmm/m/it/10.95 >$ \T1/cmr/m/n/10.95 --md5 $\OML/cmm/m/it/10.95 <$\T
+1/cmr/m/n/10.95 MD5$\OML/cmm/m/it/10.95 >$ \T1/cmr/m/n/10.95 --pipehost $\OML/c
+mm/m/it/10.95 <$\T1/cmr/m/n/10.95 server$\OML/cmm/m/it/10.95 >$ \T1/cmr/m/n/10.
+95 --pipeport $\OML/cmm/m/it/10.95 <$\T1/cmr/m/n/10.95 n$\OML/cmm/m/it/10.95 >$
+ \T1/cmr/m/n/10.95 --incremental
+ []
+
+[58]
+Overfull \hbox (11.58833pt too wide) in paragraph at lines 66--67
+[]\T1/cmr/m/n/10.95 Exports in-cre-men-tally, ie all changes since last call to
+ com-bi-ne-Ex-port us-ing --incremental 
+ []
+
+
+Overfull \hbox (31.53671pt too wide) in paragraph at lines 88--88
+[]   \T1/cmtt/m/n/10.95 combineExport --jobname atest --profile combine --chars
+et utf8 > Zebrarecs.xml[] 
+ []
+
+
+Overfull \hbox (71.14531pt too wide) in paragraph at lines 93--93
+[] \T1/cmtt/m/n/10.95 Incremental export of all changes from last call using lo
+calhost at port 6234 using the[] 
+ []
+
+
+Overfull \hbox (32.1283pt too wide) in paragraph at lines 101--103
+[]\T1/cmr/m/n/10.95 Alvis XML schema (--profile alvis) at \T1/cmss/m/n/10.95 ht
+tp://project.alvis.info/alvis_docs/enriched-document.xsd 
+ []
+
+) (./combineRun.tex [59]) (./combineUtil.tex [60]
+Overfull \hbox (7.17664pt too wide) in paragraph at lines 80--82
+[]\T1/cmr/m/n/10.95 Deletes all records match-ing the ','-separated list of URl
+ paths (ex-clud-ing net-locations)
+ []
+
+[61]) (./FromHTML.tex) (./FromTeX.tex) (./HTMLExtractor.tex)
+(./LoadTermList.tex [62]) (./Matcher.tex
+Overfull \hbox (31.53671pt too wide) in paragraph at lines 31--31
+[]        \T1/cmtt/m/n/10.95 $stoplist: object pointer to a LoadTermList object
+ with a stoplist loaded[] 
+ []
+
+
+Overfull \hbox (14.5616pt too wide) in paragraph at lines 31--31
+[]        \T1/cmtt/m/n/10.95 $simple: 1=do simple loading; 0=advanced loading (
+might induce errors)[] 
+ []
+
+[63]) (./PosMatcher.tex
+Overfull \hbox (31.53671pt too wide) in paragraph at lines 30--30
+[]        \T1/cmtt/m/n/10.95 $stoplist: object pointer to a LoadTermList object
+ with a stoplist loaded[] 
+ []
+
+
+Overfull \hbox (14.5616pt too wide) in paragraph at lines 30--30
+[]        \T1/cmtt/m/n/10.95 $simple: 1=do simple loading; 0=advanced loading (
+might induce errors)[] 
+ []
+
+[64]) (./RobotRules.tex) (./SD_SQL.tex
+Overfull \hbox (10.15337pt too wide) in paragraph at lines 33--47
+[]\T1/cmr/m/n/10.95 ########################## #Ques-tions, ideas, TO-DOs, etc 
+#Split
+ []
+
+[65]) (./XWI.tex) (./selurl.tex [66])) [67] (./DocMain.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 1390 strings out of 95755
+ 16953 string characters out of 1194952
+ 62134 words of memory out of 1000001
+ 4278 multiletter control sequences out of 10000+50000
+ 18456 words of font info for 43 fonts, out of 500000 for 1000
+ 14 hyphenation exceptions out of 1000
+ 30i,9n,21p,1459b,298s stack positions out of 1500i,500n,5000p,200000b,5000s
+
+Output written on DocMain.dvi (67 pages, 192172 bytes).

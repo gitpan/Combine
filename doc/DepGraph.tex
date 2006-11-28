@@ -1,0 +1,202 @@
+
+\section{Module dependences}
+\label{moddep}
+\subsection{Programs}
+\subsubsection{combine}
+\begin{description}
+\item[Uses:] Combine::Config; Combine::XWI; Combine::UA; Combine::RobotRules; Combine::LogSQL; Combine::FromHTML; Combine::FromImage; Combine::FromTeX; Combine::DataBase; HTTP::Date; HTTP::Status; URI::URL; Getopt::Long; Combine::SD\_SQL; Lingua::Identify; 
+
+\end{description}
+\subsubsection{combineCtrl}
+\begin{description}
+\item[Uses:] Getopt::Long; Combine::SD\_SQL; Combine::Config; 
+
+\end{description}
+\subsubsection{combineExport}
+\begin{description}
+\item[Uses:] Combine::MySQLhdb; Combine::Config; Combine::XWI2XML; DBI; HTTP::Date; Encode; Getopt::Long; Alvis::Pipeline; XML::LibXSLT; XML::LibXML; 
+
+\end{description}
+\subsubsection{combineINIT}
+\begin{description}
+\item[Uses:] Getopt::Long; Combine::Config; DBI; 
+
+\end{description}
+\subsubsection{combineUtil}
+\begin{description}
+\item[Uses:] Getopt::Long; Combine::Config; Combine::SD\_SQL; Combine::MySQLhdb; Combine::MySQLhdb; Net::hostent; 
+
+\end{description}
+\subsection{Library modules}
+\subsubsection{Check\_record.pm}
+\begin{description}
+\item[Uses:] Combine::XWI; Combine::LoadTermList; Combine::Matcher; Combine::Config; 
+
+\item[Used by:] 
+
+\end{description}
+\subsubsection{CleanXML2CanDoc.pm}
+\begin{description}
+\item[Uses:] Alvis::Canonical; 
+
+\item[Used by:] Combine::XWI2XML; 
+
+\end{description}
+\subsubsection{Config.pm}
+\begin{description}
+\item[Uses:] Config::General; DBI; 
+
+\item[Used by:] combineCtrl; combine; combineExport; combineINIT; combineUtil; Combine::Check\_record; Combine::FromHTML; Combine::LogSQL; Combine::MySQLhdb; Combine::PosCheck\_record; Combine::RobotRules; Combine::SD\_SQL; Combine::UA; Combine::XWI2XML; Combine::selurl; 
+
+\end{description}
+\subsubsection{DataBase.pm}
+\begin{description}
+\item[Uses:] Combine::MySQLhdb; Combine::selurl; 
+
+\item[Used by:] combine; 
+
+\end{description}
+\subsubsection{FromHTML.pm}
+\begin{description}
+\item[Uses:] Combine::Config; HTTP::Date; URI; URI::Escape; HTML::Entities; Encode; HTML::Tidy; Combine::HTMLExtractor; 
+
+\item[Used by:] combine; 
+
+\end{description}
+\subsubsection{FromImage.pm}
+\begin{description}
+\item[Uses:] Image::ExifTool; 
+
+\item[Used by:] combine; 
+
+\end{description}
+\subsubsection{HTMLExtractor.pm}
+\begin{description}
+\item[Uses:] HTML::TokeParser; URI; Data::Dumper; 
+
+\item[Used by:] Combine::FromHTML; 
+
+\end{description}
+\subsubsection{LoadTermList.pm}
+\begin{description}
+\item[Uses:] DBI; Lingua::Stem; 
+
+\item[Used by:] Combine::Check\_record; Combine::PosCheck\_record; 
+
+\end{description}
+\subsubsection{LogSQL.pm}
+\begin{description}
+\item[Uses:] Combine::Config; 
+
+\item[Used by:] combine; 
+
+\end{description}
+\subsubsection{Matcher.pm}
+\begin{description}
+\item[Uses:] HTML::Entities; 
+
+\item[Used by:] Combine::Check\_record; 
+
+\end{description}
+\subsubsection{MySQLhdb.pm}
+\begin{description}
+\item[Uses:] Combine::XWI; HTTP::Date; Encode; Combine::Config; Combine::selurl; Combine::Zebra; 
+
+\item[Used by:] combineExport; combineUtil; combineUtil; Combine::DataBase; 
+
+\end{description}
+\subsubsection{PosCheck\_record.pm}
+\begin{description}
+\item[Uses:] Combine::LoadTermList; Combine::PosMatcher; Combine::Config; 
+
+\item[Used by:] 
+
+\end{description}
+\subsubsection{PosMatcher.pm}
+\begin{description}
+\item[Uses:] HTML::Entities; 
+
+\item[Used by:] Combine::PosCheck\_record; 
+
+\end{description}
+\subsubsection{RobotRules.pm}
+\begin{description}
+\item[Uses:] Combine::Config; Combine::UA; 
+
+\item[Used by:] combine; 
+
+\end{description}
+\subsubsection{SD\_SQL.pm}
+\begin{description}
+\item[Uses:] Combine::Config; Combine::selurl; DBI; 
+
+\item[Used by:] combineCtrl; combine; combineUtil; 
+
+\end{description}
+\subsubsection{UA.pm}
+\begin{description}
+\item[Uses:] Combine::Config; LWP::UserAgent; HTTP::Date; Digest::MD5; 
+
+\item[Used by:] combine; Combine::RobotRules; 
+
+\end{description}
+\subsubsection{XWI.pm}
+\begin{description}
+\item[Uses:] HTML::Entities; 
+
+\item[Used by:] combine; Combine::Check\_record; Combine::MySQLhdb; Combine::XWI2XML; 
+
+\end{description}
+\subsubsection{XWI2XML.pm}
+\begin{description}
+\item[Uses:] Combine::XWI; Encode; Combine::Config; Compress::Zlib; MIME::Base64; Combine::CleanXML2CanDoc; 
+
+\item[Used by:] combineExport; Combine::Zebra; 
+
+\end{description}
+\subsubsection{Zebra.pm}
+\begin{description}
+\item[Uses:] Combine::XWI2XML; ZOOM; 
+
+\item[Used by:] Combine::MySQLhdb; 
+
+\end{description}
+\subsubsection{selurl.pm}
+\begin{description}
+\item[Uses:] URI; Combine::Config; 
+
+\item[Used by:] Combine::DataBase; Combine::MySQLhdb; Combine::SD\_SQL; 
+
+\end{description}
+\subsection{External modules}
+\label{extmods}
+These are the (non base) Perl modules Combine depend on.
+The modules marked with a '{\tt *}' are not critical.
+\begin{verbatim}
+Alvis::Canonical
+Alvis::Pipeline *
+Compress::Zlib
+Config::General
+DBI
+Data::Dumper *
+Digest::MD5
+Encode
+Getopt::Long
+HTML::Entities
+HTML::Tidy *
+HTML::TokeParser
+HTTP::Date
+HTTP::Status
+Image::ExifTool
+LWP::UserAgent
+Lingua::Identify
+Lingua::Stem
+MIME::Base64
+Net::hostent
+URI
+URI::Escape
+URI::URL
+XML::LibXML
+XML::LibXSLT
+ZOOM
+\end{verbatim}
