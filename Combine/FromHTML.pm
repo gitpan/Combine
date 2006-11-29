@@ -39,7 +39,7 @@
 # 
 # Copyright (c) 1996-1998 LUB NetLab
 
-# $Id: FromHTML.pm,v 1.11 2006/10/11 07:52:19 anders Exp $
+# $Id: FromHTML.pm,v 1.12 2006/11/08 14:53:26 anders Exp $
 
 package Combine::FromHTML;
 
@@ -173,6 +173,10 @@ sub trans {
     my $url = $xwi->url_get || return undef; # $xwi object must have url field
     if ( !defined($log) ) { $log = Combine::Config::Get('LogHandle'); }
     if ($$html eq '') { $html = $xwi->content; }
+    if ( length($$html) < 10 ) {
+	$log->say('FromHTML: short or empty file');
+	return $xwi;
+    }
     if ( length($$html) > 1024 ) { # should we check shorter files as well ?
        my $teststring = substr($$html,0,1024);
        my $start_len = 1024;

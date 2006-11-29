@@ -14,6 +14,7 @@ WriteMakefile(
               HTTP::Date => 0, HTTP::Request => 0, HTTP::Status => 0,
               Lingua::Stem => 0, Lingua::Identify => 0, LWP::UserAgent => 0,
 	      XML::LibXML => 0, XML::Parser => 0, XML::LibXSLT => 0,
+	      MIME::Base64 => 0, Net::hostent => 0, ZOOM => 0,
 	      Image::ExifTool => 0,
               URI=>0}, #OLD: HTML::Summary => 0, HTML::TreeBuilder => 0,
 
@@ -21,5 +22,6 @@ WriteMakefile(
     ($] >= 5.005 ?    ## Add these new keywords supported since 5.005
       (AUTHOR     => 'Anders Ardo <anders.ardo@it.lth.se>') : ()),
 );
+
 
 
