@@ -39,7 +39,7 @@
 # 
 # Copyright (c) 1996-1998 LUB NetLab
 
-# $Id: UA.pm,v 1.6 2006/10/20 07:02:08 anders Exp $
+# $Id: UA.pm,v 1.7 2006/12/05 08:53:10 anders Exp $
 
 
 # COMB/XWI/UA.pm - harvesting robots with XWI interface
@@ -234,7 +234,8 @@ sub decodeText {
     $xwi->length($resp->header("content-length"));
     $xwi->location($resp->header("location"));
     $xwi->base($resp->base);
-    $xwi->expiryDate(&check_date($resp->expires));
+#Numeric gives error message '... too small'
+#    $xwi->expiryDate(&check_date($resp->expires));
     $xwi->modifiedDate(&check_date($resp->header("last-modified")));
     $xwi->expiryDate(&check_date($resp->header("expires")));
 #?    $xwi->checkedDate(&check_date($resp->header("date")));

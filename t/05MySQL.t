@@ -37,7 +37,7 @@ else { ok($sv, 'MySQL'); }
 $sv->disconnect;
 
 #Test that database and tables are created OK
-system("perl  \"-Iblib/lib\" blib/script/combineINIT --baseconfig ./blib/conf/ --jobname $jobname >& /dev/null");
+system("perl  \"-Iblib/lib\" blib/script/combineINIT --baseconfig ./blib/conf/ --jobname $jobname > /dev/null 2> /dev/null");
 
 $sv = DBI->connect("DBI:mysql:database=$jobname;host=localhost", 
                     'combine', '');             #!!Handle passwd

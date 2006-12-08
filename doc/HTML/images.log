@@ -1,4 +1,4 @@
-This is e-TeX, Version 3.14159-2.1 (Web2C 7.4.5) (format=latex 2005.11.29)  29 NOV 2006 16:02
+This is e-TeX, Version 3.14159-2.1 (Web2C 7.4.5) (format=latex 2005.11.29)  7 DEC 2006 11:53
 entering extended mode
 **./images.tex
 (./images.tex
@@ -296,7 +296,7 @@ latex2htmlLength evensidemargin=-2.84544pt
 
 File: focusedrobot.eps Graphic file (type eps)
 <focusedrobot.eps>
-l2hSize :tex2html_wrap5050:216.42621pt::0.0pt::349.0pt.
+l2hSize :tex2html_wrap5060:216.42621pt::0.0pt::349.0pt.
 [1
 
 
@@ -308,41 +308,41 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 155.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 155.
-l2hSize :tex2html_wrap_inline205:7.57011pt::7.57011pt::9.06111pt.
+l2hSize :tex2html_wrap_inline213:7.57011pt::7.57011pt::9.06111pt.
 [2
 
 
 ]
 File: CrawlerArchitecture.xfig.eps Graphic file (type eps)
 <CrawlerArchitecture.xfig.eps>
-l2hSize :tex2html_wrap5092:432.85242pt::0.0pt::349.0pt.
+l2hSize :tex2html_wrap5102:432.85242pt::0.0pt::349.0pt.
 [3
 
 
 ]
 File: TopicFilter.xfig.eps Graphic file (type eps)
 <TopicFilter.xfig.eps>
-l2hSize :tex2html_wrap5101:179.87949pt::0.0pt::349.0pt.
+l2hSize :tex2html_wrap5111:179.87949pt::0.0pt::349.0pt.
 [4
 
 
 ]
-l2hSize :tex2html_wrap_inline799:8.7125pt::8.7125pt::6.01942pt.
+l2hSize :tex2html_wrap_inline809:8.7125pt::8.7125pt::6.01942pt.
 [5
 
 
 ]
-l2hSize :tex2html_wrap_inline803:7.57011pt::7.57011pt::9.06111pt.
+l2hSize :tex2html_wrap_inline813:7.57011pt::7.57011pt::9.06111pt.
 [6
 
 
 ]
-l2hSize :tex2html_wrap_inline805:7.57011pt::7.57011pt::9.06111pt.
+l2hSize :tex2html_wrap_inline815:7.57011pt::7.57011pt::9.06111pt.
 [7
 
 
 ]
-l2hSize :displaymath791:16.07863pt::0.0pt::349.0pt.
+l2hSize :displaymath801:16.07863pt::0.0pt::349.0pt.
 [8
 
 
@@ -351,32 +351,32 @@ Overfull \hbox (47.42186pt too wide) detected at line 219
 [] []
  []
 
-l2hSize :displaymath792:37.20837pt::0.0pt::349.0pt.
+l2hSize :displaymath802:37.20837pt::0.0pt::349.0pt.
 [9
 
 
 ]
-l2hSize :tex2html_wrap_inline847:8.7125pt::8.7125pt::65.28568pt.
+l2hSize :tex2html_wrap_inline857:8.7125pt::8.7125pt::65.28568pt.
 [10
 
 
 ]
-l2hSize :tex2html_wrap_inline849:8.7125pt::8.7125pt::81.71918pt.
+l2hSize :tex2html_wrap_inline859:8.7125pt::8.7125pt::81.71918pt.
 [11
 
 
 ]
-l2hSize :tex2html_wrap_inline851:8.7125pt::8.7125pt::99.8613pt.
+l2hSize :tex2html_wrap_inline861:8.7125pt::8.7125pt::99.8613pt.
 [12
 
 
 ]
-l2hSize :tex2html_wrap_inline853:7.57011pt::7.57011pt::26.3186pt.
+l2hSize :tex2html_wrap_inline863:7.57011pt::7.57011pt::26.3186pt.
 [13
 
 
 ]
-l2hSize :tex2html_wrap_inline855:8.04149pt::8.04149pt::42.7521pt.
+l2hSize :tex2html_wrap_inline865:8.04149pt::8.04149pt::42.7521pt.
 [14
 
 
@@ -385,37 +385,37 @@ Overfull \hbox (51.21078pt too wide) detected at line 257
 [] []
  []
 
-l2hSize :displaymath794:37.20837pt::0.0pt::349.0pt.
+l2hSize :displaymath804:37.20837pt::0.0pt::349.0pt.
 [15
 
 
 ]
-l2hSize :tex2html_wrap_inline859:8.7125pt::8.7125pt::111.54816pt.
+l2hSize :tex2html_wrap_inline869:8.7125pt::8.7125pt::111.54816pt.
 [16
 
 
 ]
-l2hSize :tex2html_wrap_inline861:8.04149pt::8.04149pt::34.27827pt.
+l2hSize :tex2html_wrap_inline871:8.04149pt::8.04149pt::34.27827pt.
 [17
 
 
 ]
-l2hSize :tex2html_wrap_inline865:7.60416pt::0.0pt::6.58974pt.
+l2hSize :tex2html_wrap_inline875:7.60416pt::0.0pt::6.58974pt.
 [18
 
 
 ]
-l2hSize :tex2html_wrap_inline867:7.07011pt::0.0pt::14.5361pt.
+l2hSize :tex2html_wrap_inline877:7.07011pt::0.0pt::14.5361pt.
 [19
 
 
 ]
-l2hSize :tex2html_wrap_inline869:8.7125pt::8.7125pt::121.41335pt.
+l2hSize :tex2html_wrap_inline879:8.7125pt::8.7125pt::121.41335pt.
 [20
 
 
 ]
-l2hSize :tex2html_wrap_inline871:8.7125pt::8.7125pt::177.3581pt.
+l2hSize :tex2html_wrap_inline881:8.7125pt::8.7125pt::177.3581pt.
 [21
 
 
@@ -426,7 +426,7 @@ Overfull \hbox (55.25075pt too wide) detected at line 307
  [] 
  []
 
-l2hSize :tex2html_wrap5167:288.56094pt::0.0pt::349.0pt.
+l2hSize :tex2html_wrap5177:288.56094pt::0.0pt::349.0pt.
 [22
 
 
@@ -437,12 +437,12 @@ Overfull \hbox (55.25075pt too wide) detected at line 313
  [] 
  []
 
-l2hSize :tex2html_wrap5171:288.56094pt::0.0pt::349.0pt.
+l2hSize :tex2html_wrap5181:288.56094pt::0.0pt::349.0pt.
 [23
 
 
 ]
-l2hSize :tex2html_wrap_inline2150:8.7125pt::8.7125pt::3.58609pt.
+l2hSize :tex2html_wrap_inline2160:8.7125pt::8.7125pt::3.58609pt.
 [24
 
 

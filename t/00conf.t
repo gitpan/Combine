@@ -18,8 +18,8 @@ foreach my $f (@files) {
 }
 
 mkdir('./blib/conf')  unless -d './blib/conf';
-system('cp ./conf/* ./blib/conf/ >& /dev/null');
-system("rm -rf ./blib/conf/$jobname >& /dev/null");
+system('cp ./conf/* ./blib/conf/ > /dev/null 2> /dev/null');
+system("rm -rf ./blib/conf/$jobname > /dev/null 2> /dev/null");
 print "not " unless mkdir("./blib/conf/$jobname");
 
 open(CONF,">./blib/conf/$jobname/combine.cfg");

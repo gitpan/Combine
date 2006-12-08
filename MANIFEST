@@ -38,6 +38,9 @@ conf/Topic_searchengine.txt
 t/00conf.t
 t/05MySQL.t
 t/10config.t
+t/14combineINIT.t
+t/15combineINIT.t
+t/16combineINIT.t
 t/20URLnormalization.t
 t/22URLvalidation.t
 t/30XWI.t
@@ -164,6 +167,7 @@ doc/InstallationTest.pl
 AUTHORS
 Makefile.PL
 README
+Changes
 MANIFEST
 LICENSE
 doc/DocMain.pdf

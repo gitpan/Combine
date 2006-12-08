@@ -2,7 +2,7 @@ use strict;
 local $^W = 0;
 our $jobname;
 require './t/defs.pm';
-system("perl  \"-Iblib/lib\" blib/script/combineINIT --baseconfig ./blib/conf/ --jobname $jobname >& /dev/null");
+system("perl  \"-Iblib/lib\" blib/script/combineINIT --baseconfig ./blib/conf/ --jobname $jobname > /dev/null 2> /dev/null");
 
 use Combine::XWI;
 use Combine::Config;

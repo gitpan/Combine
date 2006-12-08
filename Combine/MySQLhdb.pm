@@ -127,7 +127,10 @@ sub Write {
 		    ($netlocid,$urlid) = $lsth->fetchrow_array;
 		    if ( !defined($urlid) ) {
 			$sv->prepare(qq{INSERT IGNORE INTO netlocs SET netlocstr=?;})->execute($netlocstr);
-			($netlocid) =  $sv->selectrow_array(qq{SELECT netlocid FROM netlocs WHERE netlocstr='$netlocstr';});
+#			($netlocid) =  $sv->selectrow_array(qq{SELECT netlocid FROM netlocs WHERE netlocstr='$netlocstr';});
+			my $nlsth =  $sv->prepare(qq{SELECT netlocid FROM netlocs WHERE netlocstr=?;});
+			$nlsth->execute($netlocstr);
+			($netlocid) =  $nlsth->fetchrow_array();
 			$sv->prepare(qq{INSERT IGNORE INTO urls SET urlstr=?, netlocid=?, path=?;})->execute($urlstr,$netlocid,$path_query);
 			$lsth->execute($urlstr);
 			($netlocid,$urlid) = $lsth->fetchrow_array;
@@ -194,7 +197,7 @@ sub Write {
         $sv->prepare("INSERT INTO topic VALUES (?, ?, ?, ?, ?, ?)")->execute($recordid, Encode::encode('utf8',$cls), $absscore, $relscore, Encode::encode('utf8',$terms), $alg);
      }
     if (my $zh = Combine::Config::Get('ZebraHost')) {
-      use Combine::Zebra;
+      require Combine::Zebra;
       Combine::Zebra::update($zh,$xwi);
     }
 }

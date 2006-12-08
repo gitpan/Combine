@@ -24,7 +24,7 @@ sub wanted {
     }
     while(<F>) {
 	if (/=begin comment/) { while (<F>) {last if (/=end comment/);}}
-	if ( /^[^#]*(use|require)\s+([^\s]+)\s*.*\s*;/ ) {
+	if ( /^[^#]*(use|require)\s+([^\s;]+)[^;]*;/ ) {
 		$mod=$2; 
                 next if ( $mod =~ /\$/ );
 		if ($1 eq 'require') { $opt=' *'; } else {$opt='';}

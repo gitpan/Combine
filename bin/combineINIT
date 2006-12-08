@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-## $Id: combineINIT,v 1.16 2006/11/08 11:13:59 anders Exp $
+## $Id: combineINIT,v 1.17 2006/12/05 09:56:36 anders Exp $
 
 # Copyright (c) 1996-1998 LUB NetLab, 2002-2005 Anders Ardö
 # 
@@ -312,20 +312,36 @@ system("cat $configFileDefault > $configFile");
 open(CONF,">>$configFile");
 print CONF "          #format mysqluser\@host:databasename\n";
 print CONF "MySQLdatabase   = \"$dbuser\@$dbhost:$database\"\n";
-if ($topic && -f "$topic") {
-    print CONF "doCheckRecord = 1\n";
-    system("cp $topic $configDir/topicdefinition.txt");
-} else {
-    print CONF "doCheckRecord = 0\n";
-}
-close(CONF);
+my $tidyInMyconf=0;
+my $doCheckRecord=0;
 if ($myconf) {
-    if (-f "$myconf") {
-	system("cat $myconf >> $configFile");
+#    if (-f "$myconf") {
+#	system("cat $myconf >> $configFile");
+    if (open(MYCONF,"<$myconf")) {
+	print CONF "# START local configuration from $myconf\n";
+	while (<MYCONF>) {
+	    print CONF;
+	    if (/^[^#]*useTidy/) { $tidyInMyconf=1; }
+	    if (/^[^#]*doCheckRecord/) { $doCheckRecord=1; }
+	}
+	print CONF "# END local configuration from $myconf\n";
     } else {
-	print STDERR "WARNING: Can't find file $myconf\n";
+	print STDERR "WARNING: Can't open file $myconf\n";
     }
 }
+eval {require HTML::Tidy;};
+if ($@ && ($tidyInMyconf==0)) {
+    print CONF "# HTML::Tidy not found - disabling\n";
+    print CONF "useTidy = 0\n";
+}# else { print " ok\n"; }
+if ($topic && -f "$topic") {
+    if ($doCheckRecord==0) {print CONF "doCheckRecord = 1\n";}
+    system("cp $topic $configDir/topicdefinition.txt");
+} else {
+    if ($doCheckRecord==0) {print CONF "doCheckRecord = 0\n";}
+}
+close(CONF);
+
 system("touch $configDir/stopwords.txt");
 system("touch $configDir/config_serveralias");
 system("touch $configDir/config_exclude");

@@ -5,7 +5,7 @@ package Combine::Zebra;
 
 use strict;
 use Combine::XWI2XML;
-use ZOOM;
+require ZOOM;
 
 my $options = new ZOOM::Options();
 #$options->option(user => $user) if defined $user;

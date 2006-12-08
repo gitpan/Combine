@@ -7,6 +7,7 @@ installdirs:  site
 requires:
     Compress::Zlib:                0
     Config::General:               0
+    DBD::mysql:                    0
     DBI:                           0
     Digest::MD5:                   0
     Encode:                        0
@@ -27,7 +28,7 @@ requires:
     XML::LibXML:                   0
     XML::LibXSLT:                  0
     XML::Parser:                   0
-    ZOOM:                          0
+    ZOOM:                          1.15
 
 distribution_type: module
 generated_by: ExtUtils::MakeMaker version 6.17

@@ -3,7 +3,7 @@ local $^W = 1;
 #warn('Ignore mkdir and chmod errors');
 our $jobname;
 require './t/defs.pm';
-system("perl  \"-Iblib/lib\" blib/script/combineINIT --baseconfig ./blib/conf/ --jobname $jobname >& /dev/null");
+system("perl  \"-Iblib/lib\" blib/script/combineINIT --baseconfig ./blib/conf/ --jobname $jobname > /dev/null 2> /dev/null");
 
 require Combine::Config;
 use Cwd;
