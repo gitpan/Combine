@@ -6,7 +6,7 @@ WriteMakefile(
     'NAME'		=> 'Combine',
     'VERSION_FROM'	=> 'Combine/Config.pm', # finds $VERSION 
     'PMLIBDIRS'		=> ['Combine'],
-    'EXE_FILES'		=> ['bin/combine', 'bin/combineCtrl', 'bin/combineRun', 'bin/combineExport', 'bin/combineUtil', 'bin/combineINIT'],
+    'EXE_FILES'		=> ['bin/combine', 'bin/combineCtrl', 'bin/combineRun', 'bin/combineExport', 'bin/combineUtil', 'bin/combineINIT', 'bin/combineRank'],
     'PREREQ_PM'		=> {  DBI => 0, DBD::mysql => 0,
 	      Digest::MD5 => 0, Encode => 0,
 	      Config::General => 0, Compress::Zlib => 0,

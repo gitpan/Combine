@@ -28,26 +28,26 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<A NAME="tex2html307"
+<A NAME="tex2html384"
   HREF="node6.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
-<A NAME="tex2html303"
+<A NAME="tex2html380"
   HREF="node2.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
-<A NAME="tex2html297"
+<A NAME="tex2html374"
   HREF="node4.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
-<A NAME="tex2html305"
+<A NAME="tex2html382"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
 <BR>
-<B> Next:</B> <A NAME="tex2html308"
-  HREF="node6.html">Crawler operation</A>
-<B> Up:</B> <A NAME="tex2html304"
+<B> Next:</B> <A NAME="tex2html385"
+  HREF="node6.html">Crawler internal operation</A>
+<B> Up:</B> <A NAME="tex2html381"
   HREF="node2.html">Overview</A>
-<B> Previous:</B> <A NAME="tex2html298"
-  HREF="node4.html">Open Source distribution, Installation</A>
- &nbsp; <B>  <A NAME="tex2html306"
+<B> Previous:</B> <A NAME="tex2html375"
+  HREF="node4.html">Open source distribution, installation</A>
+ &nbsp; <B>  <A NAME="tex2html383"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
@@ -56,9 +56,18 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
 
 <UL CLASS="ChildLinks">
-<LI><A NAME="tex2html309"
+<LI><A NAME="tex2html386"
   HREF="node5.html#SECTION02031000000000000000">Configuration files</A>
-</UL>
+<UL>
+<LI><A NAME="tex2html387"
+  HREF="node5.html#SECTION02031100000000000000">Templates</A>
+<LI><A NAME="tex2html388"
+  HREF="node5.html#SECTION02031200000000000000">Global configuration files</A>
+<LI><A NAME="tex2html389"
+  HREF="node5.html#SECTION02031300000000000000">Job specific configuration files</A>
+<LI><A NAME="tex2html390"
+  HREF="node5.html#SECTION02031400000000000000">Details and default values</A>
+</UL></UL>
 <!--End of Table of Child-Links-->
 <HR>
 
@@ -67,6 +76,24 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BR>
 Configuration
 </H1>
+Configuration files use a simple format consisting of either name/value pairs
+or complex variables in sections. Name/value pairs are encoded as single lines 
+formated like '<TT>name&nbsp;=&nbsp;value</TT>'. Complex variables are encoded as multiple
+lines in named sections delimited as in XML, using '<TT>&lt;name&gt; ... &lt;/name&gt;</TT>'.
+Sections may be nested for related configuration variables.
+Empty lines and lines starting with '<TT>#</TT>' (comments) are ignored.
+
+<P>
+The most important configuration variables are the complex variables
+<TT>&lt;url&gt;&lt;allow&gt;</TT> (allows certain URLs to be harvested) and <TT>&lt;url&gt;&lt;exclude&gt;</TT> (excludes certain URLs from harvesting) which are used
+to limit your crawl to just a section of the WWW, based on the URL.
+Loading URLs to be crawled into the system checks each URL first
+against the Perl regular expressions of <TT>&lt;url&gt;&lt;allow&gt;</TT> and if it
+matches goes on to match it against <TT>&lt;url&gt;&lt;exclude&gt;</TT> where it's
+discarded if it matches, otherwise it's scheduled for crawling.
+(See <A HREF="node6.html#urlfilt">'URL filtering'</A>).
+
+<P>
 
 <H2><A NAME="SECTION02031000000000000000">
 Configuration files</A>
@@ -75,59 +102,74 @@ All configuration files are stored in the <TT>/etc/combine/</TT>
 directory tree. All configuration variables have reasonable defaults (section <A HREF="node13.html#configvars">9</A>).
 
 <P>
+
+<H3><A NAME="SECTION02031100000000000000">
+Templates</A>
+</H3>
+The values in
 <DL>
 <DT><STRONG>job_default.cfg</STRONG></DT>
-<DD>is job specific defaults. It is copied to a
+<DD>contains job specific defaults. It is copied to a
 subdirectory named after the job by <TT>combineINIT</TT>.
 
 <P>
 </DD>
 <DT><STRONG>SQLstruct.sql</STRONG></DT>
-<DD>Structure of the internal SQL database used both for administration
-and to hold data records. <A HREF="node15.html#sqlstruct">Details</A>.
+<DD>contains structure of the internal SQL database used both for administration
+and for holding data records. <A HREF="node16.html#sqlstruct">Details</A>.
 
 <P>
 </DD>
 <DT><STRONG>Topic_*</STRONG></DT>
 <DD>contains various contributed topic definitions.
+</DD>
+</DL>
 
 <P>
-</DD>
-<DT><STRONG>Global configuration files</STRONG></DT>
-<DD>These files are used for global
-parameters for all crawler jobs.
+
+<H3><A NAME="SECTION02031200000000000000">
+Global configuration files</A>
+</H3>
+Files used for global parameters for all crawler jobs.
 <DL>
 <DT><STRONG>default.cfg</STRONG></DT>
 <DD>is the global defaults. It is loaded first.
 Consult <A HREF="node13.html#configvars">'Configuration Variables'</A>
-and <A HREF="node15.html#conffiles">'Default configuration files'</A> for details.
+and <A HREF="node16.html#conffiles">'Default configuration files'</A> for details.
 Values can be overridden from
 the job-specific configuration file <TT>combine.cfg</TT>.
 
 <P>
 </DD>
 <DT><STRONG>tidy.cfg</STRONG></DT>
-<DD>configuration for Tidy cleaning of HTML code
+<DD>configuration for Tidy cleaning of HTML code.
 
 <P>
 </DD>
 </DL>
 
 <P>
-</DD>
-<DT><STRONG>Files in job specific sub-directories</STRONG></DT>
-<DD>The program <TT>combineINIT</TT> creates
-a job specific subdirectory in <TT>/etc/combine</TT> and populates it with some files including <TT>combine.cfg</TT>
+
+<H3><A NAME="SECTION02031300000000000000">
+Job specific configuration files</A>
+</H3>
+The program <TT>combineINIT</TT> creates
+a job specific sub-directory in <TT>/etc/combine</TT> and populates it with some files including <TT>combine.cfg</TT>
 initialized with a copy of <TT>job_default.cfg</TT>.
+You should always change the value of the variable <TT>Operator-Email</TT> 
+in this file and set it to something
+reasonable. It is used by Combine to identify you to the crawled Web-servers.
+
+<P>
 The job-name have to be given to all programs
 when started using the <code>--jobname</code> switch. 
 
 <P>
 <DL>
 <DT><STRONG>combine.cfg</STRONG></DT>
-<DD>the job specific configuration. It is loaded secondly
+<DD>the job specific configuration. It is loaded second
  and overrides the global defaults. Consult <A HREF="node13.html#configvars">section 'Configuration Variables'</A>
-and <A HREF="node15.html#conffiles">'Default configuration files'</A> for details.
+and <A HREF="node16.html#conffiles">'Default configuration files'</A> for details.
 
 <P>
 </DD>
@@ -140,13 +182,15 @@ The format of this file is described in <A HREF="node6.html#topicdef">'Topic def
 </DD>
 <DT><STRONG>stopwords.txt</STRONG></DT>
 <DD>a file with words to be excluded from the automatic topic
-classification processing. One word per line. Can be empty but must be present.
+classification processing. One word per line. Can be empty (default) but must be present.
 
 <P>
 </DD>
 <DT><STRONG>config_exclude</STRONG></DT>
 <DD>contains more exclude patterns.
 Optional, automatically included by <TT>combine.cfg</TT>. Updated by <TT>combineUtil</TT>.
+
+<P>
 </DD>
 <DT><STRONG>config_serveralias</STRONG></DT>
 <DD>contains patterns for resolving Web server aliases.
@@ -154,68 +198,47 @@ Optional, automatically included by <TT>combine.cfg</TT>. Updated by <TT>combine
 </DD>
 <DT><STRONG>sitesOK.txt</STRONG></DT>
 <DD>optionally used by the
- <A HREF="node6.html#autoclass">built in automated classification algorithms</A> to bypass
+ <A HREF="node6.html#autoclass">built-in automated classification algorithms</A> to bypass
 the topic filter for certain sites.
 </DD>
 </DL>
-</DD>
-</DL>
 
 <P>
-Configuration files use a simple format consisting of either name/value pairs
-or complex variables in sections. Name/value pairs are encoded as single lines 
-formated like '<TT>name&nbsp;=&nbsp;value</TT>'. Complex variables are encoded as multiple
-lines in named sections delimited as in XML, using '<TT>&lt;name&gt; ... &lt;/name&gt;</TT>'.
-Sections may be nested for related configuration variables.
-Empty lines and lines starting with '<TT>#</TT>' (comments) are ignored.
 
-<P>
-The most important configuration variables are the complex variables
-<TT>&lt;url&gt;&lt;allow&gt;</TT> (allows certain URLs to be harvested) and <TT>&lt;url&gt;&lt;exclude&gt;</TT> (excludes certain URLs from harvesting) which are used
-to limit your crawl to just a section of the Web, based on the URL.
-Loading of URLs to be crawled into the system checks each URL first
-against the Perl regular expressions of <TT>&lt;url&gt;&lt;allow&gt;</TT> and if it
-matches goes on to match it against <TT>&lt;url&gt;&lt;exclude&gt;</TT> where it's
-discarded if it matches, otherwise it's scheduled for crawling.
-(See <A HREF="node6.html#urlfilt">'URL filtering'</A>).
-
-<P>
-You should always change the value of the variable <TT>Operator-Email</TT> 
-in the file
-<BR><TT>/etc/combine/aatest/combine.cfg</TT> and set it to something
-reasonable. It is used by Combine to identify you to the crawled Web-servers.
-
-<P>
+<H3><A NAME="SECTION02031400000000000000">
+Details and default values</A>
+</H3>
 Further details are found in
-<A HREF="node13.html#configvars">'Configuration variables'</A>.
+<A HREF="node13.html#configvars">'Configuration variables'</A> which lists
+all variables and their default values.
 
 <DIV CLASS="navigation"><HR>
 <!--Navigation Panel-->
-<A NAME="tex2html307"
+<A NAME="tex2html384"
   HREF="node6.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
-<A NAME="tex2html303"
+<A NAME="tex2html380"
   HREF="node2.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
-<A NAME="tex2html297"
+<A NAME="tex2html374"
   HREF="node4.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
-<A NAME="tex2html305"
+<A NAME="tex2html382"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
 <BR>
-<B> Next:</B> <A NAME="tex2html308"
-  HREF="node6.html">Crawler operation</A>
-<B> Up:</B> <A NAME="tex2html304"
+<B> Next:</B> <A NAME="tex2html385"
+  HREF="node6.html">Crawler internal operation</A>
+<B> Up:</B> <A NAME="tex2html381"
   HREF="node2.html">Overview</A>
-<B> Previous:</B> <A NAME="tex2html298"
-  HREF="node4.html">Open Source distribution, Installation</A>
- &nbsp; <B>  <A NAME="tex2html306"
+<B> Previous:</B> <A NAME="tex2html375"
+  HREF="node4.html">Open source distribution, installation</A>
+ &nbsp; <B>  <A NAME="tex2html383"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 <ADDRESS>
 root
-2006-12-07
+2007-03-07
 </ADDRESS>
 </BODY>
 </HTML>

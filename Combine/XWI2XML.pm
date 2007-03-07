@@ -41,7 +41,7 @@ my %dcMap;
             'document-rights' => 'dc:rights',
             'keywords' => 'dc:subject',
             'resource-type' => 'dc:type',
-            'summary' => 'dc:description ',
+            'summary' => 'dc:description',
             'creation-date' => 'dc:date',
             'type' => 'dc:type',
             'document-classification' => 'dc:subject',
@@ -53,7 +53,7 @@ my %dcMap;
             'created' => 'dc:date',
             'timemodified' => 'dc:date',
             'doc-type' => 'dc:type',
-            'mimetype' => 'dc:type '
+            'mimetype' => 'dc:type'
             );
 
 ##########################SUBS########################
@@ -131,7 +131,7 @@ sub XWI2XML {
         $name = encodeXML($name);
 
           if (($name =~ /^dc\./)) {
-            $name =~ s/^dc\./dc:/;
+            $name =~ s/^dc\.\s*/dc:/;
             my $t;
             ($name,$t) = split('\.', $name, 2);
             if ($name =~ /subject/) { $res .= DCsubj($name,$content); }

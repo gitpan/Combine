@@ -5,6 +5,7 @@ Combine/DataBase.pm
 Combine/FromHTML.pm
 Combine/FromImage.pm
 Combine/FromTeX.pm
+Combine/GraphAlgorithm.pm
 Combine/HTMLExtractor.pm
 Combine/LoadTermList.pm
 Combine/LogSQL.pm
@@ -24,6 +25,7 @@ bin/combine
 bin/combineCtrl
 bin/combineExport
 bin/combineINIT
+bin/combineRank
 bin/combineRun
 bin/combineUtil
 conf/combine2alvis.xsl
@@ -83,6 +85,7 @@ doc/HTML/img21.png
 doc/HTML/img22.png
 doc/HTML/img23.png
 doc/HTML/img24.png
+doc/HTML/img25.png
 doc/HTML/img2.png
 doc/HTML/img3.png
 doc/HTML/img4.png
@@ -104,6 +107,7 @@ doc/HTML/node13.html
 doc/HTML/node14.html
 doc/HTML/node15.html
 doc/HTML/node16.html
+doc/HTML/node17.html
 doc/HTML/node1.html
 doc/HTML/node2.html
 doc/HTML/node3.html
@@ -121,6 +125,7 @@ doc/HTML/WARNINGS
 doc/ClassificationEval.tex
 doc/combineCtrl.tex
 doc/combineExport.tex
+doc/combineRank.tex
 doc/combineRun.tex
 doc/combine.tex
 doc/combineUtil.tex
@@ -156,6 +161,7 @@ doc/focusedrobot.eps
 doc/TopicFilter.xfig.eps
 doc/Config.ps
 doc/CrawlerSpeed.ps
+doc/crawl.ps
 doc/DocMain.ps
 doc/extrSQLdoc.pl
 doc/genConfigDoc.pl

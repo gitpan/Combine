@@ -39,7 +39,7 @@
 # 
 # Copyright (c) 1996-1998 LUB NetLab
 
-# $Id: UA.pm,v 1.7 2006/12/05 08:53:10 anders Exp $
+# $Id: UA.pm,v 1.8 2007/02/21 10:34:57 anders Exp $
 
 
 # COMB/XWI/UA.pm - harvesting robots with XWI interface
@@ -51,7 +51,7 @@ use strict;
 use Combine::Config;
 use LWP::UserAgent;
 use HTTP::Date;
-use Digest::MD5;
+#use Digest::MD5;
 
 my $expGar;
 my $userAgentGetIfModifiedSince;
@@ -241,18 +241,18 @@ sub decodeText {
 #?    $xwi->checkedDate(&check_date($resp->header("date")));
     $xwi->checkedDate(time) unless $xwi->checkedDate;
     if ($code eq "200" or $code eq "206") {
-  	my $md5 = new Digest::MD5;
-	$md5->reset;
+#  	my $md5 = new Digest::MD5;
+#	$md5->reset;
         if ( $method eq "GET" and length($resp->content_ref) > 0 ) {
 	  $xwi->truncated($resp->headers()->header('X-Content-Range'));
-	  $md5->add(${$resp->content_ref});
-        } else {
-	  $md5->add($url_str);
-	  $md5->add($xwi->type());
-        }
-	$_ = $md5->hexdigest;
-	tr/a-z/A-Z/;
-	$xwi->md5($_);
+#	  $md5->add(${$resp->content_ref});
+        } #else {
+#	  $md5->add($url_str);
+#	  $md5->add($xwi->type());
+#        }
+#	$_ = $md5->hexdigest;
+#	tr/a-z/A-Z/;
+#	$xwi->md5($_);
 	$xwi->content($resp->content_ref);
     }
     return ($code, $msg); 

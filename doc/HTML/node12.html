@@ -28,41 +28,49 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<A NAME="tex2html517"
+<A NAME="tex2html586"
   HREF="node13.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
-<A NAME="tex2html513"
+<A NAME="tex2html582"
   HREF="node11.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
-<A NAME="tex2html507"
+<A NAME="tex2html576"
   HREF="node11.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
-<A NAME="tex2html515"
+<A NAME="tex2html584"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
 <BR>
-<B> Next:</B> <A NAME="tex2html518"
+<B> Next:</B> <A NAME="tex2html587"
   HREF="node13.html">Configuration variables</A>
-<B> Up:</B> <A NAME="tex2html514"
+<B> Up:</B> <A NAME="tex2html583"
   HREF="node11.html">Gory details</A>
-<B> Previous:</B> <A NAME="tex2html508"
+<B> Previous:</B> <A NAME="tex2html577"
   HREF="node11.html">Gory details</A>
- &nbsp; <B>  <A NAME="tex2html516"
+ &nbsp; <B>  <A NAME="tex2html585"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
 <!--End of Navigation Panel-->
 
-<H1><A NAME="SECTION04010000000000000000">
-Frequently asked questions</A>
+<H1><A NAME="SECTION04010000000000000000"></A>
+<A NAME="faq"></A>
+<BR>
+Frequently asked questions
 </H1>
 
 <OL>
 <LI>What does the message 'Wide character in subroutine entry ...' mean?
 
 <P>
+That something is horribly wrong with the character encoding of this page.
+
+<P>
 </LI>
 <LI>What does the message 'Parsing of undecoded UTF-8 will give garbage when decoding entities ...' mean?
+
+<P>
+That something is wrong with character decoding of this page.
 
 <P>
 </LI>
@@ -82,7 +90,7 @@ characters. Try with
 <LI>I have a simple configuration variable set, but Combine does not obey it?
 
 <P>
-Check that there are not 2 instances of the same simple configuartion
+Check that there are not 2 instances of the same simple configuration
 variable in the same configuration file. Unfortunately this will break
 configuration loading.
 
@@ -100,16 +108,18 @@ You can use any mix of HOST: and URL entries
 <LI>It would also be nice to be able to crawl local files.
 
 <P>
-Presently the crawler only accepts http, https, and ftp as protocols.
+Presently the crawler only accepts HTTP, HTTPS, and FTP as protocols.
 
 <P>
 </LI>
-<LI>Crawling of a single host is VERY slow.
+<LI><A NAME="slowcrawl"></A>Crawling of a single host is VERY slow.
 Is there some way for me to speed the crawler up?
 
 <P>
-Yes it's one of the built-in limitations to keep the crawler beeing 'nice'
-It will only access a particular server once every 60 seconds by default. You can change the default by adjusting the following configuration variables, but pleas keep in mind that you increase the load on the server.
+Yes it's one of the built-in limitations to keep the crawler beeing 'nice'.
+It will only access a particular server once every 60 seconds by default.
+You can change the default by adjusting the following configuration variables,
+but please keep in mind that you increase the load on the server.
 <BR>
 WaitIntervalSchedulerGetJcf=2
 <BR>
@@ -117,11 +127,18 @@ WaitIntervalHost = 5
 <BR>
 <P>
 </LI>
+<LI>Is it possible to crawl only one single web-page?
+
+<P>
+Use the command:
+<BR><code>combine --jobname XXX --harvesturl http://www.foo.com/bar.html</code>
+
+<P>
+</LI>
 <LI>How can I crawl a fixed number of link steps from a set of seed
 pages?
-(Is it for example possible to crawl only one single webpage?
-Or one webpage and all local links on that webpage (and not
-any further)?)
+For example one web-page and all local links on that web-page (and not
+any further?
 
 <P>
 Initialize the database and load the seed pages. Turn of automatic
@@ -157,7 +174,20 @@ They are stored in the SQL database &lt;jobname&gt; in the table <TT>log</TT>.
 
 <P>
 </LI>
-<LI>What are the main differences between Std and PosCheck algorithms for automated subject classification?
+<LI>What are the main differences between Std (<TT>classifyPlugIn =
+Combine::Check_record</TT>) and PosCheck (<TT>classifyPlugIn =
+Combine::PosCheck_record</TT>) algorithms for automated subject
+classification?
+
+<P>
+Std can handle Perl regular expressions in terms and does not
+take into account if the term is found in the beginning or end of the document.
+PosCheck can't handle Perl regular expressions but is faster, and takes word position and proximity into account.
+
+<P>
+For detailed descriptions see sections
+<A HREF="node6.html#std">Algorithm 1</A>
+<A HREF="node6.html#pos">Algorithm 2</A>.
 
 <P>
 </LI>
@@ -171,7 +201,7 @@ They are stored in the SQL database &lt;jobname&gt; in the table <TT>log</TT>.
 
 <P>
 It's part of the topic definition (term list) for the topic 'Carnivorous plants'.
-It's well described in the documenentation, please see
+It's well described in the documentation, please see
 section <A HREF="node6.html#topicdef">4.5.1</A>.
 The strange characters are Perl regular expressions mostly used for truncation etc.
 
@@ -260,20 +290,19 @@ The are three things that are problematic
 <LI>Runtime PID files are stored in /var/run/combine
 </LI>
 <LI>You have to be able to create MySQL databases accessible by combine
-Apart from that nothing else needs root access.
 </LI>
 </OL>
 
 <P>
 If you take the source and look how the tests (make test) are made you might find a way to
-fix 1. Though this probably involves modifying the source - maybe only the Combine/Config.pm
+fix the first. Though this probably involves modifying the source - maybe only the Combine/Config.pm
 
 <P>
-2. is strictly not necessary and it will run even if /var/run /combine does not exist, although not
-   the command 'combineCtrl -jobname XXX kill'
+The second is strictly not necessary and it will run even if /var/run /combine does not exist, although not
+   the command <code>combineCtrl --jobname XXX kill</code>
 
 <P>
-3. is necessary and I can't think of a way around it except making a local installation of MySQL and use
+On the other hand the third is necessary and I can't think of a way around it except making a local installation of MySQL and use
 that.
 
 <P>
@@ -292,7 +321,7 @@ Also you can use combineCtrl to see current status of ready queue etc
 <LI><code>| 7352 | HARVPARS 1_wctest | 2006-07-14 17:00:59 | M500; urlid=1; netlocid=1; http://www.shanghaidaily.com/</code>
 
 <P>
-Crawler process 7352 got a url (http://www.shanghaidaily.com/) to check
+Crawler process 7352 got a URL (http://www.shanghaidaily.com/) to check
 (1_wctest is a just a name non significant)
 M500 is a sequence number for an individual crawler starting at 500 and when it reaches 0 this crawler
 process is killed and another is created.
@@ -303,7 +332,7 @@ urlid and netlocid are internal identifiers used in the MySQL tables.
 <LI><code>| 7352 | HARVPARS 1_wctest | 2006-07-14 17:01:10 | M500; RobotRules OK, OK</code>
 
 <P>
-Crawler process have checked that this url (identified earlier in the log by pid=7352 and M500) can be crawled according to the Robot Exclusin protocol.
+Crawler process have checked that this URL (identified earlier in the log by pid=7352 and M500) can be crawled according to the Robot Exclusion protocol.
 
 <P>
 </LI>
@@ -324,7 +353,7 @@ It is processing the page (in the format text/html) to see if it is of topical i
 
 <P>
 </LI>
-<LI>In fact , I  want to  know  which  crawed  urls  are  corresponding  to      the  certain  topic  class
+<LI>In fact, I  want to  know  which  crawled  URLs  are  corresponding  to      the  certain  topic  class
 such as CP.Aldrovanda . Can you tell me how can I know ?
 
 <P>
@@ -335,16 +364,16 @@ SELECT urls.urlstr FROM urls,recordurl,topic WHERE urls.urlid=recordurl.urlid AN
 recordurl.recordid=topic.recordid AND topic.notation='CP.Aldrovanda';
 
 <P>
-Table urls contain all URLs seen.
+Table urls contain all URLs seen by the crawler.
 Table recordurl connect urlid to recordid.
 recordid is used in all tables with data from the crawled Web pages.
 
 <P>
 </LI>
-<LI>what is the meaning of the item "ALL"  in the notation column of the topic table ?
+<LI>What is the meaning of the item "ALL"  in the notation column of the topic table?
 
 <P>
-If you use multiple topics in your topic-defintion
+If you use multiple topics in your topic-definition
 (ie the string after '=') then all the relevant topic scores for this page is summed
 and given the topic notation 'ALL'.
 
@@ -353,17 +382,16 @@ Just disregard it if you only use one topic-class.
 
 <P>
 </LI>
-<LI>Combine should crawl all pages underneath, but not go outside
-the domain (i.e. going to www.yahoo.com) but also not
+<LI>Combine should crawl all pages underneath <code>www.geocities.com/boulevard/newyork/</code>,
+but not go outside the domain (i.e. going to <code>www.yahoo.com</code>) but also not
 going higher in position (i.e.
-www.geocities.com/boulevar/atlanta/index.html).
-
-<P>
+<code>www.geocities.com/boulevard/atlanta/</code>).
+<BR>
 Is it possible to set up Combine like this?
 
 <P>
 Yes, change the &lt;allow&gt;-part of your configuration file combine.cfg
-to select what URL's should be allowed for crawling (by default everything
+to select what URLs should be allowed for crawling (by default everything
 is allowed). See also section <A HREF="node6.html#urlfilt">4.3</A>.
 
 <P>
@@ -395,31 +423,31 @@ URL http:\/\/www\.geocities\.com\/boulevard\/newyork\/
 
 <DIV CLASS="navigation"><HR>
 <!--Navigation Panel-->
-<A NAME="tex2html517"
+<A NAME="tex2html586"
   HREF="node13.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
-<A NAME="tex2html513"
+<A NAME="tex2html582"
   HREF="node11.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
-<A NAME="tex2html507"
+<A NAME="tex2html576"
   HREF="node11.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
-<A NAME="tex2html515"
+<A NAME="tex2html584"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
 <BR>
-<B> Next:</B> <A NAME="tex2html518"
+<B> Next:</B> <A NAME="tex2html587"
   HREF="node13.html">Configuration variables</A>
-<B> Up:</B> <A NAME="tex2html514"
+<B> Up:</B> <A NAME="tex2html583"
   HREF="node11.html">Gory details</A>
-<B> Previous:</B> <A NAME="tex2html508"
+<B> Previous:</B> <A NAME="tex2html577"
   HREF="node11.html">Gory details</A>
- &nbsp; <B>  <A NAME="tex2html516"
+ &nbsp; <B>  <A NAME="tex2html585"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 <ADDRESS>
 root
-2006-12-07
+2007-03-07
 </ADDRESS>
 </BODY>
 </HTML>

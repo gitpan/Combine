@@ -28,26 +28,26 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<A NAME="tex2html271"
+<A NAME="tex2html346"
   HREF="node4.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
-<A NAME="tex2html267"
+<A NAME="tex2html342"
   HREF="node2.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
-<A NAME="tex2html261"
+<A NAME="tex2html336"
   HREF="node2.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
-<A NAME="tex2html269"
+<A NAME="tex2html344"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
 <BR>
-<B> Next:</B> <A NAME="tex2html272"
-  HREF="node4.html">Open Source distribution, Installation</A>
-<B> Up:</B> <A NAME="tex2html268"
+<B> Next:</B> <A NAME="tex2html347"
+  HREF="node4.html">Open source distribution, installation</A>
+<B> Up:</B> <A NAME="tex2html343"
   HREF="node2.html">Overview</A>
-<B> Previous:</B> <A NAME="tex2html262"
+<B> Previous:</B> <A NAME="tex2html337"
   HREF="node2.html">Overview</A>
- &nbsp; <B>  <A NAME="tex2html270"
+ &nbsp; <B>  <A NAME="tex2html345"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
@@ -58,27 +58,32 @@ Introduction</A>
 </H1>
 
 <P>
-The Combine system is an open, free, and highly configurable system for focused crawling of Internet resources.
+The Combine system is an open, free, and highly configurable
+system for focused crawling of Internet resources.
+It aims at providing a robust and efficient tool for creating
+topic-specific moderate sized databases (up to a few million records).
+Crawling speed is around 200 URLs per minute and a complete structured
+record takes up an average of 25 kilobytes disk-space.
 
 <P>
 
 <DIV ALIGN="CENTER"><A NAME="overview"></A><A NAME="33"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figure 1:</STRONG>
-Overview of Combine focused crawler.</CAPTION>
+Overview of the Combine focused crawler.</CAPTION>
 <TR><TD>
 <DIV ALIGN="CENTER">
 <IMG
  WIDTH="498" HEIGHT="344" ALIGN="BOTTOM" BORDER="0"
  SRC="img1.png"
- ALT="\includegraphics[height=0.3\textheight width=0.8\textwidth]{focusedrobot.eps}">
+ ALT="\includegraphics[height=0.3\textheight width=0.6\textwidth]{focusedrobot.eps}">
 
 </DIV></TD></TR>
 </TABLE>
 </DIV>
 
 <P>
-Main features include
+Main features include:
 
 <UL>
 <LI>part of the <A NAME="tex2html2"
@@ -92,7 +97,8 @@ system
 <LI>possibility to use any topic filter (if provided as a <A NAME="tex2html3"
   HREF="http://combine.it.lth.se/PlugIns/">Perl Plug-In module</A>) in focused crawling mode
 </LI>
-<LI>crawl limitations based on regular expression on URLs both include and exclude (URL focus filter)
+<LI>crawl limitations based on regular expression on URLs -
+both include and exclude rules (URL focus filter)
 </LI>
 <LI>character set detection/normalization
 </LI>
@@ -102,9 +108,11 @@ system
 </LI>
 <LI>metadata extraction
 </LI>
-<LI>structured records for each crawled page
+<LI>duplicate detection
 </LI>
-<LI>supports many document types (text, HTML, PDF, PostScript, MsWord, PowerPoint, Excel, RTF, TeX, images)
+<LI>HTML parsing to provide structured records for each crawled page
+</LI>
+<LI>support for many document formats (text, HTML, PDF, PostScript, MSWord, MSPowerPoint, MSExcel, RTF, TeX, images)
 </LI>
 <LI>SQL database for data storage and administration
 </LI>
@@ -115,13 +123,14 @@ Naturally it obeys the <A NAME="tex2html4"
   HREF="http://www.robotstxt.org/wc/exclusion.html">Robots
   Exclusion Protocol</A>
 and behaves nice to Web-servers. Besides focused crawls (generating
-topic specific databases) Combine supports configurable rules on
+topic-specific databases), Combine supports configurable rules on
 what's crawled based on regular expressions on URLs (URL focus filter).
 The crawler is designed to run continuously in order to keep
-the topic-specific database as up to date as possible.
+crawled databases as up to date as possible. It can be stopped and
+restarted any time without loosing any status or information.
 
 <P>
-The operation of Combine (overview in figure <A HREF="#overview">1</A>) as a focused crawler is based on a combination of a
+The operation of Combine (overview in Figure <A HREF="#overview">1</A>) as a focused crawler is based on a combination of a
 general Web crawler and an automated subject classifier. The topic
 focus is provided by a focus filter using a topic
 definition implemented as a thesaurus, where each term is connected to a
@@ -133,50 +142,54 @@ structured records in a local relational database.
 
 <P>
 Section <A HREF="node4.html#distr">2</A>
- outlines how to download, install and test the Combine system and includes use scenarios.
+ outlines how to download, install and test the Combine system and includes use scenarios - useful in order to get a jump start at using the system.
 
 <P>
-Section <A HREF="node5.html#configuration">3</A> discuss configuration structure and highlights a few important configuration variables.
+Section <A HREF="node5.html#configuration">3</A> discusses configuration structure and highlights a few important configuration variables.
 
 <P>
 Section <A HREF="node6.html#operation">4</A> describes policies and methods used by the crawler.
 
 <P>
-The system has a number of <A HREF="node9.html#comp">components</A>, the main user visible ones being <TT>combineCtrl</TT>
-which is used to start and stop crawling, and view crawler status and
-<TT>combineExport</TT> that extracts crawled data from the internal
-database and exports it as XML records.
+Evaluation and performance are treated in sections
+<A HREF="node7.html#autoclasseval">5</A> and <A HREF="node8.html#performance">6</A>.
 
 <P>
-Further details (lots and lots of them) can be found in <A HREF="node11.html#gory">'Gory details'</A> and in <A HREF="node15.html#appendix">the Appendix</A>.
+The system has a number of <A HREF="node9.html#comp">components</A>, the main ones visible to the user being <TT>combineCtrl</TT>
+which is used to start and stop crawling and view crawler status, and
+<TT>combineExport</TT> that extracts crawled data from the internal
+database and exports them as XML records.
+
+<P>
+Further details (lots and lots of them) can be found in <A HREF="node11.html#gory">'Gory details'</A> and in <A HREF="node16.html#appendix">the Appendix</A>.
 
 <DIV CLASS="navigation"><HR>
 <!--Navigation Panel-->
-<A NAME="tex2html271"
+<A NAME="tex2html346"
   HREF="node4.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
-<A NAME="tex2html267"
+<A NAME="tex2html342"
   HREF="node2.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
-<A NAME="tex2html261"
+<A NAME="tex2html336"
   HREF="node2.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
-<A NAME="tex2html269"
+<A NAME="tex2html344"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
 <BR>
-<B> Next:</B> <A NAME="tex2html272"
-  HREF="node4.html">Open Source distribution, Installation</A>
-<B> Up:</B> <A NAME="tex2html268"
+<B> Next:</B> <A NAME="tex2html347"
+  HREF="node4.html">Open source distribution, installation</A>
+<B> Up:</B> <A NAME="tex2html343"
   HREF="node2.html">Overview</A>
-<B> Previous:</B> <A NAME="tex2html262"
+<B> Previous:</B> <A NAME="tex2html337"
   HREF="node2.html">Overview</A>
- &nbsp; <B>  <A NAME="tex2html270"
+ &nbsp; <B>  <A NAME="tex2html345"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 <ADDRESS>
 root
-2006-12-07
+2007-03-07
 </ADDRESS>
 </BODY>
 </HTML>

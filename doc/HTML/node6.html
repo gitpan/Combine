@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Crawler operation</TITLE>
-<META NAME="description" CONTENT="Crawler operation">
+<TITLE>Crawler internal operation</TITLE>
+<META NAME="description" CONTENT="Crawler internal operation">
 <META NAME="keywords" CONTENT="DocMain">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -28,26 +28,26 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<A NAME="tex2html320"
+<A NAME="tex2html401"
   HREF="node7.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
-<A NAME="tex2html316"
+<A NAME="tex2html397"
   HREF="node2.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
-<A NAME="tex2html310"
+<A NAME="tex2html391"
   HREF="node5.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
-<A NAME="tex2html318"
+<A NAME="tex2html399"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
 <BR>
-<B> Next:</B> <A NAME="tex2html321"
+<B> Next:</B> <A NAME="tex2html402"
   HREF="node7.html">Evaluation of automated subject</A>
-<B> Up:</B> <A NAME="tex2html317"
+<B> Up:</B> <A NAME="tex2html398"
   HREF="node2.html">Overview</A>
-<B> Previous:</B> <A NAME="tex2html311"
+<B> Previous:</B> <A NAME="tex2html392"
   HREF="node5.html">Configuration</A>
- &nbsp; <B>  <A NAME="tex2html319"
+ &nbsp; <B>  <A NAME="tex2html400"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
@@ -56,37 +56,41 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
 
 <UL CLASS="ChildLinks">
-<LI><A NAME="tex2html322"
+<LI><A NAME="tex2html403"
   HREF="node6.html#SECTION02041000000000000000">URL selection criteria</A>
-<LI><A NAME="tex2html323"
-  HREF="node6.html#SECTION02042000000000000000">Document parsing</A>
-<LI><A NAME="tex2html324"
+<LI><A NAME="tex2html404"
+  HREF="node6.html#SECTION02042000000000000000">Document parsing and analysis</A>
+<LI><A NAME="tex2html405"
   HREF="node6.html#SECTION02043000000000000000">URL filtering</A>
-<LI><A NAME="tex2html325"
-  HREF="node6.html#SECTION02044000000000000000">Link selection/scheduling policy</A>
-<LI><A NAME="tex2html326"
-  HREF="node6.html#SECTION02045000000000000000">Built in topic filter - automated subject classification</A>
+<LI><A NAME="tex2html406"
+  HREF="node6.html#SECTION02044000000000000000">Crawling strategy</A>
+<LI><A NAME="tex2html407"
+  HREF="node6.html#SECTION02045000000000000000">Built-in topic filter - automated subject classification</A>
 <UL>
-<LI><A NAME="tex2html327"
+<LI><A NAME="tex2html408"
   HREF="node6.html#SECTION02045100000000000000">Topic definition</A>
-<LI><A NAME="tex2html328"
+<LI><A NAME="tex2html409"
   HREF="node6.html#SECTION02045200000000000000">Topic definition (term triplets) BNF grammar</A>
-<LI><A NAME="tex2html329"
+<LI><A NAME="tex2html410"
   HREF="node6.html#SECTION02045300000000000000">Term triplet examples</A>
-<LI><A NAME="tex2html330"
+<LI><A NAME="tex2html411"
   HREF="node6.html#SECTION02045400000000000000">Algorithm 1: plain matching</A>
-<LI><A NAME="tex2html331"
+<LI><A NAME="tex2html412"
   HREF="node6.html#SECTION02045500000000000000">Algorithm 2: position weighted matching</A>
 </UL>
 <BR>
-<LI><A NAME="tex2html332"
+<LI><A NAME="tex2html413"
   HREF="node6.html#SECTION02046000000000000000">Topic filter Plug-In API</A>
-<LI><A NAME="tex2html333"
+<LI><A NAME="tex2html414"
   HREF="node6.html#SECTION02047000000000000000">Analysis</A>
-<LI><A NAME="tex2html334"
-  HREF="node6.html#SECTION02048000000000000000">URL recycling</A>
-<LI><A NAME="tex2html335"
-  HREF="node6.html#SECTION02049000000000000000">Complete application - SearchEngine in a Box</A>
+<LI><A NAME="tex2html415"
+  HREF="node6.html#SECTION02048000000000000000">Duplicate detection</A>
+<LI><A NAME="tex2html416"
+  HREF="node6.html#SECTION02049000000000000000">URL recycling</A>
+<LI><A NAME="tex2html417"
+  HREF="node6.html#SECTION020410000000000000000">Database cleaning</A>
+<LI><A NAME="tex2html418"
+  HREF="node6.html#SECTION020411000000000000000">Complete application - SearchEngine in a Box</A>
 </UL>
 <!--End of Table of Child-Links-->
 <HR>
@@ -94,23 +98,24 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <H1><A NAME="SECTION02040000000000000000"></A>
 <A NAME="operation"></A>
 <BR>
-Crawler operation
+Crawler internal operation
 </H1>
 The system is designed for continuous operation.
-The harvester processes an URL in several steps as is detailed
-in figure <A HREF="#combinearch">2</A>.  As a start-up initialization the
+The harvester processes a URL in several steps as detailed
+in Figure <A HREF="#combinearch">2</A>.  As a start-up initialization the
 frontier has to be seeded with some relevant URLs. All URLs are
 normalized before they are entered in the database.
 Data can be exported in various formats including the <A NAME="tex2html15"
   HREF="http://www.alvis.info/alvis/architecture">ALVIS XML
 document format</A>
-as well as <A NAME="tex2html16"
+and
+<A NAME="tex2html16"
   HREF="http://dublincore.org/">Dublin Core</A>
 records.
 
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="combinearch"></A><A NAME="547"></A>
+<DIV ALIGN="CENTER"><A NAME="combinearch"></A><A NAME="620"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figure 2:</STRONG>
 Architecture for the Combine focused crawler.</CAPTION>
@@ -126,14 +131,14 @@ Architecture for the Combine focused crawler.</CAPTION>
 </DIV>
 
 <P>
-The steps taken during crawling (numbers refer to figure <A HREF="#combinearch">2</A>):
+The steps taken during crawling (numbers refer to Figure <A HREF="#combinearch">2</A>):
 
 <OL>
 <LI>The next URL is fetched from the scheduler.
 
 <P>
 </LI>
-<LI>Combine obeys the the <A NAME="tex2html17"
+<LI>Combine obeys the <A NAME="tex2html17"
   HREF="http://www.robotstxt.org/wc/exclusion.html">Robots
   Exclusion Protocol</A>.
 Rules are cached locally.
@@ -155,13 +160,13 @@ Rules are cached locally.
 <LI><P>
 
 <OL>
-<LI>The page (in any of the formats PDF, PostScript, MS Word, MSExcel, PowerPoint, RTF and TeX/LaTeX) is converted to HTML (or plain 
-text) by an external program.
+<LI>The page (in any of the formats PDF, PostScript, MSWord, MSExcel, MSPowerPoint, RTF and TeX/LaTeX) is converted to HTML or plain 
+text by an external program.
 
 <P>
 </LI>
 <LI>Internal parsers handles HTML, plain text and images.
-This step extracts structured information like metadata (title, keywords, description, ...), HTML links,
+This step extracts structured information like metadata (title, keywords, description ...), HTML links,
   and text without markup.
 </LI>
 </OL>
@@ -175,7 +180,7 @@ processing continues with:
 <P>
 
 <OL>
-<LI>Heuristics like score propagation
+<LI>Heuristics like score propagation.
 
 <P>
 </LI>
@@ -184,10 +189,11 @@ processing continues with:
 
 <P>
 </LI>
-<LI>Update the record database 
+<LI>Updating the record database.
+ 
 <P>
 </LI>
-<LI>Update the frontier database with HTML links and URLs
+<LI>Updating the frontier database with HTML links and URLs
   extracted from plain text.
 <P>
 </LI>
@@ -199,9 +205,8 @@ processing continues with:
 
 <P>
 Depending on several factors like configuration, hardware, network,
-workload, etc, the crawler normally processes between 50 and 250
-URLs per minute. In general focused crawling using 'reasonable'
-topic definitions can do 100 - 150 URLs per minute.
+workload, the crawler normally processes between 50 and 200
+URLs per minute.
 
 <P>
 
@@ -209,10 +214,10 @@ topic definitions can do 100 - 150 URLs per minute.
 URL selection criteria</A>
 </H2>
 In order to successfully select and crawl one URL the following conditions
-have to be meet:
+(in this order) have to be met:
 
 <OL>
-<LI>The URL have to be selected by the scheduling algorithm (section
+<LI>The URL has to be selected by the scheduling algorithm (section
 <A HREF="#sched">4.4</A>).
 <BR>
 <P>
@@ -223,7 +228,7 @@ WaitIntervalHarvesterLockSuccess (section <A HREF="node13.html#WaitIntervalHarve
 
 <P>
 </LI>
-<LI>The URL have to pass the allow test
+<LI>The URL has to pass the allow test.
 
 <P>
 <EM>Relevant configuration variables:</EM> allow (section <A HREF="node13.html#allow">9.2.1</A>)
@@ -238,11 +243,11 @@ WaitIntervalHarvesterLockSuccess (section <A HREF="node13.html#WaitIntervalHarve
 
 <P>
 </LI>
-<LI>The Robot Exclusion Protocol have to allow crawling of the URL
+<LI>The Robot Exclusion Protocol has to allow crawling of the URL.
 
 <P>
 </LI>
-<LI>Optionally the document at the URL location have to pass the topic filter
+<LI>Optionally the document at the URL location has to pass the topic filter
 (section <A HREF="#autoclass">4.5</A>).
 
 <P>
@@ -257,12 +262,40 @@ doCheckRecord (section <A HREF="node13.html#doCheckRecord">9.1.6</A>).
 <P>
 
 <H2><A NAME="SECTION02042000000000000000">
-Document parsing</A>
+Document parsing and analysis</A>
 </H2>
 
 <P>
+Each document is parsed and analyzed by the crawler in order to store
+structured document records in the internal MySQL database. The
+structure of the record includes the fields:
+
+<UL>
+<LI>Title
+</LI>
+<LI>Headings
+</LI>
+<LI>Metadata
+</LI>
+<LI>Plain text
+</LI>
+<LI>Original document
+</LI>
+<LI>Links - HTML and plain text URLs
+</LI>
+<LI>Link anchor text
+</LI>
+<LI>Mime-Type
+</LI>
+<LI>Dates - modification, expire, and last checked by crawler
+</LI>
+<LI>Web-server identification
+</LI>
+</UL>
+
+<P>
 The system selects a document parser based on the Mime-Type together
-with available parsers and converter programs
+with available parsers and converter programs.
 
 <OL>
 <LI>For some mime-types an external program
@@ -288,6 +321,10 @@ that can convert a document in this format to HTML or plain text.
 Configuration of the mapping between document format (Mime-Type) and converter program is done in the complex configuration variable 'converters' (section  <A HREF="node13.html#converters">9.2.3</A>). 
 
 <P>
+Out of the box Combine handle the following document formats: plain text, HTML,
+PDF, PostScript, MSWord, MSPowerPoint, MSExcel, RTF, TeX, and images.
+
+<P>
 
 <H2><A NAME="SECTION02043000000000000000"></A>
 <A NAME="urlfilt"></A>
@@ -307,25 +344,25 @@ substitution, canonical URL
 
 <P>
 </LI>
-<LI>Remove fragments (ie '#' and everything after that)
+<LI>Removing fragments (ie '#' and everything after that)
 
 <P>
 </LI>
-<LI>Clean CGI repetitions of parameters
+<LI>Cleaning CGI repetitions of parameters
 
 <P>
 </LI>
-<LI>Collapse dots ('./', '../') in the path
+<LI>Collapsing dots ('./', '../') in the path
 
 <P>
 </LI>
-<LI>Remove CGI parameters that are session ids, as identified by
+<LI>Removing CGI parameters that are session ids, as identified by
 patterns in the configuration variable sessionids (section <A HREF="node13.html#sessionids">9.2.6</A>)
 
 <P>
 </LI>
-<LI>Normalize WWW-server names by resolving aliases. Identified by
-patterns in the configuration variable serveralias (section <A HREF="node13.html#serveralias">9.2.5</A>).
+<LI>Normalizing Web-server names by resolving aliases. Identified by
+patterns in the <A HREF="node13.html#serveralias">configuration variable serveralias</A>.
 These patterns can be generated by using the program
 <TT>combineUtil</TT> to analyze a crawled corpus.
 </LI>
@@ -333,11 +370,11 @@ These patterns can be generated by using the program
 
 <P>
 </LI>
-<LI>Validation: A URL have to pass all three validation steps
+<LI>Validation: A URL has to pass all three validation steps
 outlined below.
 
 <UL>
-<LI>URL length have to be less than configuration variable
+<LI>URL length has to be less than configuration variable
 maxUrlLength (section <A HREF="node13.html#maxUrlLength">9.1.14</A>)
 
 <P>
@@ -358,7 +395,7 @@ configuration variable
 Both allow and exclude can contain two types of regular expressions
 identified by either '<TT>HOST:</TT>' or '<TT>URL</TT>' in front of the
 regular expression. The '<TT>HOST:</TT>' regular expressions are matched only against the
-WWW-server part of the URL while the '<TT>URL</TT>' regular expressions
+Web-server part of the URL while the '<TT>URL</TT>' regular expressions
 are matched against the entire URL.
 </LI>
 </UL>
@@ -368,25 +405,33 @@ are matched against the entire URL.
 <H2><A NAME="SECTION02044000000000000000"></A>
 <A NAME="sched"></A>
 <BR>
-Link selection/scheduling policy
+Crawling strategy
 </H2>
+The crawler is designed to run continuously in order to keep
+crawled databases as up-to-date as possible.
+Starting and halting crawling is done manually.
+The configuration variable <A HREF="node13.html#AutoRecycleLinks">AutoRecycleLinks</A> determines if the crawler should
+follow all valid new links or just take those that already are
+marked for crawling.
+
+<P>
 All links from a relevant document are extracted, normalized and stored
 in the structured record. Those links that pass the selection/validation
 criteria outlined below are marked for crawling.
 
 <P>
-To mark a URL for crawling requires
+To mark a URL for crawling requires:
 
 <UL>
-<LI>The URL should be from a page that is relevant (ie pass the focus filter)
+<LI>The URL should be from a page that is relevant (i.e. pass the focus filter).
 </LI>
-<LI>The URL scheme must be one of HTTP, HTTPS, or FTP
+<LI>The URL scheme must be one of HTTP, HTTPS, or FTP.
 </LI>
-<LI>The URL must not exceed the maximum length (configurable, default 250 characters)
+<LI>The URL must not exceed the maximum length (configurable, default 250 characters).
 </LI>
-<LI>It should pass the 'allow' test (configurable, default all URLs passes)
+<LI>It should pass the 'allow' test (configurable, default all URLs passes).
 </LI>
-<LI>It should pass the 'exclude' test (configurable, default excludes malformed URLs, some CGI pages, and URLs with file-extensions for binary formats)
+<LI>It should pass the 'exclude' test (configurable, default excludes malformed URLs, some CGI pages, and URLs with file-extensions for binary formats).
 </LI>
 </UL>
 
@@ -397,43 +442,48 @@ before a new scheduling is done.
 Each selected URL in the ready queue thus fulfills these requirements:
 
 <UL>
-<LI>URL must be marked for crawling (see above)
+<LI>URL must be marked for crawling (see above).
 </LI>
-<LI>URL must be unlocked (each successful access to a URL lock it for
-a configurable time <A HREF="node13.html#WaitIntervalHarvesterLockSuccess">WaitIntervalHarvesterLockSuccess</A>)
+<LI>URL must be unlocked (each successful access to a URL locks it for
+a configurable time <A HREF="node13.html#WaitIntervalHarvesterLockSuccess">WaitIntervalHarvesterLockSuccess</A>).
 </LI>
-<LI>Host of the URL must be unlocked (each access to a host locks it for a configurable time <A HREF="node13.html#WaitIntervalHost">WaitIntervalHost</A>)
+<LI>Host of the URL must be unlocked (each access to a host locks it for a configurable time <A HREF="node13.html#WaitIntervalHost">WaitIntervalHost</A>).
 </LI>
 </UL>
+
+<P>
+This implements a variant of BreathFirst crawling where a page is fetched if and only if 
+a certain time threshold is exceeded 
+since the last access to the server of that page.
 
 <P>
 
 <H2><A NAME="SECTION02045000000000000000"></A>
 <A NAME="autoclass"></A>
 <BR>
-Built in topic filter - automated subject classification
+Built-in topic filter - automated subject classification
 </H2>
-The built in topic filter is a library science approach to automated classification,
-using a topic definition with a pre-defined controlled vocabulary of
+The built-in topic filter is an approach to automated classification,
+that uses a topic definition with a pre-defined controlled vocabulary of
 topical terms, to determine relevance judgement. Thus it does not rely
 on a particular set of seed pages, or a collection of pre-classified
 example pages to learn from. It does require that some of the seed pages
 are relevant and contain links into the topical area.
 One simple way of creating a set of seed pages would be to use terms
-from the controlled vocabulary as queries for a general purpose search
+from the controlled vocabulary as queries for a general-purpose search
 engine and take the result as seed pages.
 
 <P>
-The system for automated topic classification (overview in figure <A HREF="#topicfilter">3</A>), that determines
+The system for automated topic classification (overview in Figure <A HREF="#topicfilter">3</A>), that determines
 topical relevance in the topical filter, is based on matching subject
 terms from a controlled vocabulary in a topic
 definition with the text of the document to be classified
 [<A
- HREF="node10.html#ardo99:_online99">1</A>]. The topic definition uses
+ HREF="node10.html#ardo99:_online99">3</A>]. The topic definition uses
 subject classes in a hierarchical classification system (corresponding
 to topics) and terms
 associated with each subject class. Terms can be single words, phrases,
- or boolean AND-expressions connecting terms.
+ or Boolean AND-expressions connecting terms.
 Boolean OR-expressions are implicitly handled by having several
 different terms associated with the same subject class (see section <A HREF="#termlist">4.5.1</A>).
 
@@ -443,14 +493,14 @@ text in documents.
 Each time a match is found the document is awarded points based on
 which term is matched and in which structural part of the document
 (location) the match is found [<A
- HREF="node10.html#ardo05:_ECDL">5</A>].  The points are summed to make the final
+ HREF="node10.html#ardo05:_ECDL">10</A>].  The points are summed to make the final
 relevance score of the document. If the score is above a cut-off value the
 document is saved in the database together with a (list of) subject
 classification(s) and term(s).
 
 <P>
 
-<DIV ALIGN="CENTER"><A NAME="topicfilter"></A><A NAME="630"></A>
+<DIV ALIGN="CENTER"><A NAME="topicfilter"></A><A NAME="713"></A>
 <TABLE>
 <CAPTION ALIGN="BOTTOM"><STRONG>Figure 3:</STRONG>
 Overview of the automated topic classification algorithm</CAPTION>
@@ -492,22 +542,22 @@ Terms can be:
 <UL>
 <LI>single words
 </LI>
-<LI>a phrase (ie all words in exact order)
+<LI>a phrase (i.e. all words in exact order)
 </LI>
-<LI>a boolean AND-expression connecting terms (ie all terms must
-      be present but in any order). The boolean AND operator is encoded as '@and'
+<LI>a Boolean AND-expression connecting terms (i.e. all terms must
+      be present but in any order). The Boolean AND operator is encoded as '@and'.
 </LI>
 </UL>
-A boolean OR-expression has to be entered as separate term triplets.
-The boolean expression ``<TT>polymer AND (atactic OR syndiotactic)</TT>''
-thus have to be translated into two separate triplets, one containing
+A Boolean OR-expression has to be entered as separate term triplets.
+The Boolean expression ``<TT>polymer AND (atactic OR syndiotactic)</TT>''
+thus has to be translated into two separate triplets, one containing
 the term ``<TT>polymer @and atactic</TT>'', and another with ``<TT>polymer @and syndiotactic</TT>''.
 
 <P>
 Terms can include (Perl) regular expressions like:
 
 <UL>
-<LI>a '<TT>?</TT>' makes the character immediately preceding optional, ie
+<LI>a '<TT>?</TT>' makes the character immediately preceding optional, i.e.
       the term ``<TT>coins?</TT>'' will match both ``<TT>coin</TT>'' and ``<TT>coins</TT>''
 </LI>
 <LI>a ``<TT>[^ <SPAN CLASS="MATH"><IMG
@@ -527,27 +577,27 @@ Terms can include (Perl) regular expressions like:
 <P>
 It is important to understand that each triplet in the topic definition
  is considered by itself
-without any context, so they must <B>each</B> be topic or sub-class specific in order to
+without any context, so they must <B>each</B> be topic- or sub-class specific in order to
 be useful. Subject neutral terms like ``use'', ``test'', ``history'' should
 not be used.
 If really needed they have to be qualified so that they become topic
 specific (see examples below).
 
 <P>
-Simple guidelines for creating the triplets and assigning weights
+Simple guidelines for creating the triplets and assigning weights are:
 
 <UL>
-<LI>Phrases or unique, topic specific terms, 
+<LI>Phrases or unique, topic-specific terms, 
  should be used if possible, and
     assigned the highest weights, since they normally are most discriminatory.
 </LI>
-<LI>Boolean AND-expressions is the next best.
+<LI>Boolean AND-expressions are the next best.
 </LI>
-<LI>Single words can be to general and/or have several meanings or uses
+<LI>Single words can be too general and/or have several meanings or uses
     that make them less specific and those should thus be assigned
     a small weights.
 </LI>
-<LI>Acronyms can be used as terms if they are unique
+<LI>Acronyms can be used as terms if they are unique.
 </LI>
 <LI>Negative weights should be used in order to exclude concepts.
 </LI>
@@ -630,7 +680,7 @@ CLASSID :== <B><SPAN CLASS="MATH"><IMG
  ALT="$&gt;$"></SPAN></B>+  
 <BR>
 <P>
-A line that starts with '#' is ignored as are empty lines.
+A line that starts with '#' is ignored and so are empty lines.
 
 <P>
 <B><SPAN CLASS="MATH"><IMG
@@ -678,7 +728,7 @@ In order to exclude documents about artistic use of glass the term
 
 <P>
 An example from the topic definition for 'Carnivorous Plants' using
-  regular expressions. 
+  regular expressions is given below:
 <PRE>
 #This is a comment
 75: D\.?\s*californica=CP.Drosophyllum
@@ -695,7 +745,7 @@ The term ``<TT>D<SPAN CLASS="MATH"><IMG
  will match <TT>D californica, D. californica, D.californica</TT> etc.
 
 <P>
-The last two lines assures that a document containing ``<TT>pitcher</TT>'' gets
+The last two lines assure that a document containing ``<TT>pitcher</TT>'' gets
 10 points but if the document also contains ``<TT>baseball</TT>'' the points are removed.
 
 <P>
@@ -707,7 +757,8 @@ Algorithm 1: plain matching
 </H3>
 
 <P>
-Selected by setting the configuration parameter <TT>classifyPlugIn = Combine::Check_record</TT>
+This algorithm is selected by setting the configuration parameter
+<BR><code>    classifyPlugIn = Combine::Check_record</code>
 
 <P>
 The algorithm produces a list of suggested topic-classes (subject classifications) and
@@ -771,7 +822,7 @@ triplets.
 defined ad hoc for locations like title, metadata, HTML headings, and plain
 text. However the exact values for these weights does not seem to play
 a large role in the precision of the algorithm [<A
- HREF="node10.html#ardo05:_ECDL">5</A>].
+ HREF="node10.html#ardo05:_ECDL">10</A>].
 </DD>
 <DT><STRONG>hits</STRONG></DT>
 <DD>(<!-- MATH
@@ -816,12 +867,13 @@ above algorithm.
 <BR>
 Algorithm 2: position weighted matching
 </H3>
-Selected by setting the configuration parameter <TT>classifyPlugIn = Combine::PosCheck_record</TT>
+This algorithm is selected by setting the configuration parameter
+<BR><code>    classifyPlugIn = Combine::PosCheck_record</code>
 
 <P>
 In response to the problems cited above we developed a modified
 version of the algorithm that takes into account word position in the
-text and proximity for boolean terms. It also eliminates the need to
+text and proximity for Boolean terms. It also eliminates the need to
 assign ad hoc weights to locations. The new algorithm works as
 follows.
 
@@ -923,7 +975,7 @@ The constant factor <SPAN CLASS="MATH"><IMG
 <P>
 <TABLE CELLPADDING=3>
 <TR><TD ALIGN="CENTER">1</TD>
-<TD ALIGN="LEFT">for non boolean terms</TD>
+<TD ALIGN="LEFT">for non Boolean terms</TD>
 </TR>
 <TR><TD ALIGN="CENTER"><!-- MATH
  $\log(distance\_between\_components)$
@@ -932,14 +984,14 @@ The constant factor <SPAN CLASS="MATH"><IMG
  WIDTH="286" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
  SRC="img21.png"
  ALT="$\log(distance\_between\_components)$"></SPAN></TD>
-<TD ALIGN="LEFT">for boolean terms</TD>
+<TD ALIGN="LEFT">for Boolean terms</TD>
 </TR>
 </TABLE>
 </DD>
 </DL>
 
 <P>
-In this algorithm a matched term close to the start of text contribute
+In this algorithm a matched term close to the start of text contributes
 more to the relevance score than a match towards the end of the
 text. And for Boolean terms the closer the components are the higher
 the contribution to the relevance score.
@@ -951,23 +1003,21 @@ Topic filter Plug-In API</A>
 </H2>
 The configuration variable <A HREF="node13.html#classifyPlugIn">classifyPlugIn</A> is used to find
 the Perl module that implements the desired topic filter.
-The value should be formatted as a valid Perl module identifier (ie
+The value should be formatted as a valid Perl module identifier (i.e.
 the module must be somewhere in the Perl module search path).
-Combine will call a subroutine named 'classify' in this module,
-providing a XWI-object as in parameter. The subroutine must
+Combine will call a subroutine named '<code>classify</code>' in this module,
+providing an XWI-object as in parameter. An XWI-object is a structured object holding all information from
+parsing a Web-page.
+The subroutine must
 return either 0 or 1, where
 <BR>
-0: means record fails to meet the classification criteria, ie ignore this record
+0: means record fails to meet the classification criteria, i.e. ignore this record
 <BR>
-1: means record is OK and should be stored in the database, and links followed by the crawler
-
-<P>
-A XWI-object is a structured object holding all information from
-parsing a Web-page.
+1: means record is OK, store it in the database, and follow the links
 
 <P>
 More details on how to write a Plug-In can be found in the example
-Plug-In <A HREF="node15.html#classifyPlugInTemplate">classifyPlugInTemplate.pm</A>.
+<A HREF="node16.html#classifyPlugInTemplate">classifyPlugInTemplate.pm</A>.
 
 <P>
 
@@ -984,14 +1034,29 @@ page) of a page.
 <P>
 
 <H2><A NAME="SECTION02048000000000000000">
+Duplicate detection</A>
+</H2>
+Duplicates of crawled documents are automatically detected with the
+aid of a MD5-checksum calculated on the contents of the document.
+
+<P>
+The MD5-checksum is used as the master record key in the internal
+database thus preventing pollution with duplicate pages. All URLs
+for a page are stored in the record, and a page is not deleted from
+the database until the crawler has verified that it's unavailable
+from all the saved URLs.
+
+<P>
+
+<H2><A NAME="SECTION02049000000000000000">
 URL recycling</A>
 </H2>
-URLs for recycling comes from 3 sources:
+URLs for recycling come from 3 sources:
 
 <UL>
-<LI>Links extracted during HTML parsing
+<LI>Links extracted during HTML parsing.
 </LI>
-<LI>Redirects (unless configuration variable <A HREF="node13.html#UserAgentFollowRedirects">UserAgentFollowRedirects</A> is set)
+<LI>Redirects (unless configuration variable <A HREF="node13.html#UserAgentFollowRedirects">UserAgentFollowRedirects</A> is set).
 </LI>
 <LI>URLs extracted from plain text (enabled by the configuration variable
 extractLinksFromText (section <A HREF="node13.html#extractLinksFromText">9.1.8</A>)).
@@ -1002,15 +1067,45 @@ extractLinksFromText (section <A HREF="node13.html#extractLinksFromText">9.1.8</
 Automatic recycling of URLs is enabled by the configuration variable
 AutoRecycleLinks (section <A HREF="node13.html#AutoRecycleLinks">9.1.1</A>). It can also be done
 manually with the command
-<BR><TT>combineCtrl -jobname XXXX recyclelinks</TT>
+<BR><code>combineCtrl --jobname XXXX recyclelinks</code>
 
 <P>
-The command <TT>combineCtrl -jobname XXXX reharvest</TT> marks all
+The command <code>combineCtrl --jobname XXXX reharvest</code> marks all
 pages in the database for harvesting again.
 
 <P>
 
-<H2><A NAME="SECTION02049000000000000000">
+<H2><A NAME="SECTION020410000000000000000">
+Database cleaning</A>
+</H2>
+
+<P>
+The tool <TT>combineUtil</TT> implements functionality for cleaning the database.
+
+<P>
+<DL>
+<DT><STRONG>sanity/restoreSanity</STRONG></DT>
+<DD>checks respectively restore
+ consistency of the internal database.
+
+<P>
+</DD>
+<DT><STRONG>deleteNetLoc/deletePath/deleteMD5/deleteRecordid</STRONG></DT>
+<DD>deletes
+records from the database based on supplied parameters.
+
+<P>
+</DD>
+<DT><STRONG>serverAlias</STRONG></DT>
+<DD>detects Web-server aliases in the database.
+All detected alias groups are added to the <A HREF="node13.html#serveralias">serveralias configuration</A>.
+Records from aliased servers (except for the first Web-server) will be deleted.
+</DD>
+</DL>
+
+<P>
+
+<H2><A NAME="SECTION020411000000000000000">
 Complete application - SearchEngine in a Box</A>
 </H2>
 
@@ -1029,42 +1124,40 @@ a vertical search engine for your favorite topic in a few easy
 <P>
 The <A NAME="tex2html22"
   HREF="http://combine.it.lth.se/SearchEngineBox/">SearchEngine-in-a-Box</A>
-web-site contains instructions and downloads
+Web-site contains instructions and downloads
 to make this happen. Basically it makes use of the
 <A HREF="node13.html#ZebraHost">ZebraHost</A>
 configuration variable which enables direct communication between
 the crawler and the database system and thus indexes records as soon
-as they are crawled. Which also means that they are directly searchable.
-
-<P>
+as they are crawled. This also means that they are directly searchable.
 
 <DIV CLASS="navigation"><HR>
 <!--Navigation Panel-->
-<A NAME="tex2html320"
+<A NAME="tex2html401"
   HREF="node7.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
-<A NAME="tex2html316"
+<A NAME="tex2html397"
   HREF="node2.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
-<A NAME="tex2html310"
+<A NAME="tex2html391"
   HREF="node5.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
-<A NAME="tex2html318"
+<A NAME="tex2html399"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
 <BR>
-<B> Next:</B> <A NAME="tex2html321"
+<B> Next:</B> <A NAME="tex2html402"
   HREF="node7.html">Evaluation of automated subject</A>
-<B> Up:</B> <A NAME="tex2html317"
+<B> Up:</B> <A NAME="tex2html398"
   HREF="node2.html">Overview</A>
-<B> Previous:</B> <A NAME="tex2html311"
+<B> Previous:</B> <A NAME="tex2html392"
   HREF="node5.html">Configuration</A>
- &nbsp; <B>  <A NAME="tex2html319"
+ &nbsp; <B>  <A NAME="tex2html400"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 <ADDRESS>
 root
-2006-12-07
+2007-03-07
 </ADDRESS>
 </BODY>
 </HTML>

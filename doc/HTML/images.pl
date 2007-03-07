@@ -2,6 +2,12 @@
 # Associate images original text with physical files.
 
 
+$key = q/includegraphics[height=0.3textheightwidth=0.6textwidth]{focusedrobot.eps};LFS=11;AAT/;
+$cached_env_img{$key} = q|<IMG
+ WIDTH="498" HEIGHT="344" ALIGN="BOTTOM" BORDER="0"
+ SRC="|."$dir".q|img1.png"
+ ALT="\includegraphics[height=0.3\textheight width=0.6\textwidth]{focusedrobot.eps}">|; 
+
 $key = q/includegraphics[height=0.4textheight]{Config.ps};LFS=11;AAT/;
 $cached_env_img{$key} = q|<IMG
  WIDTH="621" HEIGHT="445" ALIGN="BOTTOM" BORDER="0"
@@ -31,6 +37,12 @@ $cached_env_img{$key} = q|<IMG
  WIDTH="134" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
  SRC="|."$dir".q|img11.png"
  ALT="$weight[\mbox{location}_{j}]$">|; 
+
+$key = q/includegraphics[width=140mmheight=90mm]{crawl.ps};LFS=11;AAT/;
+$cached_env_img{$key} = q|<IMG
+ WIDTH="727" HEIGHT="882" ALIGN="BOTTOM" BORDER="0"
+ SRC="|."$dir".q|img24.png"
+ ALT="\includegraphics[width=140mm height=90mm]{crawl.ps}">|; 
 
 $key = q/position[mbox{term}_{i}][mbox{match}_{j}];MSF=1.6;LFS=11;AAT/;
 $cached_env_img{$key} = q|<IMG
@@ -67,7 +79,7 @@ $cached_env_img{$key} = q|<IMG
 $key = q/|;MSF=1.6;LFS=11;AAT/;
 $cached_env_img{$key} = q|<IMG
  WIDTH="9" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
- SRC="|."$dir".q|img24.png"
+ SRC="|."$dir".q|img25.png"
  ALT="$\vert$">|; 
 
 $key = q/includegraphics[height=0.4textheight]{CrawlerSpeed.ps};LFS=11;AAT/;
@@ -99,12 +111,6 @@ $cached_env_img{$key} = q|<IMG
  WIDTH="58" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
  SRC="|."$dir".q|img17.png"
  ALT="$\mbox{match}_{j}$">|; 
-
-$key = q/includegraphics[height=0.3textheightwidth=0.8textwidth]{focusedrobot.eps};LFS=11;AAT/;
-$cached_env_img{$key} = q|<IMG
- WIDTH="498" HEIGHT="344" ALIGN="BOTTOM" BORDER="0"
- SRC="|."$dir".q|img1.png"
- ALT="\includegraphics[height=0.3\textheight width=0.8\textwidth]{focusedrobot.eps}">|; 
 
 $key = q/<;MSF=1.6;LFS=11;AAT/;
 $cached_env_img{$key} = q|<IMG

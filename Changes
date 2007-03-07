@@ -1,3 +1,12 @@
+combine (3.5) sarge; urgency=low
+
+  * Added bin/combineRank - utility for calculating ranking
+     values like PageRank
+  * Changed package numbering convention
+  * Documentation updates
+
+ -- Anders Ardo <anders@it.lth.se>  Wed, 13 Dec 2006 16:09:43 +0100
+
 combine (3.4-5) sarge; urgency=low
 
   * Disabled parsing of really short files

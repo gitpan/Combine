@@ -1,4 +1,4 @@
-# $Id: XWI.pm,v 1.2 2006/09/27 13:10:57 anders Exp $
+# $Id: XWI.pm,v 1.3 2006/12/13 15:06:46 anders Exp $
 
 # Copyright (c) 1996-1998 LUB NetLab, 2002-2006 Anders Ardö
 # 
@@ -293,12 +293,129 @@ __END__
 
 =head1 NAME
 
-XWI.pm - class for interfacing to various web-index format translators
+XWI.pm - class for internal representation of a document record
+
+=head1 SYNOPSIS
+
+ use Combine::XWI;
+ $xwi = new Combine::XWI;
+
+ #single value record variables
+ $xwi->server($server);
+
+ my $server = $xwi->server();
+
+ #original content
+ $xwi->content(\$html);
+
+ my $text = ${$xwi->content()};
+
+ #multiple value record variables
+ $xwi->meta_add($name1,$value1);
+ $xwi->meta_add($name2,$value2);
+
+ $xwi->meta_rewind;
+ my ($name,$content);
+ while (1) {
+  ($name,$content) = $xwi->meta_get;
+  last unless $name;
+ } 
+
 
 =head1 DESCRIPTION
 
-  2002-09-30 AA0
-    added robot section in analogue with meta
+Provides methods for storing and retrieving structured records
+representing crawled documents.
+
+=head1 METHODS
+
+=head2 new()
+
+=head2 XXX($val)
+
+Saves $val using AUTOLOAD. Can later be retrieved, eg
+
+    $xwi->MyVar('My value');
+    $t = $xwi->MyVar;
+
+will set $t to 'My value'
+
+=head2 *_reset()
+
+Forget all values.
+
+=head2 *_rewind()
+
+*_get will start with the first value.
+
+=head2 *_add
+
+stores values into the datastructure
+
+=head2 *_get
+
+retrieves values from the datastructure
+
+=head2 meta_reset() / meta_rewind() / meta_add() / meta_get()
+
+Stores the content of Meta-tags
+
+Takes/Returns 2 parameters: Name, Content
+
+ $xwi->meta_add($name1,$value1);
+ $xwi->meta_add($name2,$value2);
+
+ $xwi->meta_rewind;
+ my ($name,$content);
+ while (1) {
+  ($name,$content) = $xwi->meta_get;
+  last unless $name;
+ } 
+
+=head2 xmeta_reset() / xmeta_rewind() / xmeta_add() / xmeta_get()
+
+Extended information from Meta-tags. Not used.
+
+=head2 url_remove() / url_reset() / url_rewind() / url_add() / url_get()
+
+Stores all URLs (ie if multiple URLs for the same page) for this record
+
+Takes/Returns 1 parameter: URL
+
+=head2 heading_reset() / heading_rewind() / heading_add() / heading_get()
+
+Stores headings from HTML documents
+
+Takes/Returns 1 parameter: Heading text
+
+=head2 link_reset() / link_rewind() / link_add() / link_get()
+
+Stores links from documents
+
+Takes/Returns 5 parameters: URL, netlocid, urlid, Anchor text, Link type
+
+=head2 robot_reset() / robot_rewind() / robot_add() / robot_get()
+
+Stores calculated information, like genre, language, etc
+
+Takes/Returns 2 parameters Name, Value. Both are strings with max length Name: 15, Value: 20
+
+=head2 topic_reset() / topic_rewind() / topic_add() / topic_get()
+
+Stores result of topic classification.
+
+Takes/Returns 5 parameters: Class, Absolute score, Normalized score, Terms, Algorithm id
+
+Class, Terms, and Algorithm id are strings with max
+lengths Class: 50, and Algorithm id: 25
+
+Absolute score, and Normalized score are integers
+
+Normalized score and Terms are optional and may be replaced with 0, and '' respectively
+
+=head1 SEE ALSO
+
+Combine focused crawler main site L<http://combine.it.lth.se/>
 
 =head1 AUTHOR
 

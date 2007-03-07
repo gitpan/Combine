@@ -7,8 +7,8 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
   Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
 <HTML>
 <HEAD>
-<TITLE>Open Source distribution, Installation</TITLE>
-<META NAME="description" CONTENT="Open Source distribution, Installation">
+<TITLE>Open source distribution, installation</TITLE>
+<META NAME="description" CONTENT="Open source distribution, installation">
 <META NAME="keywords" CONTENT="DocMain">
 <META NAME="resource-type" CONTENT="document">
 <META NAME="distribution" CONTENT="global">
@@ -28,26 +28,26 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<A NAME="tex2html283"
+<A NAME="tex2html358"
   HREF="node5.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
-<A NAME="tex2html279"
+<A NAME="tex2html354"
   HREF="node2.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
-<A NAME="tex2html273"
+<A NAME="tex2html348"
   HREF="node3.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
-<A NAME="tex2html281"
+<A NAME="tex2html356"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
 <BR>
-<B> Next:</B> <A NAME="tex2html284"
+<B> Next:</B> <A NAME="tex2html359"
   HREF="node5.html">Configuration</A>
-<B> Up:</B> <A NAME="tex2html280"
+<B> Up:</B> <A NAME="tex2html355"
   HREF="node2.html">Overview</A>
-<B> Previous:</B> <A NAME="tex2html274"
+<B> Previous:</B> <A NAME="tex2html349"
   HREF="node3.html">Introduction</A>
- &nbsp; <B>  <A NAME="tex2html282"
+ &nbsp; <B>  <A NAME="tex2html357"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
@@ -56,34 +56,38 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
 
 <UL CLASS="ChildLinks">
-<LI><A NAME="tex2html285"
+<LI><A NAME="tex2html360"
   HREF="node4.html#SECTION02021000000000000000">Installation</A>
 <UL>
-<LI><A NAME="tex2html286"
+<LI><A NAME="tex2html361"
   HREF="node4.html#SECTION02021100000000000000">Installation from source for the impatient</A>
-<LI><A NAME="tex2html287"
+<LI><A NAME="tex2html362"
   HREF="node4.html#SECTION02021200000000000000">Porting to not supported operating systems - dependencies</A>
-<LI><A NAME="tex2html288"
+<LI><A NAME="tex2html363"
   HREF="node4.html#SECTION02021300000000000000">Automated Debian/Ubuntu installation</A>
-<LI><A NAME="tex2html289"
+<LI><A NAME="tex2html364"
   HREF="node4.html#SECTION02021400000000000000">Manual installation</A>
-<LI><A NAME="tex2html290"
-  HREF="node4.html#SECTION02021500000000000000">Installation test</A>
+<LI><A NAME="tex2html365"
+  HREF="node4.html#SECTION02021500000000000000">Out-of-the-box installation test</A>
 </UL>
 <BR>
-<LI><A NAME="tex2html291"
+<LI><A NAME="tex2html366"
   HREF="node4.html#SECTION02022000000000000000">Getting started</A>
-<LI><A NAME="tex2html292"
-  HREF="node4.html#SECTION02023000000000000000">Detailed documentation</A>
-<LI><A NAME="tex2html293"
+<LI><A NAME="tex2html367"
+  HREF="node4.html#SECTION02023000000000000000">Online documentation</A>
+<LI><A NAME="tex2html368"
   HREF="node4.html#SECTION02024000000000000000">Use scenarios</A>
 <UL>
-<LI><A NAME="tex2html294"
+<LI><A NAME="tex2html369"
   HREF="node4.html#SECTION02024100000000000000">General crawling without restrictions</A>
-<LI><A NAME="tex2html295"
+<LI><A NAME="tex2html370"
   HREF="node4.html#SECTION02024200000000000000">Focused crawling - domain restrictions</A>
-<LI><A NAME="tex2html296"
+<LI><A NAME="tex2html371"
   HREF="node4.html#SECTION02024300000000000000">Focused crawling - topic specific</A>
+<LI><A NAME="tex2html372"
+  HREF="node4.html#SECTION02024400000000000000">Focused crawling in an Alvis system</A>
+<LI><A NAME="tex2html373"
+  HREF="node4.html#SECTION02024500000000000000">Crawl one entire site and it's outlinks</A>
 </UL></UL>
 <!--End of Table of Child-Links-->
 <HR>
@@ -91,9 +95,9 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <H1><A NAME="SECTION02020000000000000000"></A>
 <A NAME="distr"></A>
 <BR>
-Open Source distribution, Installation
+Open source distribution, installation
 </H1>
-The focused crawler have been restructured and packaged as a Debian
+The focused crawler has been restructured and packaged as a Debian
 package in order to ease distribution and installation. The package
 contains dependency information to make sure that all software that is
 needed to run the crawler is installed at the same time. In connection
@@ -101,13 +105,13 @@ with this we have also packaged a number of necessary Perl-modules as
 Debian packages.
 
 <P>
-All software and packages are available from a number of places
+All software and packages are available from a number of places:
 
 <UL>
 <LI>the <A NAME="tex2html5"
   HREF="http://combine.it.lth.se/">Combine focused crawler Web-site</A>
 </LI>
-<LI><A NAME="tex2html6"
+<LI>the <A NAME="tex2html6"
   HREF="http://search.cpan.org/~aardo/Combine/">Comprehensive Perl Archive Network - CPAN</A>
 </LI>
 <LI>SourceForge <A NAME="tex2html7"
@@ -139,7 +143,7 @@ The system is distributed either as source or as a Debian package.
 <H3><A NAME="SECTION02021100000000000000">
 Installation from source for the impatient</A>
 </H3>
-Unless you are on a system supporting Debian packages (in which case look at <A HREF="#debian">Automated installation</A>) you should
+Unless you are on a system supporting Debian packages (in which case look at <A HREF="#debian">Automated installation</A>), you should
 download and unpack the source.
 The following command sequence will then install Combine:
 <PRE>
@@ -178,7 +182,7 @@ have to verify the availability, for this platform, of the two main systems:
 If they are supported you stand a good chance to port the system.
 
 <P>
-Furthermore
+Furthermore,
 the <A HREF="node14.html#extmods">external Perl modules</A> should be verified to work
 on the new platform.
 
@@ -188,8 +192,8 @@ using the Perl CPAN automated system
 <BR>(<TT>perl -MCPAN -e shell</TT>).
 
 <P>
-Optionally these external programs will be used if they are 
-installed on your system.
+Optionally the following external programs will be used if they are
+installed on your system:
 
 <UL>
 <LI>antiword (parsing MSWord files)
@@ -202,7 +206,7 @@ installed on your system.
 </LI>
 <LI>xlhtml (parsing MSExcel files)
 </LI>
-<LI>ppthtml (parsing PowerPoint files)
+<LI>ppthtml (parsing MSPowerPoint files)
 </LI>
 <LI>unrtf (parsing RTF files)
 </LI>
@@ -221,10 +225,10 @@ Automated Debian/Ubuntu installation
 </H3>
 
 <UL>
-<LI>add the following lines to your /etc/apt/sources.list
+<LI>Add the following lines to your /etc/apt/sources.list:
 <BR><TT>deb http://combine.it.lth.se/ debian/</TT>
 </LI>
-<LI>give the commands
+<LI>Give the commands:
 <BR><TT>apt-get update
 <BR>
 apt-get install combine</TT>
@@ -256,8 +260,8 @@ a number of subdirectories including <TT>bin, Combine, doc, and conf</TT>.
 '<TT>bin</TT>' contains the executable programs.
 
 <P>
-'<TT>Combine</TT>' contains needed Perl modules. Should be copied to
-somewhere Perl will find them, typically <TT>/usr/share/perl5/Combine/</TT>.
+'<TT>Combine</TT>' contains needed Perl modules. They should be copied to
+where Perl will find them, typically <TT>/usr/share/perl5/Combine/</TT>.
 
 <P>
 '<TT>conf</TT>' contains the default configuration files. Combine looks for them
@@ -281,16 +285,46 @@ mkdir /var/run/combine
 <P>
 
 <H3><A NAME="SECTION02021500000000000000">
-Installation test</A>
+Out-of-the-box installation test</A>
 </H3>
-Harvest 1 URL by doing:
-<BR><PRE>
-sudo combineINIT --jobname aatest --topic /etc/combine/Topic_carnivor.txt 
-combine --jobname aatest --harvest http://combine.it.lth.se/CombineTests/InstallationTest.html
+A simple way to test your newly installed Combine system is
+to crawl just one Web-page and export it as an XML-document. This will
+exercise much of the code and guarantee that basic focused crawling will work.
+
+<P>
+
+<UL>
+<LI>Initialize a crawl-job named aatest. This will create and populate
+the job-specific configuration directory and create the MySQL database
+that will hold the records:
+</LI>
+</UL>
+<PRE>
+sudo combineINIT --jobname aatest --topic /etc/combine/Topic_carnivor.txt
+</PRE>
+
+<UL>
+<LI>Harvest the test URL by:
+</LI>
+</UL>
+<PRE>
+combine --jobname aatest
+        --harvest http://combine.it.lth.se/CombineTests/InstallationTest.html
+</PRE>
+
+<UL>
+<LI>Export a structured Dublin Core record by:
+</LI>
+</UL>
+<PRE>
 combineExport --jobname aatest --profile dc
 </PRE>
-and verify that the output, except for dates and order, looks like
-<BR><PRE>
+
+<UL>
+<LI>and verify that the output, except for dates and order, looks like:
+</LI>
+</UL>
+<PRE>
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;documentCollection version="1.1" xmlns:dc="http://purl.org/dc/elements/1.1/"&gt;
 &lt;metadata xmlns:dc="http://purl.org/dc/elements/1.1/"&gt;
@@ -309,7 +343,7 @@ and verify that the output, except for dates and order, looks like
 
 <P>
 Or run - as root - the script
-<A HREF="node15.html#InstTest"><TT>./doc/InstallationTest.pl</TT></A>
+<A HREF="node16.html#InstTest"><TT>./doc/InstallationTest.pl</TT></A>
 which essentially does the same thing.
 
 <P>
@@ -349,10 +383,10 @@ with various parameters.
 
 <P>
 </LI>
-<LI>If you want to schedule a recheck for all the crawled pages stored in the database
+<LI>If you want to schedule a recheck for all the crawled pages stored in the database do
 <BR><TT>combineCtrl reharvest <code>--</code>jobname aatest</TT>
 </LI>
-<LI>go back to <A HREF="#crawl">3</A> for continuous operation.
+<LI>Go back to <A HREF="#crawl">3</A> for continuous operation.
 </LI>
 </OL>
 
@@ -363,7 +397,7 @@ Once a job is initialized it is controlled using
 <P>
 
 <H2><A NAME="SECTION02023000000000000000">
-Detailed documentation</A>
+Online documentation</A>
 </H2>
 The latest, updated, detailed documentation is always available
 <A NAME="tex2html13"
@@ -378,18 +412,20 @@ Use scenarios</A>
 <H3><A NAME="SECTION02024100000000000000">
 General crawling without restrictions</A>
 </H3>
-Same procedure as in section <A HREF="#gettingstarted">2.2</A>. This way of
+Use the same procedure as in section <A HREF="#gettingstarted">2.2</A>. This way of
 crawling is not recommended for the Combine system since it will
 generate really huge databases without any focus.
 
 <P>
 
-<H3><A NAME="SECTION02024200000000000000">
-Focused crawling - domain restrictions</A>
+<H3><A NAME="SECTION02024200000000000000"></A>
+<A NAME="domainfocus"></A>
+<BR>
+Focused crawling - domain restrictions
 </H3>
 Create a focused database with all pages from a Web-site. In this
 use scenario we will crawl the Combine site and the ALVIS site.
-The database is to be continuously updated, ie all pages have to be
+The database is to be continuously updated, i.e. all pages have to be
 regularly tested for changes, deleted pages should be removed from
 the database, and newly created pages added.
 
@@ -402,7 +438,7 @@ the database, and newly created pages added.
 <LI>Edit the configuration to provide the desired focus
 <BR>
 Change the <TT>&lt;allow&gt;</TT> part in <TT>/etc/combine/focustest/combine.cfg</TT> from
-<BR><PRE>
+<PRE>
 #use either URL or HOST: (obs ':') to match regular expressions to either the
 #full URL or the HOST part of a URL.
 &lt;allow&gt;
@@ -423,7 +459,7 @@ HOST: combine\.it\.lth\.se$
 The escaping of '.' by writing '<code>\.</code>' is necessary since the patterns
 actually are Perl regular expressions. Similarly the ending '$'
 indicates that the host string should end here, so for example
-a Web server on <TT>www.alvis.info.com</TT> (if such a one exists) will
+a Web server on <TT>www.alvis.info.com</TT> (if such exists) will
 not be crawled.
 
 <P>
@@ -449,11 +485,11 @@ and schedule all pages for re-harvesting
 
 <P>
 
-<H3><A NAME="SECTION02024300000000000000">
-Focused crawling - topic specific</A>
+<H3><A NAME="SECTION02024300000000000000"></A>
+<A NAME="topicfocus"></A>
+<BR>
+Focused crawling - topic specific
 </H3>
-
-<P>
 Create and maintain a topic specific crawled database for the topic 'Carnivorous plants'.
 
 <P>
@@ -498,40 +534,131 @@ configuration variable <TT>doCheckRecord = 1</TT> and copying a topic definition
 <LI>Regularly export all data records in the ALVIS XML format
 <BR><TT>combineExport <code>--</code>jobname cptest <code>--</code>profile alvis</TT>
 <BR>
-and schedule all pages for re-harvesting
-<BR><TT>combineCtrl reharvest <code>--</code>jobname cptest</TT>
+<P>
+</LI>
+</OL>
 
 <P>
+Running this crawler for an extended period will result in more than
+200&nbsp;000 records.
+
+<P>
+
+<H3><A NAME="SECTION02024400000000000000">
+Focused crawling in an Alvis system</A>
+</H3>
+Use the same procedure as in section <A HREF="#topicfocus">Focused crawling - topic specific</A>
+except for the last point. Exporting should be done incrementally into an Alvis
+pipeline (in this example listening at port 3333 on the machine nlp.alvis.info):
+<BR><code>combineExport --jobname cptest --pipehost nlp.alvis.info --pipeport 3333 --incremental</code>
+
+<P>
+
+<H3><A NAME="SECTION02024500000000000000">
+Crawl one entire site and it's outlinks</A>
+</H3>
+This scenario requires the crawler to:
+
+<UL>
+<LI>crawl an entire target site
+</LI>
+<LI>crawl all the outlinks from the site
+</LI>
+<LI>crawl no other site or URL apart from
+         external URLs mentioned on the one target site
+</LI>
+</UL>
+
+<P>
+I.e. all of <code>http://my.targetsite.com/*</code>,
+plus any other URL that is linked to from a page in
+<code>http://my.targetsite.com/*</code>.
+
+<P>
+
+<OL>
+<LI>Configure Combine to crawl this one site only.
+Change the <TT>&lt;allow&gt;</TT> part in
+<BR><TT>/etc/combine/XXX/combine.cfg</TT> to
+<PRE>
+#use either URL or HOST: (obs ':') to match regular expressions to either the
+#full URL or the HOST part of a URL.
+&lt;allow&gt;
+#Allow crawl of URLs or hostnames that matches these regular expressions
+HOST: my\.targetsite\.com$
+&lt;/allow&gt;
+</PRE>
+
+<P>
+</LI>
+<LI>Crawl until you have the entire site (if it's a big site you might want to do the changes
+suggested in <A HREF="node12.html#slowcrawl">FAQ no <A HREF="node12.html#slowcrawl"><tex2html_cr_mark></A></A>).
+
+<P>
+</LI>
+<LI>Stop crawling.
+
+<P>
+</LI>
+<LI>Change configuration <TT>&lt;allow&gt;</TT> back to allow crawling
+of any domain (which is the default).
+<PRE>
+&lt;allow&gt;
+#Allow crawl of URLs or hostnames that matches these regular expressions
+HOST: .*$
+&lt;/allow&gt;
+</PRE>
+
+<P>
+</LI>
+<LI>Schedule all links in the database for crawling, something like (change XXX to your jobname)
+<BR><code>echo 'select urlstr from urls;' | mysql -u combine XXX</code>
+<BR><code>          | combineCtrl load --jobname XXX</code>
+
+<P>
+</LI>
+<LI>Change configuration to disable automatic recycling of links:
+<BR><code>#Enable(1)/disable(0) automatic recycling of new links</code>
+<BR><code>AutoRecycleLinks = 0</code>
+
+<P>
+and maybe (depending or your other requirements) change:
+<BR><code>#User agent handles redirects (1) or treat redirects as new links (0)</code>
+<BR><code>UserAgentFollowRedirects = 0</code>
+
+<P>
+</LI>
+<LI>Start crawling and run until no more in queue.
 </LI>
 </OL>
 
 <DIV CLASS="navigation"><HR>
 <!--Navigation Panel-->
-<A NAME="tex2html283"
+<A NAME="tex2html358"
   HREF="node5.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
-<A NAME="tex2html279"
+<A NAME="tex2html354"
   HREF="node2.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
-<A NAME="tex2html273"
+<A NAME="tex2html348"
   HREF="node3.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
-<A NAME="tex2html281"
+<A NAME="tex2html356"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
 <BR>
-<B> Next:</B> <A NAME="tex2html284"
+<B> Next:</B> <A NAME="tex2html359"
   HREF="node5.html">Configuration</A>
-<B> Up:</B> <A NAME="tex2html280"
+<B> Up:</B> <A NAME="tex2html355"
   HREF="node2.html">Overview</A>
-<B> Previous:</B> <A NAME="tex2html274"
+<B> Previous:</B> <A NAME="tex2html349"
   HREF="node3.html">Introduction</A>
- &nbsp; <B>  <A NAME="tex2html282"
+ &nbsp; <B>  <A NAME="tex2html357"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 <ADDRESS>
 root
-2006-12-07
+2007-03-07
 </ADDRESS>
 </BODY>
 </HTML>

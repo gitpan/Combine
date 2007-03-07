@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-## $Id: combineUtil,v 1.7 2006/12/04 09:28:57 anders Exp $
+## $Id: combineUtil,v 1.8 2007/02/21 10:34:25 anders Exp $
 
 # Copyright (c) 1996-1998 LUB NetLab, 2002-2005 Anders Ardö
 # 
@@ -838,8 +838,7 @@ recreating it from the existing database.
 
 =head2 Action all
 
-Does the statistics generation actions: stats, sanity,
-classtat, termstat
+Does the actions: stats, sanity, classtat, termstat
 
 =head2 Actions for deleting records
 
@@ -854,7 +853,7 @@ Net-locations can include SQL wild cards ('%').
 =item deletePath
 
 Deletes all records matching the ','-separated list of URl
-paths (excluding net-locations) in the switch --pathsubstrs. Paths can include SQL wild cards ('%').
+paths (excluding net-locations) in the switch --pathsubstr. Paths can include SQL wild cards ('%').
  
 =item deleteMD5
 

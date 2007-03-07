@@ -1,4 +1,4 @@
-## $Id: PosMatcher.pm,v 1.2 2006/09/27 13:10:57 anders Exp $
+## $Id: PosMatcher.pm,v 1.3 2006/12/19 09:48:17 anders Exp $
 
 # 2002-2006 Anders Ardö
 # 
@@ -174,44 +174,6 @@ sub boolmatch {
 } 
 
 #GetText.pm ------------------
-
-sub getTextMD5 {
-  my ( $md5, $top, $DoStem, $stoplist, $simple) = @_;
-# simple means convert all terms to lowercase and include all words
-# in arrays
-
-  my $url ="";
-  my $title="No Title";
-  my $size=0;
-#  my $DoStem = 0 unless $DoStem; #False
-  my $d1=substr($md5,0,2);
-  my $d2=substr($md5,2,2);
-  open(FIL,"<$top/$d1/$d2/$md5.rec");
-  my $meta=""; my $head=""; my $text="";
-  while (<FIL>) {
-    if (/^<avli> (.*)$/) { $url=$1; }
-    if (/^<by> (\d+)$/) { $size=$1; }
-    if (/^<ti> (.*)$/) { $title=$1; $head .= $1 . " "; } #Title
-    if (/^<dh> (.*)$/) { $head .= $1 . " "; } #Headings
-    next if /^<metaRsummary>/;
-    next if /^<metaautoclass/;
-    if (/^<meta[^>]+> (.*)$/) { $meta .= $1 . " "; } #Metadata
-    if (/^<ip>$/) { $text = <FIL>; } #Text
-  }
-  close(FIL);
-  if ($simple) {
-    if ( $meta ne "") { SimpletextConv(\$meta, $DoStem); }
-    if ( $head ne "") { SimpletextConv(\$head, $DoStem); }
-    if ( $text ne "") { SimpletextConv(\$text, $DoStem); }
-    if ( $title ne "") { SimpletextConv(\$title, $DoStem); }
-  } else {
-    if ( $meta ne "") { textConv(\$meta, $DoStem, $stoplist); }
-    if ( $head ne "") { textConv(\$head, $DoStem, $stoplist); }
-    if ( $text ne "") { textConv(\$text, $DoStem, $stoplist); }
-    if ( $title ne "") { textConv(\$title, $DoStem, $stoplist); }
-  }
-  return ($meta, $head, $text, $url, $title, $size);
-}
 
 sub getTextXWI {
   my ( $xwi, $DoStem, $stoplist, $simple) = @_;
@@ -485,11 +447,6 @@ Exported routines:
         $DoStem: 1=do stemming; 0=no stemming
         $stoplist: object pointer to a LoadTermList object with a stoplist loaded
         $simple: 1=do simple loading; 0=advanced loading (might induce errors)
-
-  getTextMD5
-     parameters: $md5, $hdb_top, $DoStem, $stoplist, $simple
-       $md5 is a key into a Combine hdb-directory
-       $hdb_top is the path to the top of the Combine hdb-directory
 
  getTextXWI
      parameters: $xwi, $DoStem, $stoplist, $simple

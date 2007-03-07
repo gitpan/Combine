@@ -1,16 +1,16 @@
-\section{Open Source distribution, Installation}
+\section{Open source distribution, installation}
 \label{distr}
-The focused crawler have been restructured and packaged as a Debian
+The focused crawler has been restructured and packaged as a Debian
 package in order to ease distribution and installation. The package
 contains dependency information to make sure that all software that is
 needed to run the crawler is installed at the same time. In connection
 with this we have also packaged a number of necessary Perl-modules as
 Debian packages.
 
-All software and packages are available from a number of places
+\hspace{-\parindent}All software and packages are available from a number of places:
 \begin{itemize}
 \item the \htmladdnormallinkfoot{Combine focused crawler Web-site}{http://combine.it.lth.se/}
-\item \htmladdnormallinkfoot{Comprehensive Perl Archive Network - CPAN}{http://search.cpan.org/~aardo/Combine/}
+\item the \htmladdnormallinkfoot{Comprehensive Perl Archive Network - CPAN}{http://search.cpan.org/~aardo/Combine/}
 \item SourceForge \htmladdnormallinkfoot{project ``Combine focused crawler''}{http://sourceforge.net/projects/focused-crawler}
 \end{itemize}
 
@@ -26,7 +26,7 @@ operating systems. Porting to other UNIX dialects should be easy.
 The system is distributed either as source or as a Debian package.
 
 \subsubsection{Installation from source for the impatient}
-Unless you are on a system supporting Debian packages (in which case look at \hyperref{Automated installation}{Automated installation (section }{)}{debian}) you should
+Unless you are on a system supporting Debian packages (in which case look at \hyperref{Automated installation}{Automated installation (section }{)}{debian}), you should
 download and unpack the source.
 The following command sequence will then install Combine:
 \begin{verbatim}
@@ -51,7 +51,7 @@ have to verify the availability, for this platform, of the two main systems:
 \end{itemize}
 If they are supported you stand a good chance to port the system.
 
- Furthermore
+Furthermore,
 the \hyperref{external Perl modules}{external Perl modules (listed in }{)}{extmods} should be verified to work
 on the new platform.
 
@@ -74,15 +74,15 @@ Perl modules are most easily installed
 using the Perl CPAN automated system\\
 ({\tt perl -MCPAN -e shell}).
 
-Optionally these external programs will be used if they are 
-installed on your system.
+\hspace{-\parindent}Optionally the following external programs will be used if they are
+installed on your system:
 \begin{itemize}
  \item antiword (parsing MSWord files)
  \item detex (parsing TeX files)
  \item pdftohtml (parsing PDF files)
  \item pstotext (parsing PS and PDF files, needs ghostview)
  \item xlhtml (parsing MSExcel files)
- \item ppthtml (parsing PowerPoint files)
+ \item ppthtml (parsing MSPowerPoint files)
  \item unrtf (parsing RTF files)
  \item tth (parsing TeX files)
  \item untex (parsing TeX files)
@@ -91,9 +91,9 @@ installed on your system.
 \subsubsection{Automated Debian/Ubuntu installation}
 \label{debian}
 \begin{itemize}
-\item add the following lines to your /etc/apt/sources.list\\
+\item Add the following lines to your /etc/apt/sources.list:\\
 {\tt deb http://combine.it.lth.se/ debian/}
-\item give the commands\\
+\item Give the commands:\\
 {\tt apt-get update\\
 apt-get install combine}
 \end{itemize}
@@ -112,8 +112,8 @@ a number of subdirectories including {\tt bin, Combine, doc, and conf}.
 
 '{\tt bin}' contains the executable programs.
 
-'{\tt Combine}' contains needed Perl modules. Should be copied to
-somewhere Perl will find them, typically {\tt /usr/share/perl5/Combine/}.
+'{\tt Combine}' contains needed Perl modules. They should be copied to
+where Perl will find them, typically {\tt /usr/share/perl5/Combine/}.
 
 '{\tt conf}' contains the default configuration files. Combine looks for them
 in {\tt /etc/combine/} so they need to be copied there.
@@ -131,14 +131,35 @@ cp conf/* /etc/combine/
 mkdir /var/run/combine
 \end{verbatim}
 
-\subsubsection{Installation test}
-Harvest 1 URL by doing:\\
+\subsubsection{Out-of-the-box installation test}
+A simple way to test your newly installed Combine system is
+to crawl just one Web-page and export it as an XML-document. This will
+exercise much of the code and guarantee that basic focused crawling will work.
+
+\begin{itemize}
+\item Initialize a crawl-job named aatest. This will create and populate
+the job-specific configuration directory and create the MySQL database
+that will hold the records:
+\end{itemize}
 \begin{verbatim}
 sudo combineINIT --jobname aatest --topic /etc/combine/Topic_carnivor.txt 
-combine --jobname aatest --harvest http://combine.it.lth.se/CombineTests/InstallationTest.html
+\end{verbatim}
+\begin{itemize}
+\item Harvest the test URL by:
+\end{itemize}
+\begin{verbatim}
+combine --jobname aatest
+        --harvest http://combine.it.lth.se/CombineTests/InstallationTest.html
+\end{verbatim}
+\begin{itemize}
+\item Export a structured Dublin Core record by:
+\end{itemize}
+\begin{verbatim}
 combineExport --jobname aatest --profile dc
 \end{verbatim}
-and verify that the output, except for dates and order, looks like\\
+\begin{itemize}
+\item and verify that the output, except for dates and order, looks like:
+\end{itemize}
 \begin{verbatim}
 <?xml version="1.0" encoding="UTF-8"?>
 <documentCollection version="1.1" xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -156,8 +177,8 @@ and verify that the output, except for dates and order, looks like\\
 </metadata>
 \end{verbatim}
 
-Or run - as root - the script
-\hyperref{{\tt ./doc/InstallationTest.pl}}{{\tt ./doc/InstallationTest.pl} (see Appendix }{)}{InstTest}
+Or run -- as root -- the script
+\hyperref{{\tt ./doc/InstallationTest.pl}}{{\tt ./doc/InstallationTest.pl} (see }{ in the Appendix)}{InstTest}
 which essentially does the same thing.
 
 
@@ -182,28 +203,29 @@ with various parameters.
 \item    Export data records in the ALVIS XML format\\
 {\tt  combineExport \verb+--+jobname aatest \verb+--+profile alvis}
 
-\item If you want to schedule a recheck for all the crawled pages stored in the database\\
+\item If you want to schedule a recheck for all the crawled pages stored in the database do\\
 {\tt combineCtrl reharvest \verb+--+jobname aatest}
-\item go back to \ref{crawl} for continuous operation.
+\item Go back to \ref{crawl} for continuous operation.
 \end{enumerate}
 
 Once a job is initialized it is controlled using
 {\tt combineCtrl}. Crawled data is exported using {\tt combineExport}.
 
-\subsection{Detailed documentation}
+\subsection{Online documentation}
 The latest, updated, detailed documentation is always available
 \htmladdnormallinkfoot{online}{http://combine.it.lth.se/documentation/}.
 
 \subsection{Use scenarios}
 \subsubsection{General crawling without restrictions}
-Same procedure as in section \ref{gettingstarted}. This way of
+Use the same procedure as in section \ref{gettingstarted}. This way of
 crawling is not recommended for the Combine system since it will
 generate really huge databases without any focus.
 
-\subsubsection{Focused crawling - domain restrictions}
+\subsubsection{Focused crawling -- domain restrictions}
+\label{domainfocus}
 Create a focused database with all pages from a Web-site. In this
 use scenario we will crawl the Combine site and the ALVIS site.
-The database is to be continuously updated, ie all pages have to be
+The database is to be continuously updated, i.e. all pages have to be
 regularly tested for changes, deleted pages should be removed from
 the database, and newly created pages added.
 \begin{enumerate}
@@ -211,7 +233,7 @@ the database, and newly created pages added.
 {\tt  sudo combineINIT \verb+--+jobname focustest}
 
 \item Edit the configuration to provide the desired focus\\
-Change the {\tt <allow>} part in {\tt /etc/combine/focustest/combine.cfg} from\\
+Change the {\tt <allow>} part in {\tt /etc/combine/focustest/combine.cfg} from
 \begin{verbatim}
 #use either URL or HOST: (obs ':') to match regular expressions to either the
 #full URL or the HOST part of a URL.
@@ -233,7 +255,7 @@ HOST: combine\.it\.lth\.se$
 The escaping of '.' by writing '\verb+\.+' is necessary since the patterns
 actually are Perl regular expressions. Similarly the ending '\$'
 indicates that the host string should end here, so for example
-a Web server on {\tt www.alvis.info.com} (if such a one exists) will
+a Web server on {\tt www.alvis.info.com} (if such exists) will
 not be crawled.
 
 \item Load seed URLs\\
@@ -250,8 +272,8 @@ and schedule all pages for re-harvesting\\
 \end{enumerate}
 
 
-\subsubsection{Focused crawling - topic specific}
-
+\subsubsection{Focused crawling -- topic specific}
+\label{topicfocus}
 Create and maintain a topic specific crawled database for the topic 'Carnivorous plants'.
 
 \begin{enumerate}
@@ -283,7 +305,72 @@ cpTopic.txt}) to\\ {\tt /etc/combine/cptest/topicdefinition.txt}.
 
 \item  Regularly export all data records in the ALVIS XML format\\
 {\tt  combineExport \verb+--+jobname cptest \verb+--+profile alvis}\\
-and schedule all pages for re-harvesting\\
-{\tt combineCtrl reharvest \verb+--+jobname cptest}
+%and schedule all pages for re-harvesting\\
+%{\tt combineCtrl reharvest \verb+--+jobname cptest}
 
+\end{enumerate}
+
+Running this crawler for an extended period will result in more than
+200~000 records.
+
+\subsubsection{Focused crawling in an Alvis system}
+Use the same procedure as in section \hyperref{Focused crawling -- topic specific}{}{ (Focused crawling -- topic specific)}{topicfocus}
+except for the last point. Exporting should be done incrementally into an Alvis
+pipeline (in this example listening at port 3333 on the machine nlp.alvis.info):\\
+\verb+combineExport --jobname cptest --pipehost nlp.alvis.info --pipeport 3333 --incremental+
+
+\subsubsection{Crawl one entire site and it's outlinks}
+This scenario requires the crawler to:
+\begin{itemize}
+  \item  crawl an entire target site
+  \item  crawl all the outlinks from the site
+  \item  crawl no other site or URL apart from
+         external URLs mentioned on the one target site
+\end{itemize}
+
+I.e. all of \verb+http://my.targetsite.com/*+,
+plus any other URL that is linked to from a page in
+\verb+http://my.targetsite.com/*+.
+
+\begin{enumerate}
+\item Configure Combine to crawl this one site only.
+Change the {\tt <allow>} part in\\
+{\tt /etc/combine/XXX/combine.cfg} to
+\begin{verbatim}
+#use either URL or HOST: (obs ':') to match regular expressions to either the
+#full URL or the HOST part of a URL.
+<allow>
+#Allow crawl of URLs or hostnames that matches these regular expressions
+HOST: my\.targetsite\.com$
+</allow>
+\end{verbatim}
+
+\item Crawl until you have the entire site (if it's a big site you might want to do the changes
+suggested in \hyperref{FAQ no \ref{slowcrawl}}{FAQ no }{}{slowcrawl}).
+%FAQ no \ref{slowcrawl}).
+
+\item Stop crawling.
+
+\item Change configuration {\tt <allow>} back to allow crawling
+of any domain (which is the default).
+\begin{verbatim}
+<allow>
+#Allow crawl of URLs or hostnames that matches these regular expressions
+HOST: .*$
+</allow>
+\end{verbatim}
+
+\item Schedule all links in the database for crawling, something like (change XXX to your jobname)\\
+\verb+echo 'select urlstr from urls;' | mysql -u combine XXX+\\
+\verb+          | combineCtrl load --jobname XXX+
+
+\item Change configuration to disable automatic recycling of links:\\
+\verb+#Enable(1)/disable(0) automatic recycling of new links+\\
+\verb+AutoRecycleLinks = 0+
+
+and maybe (depending or your other requirements) change:\\
+\verb+#User agent handles redirects (1) or treat redirects as new links (0)+\\
+\verb+UserAgentFollowRedirects = 0+
+
+\item Start crawling and run until no more in queue.
 \end{enumerate}

@@ -66,7 +66,7 @@ sub classify {
   #utility routines for saving detailed results (optional) in the database. These data may appear
   # in exported XML-records
 
-  #Topic takes 4 parameters
+  #Topic takes 5 parameters
   # $xwi->topic_add(topic_class_notation, topic_absolute_score, topic_normalized_score, topic_terms, algorithm_id);
   #  topic_class_notation, topic_terms, and algorithm_id are strings
   #    max length topic_class_notation: 50, algorithm_id: 25
