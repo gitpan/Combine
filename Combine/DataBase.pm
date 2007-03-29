@@ -1,5 +1,5 @@
 # Copyright (c) 2004, 2005 Anders Ardö
-## $Id: DataBase.pm,v 1.5 2007/02/21 10:34:57 anders Exp $
+## $Id: DataBase.pm,v 1.6 2007/03/29 08:29:27 anders Exp $
 
 # 
 # See the file LICENCE included in the distribution.
@@ -9,6 +9,7 @@ package Combine::DataBase;
 use strict;
 use Combine::MySQLhdb;
 use Digest::MD5;
+use Encode qw(encode_utf8);
 
 sub new { 
     my ($class, $xwi, $sv, $loghandle) = @_;
@@ -58,9 +59,9 @@ sub insert {
     my $md5D = new Digest::MD5;
     $md5D->reset;
     if ( length($xwi->text) > 0 ) {
-	my $text = $$xwi->text;
+	my $text = ${$xwi->text};
 	$text =~ s/[\s\n\r]+//g;
-	$md5D->add($text); #use only visible text without whitespace
+	$md5D->add(encode_utf8($text)); #use only visible text without whitespace
     } else {
 	$md5D->add($xwi->url);
 	$md5D->add($xwi->type());

@@ -1,3 +1,9 @@
+combine (3.6) sarge; urgency=low
+
+  * Bugfixes in DataBase.pm MD5-sum calculation
+
+ -- Anders Ardo <anders@it.lth.se>  Mon, 26 Mar 2007 10:36:04 +0200
+
 combine (3.5) sarge; urgency=low
 
   * Added bin/combineRank - utility for calculating ranking
