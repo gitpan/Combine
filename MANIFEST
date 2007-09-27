@@ -51,6 +51,7 @@ t/43SD.t
 t/50FromHTML.t
 t/60MySQLhdb.t
 t/70DataBase.t
+t/90Installationtest.t
 t/data/malaria.html
 t/data/malaria_xml.html
 t/defs.pm

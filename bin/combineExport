@@ -2,7 +2,7 @@
 # Exports records from AlvisCombine SQL database in XML-format
 # Takes switches
 
-## $Id: combineExport,v 1.25 2006/10/11 09:52:04 anders Exp $
+## $Id: combineExport,v 1.26 2007/09/27 06:52:01 anders Exp $
 
 # Copyright (c) 2004-2005 Anders Ardö
 # 
@@ -10,6 +10,7 @@
 
 my $jobname;
 my $configfile;
+my $baseConfig;
 my $dbase;
 my $help;
 my $profile;
@@ -36,6 +37,7 @@ use Getopt::Long;
 
 GetOptions('configfile:s' => \$configfile, 'database|sql:s' => \$dbase,
 	   'jobname:s' => \$jobname,
+           'baseconfigdir:s' => \$baseConfig,
 	   'help|?' => \$help, 'profile:s' => \$profile,
 	   'charset:s' => \$charsetopt, 'include:s' => \$include,
 	   'exclude:s' => \$exclude, 'number:i' => \$nrToExport,
@@ -45,7 +47,7 @@ GetOptions('configfile:s' => \$configfile, 'database|sql:s' => \$dbase,
            'verbose' => \$verbose
 	   );
 if ($help) { Getopt::Long::HelpMessage('See man page combineExport'); }
-if (defined($jobname)) { Combine::Config::Init($jobname); }
+if (defined($jobname)) { Combine::Config::Init($jobname, $baseConfig); }
 else { Getopt::Long::HelpMessage('No jobname suplied'); }
 
 if (defined($configfile)) { warn "Switch 'configfile' not implemented"; } #Config::Init('',$configfile); }

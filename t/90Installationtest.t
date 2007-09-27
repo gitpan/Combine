@@ -1,39 +1,28 @@
-\subsection{Simple installation test}
-\label{InstTest}
-
-The following simple script is available in the {\tt
-doc/InstallationTest.pl} file. It must be run as 'root' 
-and tests that basic functions of the Combine installation works.
-
-Basicly it creates and initializes a new jobname, crawls one
-specific test page and exports it as XML. This XML is then
-compared to a correct XML-record for that page. 
-
-\subsubsection{InstallationTest.pl}
-\begin{verbatim}
 use strict;
-if ( $> != 0 ) {
-    die("You have to run this test as root");
-}
-
-my $orec='';
-while (<DATA>) { chop; $orec .= $_; }
-
-$orec =~ s|<checkedDate>.*</checkedDate>||;
-$orec =~ tr/\n\t //d;
-
-my $olen=length($orec);
-my $onodes=0;
-while ( $orec =~ m/</g ) { $onodes++; }
-print "ORIG Nodes=$onodes; Len=$olen\n";
-
+local $^W = 0;
 our $jobname;
 require './t/defs.pm';
 
-system("combineINIT --jobname $jobname --topic /etc/combine/Topic_carnivor.txt > /dev/null");
+use Test::More tests => 2;
+use Cwd;
 
-system("combine --jobname $jobname --harvest http://combine.it.lth.se/CombineTests/InstallationTest.html");
-open(REC,"combineExport --jobname $jobname |");
+my $orec='';
+while (<DATA>) { chop; $orec .= $_; }
+$orec =~ s|<checkedDate>.*</checkedDate>||;
+$orec =~ tr/\n\t //d;
+my $olen=length($orec);
+my $onodes=0;
+while ( $orec =~ m/</g ) { $onodes++; }
+#print "ORIG Nodes=$onodes; Len=$olen\n";
+
+my $confdir=getcwd . '/blib/conf';
+
+system("perl  \"-Iblib/lib\" blib/script/combineINIT --baseconfig $confdir --jobname $jobname --topic conf/Topic_carnivor.txt > /dev/null 2> /dev/null");
+
+system("perl  \"-Iblib/lib\" blib/script/combine --baseconfig $confdir --jobname $jobname --harvest http://combine.it.lth.se/CombineTests/InstallationTest.html");
+
+open(REC,"perl  \"-Iblib/lib\" blib/script/combineExport --baseconfig $confdir --jobname $jobname |");
+
 my $rec='';
 while (<REC>) { chop; $rec .= $_; }
 close(REC);
@@ -43,23 +32,20 @@ $rec =~ tr/\n\t //d;
 my $len=length($rec);
 my $nodes=0;
 while ( $rec =~ m/</g ) { $nodes++; }
-print "NEW Nodes=$nodes; Len=$len\n";
+#print "NEW Nodes=$nodes; Len=$len\n";
 
-my $OK=0;
+is($onodes,$nodes, 'Number of XML nodes') ;
 
-if ($onodes == $nodes) { print "Number of XML nodes match\n"; }
-else { print "Number of XML nodes does NOT match\n"; $OK=1; }
 if ($olen == $len) {
-  print "Size of XML match\n";
+  ok(1,"Size of XML match");
 } else {
   $orec =~  s|<originalDocument.*</originalDocument>||s;
   $rec =~  s|<originalDocument.*</originalDocument>||s;
-  if (length($orec) == length($rec)) { print "Size of XML match (after removal of 'originalDocument')\n";}
-  else { print "Size of XML does NOT match\n"; $OK=1; }
+  is(length($orec),length($rec), 'Size of XML match (after removal of originalDocument)');
 }
 
-if (($OK == 0) && ($orec eq $rec)) { print "All tests OK\n"; }
-else { print "There might be some problem with your Combine Installation\n"; }
+#if (($OK == 0) && ($orec eq $rec)) { print "All tests OK\n"; }
+#else { print "There might be some problem with your Combine Installation\n"; }
 
 __END__
 <?xml version="1.0" encoding="UTF-8"?>
@@ -127,4 +113,3 @@ BNsj/GGG4LBWrarhSw+0OiOIidZjmzGPeh15WL6ICS7zFUjT/AiuBXeRbwHj870/AeRYaTupAQAA
 </documentRecord>
 
 </documentCollection>
-\end{verbatim}

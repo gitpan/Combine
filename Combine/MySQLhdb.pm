@@ -52,7 +52,7 @@ sub Write {
     my $title = $xwi->title;
 #checkedDate is inserted/updated in DataBase.pm and harvpars.pl
     my $modifiedDate = $xwi->modifiedDate;
-#    if ( ! $modifiedDate) { $modifiedDate = $checkedDate; }
+    if ( ! $modifiedDate) { $modifiedDate = $xwi->checkedDate; }
     my $expiryDate = $xwi->expiryDate;
 #    if ($expiryDate) { $expiryDate = str2time($expiryDate) ; }
 #    else { $expiryDate = 'NULL'; }

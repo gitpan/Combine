@@ -14,14 +14,16 @@ Combine::Config::Init($jobname,getcwd . '/blib/conf');
 use Test::More tests => 23;
 
 my $xwi = new Combine::XWI;
-
+my $text = 'My text in record';
 my $url_str= 'http://www.it.lth.se/anders/';
 $xwi->urlid(7);
-$xwi->md5('71701223CA83546F151B17C493B64E55');
+#Is now set in DataBase: $xwi->md5('71701223CA83546F151B17C493B64E55');
+$xwi->modifiedDate(time);
 $xwi->type('text/html');
 $xwi->title('A title string');
 $xwi->url($url_str);
 $xwi->url_add($url_str);
+$xwi->text(\$text);
 $xwi->heading_add('head 1');
 $xwi->heading_add('My heading 2');
 #$xwi->link_add('', $netlocid, $urlid, Encode::decode('utf8',$anchor), $lty)
@@ -44,12 +46,14 @@ Combine::Config::Set('LogHandle', $log);
 my $xhdb = new Combine::DataBase( $xwi, $sv, $log);
 
 my($recordid, $recordid1, $recordid2, $md5, $uid1, $uid2, $md52, $md51);
+#New MD5 for this record is 830DDABE10FF2F3A8B5054BBD606C259 calculated in Combine::DataBase
 
 $xhdb->insert; #CASE 5
 my $sth =  $sv->prepare(qq{SELECT recordid,md5 FROM recordurl});
 $sth->execute;
 ($recordid,$md5) = $sth->fetchrow_array();
-is($md5,'71701223CA83546F151B17C493B64E55', 'md5');
+#is($md5,'71701223CA83546F151B17C493B64E55', 'md5');
+is($md5,'830DDABE10FF2F3A8B5054BBD606C259', 'md5 CASE 5');
 my ($t,$t5) = $sth->fetchrow_array();
 ok(!defined($t), 'num records case 5');
 
@@ -57,16 +61,20 @@ $xhdb->insert; #CASE 1
 $sth =  $sv->prepare(qq{SELECT recordid,md5 FROM recordurl});
 $sth->execute;
 ($recordid,$md5) = $sth->fetchrow_array();
-is($md5,'71701223CA83546F151B17C493B64E55', 'md5');
+#is($md5,'71701223CA83546F151B17C493B64E55', 'md5');
+is($md5,'830DDABE10FF2F3A8B5054BBD606C259', 'md5 CASE 1');
 ($t,$t5) = $sth->fetchrow_array();
 ok(!defined($t), 'num records case 1');
 
-$xwi->md5('71701223CA83546F151B17C493B64E56'); #new value
+#$xwi->md5('71701223CA83546F151B17C493B64E56'); #new value
+$text='My new text in record'; #new value => new md5 082247E3E13DE8C0E2C79C7C5497C856
+$xwi->text(\$text);
+
 $xhdb->insert; #CASE 4
 $sth =  $sv->prepare(qq{SELECT recordid,md5 FROM recordurl});
 $sth->execute;
 ($recordid,$md5) = $sth->fetchrow_array();
-is($md5,'71701223CA83546F151B17C493B64E56', 'md5');
+is($md5,'082247E3E13DE8C0E2C79C7C5497C856', 'md5 CASE 4');
 ($t,$t5) = $sth->fetchrow_array();
 ok(!defined($t), 'num records case 4');
 
@@ -96,7 +104,7 @@ $xhdb->delete;
 $sth =  $sv->prepare(qq{SELECT recordid,urlid,md5 FROM recordurl});
 $sth->execute;
 ($recordid,$uid1,$md5) = $sth->fetchrow_array();
-is($md5,'71701223CA83546F151B17C493B64E56', 'md5 1 del');
+is($md5,'082247E3E13DE8C0E2C79C7C5497C856', 'md5 1 del');
 is($uid1, 8, 'uid after 1 del');
 ($t,$t5) = $sth->fetchrow_array();
 ok(!defined($t), 'num records 1 del');

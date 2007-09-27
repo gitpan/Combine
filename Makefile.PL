@@ -11,7 +11,7 @@ WriteMakefile(
 	      Digest::MD5 => 0, Encode => 0,
 	      Config::General => 0, Compress::Zlib => 0,
               Getopt::Long => 0, HTML::Entities => 0,
-              HTML::TokeParser => 0, HTML::Tidy => 0,
+              HTML::TokeParser => 0, HTML::Tidy => 1.06,
               HTTP::Date => 0, HTTP::Request => 0, HTTP::Status => 0,
               Lingua::Stem => 0, Lingua::Identify => 0, LWP::UserAgent => 0,
 	      XML::LibXML => 0, XML::Parser => 0, XML::LibXSLT => 0,
@@ -21,8 +21,6 @@ WriteMakefile(
 
     'ABSTRACT'          => 'Combine focused Web crawler',
     ($] >= 5.005 ?    ## Add these new keywords supported since 5.005
-      (AUTHOR     => 'Anders Ardo <anders.ardo@it.lth.se>') : ()),
+      (##ABSTRACT_FROM  => 'bin/combine', # retrieve abstract from module
+       AUTHOR     => 'Anders Ardo <anders.ardo@eit.lth.se>') : ()),
 );
-
-
-

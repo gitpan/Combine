@@ -1,7 +1,7 @@
 # http://module-build.sourceforge.net/META-spec.html
 #XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
 name:         Combine
-version:      3.6
+version:      3.7
 version_from: Combine/Config.pm
 installdirs:  site
 requires:
@@ -13,7 +13,7 @@ requires:
     Encode:                        0
     Getopt::Long:                  0
     HTML::Entities:                0
-    HTML::Tidy:                    0
+    HTML::Tidy:                    1.06
     HTML::TokeParser:              0
     HTTP::Date:                    0
     HTTP::Request:                 0
@@ -31,4 +31,4 @@ requires:
     ZOOM:                          1.15
 
 distribution_type: module
-generated_by: ExtUtils::MakeMaker version 6.17
+generated_by: ExtUtils::MakeMaker version 6.30_01

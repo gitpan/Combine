@@ -1,4 +1,4 @@
-# LaTeX2HTML 2002-2-1 (1.70)
+# LaTeX2HTML 2002-2-1 (1.71)
 # Associate images original text with physical files.
 
 
@@ -22,7 +22,7 @@ $cached_env_img{$key} = q|<IMG
 
 $key = q/weight[mbox{term}_{i}];MSF=1.6;LFS=11;AAT/;
 $cached_env_img{$key} = q|<IMG
- WIDTH="107" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ WIDTH="108" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
  SRC="|."$dir".q|img10.png"
  ALT="$weight[\mbox{term}_{i}]$">|; 
 
@@ -34,7 +34,7 @@ $cached_env_img{$key} = q|<IMG
 
 $key = q/weight[mbox{location}_{j}];MSF=1.6;LFS=11;AAT/;
 $cached_env_img{$key} = q|<IMG
- WIDTH="134" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ WIDTH="134" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
  SRC="|."$dir".q|img11.png"
  ALT="$weight[\mbox{location}_{j}]$">|; 
 
@@ -46,7 +46,7 @@ $cached_env_img{$key} = q|<IMG
 
 $key = q/position[mbox{term}_{i}][mbox{match}_{j}];MSF=1.6;LFS=11;AAT/;
 $cached_env_img{$key} = q|<IMG
- WIDTH="181" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ WIDTH="181" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
  SRC="|."$dir".q|img16.png"
  ALT="$position[\mbox{term}_{i}][\mbox{match}_{j}]$">|; 
 
@@ -58,13 +58,13 @@ $cached_env_img{$key} = q|<IMG
 
 $key = q/hits[mbox{location}_{j}][mbox{term}_{i}];MSF=1.6;LFS=11;AAT/;
 $cached_env_img{$key} = q|<IMG
- WIDTH="162" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ WIDTH="163" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
  SRC="|."$dir".q|img12.png"
  ALT="$hits[\mbox{location}_{j}][\mbox{term}_{i}]$">|; 
 
 $key = q/mbox{term}_{i};MSF=1.6;LFS=11;AAT/;
 $cached_env_img{$key} = q|<IMG
- WIDTH="45" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ WIDTH="46" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
  SRC="|."$dir".q|img13.png"
  ALT="$\mbox{term}_{i}$">|; 
 
@@ -78,7 +78,7 @@ $cached_env_img{$key} = q|<IMG
 
 $key = q/|;MSF=1.6;LFS=11;AAT/;
 $cached_env_img{$key} = q|<IMG
- WIDTH="9" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ WIDTH="10" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
  SRC="|."$dir".q|img25.png"
  ALT="$\vert$">|; 
 
@@ -90,13 +90,13 @@ $cached_env_img{$key} = q|<IMG
 
 $key = q/mbox{location}_{j};MSF=1.6;LFS=11;AAT/;
 $cached_env_img{$key} = q|<IMG
- WIDTH="71" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ WIDTH="72" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
  SRC="|."$dir".q|img14.png"
  ALT="$\mbox{location}_{j}$">|; 
 
 $key = q/proximity[mbox{term}_{i}][mbox{match}_{j}];MSF=1.6;LFS=11;AAT/;
 $cached_env_img{$key} = q|<IMG
- WIDTH="197" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ WIDTH="197" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
  SRC="|."$dir".q|img20.png"
  ALT="$proximity[\mbox{term}_{i}][\mbox{match}_{j}]$">|; 
 
@@ -108,7 +108,7 @@ $cached_env_img{$key} = q|<IMG
 
 $key = q/mbox{match}_{j};MSF=1.6;LFS=11;AAT/;
 $cached_env_img{$key} = q|<IMG
- WIDTH="58" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ WIDTH="58" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
  SRC="|."$dir".q|img17.png"
  ALT="$\mbox{match}_{j}$">|; 
 
@@ -127,7 +127,7 @@ $cached_env_img{$key} = q|<IMG
 
 $key = q/backslash;MSF=1.6;LFS=11;AAT/;
 $cached_env_img{$key} = q|<IMG
- WIDTH="13" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ WIDTH="13" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
  SRC="|."$dir".q|img5.png"
  ALT="$\backslash$">|; 
 
@@ -151,7 +151,7 @@ $cached_env_img{$key} = q|<IMG
 
 $key = q/log(distance_between_components);MSF=1.6;LFS=11;AAT/;
 $cached_env_img{$key} = q|<IMG
- WIDTH="286" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ WIDTH="286" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
  SRC="|."$dir".q|img21.png"
  ALT="$\log(distance\_between\_components)$">|; 
 

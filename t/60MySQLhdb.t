@@ -24,6 +24,7 @@ $xwi->recordid($recordid);
 $xwi->urlid(7);
 $xwi->md5('71701223CA83546F151B17C493B64E55');
 $xwi->type('text/html');
+$xwi->modifiedDate(time);
 $xwi->title('A title string');
 $xwi->url($url_str);
 $xwi->url_add($url_str);

@@ -1,3 +1,18 @@
+combine (3.7) sarge; urgency=low
+
+  * Fixed bug with required but non-existant modifiedDate
+  * Added fix from Sean Dreilinger to import SaveConfigString in
+    Combine::Config
+  * Fixed tests: make sure modfiedtime is set, and take into account new
+    MD5 calculation
+  * Now requires v 1.06 od HTML::Tidy; newer versions handle UTF8
+    differently
+  * Applied patch from Sean Dreilinger: make Combine work with newer
+    Config::General (SaveConfigString)
+  * Added doc/Installationtest.pl as new test t/90Installationtest.t
+
+ -- Anders Ardo <anders@eit.lth.se>  Thu, 27 Sep 2007 08:52:10 +0200
+
 combine (3.6) sarge; urgency=low
 
   * Bugfixes in DataBase.pm MD5-sum calculation

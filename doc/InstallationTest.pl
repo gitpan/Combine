@@ -17,7 +17,7 @@ print "ORIG Nodes=$onodes; Len=$olen\n";
 our $jobname;
 require './t/defs.pm';
 
-system("combineINIT --jobname $jobname --topic /etc/combine/Topic_carnivor.txt >& /dev/null");
+system("combineINIT --jobname $jobname --topic /etc/combine/Topic_carnivor.txt > /dev/null");
 
 system("combine --jobname $jobname --harvest http://combine.it.lth.se/CombineTests/InstallationTest.html");
 open(REC,"combineExport --jobname $jobname |");
@@ -51,10 +51,10 @@ else { print "There might be some problem with your Combine Installation\n"; }
 __END__
 <?xml version="1.0" encoding="UTF-8"?>
 <documentCollection version="1.1" xmlns="http://alvis.info/enriched/">
-<documentRecord id="FC75599D54537931B502035C8D8E652C">
+<documentRecord id="80AC707F96BC57DFEF78C815F6FABD57">
 <acquisition>
 <acquisitionData>
-<modifiedDate>2006-12-05 13:25:38</modifiedDate>
+<modifiedDate>2006-12-05 13:20:25</modifiedDate>
 <checkedDate>2006-10-03 9:06:42</checkedDate>
 <httpServer>Apache/1.3.29 (Debian GNU/Linux) PHP/4.3.3</httpServer>
 <urls>
