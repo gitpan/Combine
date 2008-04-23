@@ -262,6 +262,9 @@ sub Get {
     my $html = Encode::decode('utf8',$html1);
     $xwi->content(\$html);
 
+    my ($urlpath) = $sv->selectrow_array(qq{SELECT path FROM urls,recordurl WHERE recordid='$key' AND recordurl.urlid=urls.urlid;});
+    $xwi->urlpath($urlpath);
+
     my ($url,$anchor,$lty,$name,$value,$heading);
 #links
     my $sth = $sv->prepare(qq{SELECT urlid,netlocid,anchor,linktype from links WHERE recordid='$key';});

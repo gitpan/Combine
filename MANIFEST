@@ -26,6 +26,7 @@ bin/combineCtrl
 bin/combineExport
 bin/combineINIT
 bin/combineRank
+bin/combineReClassify
 bin/combineRun
 bin/combineUtil
 conf/combine2alvis.xsl
@@ -127,6 +128,7 @@ doc/ClassificationEval.tex
 doc/combineCtrl.tex
 doc/combineExport.tex
 doc/combineRank.tex
+doc/combineReClassify.tex
 doc/combineRun.tex
 doc/combine.tex
 doc/combineUtil.tex

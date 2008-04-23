@@ -1,3 +1,20 @@
+combine (3.8) sarge; urgency=low
+
+  * Perl ABSTRACT now taken from bin/combine
+  * Disable old behaviour to save html as text if extracted text is very
+    short
+  * PosCheckRecord now only uses meta fields that maps to dc.subject and
+    dc.description to match against topic definition
+  * PosCheckRecord now use also the URLpath for topic checking
+  * Added new script: combineReClassify, that reclassifies all records
+  * Enabled gzip HTTP content compression
+  * Moved <META-tag parsing/extraction to FromHTML
+  * Disabled some of the more uncertain binary file detcetions in
+    FromHTML due to charset problems
+  * Charset detection and decoding now done in LWP
+
+ -- Anders Ardo <anders@eit.lth.se>  Wed, 23 Apr 2008 11:14:31 +0200
+
 combine (3.7) sarge; urgency=low
 
   * Fixed bug with required but non-existant modifiedDate

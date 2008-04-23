@@ -1,4 +1,4 @@
-## $Id: PosMatcher.pm,v 1.3 2006/12/19 09:48:17 anders Exp $
+## $Id: PosMatcher.pm,v 1.5 2007/10/17 09:09:24 anders Exp $
 
 # 2002-2006 Anders Ardö
 # 
@@ -11,6 +11,7 @@ use Exporter();
 @EXPORT=(Match);
 
 use strict;
+use Combine::XWI2XML;
 use HTML::Entities; 
 use locale; #needed for \b in regexps to work OK
 
@@ -183,19 +184,23 @@ sub getTextXWI {
   my $size=0;
   #  my $DoStem = 0 unless $DoStem; #False
   my $meta=""; my $head=""; my $text="";
-  
+
   $xwi->meta_rewind;
   my ($name,$content);
   while (1) {
     ($name,$content) = $xwi->meta_get;
     last unless $name;
-    next if ($name eq 'Rsummary');
-    next if ($name =~ /^autoclass/);
+    if (defined($Combine::XWI2XML::dcMap{$name})) { $name = $Combine::XWI2XML::dcMap{$name}; }
+    next unless (($name =~ /subject/) || ($name =~ /description/));
     $meta .= $content . " ";
   } 
 
   $title = $xwi->title; # $head = $xwi->title; # AA0 Treated separately
-  
+
+  $url = $xwi->urlpath;
+  $url =~ s/^\///;
+  $url =~ s/\// /g;
+
   $xwi->heading_rewind;
   my $this;
   while (1) {
@@ -216,11 +221,13 @@ sub getTextXWI {
     if ( defined($meta) && ($meta ne '') ) { SimpletextConv(\$meta, $DoStem); }
     if ( defined($head) && ($head ne '') ) { SimpletextConv(\$head, $DoStem); }
     if ( defined($text) && ($text ne '') ) { SimpletextConv(\$text, $DoStem); }
+    if ( defined($url) && ($url ne '') )   { SimpletextConv(\$url, $DoStem); }
     if ( defined($title) && ($title ne '') ) { SimpletextConv(\$title, $DoStem); }
   } else {
     if ( defined($meta) && ($meta ne '') ) { textConv(\$meta, $DoStem, $stoplist); }
     if ( defined($head) && ($head ne '') ) { textConv(\$head, $DoStem, $stoplist); }
     if ( defined($text) && ($text ne '') ) { textConv(\$text, $DoStem, $stoplist); }
+    if ( defined($url) && ($url ne '') )   { textConv(\$url, $DoStem, $stoplist); }
     if ( defined($title) && ($title ne '') ) { textConv(\$title, $DoStem, $stoplist); }
   }
   return ($meta, $head, $text, $url, $title, $size);

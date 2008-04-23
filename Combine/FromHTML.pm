@@ -39,7 +39,7 @@
 # 
 # Copyright (c) 1996-1998 LUB NetLab
 
-# $Id: FromHTML.pm,v 1.12 2006/11/08 14:53:26 anders Exp $
+# $Id: FromHTML.pm,v 1.14 2008/04/23 09:15:19 anders Exp $
 
 package Combine::FromHTML;
 
@@ -199,9 +199,10 @@ sub trans {
              }
           }
        } else {
-          # this is most likely a binary file => don't parse it
-	   $log->say('FromHTML: most likely a binary file');
-          return $xwi;
+# this is most likely a binary file => don't parse it
+# DISABLED since it creates problems with certain charactersets
+#	   $log->say('FromHTML: most likely a binary file');
+#          return $xwi;
        }
     }
 
@@ -240,28 +241,8 @@ sub trans {
     }
 }
 
-my $charset=$xwi->charset; #print "GOT charset $charset\n"; ##!!
-#Change to robot_get field; do a sanity test
-
-#Convert to UTF8 for Tidy
-    my $html_utf8;
-    foreach my $cs (split('; ',$charset)) {
-        if ($cs eq 'utf8') { $cs = 'UTF-8'; }
-	#print "Trying charset=$cs; ";
-#	if ( eval{Encode::from_to($html, $cs, 'utf8', Encode::FB_HTMLCREF)} ) {
-	if ( eval{$html_utf8 = Encode::decode($cs, $html, Encode::FB_HTMLCREF)} ) {
-	    #print "OK";
-	    last;
-	}
-#	else { print "NOT OK; "; }
-    }
-#    print "\n";
-    #NOTHING in html_utf8 unless successfull conversion!! fail-safe below
-    if ( ! $html_utf8 ) { 
-	$html_utf8 = Encode::decode_utf8(Encode::encode_utf8($html));
-	print STDERR "WARN can't decode charset($charset) for $url\n";
-	$log->say("WARN can't decode charset($charset) for $url"); 
-    }
+## #Convert to UTF8 for Tidy
+    my $html_utf8 = Encode::decode_utf8(Encode::encode_utf8($html));
 
 #Only do for HTML files
 if ( $opt =~ /H/ ) {
@@ -280,7 +261,6 @@ if ( $opt =~ /H/ ) {
 
 #	print "Doing Tidy\n";
 	require HTML::Tidy;
-#	my $tidy = new HTML::Tidy ( {config_file => '/etc/combine/tidy.cfg'} );
 	my $tidy = new HTML::Tidy ( {config_file => Combine::Config::Get('baseConfigDir') . '/tidy.cfg'} );
 #	$tidy->ignore( type => TIDY_WARNING );
 #	if (!eval{$html = $tidy->clean( $html . "\n" )}) { print "TIDY ERR in eval\n"; }
@@ -290,8 +270,6 @@ if ( $opt =~ /H/ ) {
 #	    print $message->as_string; #LOG!
 #	}
 	$html = Encode::decode('UTF-8', $thtml); # convert to Perl internal representation
-
-#	$xwi->meta_add('orig-content-type',$origcharset);
     } else {
 	$html_utf8 =~ s/<\!\-\-.*?\-\->/ /sgo; # replace all comments (including multiline) with whitespace
 	$html = $html_utf8;
@@ -331,6 +309,40 @@ if ( $opt =~ /H/ ) {
 	$tmp = HTML::Entities::decode_entities($tmp);
 	$xwi->title($tmp);
     }    
+
+#Extract META tags
+   while ( $html =~ m/<meta\s*(.*?)>/sgi ) {
+     my $tag = $1;
+     my $key='';
+     my $val='';
+     $tag =~ s/[\n\r]/ /g;
+     foreach my $attr ('name','content') {
+        my $str='';
+
+        if($tag =~ /$attr\s*=\s*[\"]/i) {
+            if ($tag =~ s/$attr\s*=\s*\"([^\"]+?)\"//i) {
+                $str = $1;
+            }
+        } elsif ($tag =~ /$attr\s*=\s*[\']/i) {
+            if ($tag =~ s/$attr\s*=\s*\'([^\']+?)\'//i) {
+                $str = $1;
+            }
+        } else {
+            if ($tag =~ s/$attr\s*=\s*([^\s]+?)\s//i) {
+                $str = $1;
+            }
+        }
+        next if($str =~ /^$/);
+        if($attr =~ /name/i) {
+            $key=lc($str);
+        } elsif ($attr =~ /content/i) {
+            $val=$str;
+        }
+     }
+     next if(($key =~ /^$/) || ($val =~ /^$/));
+     $xwi->meta_add($key,HTML::Entities::decode_entities($val));
+   }
+#END extract META tags
 
 =begin comment
 This feature is temporarily disabled
@@ -430,12 +442,6 @@ This feature is temporarily disabled
 		 $xwi->link_add($urlstr, 0, 0, $linktext, $$link{tag});
 #                 print "ADD: $$link{tag}; $urlstr; |$linktext|\n";
              }
-	}
-    }
-
-    if ($opt =~ /T/) { # extract text
-	if ($textdone == 0) { #not done above in the 'L' section
-		$xwi->text(\$html);
 	}
     }
 

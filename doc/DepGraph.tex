@@ -27,6 +27,11 @@
 \item[Uses:] Getopt::Long; Combine::Config; Combine::GraphAlgorithm; DBI; 
 
 \end{description}
+\subsubsection{combineReClassify}
+\begin{description}
+\item[Uses:] Combine::Config; Combine::LogSQL; Combine::DataBase; Combine::MySQLhdb; Combine::XWI; DBI; Getopt::Long; 
+
+\end{description}
 \subsubsection{combineUtil}
 \begin{description}
 \item[Uses:] Getopt::Long; Combine::Config; Combine::SD\_SQL; Combine::MySQLhdb; Combine::MySQLhdb; Net::hostent; 
@@ -51,14 +56,14 @@
 \begin{description}
 \item[Uses:] Config::General; DBI; 
 
-\item[Used by:] combineCtrl; combine; combineExport; combineINIT; combineRank; combineUtil; Combine::Check\_record; Combine::FromHTML; Combine::LogSQL; Combine::MySQLhdb; Combine::PosCheck\_record; Combine::RobotRules; Combine::SD\_SQL; Combine::UA; Combine::XWI2XML; Combine::selurl; 
+\item[Used by:] combineCtrl; combine; combineExport; combineINIT; combineRank; combineReClassify; combineUtil; Combine::Check\_record; Combine::FromHTML; Combine::LogSQL; Combine::MySQLhdb; Combine::PosCheck\_record; Combine::RobotRules; Combine::SD\_SQL; Combine::UA; Combine::XWI2XML; Combine::selurl; 
 
 \end{description}
 \subsubsection{DataBase.pm}
 \begin{description}
 \item[Uses:] Combine::MySQLhdb; Digest::MD5; Encode; Combine::selurl; 
 
-\item[Used by:] combine; 
+\item[Used by:] combine; combineReClassify; 
 
 \end{description}
 \subsubsection{FromHTML.pm}
@@ -93,7 +98,7 @@
 \begin{description}
 \item[Uses:] Combine::Config; 
 
-\item[Used by:] combine; 
+\item[Used by:] combine; combineReClassify; 
 
 \end{description}
 \subsubsection{Matcher.pm}
@@ -107,7 +112,7 @@
 \begin{description}
 \item[Uses:] Combine::XWI; HTTP::Date; Encode; Combine::Config; Combine::selurl; Combine::Zebra; 
 
-\item[Used by:] combineExport; combineUtil; combineUtil; Combine::DataBase; 
+\item[Used by:] combineExport; combineReClassify; combineUtil; combineUtil; Combine::DataBase; 
 
 \end{description}
 \subsubsection{PosCheck\_record.pm}
@@ -119,7 +124,7 @@
 \end{description}
 \subsubsection{PosMatcher.pm}
 \begin{description}
-\item[Uses:] HTML::Entities; 
+\item[Uses:] Combine::XWI2XML; HTML::Entities; 
 
 \item[Used by:] Combine::PosCheck\_record; 
 
@@ -149,14 +154,14 @@
 \begin{description}
 \item[Uses:] HTML::Entities; Combine::XWI; 
 
-\item[Used by:] combine; Combine::Check\_record; Combine::MySQLhdb; Combine::XWI; Combine::XWI2XML; 
+\item[Used by:] combine; combineReClassify; Combine::Check\_record; Combine::MySQLhdb; Combine::XWI; Combine::XWI2XML; 
 
 \end{description}
 \subsubsection{XWI2XML.pm}
 \begin{description}
 \item[Uses:] Combine::XWI; Encode; Combine::Config; Compress::Zlib; MIME::Base64; Combine::CleanXML2CanDoc; 
 
-\item[Used by:] combineExport; Combine::Zebra; 
+\item[Used by:] combineExport; Combine::PosMatcher; Combine::Zebra; 
 
 \end{description}
 \subsubsection{Zebra.pm}

@@ -39,7 +39,7 @@
 # 
 # Copyright (c) 1996-1998 LUB NetLab
 
-# $Id: UA.pm,v 1.8 2007/02/21 10:34:57 anders Exp $
+# $Id: UA.pm,v 1.9 2008/04/23 09:15:19 anders Exp $
 
 
 # COMB/XWI/UA.pm - harvesting robots with XWI interface
@@ -51,7 +51,6 @@ use strict;
 use Combine::Config;
 use LWP::UserAgent;
 use HTTP::Date;
-#use Digest::MD5;
 
 my $expGar;
 my $userAgentGetIfModifiedSince;
@@ -71,6 +70,7 @@ sub TruncatingUserAgent {
   $ua->timeout(Combine::Config::Get('UAtimeout'));
   $ua->agent("Combine/3 http://combine.it.lth.se/");
   $ua->from(Combine::Config::Get('Operator-Email'));
+  $ua->default_header('Accept-Encoding' => 'gzip');
   if (Combine::Config::Get('httpProxy')) {
     $ua->proxy(['http', 'https'], Combine::Config::Get('httpProxy'));
   }
@@ -122,105 +122,10 @@ sub fetch { # use get-if-modified-since
       $msg = $resp->message();
 #      print "$url_str; " . &time2str($since) ."; $code; $msg\n";
     }
-#Determine charset
-#    my $t = $resp->content_type; print "  CT: $t;; TYPE=$type;\n";
-    my $charset='';
-    my @charset = ('iso-8859-1'); #default
-    my @t = $resp->content_type;
-    foreach my $t (@t) {
-#	print "  CTA: $t\n";
-	if ($t =~ /charset/ ) { $charset = $t; }
-    }
-    $charset=clean($charset);
-#    print "tmpFINAL: $charset\n";
-    if ( $charset ne '' ) { unshift(@charset,$charset); }
 
     my @cs=$resp->header('Content-Type');
     foreach my $c (@cs) {
-#	print "  Content-Type:  $c\n";
-	$charset=clean($c);
-#	print "Charset=$charset;\n";
-	if ( $charset ne '' ) { unshift(@charset,$charset); }
-    }
-
-#    if ( $charset eq '' ) {
-#	$charset = 'iso-8859-1';
-#	print "CHARSET=$charset; (default)\n";
-#    }
-    $charset = join('; ',@charset);
-#    print "FINAL: $charset\n";
-    $xwi->charset($charset); ##!! Change to robot_add; See FromHTML;
-    $xwi->robot_add('charsetlist',$charset);
-#Do a sanity test of charset
-#From RFC 2616  Hypertext Transfer Protocol -- HTTP/1.1
-#The "charset" parameter is used with some media types to define the
-#   character set (section 3.4) of the data. When no explicit charset
-#   parameter is provided by the sender, media subtypes of the "text"
-#   type are defined to have a default charset value of "ISO-8859-1" when
-#   received via HTTP. Data in character sets other than "ISO-8859-1" or
-#   its subsets MUST be labeled with an appropriate charset value.
-    sub clean {
-	my ($cs) = @_;
-	if ( $cs ne '' ) {
-	    $cs =~ s|text/[^\s;]+;?\s*||i;
-	    $cs =~ s|image/[^\s;]+;?\s*||i;
-	    $cs =~ s|application/[^\s;]+;?\s*||i;
-	    $cs =~ s/charset=//ig;
-	    $cs =~ s/[\"\';]//g;
-	    $cs =~ s/^\s+//;
-	    $cs =~ s/\s+$//;
-	    $cs =~ s/UTF-?/utf/i;
-	    if (($cs ne '') && (!Encode::resolve_alias($cs))) {
-#		print STDERR "RESET CHARSET cs=$cs;\n";
-		$cs='';
-	    }
-	}
-	return $cs;
-    }
-sub decodeText {
-  my ($charset, $text) = @_;
-  #Convert to UTF8
-  my $t_utf8;
-  foreach my $cs (split('; ',$charset)) {
-    if ($cs eq 'utf8') { $cs = 'UTF-8'; }
-#    print "Trying UA charset=$cs; ";
-    if ( eval{$t_utf8 = Encode::decode($cs, $text)} ) {
-#       print "OK";
-       last;
-    }
-#       else { print "NOT OK; "; }
-    }
-#    print "\n";
-    #NOTHING in t_utf8 unless successfull conversion!! fail-safe below
-    if ( ! $t_utf8 ) { 
-        $t_utf8 = Encode::decode_utf8(Encode::encode_utf8($text));
-#        print STDERR "WARN can't decode charset($charset) for $url\n";
-#        $log->say("WARN can't decode charset($charset) for $url"); 
-    }
-    return $t_utf8;
-}
-
-#Extract Meta tags to xwi-object
-#print "Using Charset=$charset\n";
-    my @mt = $resp->header_field_names;
-    foreach my $f (@mt) {
-#	print "Field: $f\n";
-	if ( $f =~ /^X-Meta-(.*)$/ ) {
-	    my $name = lc($1);
-	    my @cs=$resp->header($f);
-	    foreach my $c (@cs) {
-#		$xwi->meta_add($name,Encode::decode($charset, $c));
-		$xwi->meta_add($name,decodeText($charset, $c));
-#		print "  XMETA: $name, $c\n";
-	    }
-	} elsif ( $f =~ /Content-Type/ ) {
-	    my @cs=$resp->header($f);
-	    my $name = lc($f);
-	    foreach my $c (@cs) {
-		$xwi->meta_add($name,$c);
-#		print "  Content-Type: $name, $c\n";
-	    }
-	}
+	$xwi->meta_add('content-type',$c);
     }
 
     $xwi->stat($code);
@@ -241,19 +146,15 @@ sub decodeText {
 #?    $xwi->checkedDate(&check_date($resp->header("date")));
     $xwi->checkedDate(time) unless $xwi->checkedDate;
     if ($code eq "200" or $code eq "206") {
-#  	my $md5 = new Digest::MD5;
-#	$md5->reset;
         if ( $method eq "GET" and length($resp->content_ref) > 0 ) {
 	  $xwi->truncated($resp->headers()->header('X-Content-Range'));
-#	  $md5->add(${$resp->content_ref});
-        } #else {
-#	  $md5->add($url_str);
-#	  $md5->add($xwi->type());
-#        }
-#	$_ = $md5->hexdigest;
-#	tr/a-z/A-Z/;
-#	$xwi->md5($_);
-	$xwi->content($resp->content_ref);
+        }
+        if ($resp->decoded_content( 'ref' => 1 )) {
+	  $xwi->content($resp->decoded_content( 'ref' => 1 ));
+        } else {
+          $xwi->content($resp->content_ref);
+#CHECK if gzip encoded anyhow?
+        }
     }
     return ($code, $msg); 
 }

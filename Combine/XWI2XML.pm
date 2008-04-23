@@ -9,7 +9,7 @@ use MIME::Base64;
 
 my $level=0; #Used to calculate indentation for pretty printing
 
-my %dcMap;
+our %dcMap;
    %dcMap = (
             'rights' => 'dc:rights',
             'coverage' => 'dc:coverage',
@@ -37,6 +37,7 @@ my %dcMap;
             'documenttype' => 'dc:type',
             'doc-rights' => 'dc:rights',
             'page-topic' => 'dc:subject',
+            'topicname' => 'dc:subject',
             'keyword' => 'dc:subject',
             'document-rights' => 'dc:rights',
             'keywords' => 'dc:subject',

@@ -68,7 +68,7 @@ sub check {
 #FIX title med simpletexconv i Matcher!!
     my @ant_text=split('\s+',$tt); my $ant_text=$#ant_text + 1;
     if ( $ant_text <= 0 ) { $ant_text = 1; }
-    my $text = join(' ', ($title,$mt,$ht,$tt)); #title, meta, headers, text
+    my $text = join(' ', ($title,$url,$mt,$ht,$tt)); #title, urlpath, meta, headers, text
 #    print "$text\n\n";
     my %text_res = Combine::PosMatcher::Match(\$text, $tm);
 

@@ -570,7 +570,7 @@ $external_latex_labels{$key} = q|9.1.14|;
 $noresave{$key} = "$nosave";
 
 $key = q/Actions_for_deleting_records/;
-$external_latex_labels{$key} = q|A.5.6|; 
+$external_latex_labels{$key} = q|A.5.7|; 
 $noresave{$key} = "$nosave";
 
 $key = q/WaitIntervalHarvesterLockNotFound/;
@@ -606,7 +606,7 @@ $external_latex_labels{$key} = q|9.2.7|;
 $noresave{$key} = "$nosave";
 
 $key = q/Actions_for_sanity_controlls/;
-$external_latex_labels{$key} = q|A.5.6|; 
+$external_latex_labels{$key} = q|A.5.7|; 
 $noresave{$key} = "$nosave";
 
 $key = q/configuration/;
@@ -626,7 +626,7 @@ $external_latex_labels{$key} = q|9.1.9|;
 $noresave{$key} = "$nosave";
 
 $key = q/url_remove_url_reset_url_rewind_url_add_url_get_/;
-$external_latex_labels{$key} = q|A.5.15|; 
+$external_latex_labels{$key} = q|A.5.16|; 
 $noresave{$key} = "$nosave";
 
 $key = q/doOAI/;
@@ -638,7 +638,7 @@ $external_latex_labels{$key} = q|10.3|;
 $noresave{$key} = "$nosave";
 
 $key = q/Action_all/;
-$external_latex_labels{$key} = q|A.5.6|; 
+$external_latex_labels{$key} = q|A.5.7|; 
 $noresave{$key} = "$nosave";
 
 $key = q/Actions_for_controlling_scheduling_of_URLs/;
@@ -654,7 +654,7 @@ $external_latex_labels{$key} = q|9.1.1|;
 $noresave{$key} = "$nosave";
 
 $key = q/heading_reset_heading_rewind_heading_add_heading_get_/;
-$external_latex_labels{$key} = q|A.5.15|; 
+$external_latex_labels{$key} = q|A.5.16|; 
 $noresave{$key} = "$nosave";
 
 $key = q/WaitIntervalHarvesterLockUnavailable/;
@@ -682,7 +682,7 @@ $external_latex_labels{$key} = q|4.3|;
 $noresave{$key} = "$nosave";
 
 $key = q/Actions_listing_statistics/;
-$external_latex_labels{$key} = q|A.5.6|; 
+$external_latex_labels{$key} = q|A.5.7|; 
 $noresave{$key} = "$nosave";
 
 $key = q/crawlstrategy/;
@@ -694,11 +694,11 @@ $external_latex_labels{$key} = q|1|;
 $noresave{$key} = "$nosave";
 
 $key = q/xmeta_reset_xmeta_rewind_xmeta_add_xmeta_get_/;
-$external_latex_labels{$key} = q|A.5.15|; 
+$external_latex_labels{$key} = q|A.5.16|; 
 $noresave{$key} = "$nosave";
 
 $key = q/METHODS/;
-$external_latex_labels{$key} = q|A.5.15|; 
+$external_latex_labels{$key} = q|A.5.16|; 
 $noresave{$key} = "$nosave";
 
 $key = q/slowcrawl/;
@@ -726,7 +726,7 @@ $external_latex_labels{$key} = q|9.1.35|;
 $noresave{$key} = "$nosave";
 
 $key = q/NAME/;
-$external_latex_labels{$key} = q|A.5.16|; 
+$external_latex_labels{$key} = q|A.5.17|; 
 $noresave{$key} = "$nosave";
 
 $key = q/faq/;
@@ -738,11 +738,11 @@ $external_latex_labels{$key} = q|9.1.25|;
 $noresave{$key} = "$nosave";
 
 $key = q/OPTIONS_AND_ARGUMENTS/;
-$external_latex_labels{$key} = q|A.5.6|; 
+$external_latex_labels{$key} = q|A.5.7|; 
 $noresave{$key} = "$nosave";
 
 $key = q/robot_reset_robot_rewind_robot_add_robot_get_/;
-$external_latex_labels{$key} = q|A.5.15|; 
+$external_latex_labels{$key} = q|A.5.16|; 
 $noresave{$key} = "$nosave";
 
 $key = q/std/;
@@ -766,7 +766,7 @@ $external_latex_labels{$key} = q|9.1.29|;
 $noresave{$key} = "$nosave";
 
 $key = q/INTRODUCTION/;
-$external_latex_labels{$key} = q|A.5.16|; 
+$external_latex_labels{$key} = q|A.5.17|; 
 $noresave{$key} = "$nosave";
 
 $key = q/gory/;
@@ -778,19 +778,19 @@ $external_latex_labels{$key} = q|9.1.16|;
 $noresave{$key} = "$nosave";
 
 $key = q/SYNOPSIS/;
-$external_latex_labels{$key} = q|A.5.15|; 
+$external_latex_labels{$key} = q|A.5.16|; 
 $noresave{$key} = "$nosave";
 
 $key = q/_get/;
-$external_latex_labels{$key} = q|A.5.15|; 
+$external_latex_labels{$key} = q|A.5.16|; 
 $noresave{$key} = "$nosave";
 
 $key = q/meta_reset_meta_rewind_meta_add_meta_get_/;
-$external_latex_labels{$key} = q|A.5.15|; 
+$external_latex_labels{$key} = q|A.5.16|; 
 $noresave{$key} = "$nosave";
 
 $key = q/new_/;
-$external_latex_labels{$key} = q|A.5.15|; 
+$external_latex_labels{$key} = q|A.5.16|; 
 $noresave{$key} = "$nosave";
 
 $key = q/gettingstarted/;
@@ -802,7 +802,7 @@ $external_latex_labels{$key} = q|9.2.4|;
 $noresave{$key} = "$nosave";
 
 $key = q/LICENSE/;
-$external_latex_labels{$key} = q|A.5.9|; 
+$external_latex_labels{$key} = q|A.5.10|; 
 $noresave{$key} = "$nosave";
 
 $key = q/UserAgentFollowRedirects/;
@@ -826,7 +826,7 @@ $external_latex_labels{$key} = q|9.1.17|;
 $noresave{$key} = "$nosave";
 
 $key = q/_add/;
-$external_latex_labels{$key} = q|A.5.15|; 
+$external_latex_labels{$key} = q|A.5.16|; 
 $noresave{$key} = "$nosave";
 
 $key = q/autoclass/;
@@ -834,7 +834,7 @@ $external_latex_labels{$key} = q|4.5|;
 $noresave{$key} = "$nosave";
 
 $key = q/XXX_val_/;
-$external_latex_labels{$key} = q|A.5.15|; 
+$external_latex_labels{$key} = q|A.5.16|; 
 $noresave{$key} = "$nosave";
 
 $key = q/MySQLdatabase/;
@@ -854,7 +854,7 @@ $external_latex_labels{$key} = q|9.1.3|;
 $noresave{$key} = "$nosave";
 
 $key = q/SEE_ALSO/;
-$external_latex_labels{$key} = q|A.5.15|; 
+$external_latex_labels{$key} = q|A.5.16|; 
 $noresave{$key} = "$nosave";
 
 $key = q/saveHTML/;
@@ -866,7 +866,7 @@ $external_latex_labels{$key} = q|9|;
 $noresave{$key} = "$nosave";
 
 $key = q/AUTHOR/;
-$external_latex_labels{$key} = q|A.5.15|; 
+$external_latex_labels{$key} = q|A.5.16|; 
 $noresave{$key} = "$nosave";
 
 $key = q/moddep/;
@@ -898,7 +898,7 @@ $external_latex_labels{$key} = q|9.1.22|;
 $noresave{$key} = "$nosave";
 
 $key = q/link_reset_link_rewind_link_add_link_get_/;
-$external_latex_labels{$key} = q|A.5.15|; 
+$external_latex_labels{$key} = q|A.5.16|; 
 $noresave{$key} = "$nosave";
 
 $key = q/UserAgentGetIfModifiedSince/;
@@ -906,7 +906,7 @@ $external_latex_labels{$key} = q|9.1.24|;
 $noresave{$key} = "$nosave";
 
 $key = q/DESCRIPTION/;
-$external_latex_labels{$key} = q|A.5.15|; 
+$external_latex_labels{$key} = q|A.5.16|; 
 $noresave{$key} = "$nosave";
 
 $key = q/baseConfigDir/;
@@ -922,7 +922,7 @@ $external_latex_labels{$key} = q|9.1.32|;
 $noresave{$key} = "$nosave";
 
 $key = q/COPYRIGHT_AND_LICENSE/;
-$external_latex_labels{$key} = q|A.5.15|; 
+$external_latex_labels{$key} = q|A.5.16|; 
 $noresave{$key} = "$nosave";
 
 $key = q/distr/;
@@ -938,7 +938,7 @@ $external_latex_labels{$key} = q|A.2|;
 $noresave{$key} = "$nosave";
 
 $key = q/_reset_/;
-$external_latex_labels{$key} = q|A.5.15|; 
+$external_latex_labels{$key} = q|A.5.16|; 
 $noresave{$key} = "$nosave";
 
 $key = q/termlist/;
@@ -954,7 +954,7 @@ $external_latex_labels{$key} = q|A.1|;
 $noresave{$key} = "$nosave";
 
 $key = q/BUGS/;
-$external_latex_labels{$key} = q|A.5.16|; 
+$external_latex_labels{$key} = q|A.5.17|; 
 $noresave{$key} = "$nosave";
 
 $key = q/topicfilter/;
@@ -974,15 +974,15 @@ $external_latex_labels{$key} = q|A.5.1|;
 $noresave{$key} = "$nosave";
 
 $key = q/EXAMPLES/;
-$external_latex_labels{$key} = q|A.5.6|; 
+$external_latex_labels{$key} = q|A.5.7|; 
 $noresave{$key} = "$nosave";
 
 $key = q/AUTHOR_Anders_Ardo/;
-$external_latex_labels{$key} = q|A.5.9|; 
+$external_latex_labels{$key} = q|A.5.10|; 
 $noresave{$key} = "$nosave";
 
 $key = q/topic_reset_topic_rewind_topic_add_topic_get_/;
-$external_latex_labels{$key} = q|A.5.15|; 
+$external_latex_labels{$key} = q|A.5.16|; 
 $noresave{$key} = "$nosave";
 
 $key = q/LogHandle/;
@@ -990,7 +990,7 @@ $external_latex_labels{$key} = q|9.1.12|;
 $noresave{$key} = "$nosave";
 
 $key = q/Actions_for_handling_server_aliases/;
-$external_latex_labels{$key} = q|A.5.6|; 
+$external_latex_labels{$key} = q|A.5.7|; 
 $noresave{$key} = "$nosave";
 
 $key = q/WaitIntervalSchedulerGetJcf/;
@@ -1014,7 +1014,7 @@ $external_latex_labels{$key} = q|9.1.30|;
 $noresave{$key} = "$nosave";
 
 $key = q/_rewind_/;
-$external_latex_labels{$key} = q|A.5.15|; 
+$external_latex_labels{$key} = q|A.5.16|; 
 $noresave{$key} = "$nosave";
 
 $key = q/extractLinksFromText/;
