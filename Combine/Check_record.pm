@@ -8,6 +8,7 @@ package Combine::Check_record;
 use strict;
 use Combine::XWI;
 use Combine::LoadTermList;
+use Combine::utilPlugIn;
 use Combine::Matcher;
 use Combine::Config;
 
@@ -68,9 +69,8 @@ sub check {
     
     my ($mt,$ht,$tt,$url,$title,$size,$k,$cl,$result);
 
-    ($mt,$ht,$tt,$url,$title,$size) = Combine::Matcher::getTextXWI($xwi,0,$tm,1); # no stemming; simple text extraction
-
-#FIX title med simpletexconv i Matcher!!
+#    ($mt,$ht,$tt,$url,$title,$size) = Combine::Matcher::getTextXWI($xwi,0,$tm,1); # no stemming; simple text extraction
+    ($mt,$ht,$tt,$url,$title) = Combine::utilPlugIn::getTextXWI($xwi,0,$tm); # no stemming
 
     my @ant_text=split('\s+',$tt); my $ant_text=$#ant_text + 1;
     if ( $ant_text <= 0 ) { $ant_text = 1; }

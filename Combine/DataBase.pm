@@ -1,5 +1,5 @@
 # Copyright (c) 2004, 2005 Anders Ardö
-## $Id: DataBase.pm,v 1.6 2007/03/29 08:29:27 anders Exp $
+## $Id: DataBase.pm 239 2007-03-29 08:29:27Z anders $
 
 # 
 # See the file LICENCE included in the distribution.

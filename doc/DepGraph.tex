@@ -2,12 +2,162 @@
 \section{Module dependences}
 \label{moddep}
 \subsection{Programs}
+\subsubsection{Check\_record.pm.svn-base}
+\begin{description}
+\item[Uses:] Combine::XWI; Combine::LoadTermList; Combine::utilPlugIn; Combine::Matcher; Combine::Config; 
+
+\item[Used by:] 
+
+\end{description}
+\subsubsection{CleanXML2CanDoc.pm.svn-base}
+\begin{description}
+\item[Uses:] Alvis::Canonical; 
+
+\item[Used by:] 
+
+\end{description}
+\subsubsection{Config.pm.svn-base}
+\begin{description}
+\item[Uses:] Config::General; DBI; 
+
+\item[Used by:] 
+
+\end{description}
+\subsubsection{DataBase.pm.svn-base}
+\begin{description}
+\item[Uses:] Combine::MySQLhdb; Digest::MD5; Encode; Combine::selurl; 
+
+\item[Used by:] 
+
+\end{description}
+\subsubsection{FromHTML.pm.svn-base}
+\begin{description}
+\item[Uses:] Combine::Config; HTTP::Date; URI; URI::Escape; HTML::Entities; Encode; HTML::Tidy; Combine::HTMLExtractor; 
+
+\item[Used by:] 
+
+\end{description}
+\subsubsection{FromImage.pm.svn-base}
+\begin{description}
+\item[Uses:] Image::ExifTool; 
+
+\item[Used by:] 
+
+\end{description}
+\subsubsection{HTMLExtractor.pm.svn-base}
+\begin{description}
+\item[Uses:] HTML::TokeParser; URI; Data::Dumper; 
+
+\item[Used by:] 
+
+\end{description}
+\subsubsection{LoadTermList.pm.svn-base}
+\begin{description}
+\item[Uses:] DBI; Lingua::Stem; 
+
+\item[Used by:] 
+
+\end{description}
+\subsubsection{LogSQL.pm.svn-base}
+\begin{description}
+\item[Uses:] Combine::Config; 
+
+\item[Used by:] 
+
+\end{description}
+\subsubsection{Matcher.pm.svn-base}
+\begin{description}
+\item[Uses:] HTML::Entities; 
+
+\item[Used by:] 
+
+\end{description}
+\subsubsection{MySQLhdb.pm.svn-base}
+\begin{description}
+\item[Uses:] Combine::XWI; HTTP::Date; Encode; Combine::Config; Combine::selurl; Combine::Zebra; 
+
+\item[Used by:] 
+
+\end{description}
+\subsubsection{PosCheck\_record.pm.svn-base}
+\begin{description}
+\item[Uses:] Combine::LoadTermList; Combine::utilPlugIn; Combine::PosMatcher; Combine::Config; 
+
+\item[Used by:] 
+
+\end{description}
+\subsubsection{PosMatcher.pm.svn-base}
+\begin{description}
+\item[Uses:] Combine::XWI2XML; HTML::Entities; 
+
+\item[Used by:] 
+
+\end{description}
+\subsubsection{RobotRules.pm.svn-base}
+\begin{description}
+\item[Uses:] Combine::Config; Combine::UA; 
+
+\item[Used by:] 
+
+\end{description}
+\subsubsection{SD\_SQL.pm.svn-base}
+\begin{description}
+\item[Uses:] Combine::Config; Combine::selurl; DBI; 
+
+\item[Used by:] 
+
+\end{description}
+\subsubsection{UA.pm.svn-base}
+\begin{description}
+\item[Uses:] Combine::Config; LWP::UserAgent; HTTP::Date; 
+
+\item[Used by:] 
+
+\end{description}
+\subsubsection{XWI.pm.svn-base}
+\begin{description}
+\item[Uses:] HTML::Entities; Combine::XWI; 
+
+\item[Used by:] 
+
+\end{description}
+\subsubsection{XWI2XML.pm.svn-base}
+\begin{description}
+\item[Uses:] Combine::XWI; Encode; Combine::Config; Compress::Zlib; MIME::Base64; Combine::CleanXML2CanDoc; 
+
+\item[Used by:] 
+
+\end{description}
+\subsubsection{Zebra.pm.svn-base}
+\begin{description}
+\item[Uses:] Combine::XWI2XML; ZOOM; 
+
+\item[Used by:] 
+
+\end{description}
+\subsubsection{classifySVM.pm.svn-base}
+\begin{description}
+\item[Uses:] Combine::XWI; Combine::Config; Combine::MySQLhdb; Combine::utilPlugIn; 
+
+\item[Used by:] 
+
+\end{description}
 \subsubsection{combine}
 \begin{description}
-\item[Uses:] Combine::Config; Combine::XWI; Combine::UA; Combine::RobotRules; Combine::LogSQL; Combine::FromHTML; Combine::FromImage; Combine::FromTeX; Combine::DataBase; HTTP::Date; HTTP::Status; URI::URL; Getopt::Long; Combine::SD\_SQL; Lingua::Identify; 
+\item[Uses:] Combine::Config; Combine::XWI; Combine::UA; Combine::RobotRules; Combine::LogSQL; Combine::FromHTML; Combine::FromImage; Combine::FromTeX; Combine::utilPlugIn; Combine::DataBase; HTTP::Date; HTTP::Status; URI::URL; Getopt::Long; Combine::SD\_SQL; 
+
+\end{description}
+\subsubsection{combine.svn-base}
+\begin{description}
+\item[Uses:] Combine::Config; Combine::XWI; Combine::UA; Combine::RobotRules; Combine::LogSQL; Combine::FromHTML; Combine::FromImage; Combine::FromTeX; Combine::utilPlugIn; Combine::DataBase; HTTP::Date; HTTP::Status; URI::URL; Getopt::Long; Combine::SD\_SQL; 
 
 \end{description}
 \subsubsection{combineCtrl}
+\begin{description}
+\item[Uses:] Getopt::Long; Combine::SD\_SQL; Combine::Config; 
+
+\end{description}
+\subsubsection{combineCtrl.svn-base}
 \begin{description}
 \item[Uses:] Getopt::Long; Combine::SD\_SQL; Combine::Config; 
 
@@ -17,7 +167,17 @@
 \item[Uses:] Combine::MySQLhdb; Combine::Config; Combine::XWI2XML; DBI; HTTP::Date; Encode; Getopt::Long; Alvis::Pipeline; XML::LibXSLT; XML::LibXML; 
 
 \end{description}
+\subsubsection{combineExport.svn-base}
+\begin{description}
+\item[Uses:] Combine::MySQLhdb; Combine::Config; Combine::XWI2XML; DBI; HTTP::Date; Encode; Getopt::Long; Alvis::Pipeline; XML::LibXSLT; XML::LibXML; 
+
+\end{description}
 \subsubsection{combineINIT}
+\begin{description}
+\item[Uses:] Getopt::Long; Combine::Config; DBI; HTML::Tidy; 
+
+\end{description}
+\subsubsection{combineINIT.svn-base}
 \begin{description}
 \item[Uses:] Getopt::Long; Combine::Config; DBI; HTML::Tidy; 
 
@@ -27,9 +187,29 @@
 \item[Uses:] Getopt::Long; Combine::Config; Combine::GraphAlgorithm; DBI; 
 
 \end{description}
+\subsubsection{combineRank.svn-base}
+\begin{description}
+\item[Uses:] Getopt::Long; Combine::Config; Combine::GraphAlgorithm; DBI; 
+
+\end{description}
 \subsubsection{combineReClassify}
 \begin{description}
 \item[Uses:] Combine::Config; Combine::LogSQL; Combine::DataBase; Combine::MySQLhdb; Combine::XWI; DBI; Getopt::Long; 
+
+\end{description}
+\subsubsection{combineReClassify.svn-base}
+\begin{description}
+\item[Uses:] Combine::Config; Combine::LogSQL; Combine::DataBase; Combine::MySQLhdb; Combine::XWI; DBI; Getopt::Long; 
+
+\end{description}
+\subsubsection{combineSVM}
+\begin{description}
+\item[Uses:] warnings; Combine::Config; Combine::selurl; Combine::MySQLhdb; Combine::utilPlugIn; Getopt::Long; Algorithm::SVMLight; 
+
+\end{description}
+\subsubsection{combineSVM.svn-base}
+\begin{description}
+\item[Uses:] warnings; Combine::Config; Combine::selurl; Combine::MySQLhdb; Combine::utilPlugIn; Getopt::Long; Algorithm::SVMLight; 
 
 \end{description}
 \subsubsection{combineUtil}
@@ -37,10 +217,29 @@
 \item[Uses:] Getopt::Long; Combine::Config; Combine::SD\_SQL; Combine::MySQLhdb; Combine::MySQLhdb; Net::hostent; 
 
 \end{description}
+\subsubsection{combineUtil.svn-base}
+\begin{description}
+\item[Uses:] Getopt::Long; Combine::Config; Combine::SD\_SQL; Combine::MySQLhdb; Combine::MySQLhdb; Net::hostent; 
+
+\end{description}
+\subsubsection{selurl.pm.svn-base}
+\begin{description}
+\item[Uses:] URI; Combine::Config; 
+
+\item[Used by:] 
+
+\end{description}
+\subsubsection{utilPlugIn.pm.svn-base}
+\begin{description}
+\item[Uses:] Combine::XWI; Combine::MySQLhdb; Combine::LoadTermList; Geo::IP; Locale::Country; Lingua::Identify; Algorithm::SVMLight; 
+
+\item[Used by:] 
+
+\end{description}
 \subsection{Library modules}
 \subsubsection{Check\_record.pm}
 \begin{description}
-\item[Uses:] Combine::XWI; Combine::LoadTermList; Combine::Matcher; Combine::Config; 
+\item[Uses:] Combine::XWI; Combine::LoadTermList; Combine::utilPlugIn; Combine::Matcher; Combine::Config; 
 
 \item[Used by:] 
 
@@ -49,75 +248,75 @@
 \begin{description}
 \item[Uses:] Alvis::Canonical; 
 
-\item[Used by:] Combine::XWI2XML; 
+\item[Used by:] Combine::XWI2XML; Combine::.svn::text-base::XWI2XML.pm.svn-base; 
 
 \end{description}
 \subsubsection{Config.pm}
 \begin{description}
 \item[Uses:] Config::General; DBI; 
 
-\item[Used by:] combineCtrl; combine; combineExport; combineINIT; combineRank; combineReClassify; combineUtil; Combine::Check\_record; Combine::FromHTML; Combine::LogSQL; Combine::MySQLhdb; Combine::PosCheck\_record; Combine::RobotRules; Combine::SD\_SQL; Combine::UA; Combine::XWI2XML; Combine::selurl; 
+\item[Used by:] combineExport; combineINIT; combineCtrl; combineReClassify; combineSVM; combineRank; combineUtil; combine; combineINIT.svn-base; combineCtrl.svn-base; combineReClassify.svn-base; combineSVM.svn-base; combineRank.svn-base; combineUtil.svn-base; combine.svn-base; combineExport.svn-base; Combine::Check\_record; Combine::UA; Combine::selurl; Combine::XWI2XML; Combine::MySQLhdb; Combine::SD\_SQL; Combine::FromHTML; Combine::PosCheck\_record; Combine::RobotRules; Combine::LogSQL; Combine::classifySVM; Combine::.svn::text-base::UA.pm.svn-base; Combine::.svn::text-base::selurl.pm.svn-base; Combine::.svn::text-base::XWI2XML.pm.svn-base; Combine::.svn::text-base::Check\_record.pm.svn-base; Combine::.svn::text-base::MySQLhdb.pm.svn-base; Combine::.svn::text-base::SD\_SQL.pm.svn-base; Combine::.svn::text-base::FromHTML.pm.svn-base; Combine::.svn::text-base::PosCheck\_record.pm.svn-base; Combine::.svn::text-base::RobotRules.pm.svn-base; Combine::.svn::text-base::LogSQL.pm.svn-base; Combine::.svn::text-base::classifySVM.pm.svn-base; 
 
 \end{description}
 \subsubsection{DataBase.pm}
 \begin{description}
 \item[Uses:] Combine::MySQLhdb; Digest::MD5; Encode; Combine::selurl; 
 
-\item[Used by:] combine; combineReClassify; 
+\item[Used by:] combineReClassify; combine; combineReClassify.svn-base; combine.svn-base; 
 
 \end{description}
 \subsubsection{FromHTML.pm}
 \begin{description}
 \item[Uses:] Combine::Config; HTTP::Date; URI; URI::Escape; HTML::Entities; Encode; HTML::Tidy; Combine::HTMLExtractor; 
 
-\item[Used by:] combine; 
+\item[Used by:] combine; combine.svn-base; 
 
 \end{description}
 \subsubsection{FromImage.pm}
 \begin{description}
 \item[Uses:] Image::ExifTool; 
 
-\item[Used by:] combine; 
+\item[Used by:] combine; combine.svn-base; 
 
 \end{description}
 \subsubsection{HTMLExtractor.pm}
 \begin{description}
 \item[Uses:] HTML::TokeParser; URI; Data::Dumper; 
 
-\item[Used by:] Combine::FromHTML; 
+\item[Used by:] Combine::FromHTML; Combine::.svn::text-base::FromHTML.pm.svn-base; 
 
 \end{description}
 \subsubsection{LoadTermList.pm}
 \begin{description}
 \item[Uses:] DBI; Lingua::Stem; 
 
-\item[Used by:] Combine::Check\_record; Combine::PosCheck\_record; 
+\item[Used by:] Combine::Check\_record; Combine::utilPlugIn; Combine::PosCheck\_record; Combine::.svn::text-base::Check\_record.pm.svn-base; Combine::.svn::text-base::utilPlugIn.pm.svn-base; Combine::.svn::text-base::PosCheck\_record.pm.svn-base; 
 
 \end{description}
 \subsubsection{LogSQL.pm}
 \begin{description}
 \item[Uses:] Combine::Config; 
 
-\item[Used by:] combine; combineReClassify; 
+\item[Used by:] combineReClassify; combine; combineReClassify.svn-base; combine.svn-base; 
 
 \end{description}
 \subsubsection{Matcher.pm}
 \begin{description}
 \item[Uses:] HTML::Entities; 
 
-\item[Used by:] Combine::Check\_record; 
+\item[Used by:] Combine::Check\_record; Combine::.svn::text-base::Check\_record.pm.svn-base; 
 
 \end{description}
 \subsubsection{MySQLhdb.pm}
 \begin{description}
 \item[Uses:] Combine::XWI; HTTP::Date; Encode; Combine::Config; Combine::selurl; Combine::Zebra; 
 
-\item[Used by:] combineExport; combineReClassify; combineUtil; combineUtil; Combine::DataBase; 
+\item[Used by:] combineExport; combineReClassify; combineSVM; combineUtil; combineUtil; combineReClassify.svn-base; combineSVM.svn-base; combineUtil.svn-base; combineUtil.svn-base; combineExport.svn-base; Combine::DataBase; Combine::utilPlugIn; Combine::classifySVM; Combine::.svn::text-base::DataBase.pm.svn-base; Combine::.svn::text-base::utilPlugIn.pm.svn-base; Combine::.svn::text-base::classifySVM.pm.svn-base; 
 
 \end{description}
 \subsubsection{PosCheck\_record.pm}
 \begin{description}
-\item[Uses:] Combine::LoadTermList; Combine::PosMatcher; Combine::Config; 
+\item[Uses:] Combine::LoadTermList; Combine::utilPlugIn; Combine::PosMatcher; Combine::Config; 
 
 \item[Used by:] 
 
@@ -126,56 +325,70 @@
 \begin{description}
 \item[Uses:] Combine::XWI2XML; HTML::Entities; 
 
-\item[Used by:] Combine::PosCheck\_record; 
+\item[Used by:] Combine::PosCheck\_record; Combine::.svn::text-base::PosCheck\_record.pm.svn-base; 
 
 \end{description}
 \subsubsection{RobotRules.pm}
 \begin{description}
 \item[Uses:] Combine::Config; Combine::UA; 
 
-\item[Used by:] combine; 
+\item[Used by:] combine; combine.svn-base; 
 
 \end{description}
 \subsubsection{SD\_SQL.pm}
 \begin{description}
 \item[Uses:] Combine::Config; Combine::selurl; DBI; 
 
-\item[Used by:] combineCtrl; combine; combineUtil; 
+\item[Used by:] combineCtrl; combineUtil; combine; combineCtrl.svn-base; combineUtil.svn-base; combine.svn-base; 
 
 \end{description}
 \subsubsection{UA.pm}
 \begin{description}
 \item[Uses:] Combine::Config; LWP::UserAgent; HTTP::Date; 
 
-\item[Used by:] combine; Combine::RobotRules; 
+\item[Used by:] combine; combine.svn-base; Combine::RobotRules; Combine::.svn::text-base::RobotRules.pm.svn-base; 
 
 \end{description}
 \subsubsection{XWI.pm}
 \begin{description}
 \item[Uses:] HTML::Entities; Combine::XWI; 
 
-\item[Used by:] combine; combineReClassify; Combine::Check\_record; Combine::MySQLhdb; Combine::XWI; Combine::XWI2XML; 
+\item[Used by:] combineReClassify; combine; combineReClassify.svn-base; combine.svn-base; Combine::Check\_record; Combine::XWI; Combine::XWI2XML; Combine::MySQLhdb; Combine::utilPlugIn; Combine::classifySVM; Combine::.svn::text-base::XWI.pm.svn-base; Combine::.svn::text-base::XWI2XML.pm.svn-base; Combine::.svn::text-base::Check\_record.pm.svn-base; Combine::.svn::text-base::MySQLhdb.pm.svn-base; Combine::.svn::text-base::utilPlugIn.pm.svn-base; Combine::.svn::text-base::classifySVM.pm.svn-base; 
 
 \end{description}
 \subsubsection{XWI2XML.pm}
 \begin{description}
 \item[Uses:] Combine::XWI; Encode; Combine::Config; Compress::Zlib; MIME::Base64; Combine::CleanXML2CanDoc; 
 
-\item[Used by:] combineExport; Combine::PosMatcher; Combine::Zebra; 
+\item[Used by:] combineExport; combineExport.svn-base; Combine::PosMatcher; Combine::Zebra; Combine::.svn::text-base::PosMatcher.pm.svn-base; Combine::.svn::text-base::Zebra.pm.svn-base; 
 
 \end{description}
 \subsubsection{Zebra.pm}
 \begin{description}
 \item[Uses:] Combine::XWI2XML; ZOOM; 
 
-\item[Used by:] Combine::MySQLhdb; 
+\item[Used by:] Combine::MySQLhdb; Combine::.svn::text-base::MySQLhdb.pm.svn-base; 
+
+\end{description}
+\subsubsection{classifySVM.pm}
+\begin{description}
+\item[Uses:] Combine::XWI; Combine::Config; Combine::MySQLhdb; Combine::utilPlugIn; 
+
+\item[Used by:] 
 
 \end{description}
 \subsubsection{selurl.pm}
 \begin{description}
 \item[Uses:] URI; Combine::Config; 
 
-\item[Used by:] Combine::DataBase; Combine::MySQLhdb; Combine::SD\_SQL; 
+\item[Used by:] combineSVM; combineSVM.svn-base; Combine::DataBase; Combine::MySQLhdb; Combine::SD\_SQL; Combine::.svn::text-base::DataBase.pm.svn-base; Combine::.svn::text-base::MySQLhdb.pm.svn-base; Combine::.svn::text-base::SD\_SQL.pm.svn-base; 
+
+\end{description}
+\subsubsection{utilPlugIn.pm}
+\begin{description}
+\item[Uses:] Combine::XWI; Combine::MySQLhdb; Combine::LoadTermList; Geo::IP; Locale::Country; Lingua::Identify; Algorithm::SVMLight; 
+
+\item[Used by:] combineSVM; combine; combineSVM.svn-base; combine.svn-base; Combine::Check\_record; Combine::PosCheck\_record; Combine::classifySVM; Combine::.svn::text-base::Check\_record.pm.svn-base; Combine::.svn::text-base::PosCheck\_record.pm.svn-base; Combine::.svn::text-base::classifySVM.pm.svn-base; 
 
 \end{description}
 \subsection{External modules}
@@ -183,6 +396,8 @@
 These are the (non base) Perl modules Combine depend on.
 The modules marked with a '{\tt *}' are not critical.
 \begin{verbatim}
+Algorithm::SVMLight
+Algorithm::SVMLight *
 Alvis::Canonical
 Alvis::Pipeline *
 Compress::Zlib
@@ -191,6 +406,7 @@ DBI
 Data::Dumper *
 Digest::MD5
 Encode
+Geo::IP
 Getopt::Long
 HTML::Entities
 HTML::Tidy *
@@ -201,6 +417,7 @@ Image::ExifTool
 LWP::UserAgent
 Lingua::Identify
 Lingua::Stem
+Locale::Country
 MIME::Base64
 Net::hostent
 URI
@@ -209,4 +426,5 @@ URI::URL
 XML::LibXML
 XML::LibXSLT
 ZOOM *
+warnings
 \end{verbatim}

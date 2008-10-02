@@ -25,5 +25,5 @@ foreach my $n (0 ..$#files) {
     system("pod2latex -h1level 4 $prog[$n]");
     $c = $files[$n]; $cc = $c; $cc =~ s/_/\\_/g;
     if ( $prog[$n] =~ m|/Combine/| ) { $cc = 'Combine::' . $cc; }
-    if ( -s "$c.tex" ) { print "\\subsubsection{$cc}\n\\input{$c}\n"; }
+    if ( -s "$c.tex" ) { print "\\subsubsection{$cc}\n\\input{$c}\n\\htmlrule\\hrulefill\n"; }
 }

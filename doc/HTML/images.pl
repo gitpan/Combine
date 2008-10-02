@@ -52,7 +52,7 @@ $cached_env_img{$key} = q|<IMG
 
 $key = q/{displaymath}mbox{Relevance_score}={displaymath};MSF=1.6;LFS=11;AAT/;
 $cached_env_img{$key} = q|<IMG
- WIDTH="144" HEIGHT="31" BORDER="0"
+ WIDTH="143" HEIGHT="31" BORDER="0"
  SRC="|."$dir".q|img8.png"
  ALT="\begin{displaymath}\mbox{Relevance\_score} = \end{displaymath}">|; 
 

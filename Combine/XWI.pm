@@ -1,4 +1,4 @@
-# $Id: XWI.pm,v 1.3 2006/12/13 15:06:46 anders Exp $
+# $Id: XWI.pm 226 2006-12-13 15:06:48Z anders $
 
 # Copyright (c) 1996-1998 LUB NetLab, 2002-2006 Anders Ardö
 # 

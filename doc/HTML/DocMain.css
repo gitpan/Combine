@@ -29,9 +29,9 @@ TD.eqno			{ }	/* equation-number cells */
 
 /* document-specific styles come next */
 DIV.navigation		{   }
-DIV.center		{   }
 SPAN.bf		{   }
 PRE.preform		{   }
-SPAN.textit		{ font-style: italic  }
+DIV.center		{   }
 SPAN.arabic		{   }
 SPAN.textsf		{ font-style: italic  }
+SPAN.textit		{ font-style: italic  }

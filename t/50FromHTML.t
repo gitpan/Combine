@@ -34,17 +34,17 @@ Combine::Config::Set('LogHandle', $log);
 
 my %testurls;
 
-%{$testurls{'http://dbkit02.it.lth.se/CombineTests/anders.html'}} =
- ('url' => 'http://dbkit02.it.lth.se/CombineTests/anders.html',
+%{$testurls{'http://combine.it.lth.se/CombineTests/anders.html'}} =
+ ('url' => 'http://combine.it.lth.se/CombineTests/anders.html',
   'type' => 'text/html',
   'metacontent-type' => 'text/html; charset=iso-8859-1',
   'title' => 'Short CV for Anders Ardö',
 #  'server' => 'Apache/1.3.26 (Unix) Debian GNU/Linux PHP/4.1.2',
 #  'size' => '1582',
-  'http://dbkit02.it.lth.se/CombineTests/aa.gif' => '',
+  'http://combine.it.lth.se/CombineTests/aa.gif' => '',
   'http://www.lub.lu.se/netlab/' => 'NetLab',
   'http://www.dtv.dk/' => 'DTV',
-  'http://dbkit02.it.lth.se/CombineTests/cv.html' => 'Full CV',
+  'http://combine.it.lth.se/CombineTests/cv.html' => 'Full CV',
   'metadescription' => 'short_cv',
   'metakeywords' => 'short_cv, keyword',
   'metaresource-type' => 'document',
@@ -52,8 +52,8 @@ my %testurls;
   'Full Curriculum Vitae' => 'heading'
   );
 
-%{$testurls{'http://dbkit02.it.lth.se/CombineTests/I8_utf8.html'}} =
- ('url' => 'http://dbkit02.it.lth.se/CombineTests/I8_utf8.html',
+%{$testurls{'http://combine.it.lth.se/CombineTests/I8_utf8.html'}} =
+ ('url' => 'http://combine.it.lth.se/CombineTests/I8_utf8.html',
   'type' => 'text/html',
   'metacontent-type' => 'text/html',
   'title' => 'Short CV for Anders Ardö',
@@ -63,8 +63,8 @@ my %testurls;
   'Heading m öäåÖÄÅ' => 'heading'
   );
 
-%{$testurls{'http://dbkit02.it.lth.se/CombineTests/base.html'}} =
- ('url' => 'http://dbkit02.it.lth.se/CombineTests/base.html',
+%{$testurls{'http://combine.it.lth.se/CombineTests/base.html'}} =
+ ('url' => 'http://combine.it.lth.se/CombineTests/base.html',
   'title' => 'Jane Larsen',
   'type' => 'text/html',
   'metagenerator' => "HKN's preprocessor",
@@ -83,20 +83,20 @@ my %testurls;
   'Jane Larsen; People at Chemical Physics' => 'heading'
   );
 
-%{$testurls{'http://dbkit02.it.lth.se/CombineTests/metatest.html'}} =
- ('url' => 'http://dbkit02.it.lth.se/CombineTests/metatest.html',
+%{$testurls{'http://combine.it.lth.se/CombineTests/metatest.html'}} =
+ ('url' => 'http://combine.it.lth.se/CombineTests/metatest.html',
   'title' => '',
   'type' => 'text/html',
   'metacontent-type' => 'text/html',
-  'http://dbkit02.it.lth.se/CombineTests/mail_links.pl/667' => "Earle's Email",
-  'http://dbkit02.it.lth.se/CombineTests/people.pl?turing=&id=877' => 'Email contact',
+  'http://combine.it.lth.se/CombineTests/mail_links.pl/667' => "Earle's Email",
+  'http://combine.it.lth.se/CombineTests/people.pl?turing=&id=877' => 'Email contact',
   'metarobots' => 'noindex,nofollow',
   'METArobots' => 'noindex,nofollow',
   'Email addresses' => 'heading'
   );
 
-%{$testurls{'http://dbkit02.it.lth.se/CombineTests/I8.html'}} =
- ('url' => 'http://dbkit02.it.lth.se/CombineTests/I8.html',
+%{$testurls{'http://combine.it.lth.se/CombineTests/I8.html'}} =
+ ('url' => 'http://combine.it.lth.se/CombineTests/I8.html',
   'title' => 'Short CV for Anders Ardö',
   'type' => 'text/html',
   'metacontent-type' => 'text/html',

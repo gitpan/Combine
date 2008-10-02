@@ -1,4 +1,4 @@
-## $Id: SD_SQL.pm,v 1.12 2006/09/27 13:10:57 anders Exp $
+## $Id: SD_SQL.pm 152 2006-09-27 13:10:57Z anders $
 
 # 2002-2006 Anders Ardö
 # 

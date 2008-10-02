@@ -1,4 +1,4 @@
-## $Id: Matcher.pm,v 1.2 2006/09/27 13:10:56 anders Exp $
+## $Id: Matcher.pm 152 2006-09-27 13:10:57Z anders $
 # Copyright (c) 1996-1998 LUB NetLab, 2002-2006 Anders Ardö
 # 
 # See the file LICENCE included in the distribution.

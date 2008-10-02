@@ -49,7 +49,7 @@ sub update {
 	# as fatal:
 	warn $@;
     } elsif ($@->diagset() ne "ZOOM" ||
-	     $@->code() != ZOOM::Error::CONNECTION_LOST) {
+	     $@->code() != ZOOM::Error::CONNECTION_LOST()) {
 	# A ZOOM error other than connection lost, e.g. BIB-1 224,
 	# "ES: immediate execution failed".  Most such cases need not
 	# be treated as fatal, so we just log it and continue.

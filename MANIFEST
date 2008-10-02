@@ -1,4 +1,5 @@
 Combine/Check_record.pm
+Combine/classifySVM.pm
 Combine/CleanXML2CanDoc.pm
 Combine/Config.pm
 Combine/DataBase.pm
@@ -17,6 +18,7 @@ Combine/RobotRules.pm
 Combine/SD_SQL.pm
 Combine/selurl.pm
 Combine/UA.pm
+Combine/utilPlugIn.pm
 Combine/WP7Canonical.pm
 Combine/XWI2XML.pm
 Combine/XWI.pm
@@ -28,6 +30,7 @@ bin/combineINIT
 bin/combineRank
 bin/combineReClassify
 bin/combineRun
+bin/combineSVM
 bin/combineUtil
 conf/combine2alvis.xsl
 conf/combine2dc.xsl
@@ -63,6 +66,7 @@ PlugIns/MPCA/Saa.pm
 PlugIns/MPCA/Tana.pm
 PlugIns/README
 templates/classifyPlugInTemplate.pm
+templates/myAnalyse.pm
 doc/HTML/contents.png
 doc/HTML/DocMain.css
 doc/HTML/DocMain.html
@@ -99,7 +103,6 @@ doc/HTML/img9.png
 doc/HTML/index.html
 doc/HTML/internals.pl
 doc/HTML/labels.pl
-doc/HTML/missfont.log
 doc/HTML/next_g.png
 doc/HTML/next.png
 doc/HTML/node10.html
@@ -125,11 +128,13 @@ doc/HTML/up_g.png
 doc/HTML/up.png
 doc/HTML/WARNINGS
 doc/ClassificationEval.tex
+doc/classifySVM.tex
 doc/combineCtrl.tex
 doc/combineExport.tex
 doc/combineRank.tex
 doc/combineReClassify.tex
 doc/combineRun.tex
+doc/combineSVM.tex
 doc/combine.tex
 doc/combineUtil.tex
 doc/Configuration.tex
@@ -157,6 +162,7 @@ doc/SD_SQL.tex
 doc/selurl.tex
 doc/SQL.tex
 doc/SystemComponents.tex
+doc/utilPlugIn.tex
 doc/XWI.tex
 doc/myalvis.bib
 doc/CrawlerArchitecture.xfig.eps
@@ -165,7 +171,6 @@ doc/TopicFilter.xfig.eps
 doc/Config.ps
 doc/CrawlerSpeed.ps
 doc/crawl.ps
-doc/DocMain.ps
 doc/extrSQLdoc.pl
 doc/genConfigDoc.pl
 doc/genDepGraph.pl

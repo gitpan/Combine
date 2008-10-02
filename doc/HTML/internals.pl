@@ -38,6 +38,10 @@ $key = q/load/;
 $ref_files{$key} = "$dir".q|node4.html|; 
 $noresave{$key} = "$nosave";
 
+$key = q/analysis/;
+$ref_files{$key} = "$dir".q|node6.html|; 
+$noresave{$key} = "$nosave";
+
 $key = q/Actions_for_controlling_scheduling_of_URLs/;
 $ref_files{$key} = "$dir".q|node16.html|; 
 $noresave{$key} = "$nosave";
@@ -238,6 +242,10 @@ $key = q/httpProxy/;
 $ref_files{$key} = "$dir".q|node13.html|; 
 $noresave{$key} = "$nosave";
 
+$key = q/relTextPlugin/;
+$ref_files{$key} = "$dir".q|node13.html|; 
+$noresave{$key} = "$nosave";
+
 $key = q/doCheckRecord/;
 $ref_files{$key} = "$dir".q|node13.html|; 
 $noresave{$key} = "$nosave";
@@ -386,6 +394,10 @@ $key = q/gory/;
 $ref_files{$key} = "$dir".q|node11.html|; 
 $noresave{$key} = "$nosave";
 
+$key = q/SVMmodel/;
+$ref_files{$key} = "$dir".q|node13.html|; 
+$noresave{$key} = "$nosave";
+
 $key = q/cite_Yang_99/;
 $ref_files{$key} = "$dir".q|node10.html|; 
 $noresave{$key} = "$nosave";
@@ -398,6 +410,10 @@ $key = q/_get/;
 $ref_files{$key} = "$dir".q|node16.html|; 
 $noresave{$key} = "$nosave";
 
+$key = q/analysePlugin/;
+$ref_files{$key} = "$dir".q|node13.html|; 
+$noresave{$key} = "$nosave";
+
 $key = q/new_/;
 $ref_files{$key} = "$dir".q|node16.html|; 
 $noresave{$key} = "$nosave";
@@ -406,12 +422,12 @@ $key = q/gettingstarted/;
 $ref_files{$key} = "$dir".q|node4.html|; 
 $noresave{$key} = "$nosave";
 
-$key = q/exclude/;
-$ref_files{$key} = "$dir".q|node13.html|; 
-$noresave{$key} = "$nosave";
-
 $key = q/LICENSE/;
 $ref_files{$key} = "$dir".q|node16.html|; 
+$noresave{$key} = "$nosave";
+
+$key = q/exclude/;
+$ref_files{$key} = "$dir".q|node13.html|; 
 $noresave{$key} = "$nosave";
 
 $key = q/cite_GolubChall/;
@@ -506,11 +522,11 @@ $key = q/InstTest/;
 $ref_files{$key} = "$dir".q|node16.html|; 
 $noresave{$key} = "$nosave";
 
-$key = q/topic_reset_topic_rewind_topic_add_topic_get_/;
+$key = q/Actions_loading_or_recycling_URLs_for_crawling/;
 $ref_files{$key} = "$dir".q|node16.html|; 
 $noresave{$key} = "$nosave";
 
-$key = q/Actions_loading_or_recycling_URLs_for_crawling/;
+$key = q/topic_reset_topic_rewind_topic_add_topic_get_/;
 $ref_files{$key} = "$dir".q|node16.html|; 
 $noresave{$key} = "$nosave";
 
@@ -530,12 +546,12 @@ $key = q/debian/;
 $ref_files{$key} = "$dir".q|node4.html|; 
 $noresave{$key} = "$nosave";
 
-$key = q/_rewind_/;
-$ref_files{$key} = "$dir".q|node16.html|; 
-$noresave{$key} = "$nosave";
-
 $key = q/WaitIntervalHarvesterLockSuccess/;
 $ref_files{$key} = "$dir".q|node13.html|; 
+$noresave{$key} = "$nosave";
+
+$key = q/_rewind_/;
+$ref_files{$key} = "$dir".q|node16.html|; 
 $noresave{$key} = "$nosave";
 
 $key = q/cite_Svenonius_2000/;

@@ -28,26 +28,26 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<A NAME="tex2html359"
+<A NAME="tex2html382"
   HREF="node5.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
-<A NAME="tex2html355"
+<A NAME="tex2html378"
   HREF="node2.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
-<A NAME="tex2html349"
+<A NAME="tex2html372"
   HREF="node3.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
-<A NAME="tex2html357"
+<A NAME="tex2html380"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
 <BR>
-<B> Next:</B> <A NAME="tex2html360"
+<B> Next:</B> <A NAME="tex2html383"
   HREF="node5.html">Configuration</A>
-<B> Up:</B> <A NAME="tex2html356"
+<B> Up:</B> <A NAME="tex2html379"
   HREF="node2.html">Overview</A>
-<B> Previous:</B> <A NAME="tex2html350"
+<B> Previous:</B> <A NAME="tex2html373"
   HREF="node3.html">Introduction</A>
- &nbsp; <B>  <A NAME="tex2html358"
+ &nbsp; <B>  <A NAME="tex2html381"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
@@ -56,37 +56,37 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
 
 <UL CLASS="ChildLinks">
-<LI><A NAME="tex2html361"
+<LI><A NAME="tex2html384"
   HREF="node4.html#SECTION02021000000000000000">Installation</A>
 <UL>
-<LI><A NAME="tex2html362"
+<LI><A NAME="tex2html385"
   HREF="node4.html#SECTION02021100000000000000">Installation from source for the impatient</A>
-<LI><A NAME="tex2html363"
+<LI><A NAME="tex2html386"
   HREF="node4.html#SECTION02021200000000000000">Porting to not supported operating systems - dependencies</A>
-<LI><A NAME="tex2html364"
+<LI><A NAME="tex2html387"
   HREF="node4.html#SECTION02021300000000000000">Automated Debian/Ubuntu installation</A>
-<LI><A NAME="tex2html365"
+<LI><A NAME="tex2html388"
   HREF="node4.html#SECTION02021400000000000000">Manual installation</A>
-<LI><A NAME="tex2html366"
+<LI><A NAME="tex2html389"
   HREF="node4.html#SECTION02021500000000000000">Out-of-the-box installation test</A>
 </UL>
 <BR>
-<LI><A NAME="tex2html367"
+<LI><A NAME="tex2html390"
   HREF="node4.html#SECTION02022000000000000000">Getting started</A>
-<LI><A NAME="tex2html368"
+<LI><A NAME="tex2html391"
   HREF="node4.html#SECTION02023000000000000000">Online documentation</A>
-<LI><A NAME="tex2html369"
+<LI><A NAME="tex2html392"
   HREF="node4.html#SECTION02024000000000000000">Use scenarios</A>
 <UL>
-<LI><A NAME="tex2html370"
+<LI><A NAME="tex2html393"
   HREF="node4.html#SECTION02024100000000000000">General crawling without restrictions</A>
-<LI><A NAME="tex2html371"
+<LI><A NAME="tex2html394"
   HREF="node4.html#SECTION02024200000000000000">Focused crawling - domain restrictions</A>
-<LI><A NAME="tex2html372"
+<LI><A NAME="tex2html395"
   HREF="node4.html#SECTION02024300000000000000">Focused crawling - topic specific</A>
-<LI><A NAME="tex2html373"
+<LI><A NAME="tex2html396"
   HREF="node4.html#SECTION02024400000000000000">Focused crawling in an Alvis system</A>
-<LI><A NAME="tex2html374"
+<LI><A NAME="tex2html397"
   HREF="node4.html#SECTION02024500000000000000">Crawl one entire site and it's outlinks</A>
 </UL></UL>
 <!--End of Table of Child-Links-->
@@ -147,13 +147,12 @@ Unless you are on a system supporting Debian packages (in which case look at <A 
 download and unpack the source.
 The following command sequence will then install Combine:
 <PRE>
-perl Makefile.PL
-make
-make test
-make install
-mkdir /etc/combine
-cp conf/* /etc/combine/
-mkdir /var/run/combine
+CREATE TABLE robotrules (
+  netlocid int(11) NOT NULL default '0',
+  expire int(11) NOT NULL default '0',
+  rule varchar(255) default '',
+  KEY netlocid (netlocid)
+) ENGINE=MyISAM DEFAULT CHARACTER SET=utf8;
 </PRE>
 
 <P>
@@ -273,13 +272,14 @@ in <TT>/etc/combine/</TT> so they need to be copied there.
 <P>
 The following command sequence will install Combine:
 <PRE>
-perl Makefile.PL
-make
-make test
-make install
-mkdir /etc/combine
-cp conf/* /etc/combine/
-mkdir /var/run/combine
+CREATE TABLE oai (
+  recordid int(11) NOT NULL default '0',
+  md5 char(32),
+  date timestamp,
+  status enum('created', 'updated', 'deleted'),
+  PRIMARY KEY (md5),
+  KEY date (date)
+) ENGINE=MyISAM DEFAULT CHARACTER SET=utf8;
 </PRE>
 
 <P>
@@ -300,7 +300,11 @@ that will hold the records:
 </LI>
 </UL>
 <PRE>
-sudo combineINIT --jobname aatest --topic /etc/combine/Topic_carnivor.txt
+CREATE TABLE exports (
+  host varchar(30),
+  port int,
+  last timestamp DEFAULT '1999-12-31'
+) ENGINE=MyISAM DEFAULT CHARACTER SET=utf8;
 </PRE>
 
 <UL>
@@ -308,8 +312,13 @@ sudo combineINIT --jobname aatest --topic /etc/combine/Topic_carnivor.txt
 </LI>
 </UL>
 <PRE>
-combine --jobname aatest
-        --harvest http://combine.it.lth.se/CombineTests/InstallationTest.html
+CREATE TABLE localtags (
+  netlocid int(11) NOT NULL DEFAULT '0',
+  urlid int(11) NOT NULL DEFAULT '0',
+  name varchar(100) NOT NULL,
+  value varchar(100) NOT NULL,
+  PRIMARY KEY tag (netlocid,urlid,name(100),value(100))
+) ENGINE=MyISAM DEFAULT CHARACTER SET=utf8;
 </PRE>
 
 <UL>
@@ -317,7 +326,8 @@ combine --jobname aatest
 </LI>
 </UL>
 <PRE>
-combineExport --jobname aatest --profile dc
+GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,CREATE TEMPORARY TABLES,
+   ALTER,LOCK TABLES ON $database.* TO $dbuser;
 </PRE>
 
 <UL>
@@ -325,20 +335,8 @@ combineExport --jobname aatest --profile dc
 </LI>
 </UL>
 <PRE>
-&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;documentCollection version="1.1" xmlns:dc="http://purl.org/dc/elements/1.1/"&gt;
-&lt;metadata xmlns:dc="http://purl.org/dc/elements/1.1/"&gt;
-&lt;dc:format&gt;text/html&lt;/dc:format&gt;
-&lt;dc:format&gt;text/html; charset=iso-8859-1&lt;/dc:format&gt;
-&lt;dc:subject&gt;Carnivorous plants&lt;/dc:subject&gt;
-&lt;dc:subject&gt;Drosera&lt;/dc:subject&gt;
-&lt;dc:subject&gt;Nepenthes&lt;/dc:subject&gt;
-&lt;dc:title transl="yes"&gt;Installation test for Combine&lt;/dc:title&gt;
-&lt;dc:description&gt;&lt;/dc:description&gt;
-&lt;dc:date&gt;2006-05-19 9:57:03&lt;/dc:date&gt;
-&lt;dc:identifier&gt;http://combine.it.lth.se/CombineTests/InstallationTest.html&lt;/dc:identifier&gt;
-&lt;dc:language&gt;en&lt;/dc:language&gt;
-&lt;/metadata&gt;
+GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,CREATE TEMPORARY TABLES,
+   ALTER,LOCK TABLES ON $database.* TO $dbuser\@localhost;
 </PRE>
 
 <P>
@@ -359,32 +357,32 @@ A simple example work-flow for a trivial crawl job name 'aatest' might look like
 
 <OL>
 <LI>Initialize database and configuration (needs root privileges)
-<BR><TT>sudo combineINIT <code>--</code>jobname aatest</TT>
+<BR><TT>sudo combineINIT <code></code>jobname aatest</TT>
 </LI>
 <LI><A NAME="load"></A> Load some seed URLs like (you can repeat this command with different URLs as many times as you wish)
-<BR><TT>echo 'http://combine.it.lth.se/' | combineCtrl  load <code>--</code>jobname aatest</TT>
+<BR><TT>echo 'http://combine.it.lth.se/' | combineCtrl  load <code></code>jobname aatest</TT>
 </LI>
 <LI><A NAME="crawl"></A>   Start 2 harvesting processes
-<BR><TT>combineCtrl  start <code>--</code>jobname aatest <code>--</code>harvesters 2</TT>
+<BR><TT>combineCtrl  start <code></code>jobname aatest <code></code>harvesters 2</TT>
 
 <P>
 </LI>
 <LI>Let it run for some time. Status and progress can be checked using
-the program '<TT>combineCtrl <code>--</code>jobname aatest</TT>'
+the program '<TT>combineCtrl <code></code>jobname aatest</TT>'
 with various parameters.
 
 <P>
 </LI>
 <LI>When satisfied kill the crawlers
-<BR><TT>combineCtrl kill <code>--</code>jobname aatest</TT>
+<BR><TT>combineCtrl kill <code></code>jobname aatest</TT>
 </LI>
 <LI>Export data records in the ALVIS XML format
-<BR><TT>combineExport <code>--</code>jobname aatest <code>--</code>profile alvis</TT>
+<BR><TT>combineExport <code></code>jobname aatest <code></code>profile alvis</TT>
 
 <P>
 </LI>
 <LI>If you want to schedule a recheck for all the crawled pages stored in the database do
-<BR><TT>combineCtrl reharvest <code>--</code>jobname aatest</TT>
+<BR><TT>combineCtrl reharvest <code></code>jobname aatest</TT>
 </LI>
 <LI>Go back to <A HREF="#crawl">3</A> for continuous operation.
 </LI>
@@ -431,32 +429,19 @@ the database, and newly created pages added.
 
 <OL>
 <LI>Initialize database and configuration
-<BR><TT>sudo combineINIT <code>--</code>jobname focustest</TT>
+<BR><TT>sudo combineINIT <code></code>jobname focustest</TT>
 
 <P>
 </LI>
 <LI>Edit the configuration to provide the desired focus
 <BR>
 Change the <TT>&lt;allow&gt;</TT> part in <TT>/etc/combine/focustest/combine.cfg</TT> from
-<PRE>
-#use either URL or HOST: (obs ':') to match regular expressions to either the
-#full URL or the HOST part of a URL.
-&lt;allow&gt;
-#Allow crawl of URLs or hostnames that matches these regular expressions
-HOST: .*$
-&lt;/allow&gt;
+<PRE>%structure of the classification system,
 </PRE>
 to
-<BR><PRE>
-#use either URL or HOST: (obs ':') to match regular expressions to either the
-#full URL or the HOST part of a URL.
-&lt;allow&gt;
-#Allow crawl of URLs or hostnames that matches these regular expressions
-HOST: www\.alvis\.info$
-HOST: combine\.it\.lth\.se$
-&lt;/allow&gt;
+<BR><PRE>%scores are propagated to the most specific
 </PRE>
-The escaping of '.' by writing '<code>\.</code>' is necessary since the patterns
+The escaping of '.' by writing '<code></code>' is necessary since the patterns
 actually are Perl regular expressions. Similarly the ending '$'
 indicates that the host string should end here, so for example
 a Web server on <TT>www.alvis.info.com</TT> (if such exists) will
@@ -465,21 +450,21 @@ not be crawled.
 <P>
 </LI>
 <LI>Load seed URLs
-<BR><TT>echo 'http://combine.it.lth.se/' | combineCtrl  load <code>--</code>jobname&nbsp;focustest</TT>
-<BR><TT>echo 'http://www.alvis.info/' | combineCtrl  load <code>--</code>jobname focustest</TT>
+<BR><TT>echo 'http://combine.it.lth.se/' | combineCtrl  load <code></code>jobname&nbsp;focustest</TT>
+<BR><TT>echo 'http://www.alvis.info/' | combineCtrl  load <code></code>jobname focustest</TT>
 
 <P>
 </LI>
 <LI>Start 1 harvesting process
-<BR><TT>combineCtrl  start <code>--</code>jobname focustest</TT>
+<BR><TT>combineCtrl  start <code></code>jobname focustest</TT>
 
 <P>
 </LI>
 <LI>Daily export all data records in the ALVIS XML format
-<BR><TT>combineExport <code>--</code>jobname focustest <code>--</code>profile alvis</TT>
+<BR><TT>combineExport <code></code>jobname focustest <code></code>profile alvis</TT>
 <BR>
 and schedule all pages for re-harvesting
-<BR><TT>combineCtrl reharvest <code>--</code>jobname focustest</TT>
+<BR><TT>combineCtrl reharvest <code></code>jobname focustest</TT>
 </LI>
 </OL>
 
@@ -501,18 +486,13 @@ Create and maintain a topic specific crawled database for the topic 'Carnivorous
 </LI>
 <LI>Create a file named <TT>cpSeedURLs.txt</TT> with seed URLs for this
 topic, containing the URLs:
-<PRE>
-http://www.sarracenia.com/faq.html
-http://dmoz.org/Home/Gardening/Plants/Carnivorous_Plants/
-http://www.omnisterra.com/bot/cp_home.cgi
-http://www.vcps.au.com/
-http://www.murevarn.se/links.html
+<PRE>%classifications suggested by the topic filter.  This is achieved by assigning, for each
 </PRE>
 
 <P>
 </LI>
 <LI>Initialization
-<BR><TT>sudo combineINIT <code>--</code>jobname cptest <code>--</code>topic cpTopic.txt</TT>
+<BR><TT>sudo combineINIT <code></code>jobname cptest <code></code>topic cpTopic.txt</TT>
 
 <P>
 This enables topic checking and focused crawl mode by setting
@@ -522,17 +502,17 @@ configuration variable <TT>doCheckRecord = 1</TT> and copying a topic definition
 <P>
 </LI>
 <LI>Load seed URLs
-<BR><TT>combineCtrl  load <code>--</code>jobname cptest &lt; cpSeedURLs.txt</TT>
+<BR><TT>combineCtrl  load <code></code>jobname cptest &lt; cpSeedURLs.txt</TT>
 
 <P>
 </LI>
 <LI>Start 3 harvesting process
-<BR><TT>combineCtrl  start <code>--</code>jobname cptest <code>--</code>harvesters 3</TT>
+<BR><TT>combineCtrl  start <code></code>jobname cptest <code></code>harvesters 3</TT>
 
 <P>
 </LI>
 <LI>Regularly export all data records in the ALVIS XML format
-<BR><TT>combineExport <code>--</code>jobname cptest <code>--</code>profile alvis</TT>
+<BR><TT>combineExport <code></code>jobname cptest <code></code>profile alvis</TT>
 <BR>
 <P>
 </LI>
@@ -550,7 +530,7 @@ Focused crawling in an Alvis system</A>
 Use the same procedure as in section <A HREF="#topicfocus">Focused crawling - topic specific</A>
 except for the last point. Exporting should be done incrementally into an Alvis
 pipeline (in this example listening at port 3333 on the machine nlp.alvis.info):
-<BR><code>combineExport --jobname cptest --pipehost nlp.alvis.info --pipeport 3333 --incremental</code>
+<BR><code></code>
 
 <P>
 
@@ -570,9 +550,9 @@ This scenario requires the crawler to:
 </UL>
 
 <P>
-I.e. all of <code>http://my.targetsite.com/*</code>,
+I.e. all of <code></code>,
 plus any other URL that is linked to from a page in
-<code>http://my.targetsite.com/*</code>.
+<code></code>.
 
 <P>
 
@@ -580,13 +560,7 @@ plus any other URL that is linked to from a page in
 <LI>Configure Combine to crawl this one site only.
 Change the <TT>&lt;allow&gt;</TT> part in
 <BR><TT>/etc/combine/XXX/combine.cfg</TT> to
-<PRE>
-#use either URL or HOST: (obs ':') to match regular expressions to either the
-#full URL or the HOST part of a URL.
-&lt;allow&gt;
-#Allow crawl of URLs or hostnames that matches these regular expressions
-HOST: my\.targetsite\.com$
-&lt;/allow&gt;
+<PRE>%leaf node in the list, the sum of it's score and all scores for all
 </PRE>
 
 <P>
@@ -602,29 +576,25 @@ suggested in <A HREF="node12.html#slowcrawl">FAQ no <A HREF="node12.html#slowcra
 </LI>
 <LI>Change configuration <TT>&lt;allow&gt;</TT> back to allow crawling
 of any domain (which is the default).
-<PRE>
-&lt;allow&gt;
-#Allow crawl of URLs or hostnames that matches these regular expressions
-HOST: .*$
-&lt;/allow&gt;
+<PRE>%suggested classifications above in the classification tree, to that
 </PRE>
 
 <P>
 </LI>
 <LI>Schedule all links in the database for crawling, something like (change XXX to your jobname)
-<BR><code>echo 'select urlstr from urls;' | mysql -u combine XXX</code>
-<BR><code>          | combineCtrl load --jobname XXX</code>
+<BR><code></code>
+<BR><code></code>
 
 <P>
 </LI>
 <LI>Change configuration to disable automatic recycling of links:
-<BR><code>#Enable(1)/disable(0) automatic recycling of new links</code>
-<BR><code>AutoRecycleLinks = 0</code>
+<BR><code></code>
+<BR><code></code>
 
 <P>
 and maybe (depending or your other requirements) change:
-<BR><code>#User agent handles redirects (1) or treat redirects as new links (0)</code>
-<BR><code>UserAgentFollowRedirects = 0</code>
+<BR><code></code>
+<BR><code></code>
 
 <P>
 </LI>
@@ -634,31 +604,31 @@ and maybe (depending or your other requirements) change:
 
 <DIV CLASS="navigation"><HR>
 <!--Navigation Panel-->
-<A NAME="tex2html359"
+<A NAME="tex2html382"
   HREF="node5.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
-<A NAME="tex2html355"
+<A NAME="tex2html378"
   HREF="node2.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
-<A NAME="tex2html349"
+<A NAME="tex2html372"
   HREF="node3.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
-<A NAME="tex2html357"
+<A NAME="tex2html380"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
 <BR>
-<B> Next:</B> <A NAME="tex2html360"
+<B> Next:</B> <A NAME="tex2html383"
   HREF="node5.html">Configuration</A>
-<B> Up:</B> <A NAME="tex2html356"
+<B> Up:</B> <A NAME="tex2html379"
   HREF="node2.html">Overview</A>
-<B> Previous:</B> <A NAME="tex2html350"
+<B> Previous:</B> <A NAME="tex2html373"
   HREF="node3.html">Introduction</A>
- &nbsp; <B>  <A NAME="tex2html358"
+ &nbsp; <B>  <A NAME="tex2html381"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 <ADDRESS>
 root
-2008-04-23
+2008-10-02
 </ADDRESS>
 </BODY>
 </HTML>

@@ -1,3 +1,25 @@
+combine (3.9) sarge; urgency=low
+
+  * Changed default for useTidy to 0 (Not using Tidy)
+  * Added dependency on libclass-factory-util-perl
+  * Changed test Web-server to combine.it.lth.se
+  * Added Combine/utilPlugIn.pm Combine/classifySVM.pm - support for SVM
+    classifiers (depends SVMLight) plus documentation
+  * Changed *Check_record.pm to use XWI text extraction from
+    utilPlugIn.pm
+  * Added country determination (plus dependency on GeoIp)
+  * Updated extensions of binary files
+  * Added analysePlugin and relTextPlugin to default config
+  * Cleaned FromHTML.pm code
+  * Added call to external relTextPlugin
+  * Added call to Plugin for extra analysis in utilPlugin.pm
+  * Improved title extraction in XWI2XML
+  * Fixed in rules: shell IO redirection
+  * Added table 'localtags' - for storing local name/value pairs to be
+    added by analysePlugin
+
+ -- Anders Ardo <anders@eit.lth.se>  Fri, 26 Sep 2008 15:22:43 +0200
+
 combine (3.8) sarge; urgency=low
 
   * Perl ABSTRACT now taken from bin/combine

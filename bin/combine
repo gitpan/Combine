@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-## $Id: combine,v 1.17 2007/10/17 09:09:24 anders Exp $
+## $Id: combine 264 2008-09-05 07:58:42Z anders $
 
 # Copyright (c) 1996-1998 LUB NetLab, 2002-2005 Anders Ardö
 # 
@@ -15,6 +15,7 @@ use Combine::LogSQL;
 use Combine::FromHTML;
 use Combine::FromImage;
 use Combine::FromTeX;
+use Combine::utilPlugIn;
 use Combine::DataBase;
 use HTTP::Date;
 use HTTP::Status;
@@ -213,7 +214,7 @@ while (1) { # the main loop
 	}
 	else {
 	    if ( $extractLinksFromText ) { textLinks($xwi); }
-	    if ( $doAnalyse ) { analyse($xwi); }
+	    if ( $doAnalyse ) { Combine::utilPlugIn::analyse($xwi); }
 	    $xhdb->insert;
 #	    logLinks($xwi);
 	    if ( ! ($robot_tag=~/nofollow/i) ) { #'none' is taken care of above
@@ -317,16 +318,6 @@ sub textLinks {
     foreach my $l (keys(%links)) {
 	$xwi->link_add($l, 0, 0, '', 'text');
     }
-}
-
-sub analyse {
-    my ($xwi) = @_;
-    my $text;
-    if (defined($xwi->text)) { $text = substr(${$xwi->text},0,5000); } else { return; }
-    use Lingua::Identify qw(:language_identification);
-    if (length($text)<100) {$text .= ' ' . $xwi->title;}
-    my $lang = langof($text); # gives the most probable language
-    if ($lang ne '') { $xwi->robot_add('language', $lang); }
 }
 
 __END__

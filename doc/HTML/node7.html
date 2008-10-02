@@ -28,26 +28,26 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<A NAME="tex2html430"
+<A NAME="tex2html454"
   HREF="node8.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
-<A NAME="tex2html426"
+<A NAME="tex2html450"
   HREF="node2.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
-<A NAME="tex2html420"
+<A NAME="tex2html444"
   HREF="node6.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
-<A NAME="tex2html428"
+<A NAME="tex2html452"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
 <BR>
-<B> Next:</B> <A NAME="tex2html431"
+<B> Next:</B> <A NAME="tex2html455"
   HREF="node8.html">Performance and scalability</A>
-<B> Up:</B> <A NAME="tex2html427"
+<B> Up:</B> <A NAME="tex2html451"
   HREF="node2.html">Overview</A>
-<B> Previous:</B> <A NAME="tex2html421"
+<B> Previous:</B> <A NAME="tex2html445"
   HREF="node6.html">Crawler internal operation</A>
- &nbsp; <B>  <A NAME="tex2html429"
+ &nbsp; <B>  <A NAME="tex2html453"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
@@ -56,36 +56,36 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <A NAME="CHILD_LINKS"><STRONG>Subsections</STRONG></A>
 
 <UL CLASS="ChildLinks">
-<LI><A NAME="tex2html432"
+<LI><A NAME="tex2html456"
   HREF="node7.html#SECTION02051000000000000000">Approaches to automated classification</A>
 <UL>
-<LI><A NAME="tex2html433"
+<LI><A NAME="tex2html457"
   HREF="node7.html#SECTION02051100000000000000">Description of the used string-matching algorithm</A>
 </UL>
 <BR>
-<LI><A NAME="tex2html434"
+<LI><A NAME="tex2html458"
   HREF="node7.html#SECTION02052000000000000000">Evaluation methodology</A>
 <UL>
-<LI><A NAME="tex2html435"
+<LI><A NAME="tex2html459"
   HREF="node7.html#SECTION02052100000000000000">Evaluation challenge</A>
-<LI><A NAME="tex2html436"
+<LI><A NAME="tex2html460"
   HREF="node7.html#SECTION02052200000000000000">Evaluation measures used</A>
-<LI><A NAME="tex2html437"
+<LI><A NAME="tex2html461"
   HREF="node7.html#SECTION02052300000000000000">Data collection</A>
 </UL>
 <BR>
-<LI><A NAME="tex2html438"
+<LI><A NAME="tex2html462"
   HREF="node7.html#SECTION02053000000000000000">Results</A>
 <UL>
-<LI><A NAME="tex2html439"
+<LI><A NAME="tex2html463"
   HREF="node7.html#SECTION02053100000000000000">The role of different thesauri terms</A>
-<LI><A NAME="tex2html440"
+<LI><A NAME="tex2html464"
   HREF="node7.html#SECTION02053200000000000000">Enriching the term list using natural language processing</A>
-<LI><A NAME="tex2html441"
+<LI><A NAME="tex2html465"
   HREF="node7.html#SECTION02053300000000000000">Importance of HTML structural elements and metadata</A>
-<LI><A NAME="tex2html442"
+<LI><A NAME="tex2html466"
   HREF="node7.html#SECTION02053400000000000000">Challenges and recommendations for classification of Web pages</A>
-<LI><A NAME="tex2html443"
+<LI><A NAME="tex2html467"
   HREF="node7.html#SECTION02053500000000000000">Comparing and combining two approaches</A>
 </UL></UL>
 <!--End of Table of Child-Links-->
@@ -143,50 +143,24 @@ Description of the used string-matching algorithm</A>
 Automated classification approach used for evaluation was <A HREF="node6.html#autoclass">string-matching of terms</A> from an engineering-specific controlled vocabulary Engineering Index (Ei) thesaurus and classification scheme, used in Elsevier's Compendex database. Ei classification scheme is organized into six categories which are divided into 38 subjects, which are further subdivided into 182 specific subject areas. These are further subdivided, resulting in some 800 individual classes in a five-level hierarchy. In Ei there are on average 88 intellectually selected terms designating one class.
 
 <P>
-The algorithm searches for terms from the Ei thesaurus and classification scheme in documents to be classified. In order to do this, a term list is created, containing class captions, different thesauri terms and classes which the terms and captions denote. 	The term list consists of triplets: term (single word, Boolean term or phrase), class which the term designates or maps to, and weight. Boolean terms consist of words that must all be present but in any order or in any distance from each other. The Boolean terms are not explicitly part of the Ei thesaurus, so they had to be created in a pre-processing step. They are considered to be those terms which contain the following strings: '<code>and</code>', '<code>vs.</code>' (short for versus), '<code>,</code>' (comma), '<code>;</code>' (semi-colon, separating different concepts in class names), '<code>(</code>' (parenthesis, indicating the context of a homonym), '<code>:</code>' (colon, indicating a more specific description of the previous term in a class name), and '<code>--</code>' (double dash, indicating heading-subheading relationship). Upper-case words from the Ei thesaurus and classification scheme are left in upper case in the term list, assuming that they are acronyms. All other words containing at least one lower-case letter are converted into lower case. Geographical names are excluded on the grounds that they are not being engineering-specific in any sense. 
+The algorithm searches for terms from the Ei thesaurus and classification scheme in documents to be classified. In order to do this, a term list is created, containing class captions, different thesauri terms and classes which the terms and captions denote. 	The term list consists of triplets: term (single word, Boolean term or phrase), class which the term designates or maps to, and weight. Boolean terms consist of words that must all be present but in any order or in any distance from each other. The Boolean terms are not explicitly part of the Ei thesaurus, so they had to be created in a pre-processing step. They are considered to be those terms which contain the following strings: '<code></code>', '<code></code>' (short for versus), '<code></code>' (comma), '<code></code>' (semi-colon, separating different concepts in class names), '<code></code>' (parenthesis, indicating the context of a homonym), '<code></code>' (colon, indicating a more specific description of the previous term in a class name), and '<code></code>' (double dash, indicating heading-subheading relationship). Upper-case words from the Ei thesaurus and classification scheme are left in upper case in the term list, assuming that they are acronyms. All other words containing at least one lower-case letter are converted into lower case. Geographical names are excluded on the grounds that they are not being engineering-specific in any sense. 
 
 <P>
 The following is an excerpt from the Ei thesaurus and classification scheme, based on which the excerpt from the term list (further below) was created.
 <BR>
 From the classification scheme (captions):
-<PRE>
-931.2 Physical Properties of Gases, Liquids and Solids
-...
-942.1 Electric and Electronic Instruments
-...
-943.2 Mechanical Variables Measurements
+<PRE>\begin{displaymath}
+\mbox{Relevance\_score} =
+\end{displaymath}
 </PRE>
 From the thesaurus:
-<PRE>
-TM Amperometric sensors
-UF Sensors--Amperometric measurements
-MC 942.1
-
-TM Angle measurement
-UF Angular measurement
-UF Mechanical variables measurement--Angles
-BT Spatial variables measurement
-RT Micrometers
-MC 943.2
-
-TM Anisotropy
-NT Magnetic anisotropy
-MC 931.2
+<PRE>\begin{displaymath}
+\sum_{\mbox{all locations}} \left( \sum_{\mbox{all terms}} (hits[\mbox{location}_{j}][\mbox{term
+}_{i}] * weight[\mbox{term}_{i}] * weight[\mbox{location}_{j}]) \right)
+\end{displaymath}
 </PRE>
 TM stands for the preferred term, UF for synonym, BT for broader term, RT for related term, NT for narrower term; MC represents the main class. Below is an excerpt from one term list, as based on the above examples:
-<PRE>
-1: electric @and electronic instruments=942.1,
-1: mechanical variables measurements=943.2,
-1: physical properties of gases @and liquids @and solids=931.2,
-1: amperometric sensors=942.1,
-1: sensors @and amperometric measurements=942.1,
-1: angle measurement=943.2,
-1: angular measurement=943.2,
-1: mechanical variables measurement @and angles=943.2,
-1: spatial variables measurement=943.2,
-1: micrometers=943.2,
-1: anisotropy=931.2,
-1: magnetic anisotropy=931.2
+<PRE>$weight[\mbox{term}_{i}]$
 </PRE>
 
 <P>
@@ -242,14 +216,14 @@ In the experiments, the following data collections were used:
 <OL>
 <LI>For deriving significance indicators assigned to different Web page elements [<A
  HREF="node10.html#ardo05:_ECDL">10</A>], and identifying issues specific to Web pages [<A
- HREF="node10.html#GolubChall">8</A>] some 1000 Web pages engineering, to which Ei classes had been manually assigned as part of the <A NAME="tex2html23"
+ HREF="node10.html#GolubChall">8</A>] some 1000 Web pages engineering, to which Ei classes had been manually assigned as part of the <A NAME="tex2html28"
   HREF="http://eels.lub.lu.se/">EELS subject gateway</A>
 were used.
 </LI>
 <LI>For deriving weights based on the type of controlled vocabulary term [<A
  HREF="node10.html#GolubRole">9</A>],
 and for enriching the term list with terms extracted using natural language processing,
-the data collection consisted of 35166 document records from the <A NAME="tex2html24"
+the data collection consisted of 35166 document records from the <A NAME="tex2html29"
   HREF="http://www.engineeringvillage2.org/">Compendex database</A>. From each document record the following elements were utilized: an identification number, title, abstract and intellectually pre-assigned classes, for example:
 <BR><SMALL CLASS="SMALL"><TT><B>Identification number</B>:  03337590709
 <BR><B>Title</B>:  The concept of relevance in IR
@@ -390,31 +364,31 @@ SVM performs best using the original set of terms, and string-matching approach 
 
 <DIV CLASS="navigation"><HR>
 <!--Navigation Panel-->
-<A NAME="tex2html430"
+<A NAME="tex2html454"
   HREF="node8.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
-<A NAME="tex2html426"
+<A NAME="tex2html450"
   HREF="node2.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
-<A NAME="tex2html420"
+<A NAME="tex2html444"
   HREF="node6.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
-<A NAME="tex2html428"
+<A NAME="tex2html452"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
 <BR>
-<B> Next:</B> <A NAME="tex2html431"
+<B> Next:</B> <A NAME="tex2html455"
   HREF="node8.html">Performance and scalability</A>
-<B> Up:</B> <A NAME="tex2html427"
+<B> Up:</B> <A NAME="tex2html451"
   HREF="node2.html">Overview</A>
-<B> Previous:</B> <A NAME="tex2html421"
+<B> Previous:</B> <A NAME="tex2html445"
   HREF="node6.html">Crawler internal operation</A>
- &nbsp; <B>  <A NAME="tex2html429"
+ &nbsp; <B>  <A NAME="tex2html453"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 <ADDRESS>
 root
-2008-04-23
+2008-10-02
 </ADDRESS>
 </BODY>
 </HTML>

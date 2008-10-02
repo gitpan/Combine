@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-## $Id: combineINIT,v 1.17 2006/12/05 09:56:36 anders Exp $
+## $Id: combineINIT 281 2008-09-26 14:47:38Z anders $
 
 # Copyright (c) 1996-1998 LUB NetLab, 2002-2005 Anders Ardö
 # 
@@ -99,6 +99,7 @@ print "Creating MySQL tables\n";
 ##TABLE robotrules: netlocid*, rule, expire
 ##TABLE oai: recordid, md5^, date*, status
 ##TABLE exports: host, port, last
+##TABLE localtags: netlocid, urlid, name, value
 
 print "Data tables: hdb, html, links, meta, analys, topic\n";
 
@@ -292,6 +293,14 @@ $res = $sv->do(qq{CREATE TABLE exports (
   last timestamp DEFAULT '1999-12-31'
 ) ENGINE=MyISAM DEFAULT CHARACTER SET=utf8;});
 
+$res = $sv->do(qq{CREATE TABLE localtags (
+  netlocid int(11) NOT NULL DEFAULT '0',
+  urlid int(11) NOT NULL DEFAULT '0',
+  name varchar(100) NOT NULL,
+  value varchar(100) NOT NULL,
+  PRIMARY KEY tag (netlocid,urlid,name(100),value(100))
+) ENGINE=MyISAM DEFAULT CHARACTER SET=utf8;});
+
 print "Create user $dbuser with required priviligies: SELECT,INSERT,UPDATE,DELETE,CREATE,CREATE TEMPORARY TABLES,ALTER,LOCK TABLES\n";
 $res = $sv->do(qq{GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,CREATE TEMPORARY TABLES,
    ALTER,LOCK TABLES ON $database.* TO $dbuser;});
@@ -377,6 +386,7 @@ my %tables = (
   robotrules => 1,
   oai => 1,
   exports => 1,
+  localtags => 1
 	      );
 my $noOfTables = scalar(keys %tables);
 

@@ -1,4 +1,4 @@
-## $Id: PosMatcher.pm,v 1.5 2007/10/17 09:09:24 anders Exp $
+## $Id: PosMatcher.pm 252 2007-10-17 09:09:25Z anders $
 
 # 2002-2006 Anders Ardö
 # 

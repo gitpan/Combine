@@ -38,7 +38,7 @@
 # POSSIBILITY OF SUCH DAMAGES.
 # 
 
-# $Id: LogSQL.pm,v 1.1.1.1 2005/06/22 14:24:53 anders Exp $
+# $Id: LogSQL.pm 2 2005-06-22 14:24:52Z anders $
 
 package Combine::LogSQL;
 

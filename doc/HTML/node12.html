@@ -28,26 +28,26 @@ original version by:  Nikos Drakos, CBLU, University of Leeds
 <BODY >
 
 <DIV CLASS="navigation"><!--Navigation Panel-->
-<A NAME="tex2html588"
+<A NAME="tex2html648"
   HREF="node13.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
-<A NAME="tex2html584"
+<A NAME="tex2html644"
   HREF="node11.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
-<A NAME="tex2html578"
+<A NAME="tex2html638"
   HREF="node11.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
-<A NAME="tex2html586"
+<A NAME="tex2html646"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
 <BR>
-<B> Next:</B> <A NAME="tex2html589"
+<B> Next:</B> <A NAME="tex2html649"
   HREF="node13.html">Configuration variables</A>
-<B> Up:</B> <A NAME="tex2html585"
+<B> Up:</B> <A NAME="tex2html645"
   HREF="node11.html">Gory details</A>
-<B> Previous:</B> <A NAME="tex2html579"
+<B> Previous:</B> <A NAME="tex2html639"
   HREF="node11.html">Gory details</A>
- &nbsp; <B>  <A NAME="tex2html587"
+ &nbsp; <B>  <A NAME="tex2html647"
   HREF="node1.html">Contents</A></B> 
 <BR>
 <BR></DIV>
@@ -83,7 +83,7 @@ appropriate regular expression in the &lt;allow&gt; section of the configuration
 file. Appropriate means
 a Perl regular expression, which means that you have to escape special
 characters. Try with
-<BR><code>URL http:\/\/www\.foo\.com\/bar\/</code>
+<BR><code></code>
 
 <P>
 </LI>
@@ -131,7 +131,7 @@ WaitIntervalHost = 5
 
 <P>
 Use the command:
-<BR><code>combine --jobname XXX --harvesturl http://www.foo.com/bar.html</code>
+<BR><code></code>
 
 <P>
 </LI>
@@ -194,9 +194,10 @@ For detailed descriptions see sections
 <LI>I don't understand what this means. Can you explain it to me ? Thank you !
 
 <P>
-<PRE>
-40: sundew[^\s]*=CP.Drosera
-40: tropical pitcher plant=CP.Nepenthes
+<PRE>\begin{displaymath}
+\sum_{\mbox{all locations}} \left( \sum_{\mbox{all terms}} (hits[\mbox{location}_{j}][\mbox{term
+}_{i}] * weight[\mbox{term}_{i}] * weight[\mbox{location}_{j}]) \right)
+\end{displaymath}
 </PRE>
 
 <P>
@@ -218,9 +219,7 @@ So for getting all pages about 'icecream' from 'www.yahoo.com' you have to:
    terms. The file is essential a list of terms relevant for the topic. Format of the file is
    "numeric_importance: term=TopicClass" e.g. "<TT>100: icecream=YahooIce</TT>"
    (Say you call your topic 'YahooIce'). A few terms might be:
-<BR><PRE>
-100: icecream=YahooIce
-100: ice cone=YahooIce
+<BR><PRE>$weight[\mbox{term}_{i}]$
 </PRE>
   and so on stored in a file called say TopicYahooIce.txt
 
@@ -235,26 +234,14 @@ So for getting all pages about 'icecream' from 'www.yahoo.com' you have to:
 Change the &lt;allow&gt; part in /etc/combine/focustest/combine.cfg from
 
 <P>
-<PRE>
-#use either URL or HOST: (obs ':') to match regular expressions to either the
-#full URL or the HOST part of a URL.
-&lt;allow&gt;
-#Allow crawl of URLs or hostnames that matches these regular expressions
-HOST: .*$
-&lt;/allow&gt;
+<PRE>$weight[\mbox{location}_{j}]$
 </PRE>
 
 <P>
 to
 
 <P>
-<PRE>
-#use either URL or HOST: (obs ':') to match regular expressions to either the
-#full URL or the HOST part of a URL.
-&lt;allow&gt;
-#Allow crawl of URLs or hostnames that matches these regular expressions
-HOST: www\.yahoo\.com$
-&lt;/allow&gt;
+<PRE>$hits[\mbox{location}_{j}][\mbox{term}_{i}]$
 </PRE>
 
 <P>
@@ -299,7 +286,7 @@ fix the first. Though this probably involves modifying the source - maybe only t
 
 <P>
 The second is strictly not necessary and it will run even if /var/run /combine does not exist, although not
-   the command <code>combineCtrl --jobname XXX kill</code>
+   the command <code></code>
 
 <P>
 On the other hand the third is necessary and I can't think of a way around it except making a local installation of MySQL and use
@@ -310,7 +297,7 @@ that.
 <LI>What does the following entries from the log table mean?
 
 <OL>
-<LI><code>| 5409 | HARVPARS 1_zltest | 2006-07-14 15:08:52 | M500; SD empty, sleep 20 second... |</code>
+<LI><code></code>
 
 <P>
 This means that there are no URLs ready for crawling (SD empty).
@@ -318,7 +305,7 @@ Also you can use combineCtrl to see current status of ready queue etc
 
 <P>
 </LI>
-<LI><code>| 7352 | HARVPARS 1_wctest | 2006-07-14 17:00:59 | M500; urlid=1; netlocid=1; http://www.shanghaidaily.com/</code>
+<LI><code></code>
 
 <P>
 Crawler process 7352 got a URL (http://www.shanghaidaily.com/) to check
@@ -329,21 +316,21 @@ urlid and netlocid are internal identifiers used in the MySQL tables.
 
 <P>
 </LI>
-<LI><code>| 7352 | HARVPARS 1_wctest | 2006-07-14 17:01:10 | M500; RobotRules OK, OK</code>
+<LI><code></code>
 
 <P>
 Crawler process have checked that this URL (identified earlier in the log by pid=7352 and M500) can be crawled according to the Robot Exclusion protocol.
 
 <P>
 </LI>
-<LI><code>| 7352 | HARVPARS 1_wctest | 2006-07-14 17:01:10 | M500; HTTP(200 = "OK")  =&gt; OK</code>
+<LI><code></code>
 
 <P>
 It has fetched the page (identified earlier in the log by pid=7352 and M500) OK
 
 <P>
 </LI>
-<LI><code>| 7352 | HARVPARS 1_wctest | 2006-07-14 17:01:10 | M500; Doing: text/html;200;0F061033DAF69587170F8E285E950120;Not used |</code>
+<LI><code></code>
 
 <P>
 It is processing the page (in the format text/html) to see if it is of topical interest
@@ -382,10 +369,10 @@ Just disregard it if you only use one topic-class.
 
 <P>
 </LI>
-<LI>Combine should crawl all pages underneath <code>www.geocities.com/boulevard/newyork/</code>,
-but not go outside the domain (i.e. going to <code>www.yahoo.com</code>) but also not
+<LI>Combine should crawl all pages underneath <code></code>,
+but not go outside the domain (i.e. going to <code></code>) but also not
 going higher in position (i.e.
-<code>www.geocities.com/boulevard/atlanta/</code>).
+<code></code>).
 <BR>
 Is it possible to set up Combine like this?
 
@@ -396,20 +383,12 @@ is allowed). See also section <A HREF="node6.html#urlfilt">4.3</A>.
 
 <P>
 So change
-<BR><PRE>
-&lt;allow&gt;
-#Allow crawl of URLs or hostnames that matches these regular expressions
-HOST: .*$
-&lt;/allow&gt;
+<BR><PRE>$\mbox{term}_{i}$
 </PRE>
 to something like
 
 <P>
-<PRE>
-&lt;allow&gt;
-#Allow crawl of URLs or hostnames that matches these regular expressions
-URL http:\/\/www\.geocities\.com\/boulevard\/newyork\/
-&lt;/allow&gt;
+<PRE>$\mbox{location}_{j}$
 </PRE>
 
 <P>
@@ -423,31 +402,31 @@ URL http:\/\/www\.geocities\.com\/boulevard\/newyork\/
 
 <DIV CLASS="navigation"><HR>
 <!--Navigation Panel-->
-<A NAME="tex2html588"
+<A NAME="tex2html648"
   HREF="node13.html">
 <IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next.png"></A> 
-<A NAME="tex2html584"
+<A NAME="tex2html644"
   HREF="node11.html">
 <IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up.png"></A> 
-<A NAME="tex2html578"
+<A NAME="tex2html638"
   HREF="node11.html">
 <IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="prev.png"></A> 
-<A NAME="tex2html586"
+<A NAME="tex2html646"
   HREF="node1.html">
 <IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="contents" SRC="contents.png"></A>  
 <BR>
-<B> Next:</B> <A NAME="tex2html589"
+<B> Next:</B> <A NAME="tex2html649"
   HREF="node13.html">Configuration variables</A>
-<B> Up:</B> <A NAME="tex2html585"
+<B> Up:</B> <A NAME="tex2html645"
   HREF="node11.html">Gory details</A>
-<B> Previous:</B> <A NAME="tex2html579"
+<B> Previous:</B> <A NAME="tex2html639"
   HREF="node11.html">Gory details</A>
- &nbsp; <B>  <A NAME="tex2html587"
+ &nbsp; <B>  <A NAME="tex2html647"
   HREF="node1.html">Contents</A></B> </DIV>
 <!--End of Navigation Panel-->
 <ADDRESS>
 root
-2008-04-23
+2008-10-02
 </ADDRESS>
 </BODY>
 </HTML>

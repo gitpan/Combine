@@ -7,6 +7,7 @@ package Combine::PosCheck_record;
 
 use strict;
 use Combine::LoadTermList;
+use Combine::utilPlugIn;
 use Combine::PosMatcher;
 use Combine::Config;
 
@@ -63,9 +64,9 @@ sub check {
     
     my ($mt,$ht,$tt,$url,$title,$size,$k,$cl,$result);
 
-    ($mt,$ht,$tt,$url,$title,$size) = Combine::PosMatcher::getTextXWI($xwi,0,$tm,1); # no stemming; simple text extraction
+#    ($mt,$ht,$tt,$url,$title,$size) = Combine::PosMatcher::getTextXWI($xwi,0,$tm,1); # no stemming; simple text extraction
+    ($mt,$ht,$tt,$url,$title) = Combine::utilPlugIn::getTextXWI($xwi,0,$tm); # no stemming
 
-#FIX title med simpletexconv i Matcher!!
     my @ant_text=split('\s+',$tt); my $ant_text=$#ant_text + 1;
     if ( $ant_text <= 0 ) { $ant_text = 1; }
     my $text = join(' ', ($title,$url,$mt,$ht,$tt)); #title, urlpath, meta, headers, text

@@ -9,6 +9,7 @@ use Cwd;
 my $orec='';
 while (<DATA>) { chop; $orec .= $_; }
 $orec =~ s|<checkedDate>.*</checkedDate>||;
+$orec =~ s|<httpServer>.*</httpServer>||;
 $orec =~ tr/\n\t //d;
 my $olen=length($orec);
 my $onodes=0;
@@ -27,6 +28,7 @@ my $rec='';
 while (<REC>) { chop; $rec .= $_; }
 close(REC);
 $rec =~ s|<checkedDate>.*</checkedDate>||;
+$rec =~ s|<httpServer>.*</httpServer>||;
 $rec =~ tr/\n\t //d;
 
 my $len=length($rec);
@@ -43,6 +45,8 @@ if ($olen == $len) {
   $rec =~  s|<originalDocument.*</originalDocument>||s;
   is(length($orec),length($rec), 'Size of XML match (after removal of originalDocument)');
 }
+
+#print "O: $orec\n\nN: $rec\n";
 
 #if (($OK == 0) && ($orec eq $rec)) { print "All tests OK\n"; }
 #else { print "There might be some problem with your Combine Installation\n"; }
@@ -92,18 +96,18 @@ BNsj/GGG4LBWrarhSw+0OiOIidZjmzGPeh15WL6ICS7zFUjT/AiuBXeRbwHj870/AeRYaTupAQAA
 <property name="topLevelDomain">se</property>
 <property name="univ">1</property>
 <property name="language">en</property>
-<topic absoluteScore="1000" relativeScore="110526">
+<topic absoluteScore="1000" relativeScore="99415">
     <class>ALL</class>
   </topic>
-<topic absoluteScore="375" relativeScore="41447">
+<topic absoluteScore="375" relativeScore="37281">
     <class>CP.Drosera</class>
     <terms>drosera</terms>
   </topic>
-<topic absoluteScore="375" relativeScore="41447">
+<topic absoluteScore="375" relativeScore="37281">
     <class>CP.Nepenthes</class>
     <terms>nepenthe</terms>
   </topic>
-<topic absoluteScore="250" relativeScore="27632">
+<topic absoluteScore="250" relativeScore="24854">
     <class>CP</class>
     <terms>carnivorous plant</terms>
     <terms>carnivor</terms>

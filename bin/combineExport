@@ -2,7 +2,7 @@
 # Exports records from AlvisCombine SQL database in XML-format
 # Takes switches
 
-## $Id: combineExport,v 1.26 2007/09/27 06:52:01 anders Exp $
+## $Id: combineExport 245 2007-09-27 06:52:02Z anders $
 
 # Copyright (c) 2004-2005 Anders Ardö
 # 

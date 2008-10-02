@@ -39,7 +39,7 @@
 # 
 # Copyright (c) 1996-1998 LUB NetLab
 
-# $Id: FromHTML.pm,v 1.14 2008/04/23 09:15:19 anders Exp $
+# $Id: FromHTML.pm 274 2008-09-26 12:05:02Z anders $
 
 package Combine::FromHTML;
 
@@ -57,297 +57,294 @@ use Encode;
 #
 my %Ent2CharMap=(
 
-# amp    => '&',
-# gt    => '>',
-# lt    => '<',
-# quot   => '"',
-# apos   => "'",
+		 # amp    => '&',
+		 # gt    => '>',
+		 # lt    => '<',
+		 # quot   => '"',
+		 # apos   => "'",
 
- AElig  => 'Æ',
- Aacute => 'Á',
- Acirc  => 'Â',
- Agrave => 'À',
- Aring  => 'Å',
- Atilde => 'Ã',
- Auml   => 'Ä',
- Ccedil => 'Ç',
- ETH    => 'Ð',
- Eacute => 'É',
- Ecirc  => 'Ê',
- Egrave => 'È',
- Euml   => 'Ë',
- Iacute => 'Í',
- Icirc  => 'Î',
- Igrave => 'Ì',
- Iuml   => 'Ï',
- Ntilde => 'Ñ',
- Oacute => 'Ó',
- Ocirc  => 'Ô',
- Ograve => 'Ò',
- Oslash => 'Ø',
- Otilde => 'Õ',
- Ouml   => 'Ö',
- THORN  => 'Þ',
- Uacute => 'Ú',
- Ucirc  => 'Û',
- Ugrave => 'Ù',
- Uuml   => 'Ü',
- Yacute => 'Ý',
- aacute => 'á',
- acirc  => 'â',
- aelig  => 'æ',
- agrave => 'à',
- aring  => 'å',
- atilde => 'ã',
- auml   => 'ä',
- ccedil => 'ç',
- eacute => 'é',
- ecirc  => 'ê',
- egrave => 'è',
- eth    => 'ð',
- euml   => 'ë',
- iacute => 'í',
- icirc  => 'î',
- igrave => 'ì',
- iuml   => 'ï',
- ntilde => 'ñ',
- oacute => 'ó',
- ocirc  => 'ô',
- ograve => 'ò',
- oslash => 'ø',
- otilde => 'õ',
- ouml   => 'ö',
- szlig  => 'ß',
- thorn  => 'þ',
- uacute => 'ú',
- ucirc  => 'û',
- ugrave => 'ù',
- uuml   => 'ü',
- yacute => 'ý',
- yuml   => 'ÿ',
+		 AElig  => 'Æ',
+		 Aacute => 'Á',
+		 Acirc  => 'Â',
+		 Agrave => 'À',
+		 Aring  => 'Å',
+		 Atilde => 'Ã',
+		 Auml   => 'Ä',
+		 Ccedil => 'Ç',
+		 ETH    => 'Ð',
+		 Eacute => 'É',
+		 Ecirc  => 'Ê',
+		 Egrave => 'È',
+		 Euml   => 'Ë',
+		 Iacute => 'Í',
+		 Icirc  => 'Î',
+		 Igrave => 'Ì',
+		 Iuml   => 'Ï',
+		 Ntilde => 'Ñ',
+		 Oacute => 'Ó',
+		 Ocirc  => 'Ô',
+		 Ograve => 'Ò',
+		 Oslash => 'Ø',
+		 Otilde => 'Õ',
+		 Ouml   => 'Ö',
+		 THORN  => 'Þ',
+		 Uacute => 'Ú',
+		 Ucirc  => 'Û',
+		 Ugrave => 'Ù',
+		 Uuml   => 'Ü',
+		 Yacute => 'Ý',
+		 aacute => 'á',
+		 acirc  => 'â',
+		 aelig  => 'æ',
+		 agrave => 'à',
+		 aring  => 'å',
+		 atilde => 'ã',
+		 auml   => 'ä',
+		 ccedil => 'ç',
+		 eacute => 'é',
+		 ecirc  => 'ê',
+		 egrave => 'è',
+		 eth    => 'ð',
+		 euml   => 'ë',
+		 iacute => 'í',
+		 icirc  => 'î',
+		 igrave => 'ì',
+		 iuml   => 'ï',
+		 ntilde => 'ñ',
+		 oacute => 'ó',
+		 ocirc  => 'ô',
+		 ograve => 'ò',
+		 oslash => 'ø',
+		 otilde => 'õ',
+		 ouml   => 'ö',
+		 szlig  => 'ß',
+		 thorn  => 'þ',
+		 uacute => 'ú',
+		 ucirc  => 'û',
+		 ugrave => 'ù',
+		 uuml   => 'ü',
+		 yacute => 'ý',
+		 yuml   => 'ÿ',
 
- copy   => '©',
- reg    => '®',
- nbsp   => "\240",
+		 copy   => '©',
+		 reg    => '®',
+		 # nbsp   => "\240",
+		 nbsp   => ' ',
 
- iexcl  => '¡',
- cent   => '¢',
- pound  => '£',
- curren => '¤',
- yen    => '¥',
- brvbar => '¦',
- sect   => '§',
- uml    => '¨',
- ordf   => 'ª',
- laquo  => '«',
- not   => '¬',
- shy    => '­',
- macr   => '¯',
- deg    => '°',
- plusmn => '±',
- sup1   => '¹',
- sup2   => '²',
- sup3   => '³',
- acute  => '´',
- micro  => 'µ',
- para   => '¶',
- middot => '·',
- cedil  => '¸',
- ordm   => 'º',
- raquo  => '»',
- frac14 => '¼',
- frac12 => '½',
- frac34 => '¾',
- iquest => '¿',
- times => '×',
- divide => '÷',
+		 iexcl  => '¡',
+		 cent   => '¢',
+		 pound  => '£',
+		 curren => '¤',
+		 yen    => '¥',
+		 brvbar => '¦',
+		 sect   => '§',
+		 uml    => '¨',
+		 ordf   => 'ª',
+		 laquo  => '«',
+		 not   => '¬',
+		 shy    => '­',
+		 macr   => '¯',
+		 deg    => '°',
+		 plusmn => '±',
+		 sup1   => '¹',
+		 sup2   => '²',
+		 sup3   => '³',
+		 acute  => '´',
+		 micro  => 'µ',
+		 para   => '¶',
+		 middot => '·',
+		 cedil  => '¸',
+		 ordm   => 'º',
+		 raquo  => '»',
+		 frac14 => '¼',
+		 frac12 => '½',
+		 frac34 => '¾',
+		 iquest => '¿',
+		 times => '×',
+		 divide => '÷',
 
-);
+		);
 
 my $log;
 
 sub trans {
-    my ($html, $xwi, $opt) = @_;
-    return undef unless ref $xwi;
-    $xwi->url_rewind;  # (BR)
-    my $url = $xwi->url_get || return undef; # $xwi object must have url field
-    if ( !defined($log) ) { $log = Combine::Config::Get('LogHandle'); }
-    if ($$html eq '') { $html = $xwi->content; }
-    if ( length($$html) < 10 ) {
-	$log->say('FromHTML: short or empty file');
-	return $xwi;
+  my ($html, $xwi, $opt) = @_;
+  return undef unless ref $xwi;
+  #$opt can be 'HTML', 'TEXT', 'GuessHTML', 'GuessText'
+  $xwi->url_rewind;		# (BR)
+  my $url = $xwi->url_get || return undef; # $xwi object must have url field
+  if ( !defined($log) ) {
+    $log = Combine::Config::Get('LogHandle');
+  }
+  if ($$html eq '') {
+    $html = $xwi->content;
+  }
+  if ( length($$html) < 10 ) {
+    $log->say('FromHTML: short or empty file');
+    return $xwi;
+  }
+  if ( length($$html) > 1024 ) { # should we check shorter files as well ?
+    my $teststring = substr($$html,0,1024);
+    my $start_len = 1024;
+    $teststring =~ s/[^\s\x20-\xfe]+//g;
+    my $len = length($teststring);
+    if ( $len > ( 0.9 * $start_len ) ) { # this is some kind of text
+      my @rows = split(/\n/,$teststring);
+      shift(@rows); 
+      my ($i,$uu,$b64,$r);
+      $uu=0; $b64=0;
+      my $n = $#rows>10 ? 10 : $#rows;
+      for ($i=0;$i<$n;$i++) {
+	$r = shift(@rows);
+	$uu++ if (length($r)==61) and (substr($r,0,1) eq "M");
+	$b64++ if (length($r)==72) and ($r!~/\s/);
+	if ( ( $uu == 10 ) or ( $b64 == 10 ) ) {
+	  # this is probably uuencoded or base64 encoded
+	  $log->say('FromHTML: probably uuencoded or base64 encoded');
+	  return $xwi;
+	}
+      }
+    } else {
+      # this is most likely a binary file => don't parse it
+      # DISABLED since it creates problems with certain charactersets
+      #	   $log->say('FromHTML: most likely a binary file');
+      #          return $xwi;
     }
-    if ( length($$html) > 1024 ) { # should we check shorter files as well ?
-       my $teststring = substr($$html,0,1024);
-       my $start_len = 1024;
-       $teststring =~ s/[^\s\x20-\xfe]+//g;
-       my $len = length($teststring);
-       if ( $len > ( 0.9 * $start_len ) ) {  # this is some kind of text
-          my @rows = split(/\n/,$teststring);
-          shift(@rows); 
-          my ($i,$uu,$b64,$r);
-	  $uu=0; $b64=0;
-	  my $n = $#rows>10 ? 10 : $#rows;
-          for($i=0;$i<$n;$i++) {
-             $r = shift(@rows);
-             $uu++ if (length($r)==61) and (substr($r,0,1) eq "M");
-             $b64++ if (length($r)==72) and ($r!~/\s/);
-             if ( ( $uu == 10 ) or ( $b64 == 10 ) ) {
-                # this is probably uuencoded or base64 encoded
-		 $log->say('FromHTML: probably uuencoded or base64 encoded');
-                return $xwi;
-             }
-          }
-       } else {
-# this is most likely a binary file => don't parse it
-# DISABLED since it creates problems with certain charactersets
-#	   $log->say('FromHTML: most likely a binary file');
-#          return $xwi;
-       }
+  }
+
+  $html = $$html;
+  if ($xwi->truncated()) {
+    my $last_blank = rindex($html, ' ');
+    if ($last_blank > 0) {
+      $html = substr($html, 0, $last_blank);
+    } else {
+      # What ! No blanks ! This is some weird text => don't parse it
+      $log->say('FromHTML: No blanks - Not processing');
+      return $xwi;
     }
+  }
 
-
-    # Please refer to ToWIR.pm for an explanation of this test.
-    # (Why done in two places?!)
-    $html = $$html;
-    if ($xwi->truncated()) {
-       my $last_blank = rindex($html, ' ');
-       if ($last_blank > 0) {
-	 $html = substr($html, 0, $last_blank);
-       }
-       else {
-	 # What ! No blanks ! This is some weird text => don't parse it
-	   $log->say('FromHTML: No blanks');
-	 return $xwi;
-       }
-    }
-
-###    $opt = "HTMLFIC" unless $opt;
-#TEST for HTML/text and set $opt accordingly
-    $opt .= 'C'; #Always save cleaned content
-   if ( $opt =~ /^Guess/ ) {
+  if ( $opt =~ /^Guess/ ) {
     if ( ($url =~ /\..?html?$|\/$/i) || 
 	 ($html =~ /<\s*html\s*|<\s*head\s*|<\s*body\s*/i) ) {
-        if ( ! ($opt =~ /HTML/) ) { 
-	  $opt = "HTMLC";
-	  $log->say("FromHTML: Changed to HTMLFIC");
-        }
+      $opt = 'HTML';
     } else {
-#test for TeX file
-	$opt = "TC";
-        if ( ($opt =~ /HTML/) ) { 
-	  $log->say("FromHTML: Changed to TC");
-        }
+      $opt = 'Text';
     }
-}
+  }
 
-## #Convert to UTF8 for Tidy
-    my $html_utf8 = Encode::decode_utf8(Encode::encode_utf8($html));
+  if ($opt =~ /Text/i) {
+    $xwi->content(\$html);
+    return $xwi;
+  }
 
-#Only do for HTML files
-if ( $opt =~ /H/ ) {
-    # General modifications to the HTML code before extracting our information
+  #clean character entities #1..#255 to utf-8/latin1
+my $html_utf8;
+  if (1) {
+    my $c;
+     $html_utf8=HTML::Entities::decode_entities($html);
+  }
 
-    if ( Combine::Config::Get('useTidy') ) {
-
-    #clean character entities #1..#255 to utf-8/latin1
-    if (1)
-    {
-	my $c;
-	$html_utf8=~s/(?:&\#(\d+);?)/$1<256 && $1>0 ? chr($1) : ""/ego;
-	$html_utf8=~s/(?:&\#[xX]([0-9a-fA-F]+);?)/$c=hex($1); $c<256 && $c>0 ? chr($c) : ""/ego;
-	$html_utf8=~s/(&(\w+);)/$Ent2CharMap{$2} || $1/ego;
+  my $rtext;
+  ##Plugin for extracting only relevant text and discarding base templates
+  my $relTextPlugin = Combine::Config::Get('relTextPlugin');
+  if (defined($relTextPlugin) && $relTextPlugin ne '') {
+    eval "require $relTextPlugin";
+    $rtext = $relTextPlugin->extrText($html_utf8);
+    if (defined($rtext)) {
+      $xwi->text(\$rtext);
     }
+  }
+  ##
 
-#	print "Doing Tidy\n";
-	require HTML::Tidy;
-	my $tidy = new HTML::Tidy ( {config_file => Combine::Config::Get('baseConfigDir') . '/tidy.cfg'} );
-#	$tidy->ignore( type => TIDY_WARNING );
-#	if (!eval{$html = $tidy->clean( $html . "\n" )}) { print "TIDY ERR in eval\n"; }
-	my $thtml;
-        if (!eval{$thtml = $tidy->clean( $html_utf8 . "\n" )}) { print "TIDY ERR in eval\n"; }
-#	for my $message ( $tidy->messages ) {
-#	    print $message->as_string; #LOG!
-#	}
-	$html = Encode::decode('UTF-8', $thtml); # convert to Perl internal representation
-    } else {
-	$html_utf8 =~ s/<\!\-\-.*?\-\->/ /sgo; # replace all comments (including multiline) with whitespace
-	$html = $html_utf8;
+  #Only do for HTML files
+  # General modifications to the HTML code before extracting our information
+
+  if ( Combine::Config::Get('useTidy') ) {
+
+
+    #	print "Doing Tidy\n";
+    require HTML::Tidy;
+    my $tidy = new HTML::Tidy ( {config_file => Combine::Config::Get('baseConfigDir') . '/tidy.cfg'} );
+    #	$tidy->ignore( type => TIDY_WARNING );
+    #	if (!eval{$html = $tidy->clean( $html . "\n" )}) { print "TIDY ERR in eval\n"; }
+    my $thtml;
+    if (!eval{$thtml = $tidy->clean( $html_utf8 . "\n" )}) {
+      print "TIDY ERR in eval\n";
     }
-if ( ! Encode::is_utf8($html) ) { print STDERR "WARN HTML content not in UTF-8\n"; } ##
+    #	for my $message ( $tidy->messages ) {
+    #	    print $message->as_string; #LOG!
+    #	}
+    $html = Encode::decode('UTF-8', $thtml); # convert to Perl internal representation
+  } else {
+    $html_utf8 =~ s/<\!\-\-.*?\-\->/ /sgo; # replace all comments (including multiline) with whitespace
+    $html = $html_utf8;
+  }
+  if ( ! Encode::is_utf8($html) ) {
+    print STDERR "WARN HTML content not in UTF-8\n";
+  }				##
 
-    $html =~ s/<script.*?<\/script>/ /sigo; # remove all the scripts (including multiline)
-    $html =~ s/<noscript.*?<\/noscript>/ /sigo; # remove all the scripts (including multiline)
-    $html =~ s/<style.*?<\/style>/ /sigo; # remove all the style scripts (including multiline)
-##    $html =~ s/[\s\240]+/ /g; # compress whitespace
-} else {
-    $html = Encode::decode('UTF-8', $html); #?? convert to Perl internal representation
-    if ( ! Encode::is_utf8($html) ) { print STDERR "WARN Text content not in UTF-8\n"; } ##
-##    $html =~ s/[\s\240]+/ /g; # compress whitespace
-}
-#End if H
+  $html =~ s/<script.*?<\/script>/ /sigo; # remove all the scripts (including multiline)
+  $html =~ s/<noscript.*?<\/noscript>/ /sigo; # remove all the scripts (including multiline)
+  $html =~ s/<style.*?<\/style>/ /sigo;	# remove all the style scripts (including multiline)
+  ##    $html =~ s/[\s\240]+/ /g; # compress whitespace
 
-    if ($opt =~ /C/) { # keep content
-	my $xwicontent=$html;
-	$xwi->content(\$xwicontent);
+  my $xwicontent=$html;
+  $xwi->content(\$xwicontent);
+
+  #    #Split into HEAD and BODY
+  #    my $head='';
+  ##    if ($html =~ s|^(.*?)<\s*body\s*|<body |i) { #Does not work on ceratin frame-sets
+  ## where the frameset is outside the <body> see http://poseidon.csd.auth.gr/EN/
+  #    if ( $html =~ s|^(.*?<\s*\/head[^>]*>)||i ) { ???
+  #	$head=$1;
+  #    }
+
+  #Parsing and extraction of data
+  if ($html =~ /<title>([^<]+)<\/title>/i) { # extract title
+    my $tmp = $1;
+    #	$tmp =~ s/\s+/ /g;   #needed AA0?
+    #	$tmp = HTML::Entities::decode_entities($tmp);
+    $xwi->title($tmp);
+  }    
+
+  #Extract META tags
+  while ( $html =~ m/<meta\s*(.*?)>/sgi ) {
+    my $tag = $1;
+    my $key='';
+    my $val='';
+    $tag =~ s/[\n\r]/ /g;
+    foreach my $attr ('name','content') {
+      my $str='';
+
+      if ($tag =~ /$attr\s*=\s*[\"]/i) {
+	if ($tag =~ s/$attr\s*=\s*\"([^\"]+?)\"//i) {
+	  $str = $1;
+	}
+      } elsif ($tag =~ /$attr\s*=\s*[\']/i) {
+	if ($tag =~ s/$attr\s*=\s*\'([^\']+?)\'//i) {
+	  $str = $1;
+	}
+      } else {
+	if ($tag =~ s/$attr\s*=\s*([^\s]+?)\s//i) {
+	  $str = $1;
+	}
+      }
+      next if($str =~ /^$/);
+      if ($attr =~ /name/i) {
+	$key=lc($str);
+      } elsif ($attr =~ /content/i) {
+	$val=$str;
+      }
     }
-
-#Only do for HTML files
-if ( $opt =~ /H/ ) {
-#    #Split into HEAD and BODY
-#    my $head='';
-##    if ($html =~ s|^(.*?)<\s*body\s*|<body |i) { #Does not work on ceratin frame-sets
-## where the frameset is outside the <body> see http://poseidon.csd.auth.gr/EN/
-#    if ( $html =~ s|^(.*?<\s*\/head[^>]*>)||i ) { ???
-#	$head=$1;
-#    }
-
-    #Parsing and extraction of data
-    if ($html =~ /<title>([^<]+)<\/title>/i) { # extract title
-	my $tmp = $1;
-#	$tmp =~ s/\s+/ /g;   #needed AA0?
-	$tmp = HTML::Entities::decode_entities($tmp);
-	$xwi->title($tmp);
-    }    
-
-#Extract META tags
-   while ( $html =~ m/<meta\s*(.*?)>/sgi ) {
-     my $tag = $1;
-     my $key='';
-     my $val='';
-     $tag =~ s/[\n\r]/ /g;
-     foreach my $attr ('name','content') {
-        my $str='';
-
-        if($tag =~ /$attr\s*=\s*[\"]/i) {
-            if ($tag =~ s/$attr\s*=\s*\"([^\"]+?)\"//i) {
-                $str = $1;
-            }
-        } elsif ($tag =~ /$attr\s*=\s*[\']/i) {
-            if ($tag =~ s/$attr\s*=\s*\'([^\']+?)\'//i) {
-                $str = $1;
-            }
-        } else {
-            if ($tag =~ s/$attr\s*=\s*([^\s]+?)\s//i) {
-                $str = $1;
-            }
-        }
-        next if($str =~ /^$/);
-        if($attr =~ /name/i) {
-            $key=lc($str);
-        } elsif ($attr =~ /content/i) {
-            $val=$str;
-        }
-     }
-     next if(($key =~ /^$/) || ($val =~ /^$/));
-     $xwi->meta_add($key,HTML::Entities::decode_entities($val));
-   }
-#END extract META tags
+    next if(($key =~ /^$/) || ($val =~ /^$/));
+    #     $xwi->meta_add($key,HTML::Entities::decode_entities($val));
+    $xwi->meta_add($key,$val);
+  }
+  #END extract META tags
 
 =begin comment
 This feature is temporarily disabled
-
-    if ($opt =~ /M/) { # extract metadata
 
 	my $summary = "";
 	$xwi->meta_rewind;
@@ -390,62 +387,59 @@ This feature is temporarily disabled
 		$xwi->meta_add("Rsummary",$summary);
 	    }
 	}
-    }#End if M
 
 =end comment
 
 =cut
 
-} #End if H
+  # extract links
+  use Combine::HTMLExtractor;
+  my ($alt, $linktext, $linkurl, $base);
+  $base = $xwi->base;		#Set by UA.pm
+  my $lx = new Combine::HTMLExtractor(undef,undef,1);
+  #	print "INPUT: $html\n";
+  #	$html = HTML::Entities::decode_entities( Encode::encode('latin1',$html) );
+  $html = HTML::Entities::decode_entities( $html );
+  $lx->parse(\$html);
 
-    my $textdone=0;
-    if ($opt =~ /L/) { # extract links
-	use Combine::HTMLExtractor;
-	my ($alt, $linktext, $linkurl, $base);
-	$base = $xwi->base;  #Set by UA.pm
-	my $lx = new Combine::HTMLExtractor(undef,undef,1);
-#	print "INPUT: $html\n";
-#	$html = HTML::Entities::decode_entities( Encode::encode('latin1',$html) );
-        $html = HTML::Entities::decode_entities( $html );
-	$lx->parse(\$html);
-
-	my %Tags = ( a => 1, area => 1, frame => 1, img => 1, headings => 1, text => 1 );
-	for my $link ( @{$lx->links} ) {
-#	    print "GOTLINK: $$link{tag} = $$link{_TEXT}\n";
-	    next unless exists($Tags{$$link{tag}});
-	    my $linktext = $$link{_TEXT} ? $$link{_TEXT} : '';
-	    if ( ($$link{tag} eq 'headings') ) {
-		if ( $linktext !~ /^\s*$/ ) {
-		    $linktext =~ s/^[\s;]+//;
-		    $linktext =~ s/[\s;]+$//;
-#		    $xwi->heading_add(Encode::decode('latin1',$linktext));
-		    $xwi->heading_add($linktext);
-		}
-		next;
-	    } elsif ( ($$link{tag} eq 'text') ) {
-#		$linktext = Encode::decode('latin1',$linktext);
-		$linktext =~ s/[\s\240]+/ /g; # compress whitespace??
-		$xwi->text(\$linktext);
-		if (length($linktext)>10) { $textdone=1; }
-		next;
-	    } elsif ( ($$link{tag} eq 'frame') || ($$link{tag} eq 'img') ) {
-		$linkurl = $$link{src};
-		$linktext .= $$link{alt} || '';
-	    } else {
-		$linkurl = $$link{href};
-	    }
-	    $linktext =~ s/\[IMG\]//g;
-            if ( $linkurl !~ /^#/ ) {  # Throw away links within a document
-		 $linkurl =~ s/\?\s+/?/;  #to be handled in normalize??
-		 my $urlstr = URI->new_abs($linkurl, $base)->canonical->as_string;
-#		 $xwi->link_add($urlstr, 0, 0, Encode::decode('latin1',$linktext), $$link{tag});
-		 $xwi->link_add($urlstr, 0, 0, $linktext, $$link{tag});
-#                 print "ADD: $$link{tag}; $urlstr; |$linktext|\n";
-             }
-	}
+  my %Tags = ( a => 1, area => 1, frame => 1, img => 1, headings => 1, text => 1 );
+  for my $link ( @{$lx->links} ) {
+    #	    print "GOTLINK: $$link{tag} = $$link{_TEXT}\n";
+    next unless exists($Tags{$$link{tag}});
+    my $linktext = $$link{_TEXT} ? $$link{_TEXT} : '';
+    if ( ($$link{tag} eq 'headings') ) {
+      if ( $linktext !~ /^\s*$/ ) {
+	$linktext =~ s/^[\s;]+//;
+	$linktext =~ s/[\s;]+$//;
+	#		    $xwi->heading_add(Encode::decode('latin1',$linktext));
+	$xwi->heading_add($linktext);
+      }
+      next;
+    } elsif ( ($$link{tag} eq 'text') ) {
+      if (!defined($rtext)) {
+	#		$linktext = Encode::decode('latin1',$linktext);
+	$linktext =~ s/[\s\240]+/ /g; # compress whitespace??
+	$xwi->text(\$linktext);
+#print "HT=$linktext\n";
+      }
+      next;
+    } elsif ( ($$link{tag} eq 'frame') || ($$link{tag} eq 'img') ) {
+      $linkurl = $$link{src};
+      $linktext .= $$link{alt} || '';
+    } else {
+      $linkurl = $$link{href};
     }
+    $linktext =~ s/\[IMG\]//g;
+    if ( $linkurl !~ /^#/ ) {	# Throw away links within a document
+      $linkurl =~ s/\?\s+/?/;	#to be handled in normalize??
+      my $urlstr = URI->new_abs($linkurl, $base)->canonical->as_string;
+      #		 $xwi->link_add($urlstr, 0, 0, Encode::decode('latin1',$linktext), $$link{tag});
+      $xwi->link_add($urlstr, 0, 0, $linktext, $$link{tag});
+      #                 print "ADD: $$link{tag}; $urlstr; |$linktext|\n";
+    }
+  }
 
-    return $xwi;
+  return $xwi;
 }
 
 1; 

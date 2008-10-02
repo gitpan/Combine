@@ -1,4 +1,4 @@
-$Id: README,v 1.5 2008/04/23 09:15:18 anders Exp $
+$Id: README 258 2008-09-03 08:29:42Z anders $
 
  Combine is highly configurable web focused crawler completely written in Perl
 
@@ -8,6 +8,7 @@ http://combine.it.lth.se/
 
 
 The following command sequence will install Combine:
+  (you might have run 'make test' and 'make install' as root)
 
 perl Makefile.PL
 make

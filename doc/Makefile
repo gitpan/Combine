@@ -5,13 +5,14 @@ IMGS = CrawlerArchitecture.xfig.eps TopicFilter.xfig.eps CrawlerSpeed.ps Config.
 BINS = ../bin/combine*
 MODULES = ../Combine/*.pm
 
-all : pdf ps html
+all : pdf html
 dvi : DocMain.dvi
 pdf : DocMain.pdf
 ps  : DocMain.ps
 
 DocMain.pdf : DocMain.dvi
-	    dvipdf DocMain.dvi DocMain.pdf
+	    rm -f DocMain.aux DocMain.log DocMain.pdf DocMain.toc DocMain.out
+	    pdflatex DocMain.tex
 
 DocMain.ps : DocMain.dvi
 	   dvips -o DocMain.ps DocMain.dvi

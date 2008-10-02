@@ -39,7 +39,7 @@
 # 
 # Copyright (c) 1996-1998 LUB NetLab
 
-# $Id: UA.pm,v 1.9 2008/04/23 09:15:19 anders Exp $
+# $Id: UA.pm 257 2008-09-03 08:23:32Z anders $
 
 
 # COMB/XWI/UA.pm - harvesting robots with XWI interface
@@ -129,7 +129,7 @@ sub fetch { # use get-if-modified-since
     }
 
     $xwi->stat($code);
-    $xwi->url($url_str);
+#BEHÖVS???    $xwi->url($url_str);
     $xwi->server($resp->header("server"));
     $xwi->etag($resp->header("etag"));
     my $t = $resp->content_type;

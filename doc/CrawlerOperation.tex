@@ -132,7 +132,7 @@ doCheckRecord (section \ref{doCheckRecord}).
 
 \end{enumerate}
 
-\subsection{Document parsing and analysis}
+\subsection{Document parsing and information extraction}
 
 Each document is parsed and analyzed by the crawler in order to store
 structured document records in the internal MySQL database. The
@@ -149,6 +149,8 @@ structure of the record includes the fields:
 \item Dates -- modification, expire, and last checked by crawler
 \item Web-server identification
 \end{itemize}
+
+Optional some extra analysis can be done, see section \ref{analysis}.
 
 The system selects a document parser based on the Mime-Type together
 with available parsers and converter programs.
@@ -270,7 +272,7 @@ This implements a variant of BreathFirst crawling where a page is fetched if and
 a certain time threshold is exceeded 
 since the last access to the server of that page.
 
-\subsection{Built-in topic filter -- automated subject classification}
+\subsection{Built-in topic filter -- automated subject classification using string matching}
 \label{autoclass}
 The built-in topic filter is an approach to automated classification,
 that uses a topic definition with a pre-defined controlled vocabulary of
@@ -327,6 +329,7 @@ relevance weight, topic-classes) as its basic entities. Weights
 are signed integers and indicate the relevance of the term with respect to
 the topic-classes. Higher values indicate more relevant terms. A large
 negative value can be used to exclude documents containing that term.
+Terms should be all lowercase.
 
 Terms can be:
 \begin{itemize}
@@ -418,11 +421,11 @@ An example from the topic definition for 'Carnivorous Plants' using
   regular expressions is given below:
 \begin{verbatim}
 #This is a comment
-75: D\.?\s*californica=CP.Drosophyllum
+75: d\.?\s*californica=CP.Drosophyllum
 10: pitcher[^\s]*=CP
 -10: pitcher[^\s]* @and baseball=CP
 \end{verbatim}
-The term ``{\tt D$\backslash$.?$\backslash$s*californica}''
+The term ``{\tt d$\backslash$.?$\backslash$s*californica}''
  will match {\tt D californica, D. californica, D.californica} etc.
 
 The last two lines assure that a document containing ``{\tt pitcher}'' gets
@@ -504,6 +507,31 @@ more to the relevance score than a match towards the end of the
 text. And for Boolean terms the closer the components are the higher
 the contribution to the relevance score.
 
+\subsection{Built-in topic filter -- automated subject classification using SVM}
+Topic filetring using SVM (Support Vector Machines) classifiers are supported using the
+\htmladdnormallinkfoot{SVMLight package}{http://svmlight.joachims.org/}. This package has to be
+installed manually together with the Algorithm::SVMLight Perl module. For installation hints see
+\htmladdnormallinkfoot{CPAN SVMLight README}{http://search.cpan.org/src/KWILLIAMS/Algorithm-SVMLight-0.08/README} or 
+'\htmladdnormallinkfoot{installing-algorithm-svmlight-linux-ubuntu}{http://www.dale-emmons.com/content/installing-algorithm-svmlight-linux-ubuntu}'
+
+SVM classifiers need a trained model before they can be used.
+
+The procedure to get started is as follows:
+\begin{itemize}
+\item Make sure that \htmladdnormallinkfoot{Algorithm::SVMLight}{http://search.cpan.org/~kwilliams/Algorithm-SVMLight-0.08/} and \htmladdnormallinkfoot{SVMLight}{http://svmlight.joachims.org/} are installed.
+\item Collect examples of good and bad URLs that defines your topic (the more the better).
+\item Generate a SVM model with the program {\tt combineSVM}.
+\item Initialize a new job with {\tt combineINIT}.
+\item Copy the SVM model to the job's configuration directory {\tt /etc/combine/<jobname>/SVMmodel.txt}.
+\item Edit the configuration file {\tt /etc/combine/<jobname>/combine.cfg} and add the following:
+\begin{verbatim}
+doCheckRecord = 1
+classifyPlugIn = Combine::classifySVM
+SVMmodel = SVMmodel.txt
+\end{verbatim}
+\item Then proceed with crawling as normal.
+\end{itemize}
+
 \subsection{Topic filter Plug-In API}
 The configuration variable \hyperref{classifyPlugIn}{classifyPlugIn (section }{)}{classifyPlugIn} is used to find
 the Perl module that implements the desired topic filter.
@@ -521,12 +549,11 @@ More details on how to write a Plug-In can be found in the example
 \hyperref{classifyPlugInTemplate.pm}{classifyPlugInTemplate.pm (see Appendix }{)}{classifyPlugInTemplate}.
 
 \subsection{Analysis}
-Extra analysis is enabled by the configuration variable 
-doAnalyse (section \ref{doAnalyse}). Among other things analysis tries to determine 
-the language of the text in the page. The URL is used to extract an
-indication of the category (University, Education, Research,
-Publication, Product, Top page, Personal
-page) of a page.
+\label{analysis}
+Extra analysis, enabled by the configuration variable 
+doAnalyse (section \ref{doAnalyse}), tries to determine
+the language of the content and the country of the Web-server.
+Both are stored in the internal database.
 
 \subsection{Duplicate detection}
 Duplicates of crawled documents are automatically detected with the
