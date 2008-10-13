@@ -1,6 +1,6 @@
 # Copyright (c) 2004, 2005 Anders Ardö
 
-## $Id: Config.pm 255 2008-05-12 08:54:18Z anders $
+## $Id: Config.pm 283 2008-10-12 11:43:08Z it-aar $
 # 
 # See the file LICENCE included in the distribution.
 
@@ -9,7 +9,7 @@ package Combine::Config;
 use strict;
 use Config::General qw(SaveConfigString);
 
-our $VERSION = '3.9';
+our $VERSION = '3.10';
 our %serverbypreferred = ();
 our %serverbyalias     = ();
 our @allow = ();

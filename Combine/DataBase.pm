@@ -1,5 +1,5 @@
 # Copyright (c) 2004, 2005 Anders Ardö
-## $Id: DataBase.pm 239 2007-03-29 08:29:27Z anders $
+## $Id: DataBase.pm 286 2008-10-13 09:13:26Z it-aar $
 
 # 
 # See the file LICENCE included in the distribution.
@@ -31,10 +31,10 @@ sub delete {
     return undef unless ref $xwi;
     
     my $urlid = $xwi->urlid;
-    my ($recordid) = $self->{databasehandle}->selectrow_array(
-              qq{SELECT recordid FROM recordurl WHERE urlid=$urlid;}); #Only one
+    my ($recordid, $md5) = $self->{databasehandle}->selectrow_array(
+              qq{SELECT recordid,md5 FROM recordurl WHERE urlid=$urlid;}); #Only one
     return if !defined($recordid);
-    $self->{'loghandle'}->say("DataBase::delete $urlid, $recordid;");
+    $self->{'loghandle'}->say("DataBase::delete $urlid, $recordid, $md5;");
 #LOCK recordurl - needed?
     $self->{databasehandle}->prepare(qq{LOCK TABLES recordurl WRITE;})->execute();
     #delete URL from recordurl
@@ -43,7 +43,7 @@ sub delete {
               qq{SELECT recordid FROM recordurl WHERE recordid=$recordid LIMIT 1;});
 #UNLOCK recordurl - needed?
     $self->{databasehandle}->prepare(qq{UNLOCK TABLES;})->execute();
-    if ( !defined($ant) || ($ant == 0) ) { Combine::MySQLhdb::DeleteKey($recordid); } #Should handle del's of non-existing recs
+    if ( !defined($ant) || ($ant == 0) ) { Combine::MySQLhdb::DeleteKey($recordid,$md5); } #Should handle del's of non-existing recs
 
     $xwi->nofollow("true"); #?? check??
 }
@@ -125,7 +125,7 @@ sub insert {
 	          qq{SELECT recordid FROM recordurl WHERE recordid=$oldrecordid LIMIT 1;}); #Outside LOCK?
 	if ( ! defined($ant) ) { $ant = 0; }
 	$self->{'loghandle'}->say("DataBase::DelURL case 2: $oldrecordid; $ant;; $existrecordid; $existurlid; $oldmd5;");
-	if ( $ant == 0 ) { Combine::MySQLhdb::DeleteKey($oldrecordid); }
+	if ( $ant == 0 ) { Combine::MySQLhdb::DeleteKey($oldrecordid, $oldmd5); }
 
 #CASE 3
     } elsif ( $existrecordid && ! $existurlid ) {
@@ -153,7 +153,7 @@ sub insert {
               qq{SELECT recordid FROM recordurl WHERE recordid=$oldrecordid LIMIT 1;});
 	if ( ! defined($ant) ) { $ant = 0; }
 	$self->{'loghandle'}->say("DataBase::DelURL $oldrecordid; $ant;");
-	if ( $ant == 0 ) { Combine::MySQLhdb::DeleteKey($oldrecordid); }
+	if ( $ant == 0 ) { Combine::MySQLhdb::DeleteKey($oldrecordid, $oldmd5); }
 	my ($recordid) = $self->{databasehandle}->selectrow_array(
               qq{SELECT recordid FROM recordurl WHERE urlid=$urlid;});
 	$xwi->recordid($recordid);

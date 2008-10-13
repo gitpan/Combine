@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-## $Id: combineINIT 281 2008-09-26 14:47:38Z anders $
+## $Id: combineINIT 286 2008-10-13 09:13:26Z it-aar $
 
 # Copyright (c) 1996-1998 LUB NetLab, 2002-2005 Anders Ardö
 # 
@@ -84,6 +84,8 @@ print "Creating MySQL tables\n";
 ##TABLE html: recordid^, html
 ##TABLE analys: recordid*, name, value
 ##TABLE topic: recordid*, notation*, absscore, relscore, terms, algorithm
+##TABLE localtags: netlocid, urlid, name, value
+##TABLE search: recordid^, stext*
 ##
 ##(TABLE netlocalias: netlocid*, netlocstr^)
 ##(TABLE urlalias: urlid*, urlstr^)
@@ -99,9 +101,8 @@ print "Creating MySQL tables\n";
 ##TABLE robotrules: netlocid*, rule, expire
 ##TABLE oai: recordid, md5^, date*, status
 ##TABLE exports: host, port, last
-##TABLE localtags: netlocid, urlid, name, value
 
-print "Data tables: hdb, html, links, meta, analys, topic\n";
+print "Data tables: hdb, html, links, meta, analys, topic, localtags, search\n";
 
 $res = $sv->do(qq{CREATE TABLE hdb (
   recordid int(11) NOT NULL default '0',
@@ -164,6 +165,21 @@ $res = $sv->do(qq{CREATE TABLE topic (
   KEY notation (notation),
   KEY recordid (recordid)
 ) ENGINE=MyISAM DEFAULT CHARACTER SET=utf8;});
+
+$res = $sv->do(qq{CREATE TABLE localtags (
+  netlocid int(11) NOT NULL DEFAULT '0',
+  urlid int(11) NOT NULL DEFAULT '0',
+  name varchar(100) NOT NULL,
+  value varchar(100) NOT NULL,
+  PRIMARY KEY tag (netlocid,urlid,name(100),value(100))
+) ENGINE=MyISAM DEFAULT CHARACTER SET=utf8;});
+
+$res = $sv->do(qq{CREATE TABLE search (
+  recordid int(11) NOT NULL default '0',
+  stext mediumtext,
+  PRIMARY KEY (recordid),
+  FULLTEXT (stext)
+) ENGINE=MyISAM AVG_ROW_LENGTH = 20000 MAX_ROWS = 10000000 DEFAULT CHARACTER SET=utf8;});
 
 
 print "Administrative tables: netlocalias, urlalias, topichierarchy, netlocs, urls, urldb, newlinks, recordurl, admin, log, que, robotrules\n";
@@ -293,14 +309,6 @@ $res = $sv->do(qq{CREATE TABLE exports (
   last timestamp DEFAULT '1999-12-31'
 ) ENGINE=MyISAM DEFAULT CHARACTER SET=utf8;});
 
-$res = $sv->do(qq{CREATE TABLE localtags (
-  netlocid int(11) NOT NULL DEFAULT '0',
-  urlid int(11) NOT NULL DEFAULT '0',
-  name varchar(100) NOT NULL,
-  value varchar(100) NOT NULL,
-  PRIMARY KEY tag (netlocid,urlid,name(100),value(100))
-) ENGINE=MyISAM DEFAULT CHARACTER SET=utf8;});
-
 print "Create user $dbuser with required priviligies: SELECT,INSERT,UPDATE,DELETE,CREATE,CREATE TEMPORARY TABLES,ALTER,LOCK TABLES\n";
 $res = $sv->do(qq{GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,CREATE TEMPORARY TABLES,
    ALTER,LOCK TABLES ON $database.* TO $dbuser;});
@@ -386,7 +394,8 @@ my %tables = (
   robotrules => 1,
   oai => 1,
   exports => 1,
-  localtags => 1
+  localtags => 1,
+  search => 1
 	      );
 my $noOfTables = scalar(keys %tables);
 

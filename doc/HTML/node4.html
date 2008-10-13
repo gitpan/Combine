@@ -147,11 +147,11 @@ Unless you are on a system supporting Debian packages (in which case look at <A 
 download and unpack the source.
 The following command sequence will then install Combine:
 <PRE>
-CREATE TABLE robotrules (
-  netlocid int(11) NOT NULL default '0',
-  expire int(11) NOT NULL default '0',
-  rule varchar(255) default '',
-  KEY netlocid (netlocid)
+CREATE TABLE log (
+  pid int(11) NOT NULL default '0',
+  id varchar(50) default NULL,
+  date timestamp NOT NULL,
+  message varchar(255) default NULL
 ) ENGINE=MyISAM DEFAULT CHARACTER SET=utf8;
 </PRE>
 
@@ -272,14 +272,12 @@ in <TT>/etc/combine/</TT> so they need to be copied there.
 <P>
 The following command sequence will install Combine:
 <PRE>
-CREATE TABLE oai (
-  recordid int(11) NOT NULL default '0',
-  md5 char(32),
-  date timestamp,
-  status enum('created', 'updated', 'deleted'),
-  PRIMARY KEY (md5),
-  KEY date (date)
-) ENGINE=MyISAM DEFAULT CHARACTER SET=utf8;
+CREATE TABLE que (
+  netlocid int(11) NOT NULL default '0',
+  urlid int(11) NOT NULL default '0',
+  queid int(11) NOT NULL auto_increment,
+  PRIMARY KEY  (queid)
+) ENGINE=MEMORY DEFAULT CHARACTER SET=utf8;
 </PRE>
 
 <P>
@@ -300,10 +298,11 @@ that will hold the records:
 </LI>
 </UL>
 <PRE>
-CREATE TABLE exports (
-  host varchar(30),
-  port int,
-  last timestamp DEFAULT '1999-12-31'
+CREATE TABLE robotrules (
+  netlocid int(11) NOT NULL default '0',
+  expire int(11) NOT NULL default '0',
+  rule varchar(255) default '',
+  KEY netlocid (netlocid)
 ) ENGINE=MyISAM DEFAULT CHARACTER SET=utf8;
 </PRE>
 
@@ -312,12 +311,13 @@ CREATE TABLE exports (
 </LI>
 </UL>
 <PRE>
-CREATE TABLE localtags (
-  netlocid int(11) NOT NULL DEFAULT '0',
-  urlid int(11) NOT NULL DEFAULT '0',
-  name varchar(100) NOT NULL,
-  value varchar(100) NOT NULL,
-  PRIMARY KEY tag (netlocid,urlid,name(100),value(100))
+CREATE TABLE oai (
+  recordid int(11) NOT NULL default '0',
+  md5 char(32),
+  date timestamp,
+  status enum('created', 'updated', 'deleted'),
+  PRIMARY KEY (md5),
+  KEY date (date)
 ) ENGINE=MyISAM DEFAULT CHARACTER SET=utf8;
 </PRE>
 
@@ -326,8 +326,11 @@ CREATE TABLE localtags (
 </LI>
 </UL>
 <PRE>
-GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,CREATE TEMPORARY TABLES,
-   ALTER,LOCK TABLES ON $database.* TO $dbuser;
+CREATE TABLE exports (
+  host varchar(30),
+  port int,
+  last timestamp DEFAULT '1999-12-31'
+) ENGINE=MyISAM DEFAULT CHARACTER SET=utf8;
 </PRE>
 
 <UL>
@@ -336,7 +339,7 @@ GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,CREATE TEMPORARY TABLES,
 </UL>
 <PRE>
 GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,CREATE TEMPORARY TABLES,
-   ALTER,LOCK TABLES ON $database.* TO $dbuser\@localhost;
+   ALTER,LOCK TABLES ON $database.* TO $dbuser;
 </PRE>
 
 <P>
@@ -436,7 +439,9 @@ the database, and newly created pages added.
 <LI>Edit the configuration to provide the desired focus
 <BR>
 Change the <TT>&lt;allow&gt;</TT> part in <TT>/etc/combine/focustest/combine.cfg</TT> from
-<PRE>%structure of the classification system,
+<PRE>
+GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,CREATE TEMPORARY TABLES,
+   ALTER,LOCK TABLES ON $database.* TO $dbuser\@localhost;
 </PRE>
 to
 <BR><PRE>%scores are propagated to the most specific
@@ -628,7 +633,7 @@ and maybe (depending or your other requirements) change:
 <!--End of Navigation Panel-->
 <ADDRESS>
 root
-2008-10-02
+2008-10-13
 </ADDRESS>
 </BODY>
 </HTML>

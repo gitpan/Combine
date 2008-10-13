@@ -200,6 +200,9 @@ sub Write {
       require Combine::Zebra;
       Combine::Zebra::update($zh,$xwi);
     }
+    if (Combine::Config::Get('MySQLfulltext')) {
+      $sv->prepare("REPLACE INTO search VALUES (?, ?)")->execute($recordid, Encode::encode('utf8',$title .' '. $ip));
+    }
 }
 
 sub Delete { #Used??
@@ -208,22 +211,30 @@ sub Delete { #Used??
 
     my $recordid = $xwi->recordid; 
 #print "MySQLhdb::DeleteMD5 $recordid\n";
-    DeleteKey($recordid);
+    DeleteKey($recordid, $xwi->md5);
 }
 
 sub DeleteKey {
-    my ($key) = @_;
+    my ($key, $md5) = @_;
     if (!defined($sv)) { Open(); } #Init $sv CHANGE?
 #OAI
      if ($doOAI) {
 #     $sv->prepare("REPLACE INTO oai SET status='deleted', recordid=?, md5=?")->execute($key,$md5);
+##FEL recurdurl updaterad i Database.pm FIX!
        $sv->prepare("REPLACE INTO oai SELECT recordid,md5,NOW(),'deleted' FROM recordurl WHERE recordid=?")->execute($key);
      }
 #OAI
 
+#Zebra
+    if (my $zh = Combine::Config::Get('ZebraHost')) {
+      require Combine::Zebra;
+      Combine::Zebra::delete($zh,$md5);
+    }
+
 #print "MySQLhdb::DeleteKey $key\n";
     my $res = $sv->do(qq{DELETE FROM hdb WHERE recordid=$key;});
     $res = $sv->do(qq{DELETE FROM html WHERE recordid=$key;});
+    $res = $sv->do(qq{DELETE FROM search WHERE recordid=$key;});
     $res = $sv->do(qq{DELETE FROM meta WHERE recordid=$key;});
     $res = $sv->do(qq{DELETE FROM analys WHERE recordid=$key});
     $res = $sv->do(qq{DELETE FROM links WHERE recordid=$key;});

@@ -14,6 +14,8 @@ USE $database;
 #TABLE html: recordid^, html
 #TABLE analys: recordid*, name, value
 #TABLE topic: recordid*, notation*, absscore, relscore, terms, algorithm
+#TABLE localtags: netlocid, urlid, name, value
+#TABLE search: recordid^, stext*
 #
 #(TABLE netlocalias: netlocid*, netlocstr^)
 #(TABLE urlalias: urlid*, urlstr^)
@@ -29,7 +31,6 @@ USE $database;
 #TABLE robotrules: netlocid*, rule, expire
 #TABLE oai: recordid, md5^, date*, status
 #TABLE exports: host, port, last
-#TABLE localtags: netlocid, urlid, name, value
 
 #Data tables
 CREATE TABLE hdb (
@@ -91,6 +92,21 @@ CREATE TABLE topic (
   KEY notation (notation),
   KEY recordid (recordid)
 ) ENGINE=MyISAM DEFAULT CHARACTER SET=utf8;
+
+CREATE TABLE localtags (
+  netlocid int(11) NOT NULL DEFAULT '0',
+  urlid int(11) NOT NULL DEFAULT '0',
+  name varchar(100) NOT NULL,
+  value varchar(100) NOT NULL,
+  PRIMARY KEY tag (netlocid,urlid,name(100),value(100))
+) ENGINE=MyISAM DEFAULT CHARACTER SET=utf8;
+
+CREATE TABLE search (
+  recordid int(11) NOT NULL default '0',
+  stext mediumtext,
+  PRIMARY KEY (recordid),
+  FULLTEXT (stext)
+) ENGINE=MyISAM AVG_ROW_LENGTH = 20000 MAX_ROWS = 10000000 DEFAULT CHARACTER SET=utf8;
 
 
 #Administrative tables
@@ -210,14 +226,6 @@ CREATE TABLE exports (
   host varchar(30),
   port int,
   last timestamp DEFAULT '1999-12-31'
-) ENGINE=MyISAM DEFAULT CHARACTER SET=utf8;
-
-CREATE TABLE localtags (
-  netlocid int(11) NOT NULL DEFAULT '0',
-  urlid int(11) NOT NULL DEFAULT '0',
-  name varchar(100) NOT NULL,
-  value varchar(100) NOT NULL,
-  PRIMARY KEY tag (netlocid,urlid,name(100),value(100))
 ) ENGINE=MyISAM DEFAULT CHARACTER SET=utf8;
 
 

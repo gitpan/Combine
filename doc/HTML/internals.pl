@@ -482,6 +482,10 @@ $key = q/UAtimeout/;
 $ref_files{$key} = "$dir".q|node13.html|; 
 $noresave{$key} = "$nosave";
 
+$key = q/MySQLfulltext/;
+$ref_files{$key} = "$dir".q|node13.html|; 
+$noresave{$key} = "$nosave";
+
 $key = q/baseConfigDir/;
 $ref_files{$key} = "$dir".q|node13.html|; 
 $noresave{$key} = "$nosave";
@@ -502,12 +506,12 @@ $key = q/sessionids/;
 $ref_files{$key} = "$dir".q|node13.html|; 
 $noresave{$key} = "$nosave";
 
-$key = q/cite_ardo99:_online99/;
-$ref_files{$key} = "$dir".q|node10.html|; 
-$noresave{$key} = "$nosave";
-
 $key = q/_reset_/;
 $ref_files{$key} = "$dir".q|node16.html|; 
+$noresave{$key} = "$nosave";
+
+$key = q/cite_ardo99:_online99/;
+$ref_files{$key} = "$dir".q|node10.html|; 
 $noresave{$key} = "$nosave";
 
 $key = q/termlist/;

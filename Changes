@@ -1,3 +1,11 @@
+combine (3.10) sarge; urgency=low
+
+  * Added a fulltext-index in MySQL table search plus configuration var
+    to enable/disable
+  * Added Zebra deleteRecord
+
+ -- Anders Ardo <anders@eit.lth.se>  Sun, 12 Oct 2008 20:56:51 +0200
+
 combine (3.9) sarge; urgency=low
 
   * Changed default for useTidy to 0 (Not using Tidy)
