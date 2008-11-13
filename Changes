@@ -1,3 +1,17 @@
+combine (3.11) intrepid; urgency=low
+
+  * Added switches 'collapseinlinks' and 'nooutlinks' to combineExport
+  * Moved tmp-files to /tmp/$$
+  * decoded output from extconverter to Perl internal utf8
+  * Added -nodrm to pdf2html switches
+  * Fixed bug in processing of pure text documents
+  * Added switch ZebraIndexing to combineExport. Enables updating of the
+    configured Zebra server with exported records
+  * Improved indexing of PDF documents
+  * Handled case when $md5 empty in DeleteKey
+
+ -- Anders Ardo <anders@dbkit10.eit.lth.se>  Sat, 08 Nov 2008 09:56:01 +0100
+
 combine (3.10) sarge; urgency=low
 
   * Added a fulltext-index in MySQL table search plus configuration var

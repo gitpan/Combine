@@ -17,13 +17,13 @@ sub update {
   my ($zhost, $xwi) = @_;
   if (!$connected) {
      $conn->connect($zhost);
-     print STDERR "connected:\n";
+#     print STDERR "connected:\n";
      $connected=1;
   }
   my $md5 = $xwi->md5;
   my $xml =  '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
      $xml .= "<documentCollection>\n";
-     $xml .= Combine::XWI2XML::XWI2XML($xwi, 0, 0);
+     $xml .= Combine::XWI2XML::XWI2XML($xwi, 0, 0, 1, 1);
      $xml .= "</documentCollection>\n";
   return if length($xml)>4718592; #Record to large for indexing
 
@@ -32,19 +32,18 @@ sub update {
 	my $p = $conn->package();
 	$p->option(action => "specialUpdate");
 	$p->option(record => $xml);
-        $p->option(recordIdOpaque => $md5);
 	$p->send("update");
-	print STDERR "sent package specialUpdate ... ";
+#	print STDERR "sent package specialUpdate ... ";
 	$p->destroy();
 
 	$p = $conn->package();
 	$p->option(action => "commit");
 	$p->send("commit");
-	print STDERR "commit ... ";
+#	print STDERR "commit ... ";
     };
 
     if (!$@) {
-	print STDERR "added document\n";
+#	print STDERR "added document\n";
     } elsif (!ref $@ || !$@->isa("ZOOM::Exception")) {
 	# A non-ZOOM error, which is totally unexepected.  Treat this
 	# as fatal:
@@ -59,7 +58,7 @@ sub update {
 	# Connection lost, most likely because Zebra got bored and
 	# timed it out.  Re-forge the connection and try again.
 	warn "ZOOM connection lost (probably due to timeout): re-forging\n";
-	create ZOOM::Connection($options);
+	$conn = create ZOOM::Connection($options);
 	$conn->connect($zhost);
 	goto AGAIN;
     }
@@ -68,15 +67,15 @@ sub update {
 }
 
 sub delete {
-  my ($zhost, $md5) = @_;
+  my ($zhost, $md5, $rid) = @_;
   if (!$connected) {
      $conn->connect($zhost);
-     print STDERR "connected:\n";
+#     print STDERR "connected:\n";
      $connected=1;
   }
   my $xml =  '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
      $xml .= "<documentCollection>\n";
-     $xml .= "<documentRecord id=\"$md5\"/>\n";
+     $xml .= "<documentRecord md5id=\"$md5\" id=\"$rid\"/>\n";
      $xml .= "</documentCollection>\n";
 
   AGAIN:
@@ -84,19 +83,18 @@ sub delete {
 	my $p = $conn->package();
 	$p->option(action => "recordDelete");
 	$p->option(record => $xml);
-        $p->option(recordIdOpaque => $md5);
 	$p->send("update");
-	print STDERR "sent package recordDelete... ";
+#	print STDERR "sent package recordDelete... ";
 	$p->destroy();
 
 	$p = $conn->package();
 	$p->option(action => "commit");
 	$p->send("commit");
-	print STDERR "commit ... ";
+#	print STDERR "commit ... ";
     };
 
     if (!$@) {
-	print STDERR "added document\n";
+#	print STDERR "added document\n";
     } elsif (!ref $@ || !$@->isa("ZOOM::Exception")) {
 	# A non-ZOOM error, which is totally unexepected.  Treat this
 	# as fatal:
@@ -111,7 +109,7 @@ sub delete {
 	# Connection lost, most likely because Zebra got bored and
 	# timed it out.  Re-forge the connection and try again.
 	warn "ZOOM connection lost (probably due to timeout): re-forging\n";
-	create ZOOM::Connection($options);
+	$conn = create ZOOM::Connection($options);
 	$conn->connect($zhost);
 	goto AGAIN;
     }
@@ -131,14 +129,14 @@ sub init {
 	my $p = $conn->package();
 	$p->option(action => "drop");
 	$p->send("drop");
-	print STDERR "sent drop ... ";
+#	print STDERR "sent drop ... ";
 	$p->destroy();
 	$p = $conn->package();
 	$p->option(action => "commit");
 	$p->send("commit");
-	print STDERR "commit ... ";
+#	print STDERR "commit ... ";
     };
-  print STDERR "Done\n";
+#  print STDERR "Done\n";
 }
 ##########################
 1;

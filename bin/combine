@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-## $Id: combine 264 2008-09-05 07:58:42Z anders $
+## $Id: combine 290 2008-11-07 09:09:53Z it-aar $
 
 # Copyright (c) 1996-1998 LUB NetLab, 2002-2005 Anders Ardö
 # 
@@ -130,6 +130,7 @@ my $xhdb;
 
 while (1) { # the main loop
     if ($num < 0 or $stop == 1) {
+        rmdir("/tmp/$$");
 	system("rm /var/run/combine/$jobname/combine_$name");
       exit;
     }
@@ -278,12 +279,14 @@ sub parse {
     my $result = '';
     if ( defined($extConverter{$mime}) ) {
 	$log->say("External converter $extConverter{$mime}");
-	my $tmpFile = "$$.parser";
-	open(TMP, ">$tmpFile");
+        mkdir("/tmp/$$");
+        my $fil=substr($url_str,rindex($url_str,'/')+1,length($url_str)-rindex($url_str,'/')-1);
+        if (length($fil)<3) {$fil='Unknown';}
+	open(TMP, ">/tmp/$$/$fil");
 	print TMP ${$xwi->content};
         close(TMP);
-	$result = `$extConverter{$mime} $tmpFile`;
-        unlink $tmpFile;
+	$result = Encode::decode('utf8',`cd /tmp/$$; $extConverter{$mime} $fil`);
+        unlink "/tmp/$$/$fil";
         if ( $result eq '' ) { $result="Error: Failed conversion $extConverter{$mime}"; }
     }
     if ( defined($intConverter{$mime}) ) {

@@ -39,11 +39,30 @@ Selects a specific characterset from UTF-8, iso-latin-1
 Overrides --profile settings.
 
 
-\item[{--pipehost, --pipeport}] \mbox{}
+\item[{--collapseinlinks}] \mbox{}
 
-Specifies the server-name and port to connect to and export data using the Alvis Pipeline.
-Exports incrementally, ie all changes since last call to combineExport with the same pipehost
-and pipeport.
+Skip inlinks with duplicate anchor-texts (ie just one inlink per unique anchor-text).
+
+
+\item[{--nooutlinks}] \mbox{}
+
+Do not include any outlinks in the exported records.
+
+
+\item[{--ZebraIndex}] \mbox{}
+
+ZebraIndex sends XML records directly to the Zebra server defined in Combine
+configuration variable 'ZebraHost'.
+It uses the default Zebra configuration: profile=combine, nooutlinks, collapseinlinks
+and is compatible with the direct Zebra indexing done during harvesting when
+'ZebraHost' is defined in the Combine configuration. Requires that the Zebra server
+is running.
+
+
+\item[{--xsltscript}] \mbox{}
+
+Generates records in Combine native format and converts them using this XSLT script
+before output. See example scripts in /etc/combine/*.xsl
 
 
 \item[{--number}] \mbox{}
@@ -61,15 +80,16 @@ Export just the one record with this recordid
 Export just the one record with this MD5 checksum
 
 
+\item[{--pipehost, --pipeport}] \mbox{}
+
+Specifies the server-name and port to connect to and export data using the Alvis Pipeline.
+Exports incrementally, ie all changes since last call to combineExport with the same pipehost
+and pipeport.
+
+
 \item[{--incremental}] \mbox{}
 
 Exports incrementally, ie all changes since last call to combineExport using --incremental
-
-
-\item[{--xsltscript}] \mbox{}
-
-Generates records in Combine native format and converts them using this XSLT script
-before output. See example scripts in /etc/combine/*.xsl
 
 \end{description}
 \paragraph{DESCRIPTION\label{DESCRIPTION}\index{DESCRIPTION}}

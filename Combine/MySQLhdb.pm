@@ -91,7 +91,7 @@ sub Write {
       else {
         $ip = $this ;
       }
-    }
+    } else { my $t=''; $xwi->text(\$t); } #make sure xwi->text is defined
 #??    if (length($ip)>250000) {$ip = substr($ip, 0, 250000);}
 
     $sv->prepare("REPLACE INTO hdb VALUES (?, ?, ?, FROM_UNIXTIME( ? ), FROM_UNIXTIME( ? ), ?, ?, ?, ?, ?, ?, COMPRESS(?))")->execute(
@@ -228,7 +228,8 @@ sub DeleteKey {
 #Zebra
     if (my $zh = Combine::Config::Get('ZebraHost')) {
       require Combine::Zebra;
-      Combine::Zebra::delete($zh,$md5);
+#Not needed: if ($md5 eq '') { ($md5)=$sv->selectrow_array('SELECT md5 FROM recordurl WHERE recordid=$key'); }
+      Combine::Zebra::delete($zh, $md5, $key);
     }
 
 #print "MySQLhdb::DeleteKey $key\n";

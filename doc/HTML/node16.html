@@ -733,20 +733,20 @@ SYNOPSIS
 <P>
 combineExport -jobname <SPAN CLASS="MATH"><IMG
  WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img7.png"
- ALT="$&gt;$"></SPAN>name<SPAN CLASS="MATH"><IMG
- WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
  SRC="img6.png"
- ALT="$&lt;$"></SPAN> [-profile alvis<SPAN CLASS="MATH"><IMG
+ ALT="$&lt;$"></SPAN>name<SPAN CLASS="MATH"><IMG
  WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
  SRC="img7.png"
- ALT="$&gt;$"></SPAN>dc<SPAN CLASS="MATH"><IMG
- WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img6.png"
- ALT="$&lt;$"></SPAN>combine -charset utf8<SPAN CLASS="MATH"><IMG
- WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img7.png"
- ALT="$&gt;$"></SPAN>isolatin -number <SPAN CLASS="MATH"><IMG
+ ALT="$&gt;$"></SPAN> [-profile alvis<SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$\vert$"></SPAN>dc<SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$\vert$"></SPAN>combine -charset utf8<SPAN CLASS="MATH"><IMG
+ WIDTH="10" HEIGHT="36" ALIGN="MIDDLE" BORDER="0"
+ SRC="img25.png"
+ ALT="$\vert$"></SPAN>isolatin -number <SPAN CLASS="MATH"><IMG
  WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
  SRC="img6.png"
  ALT="$&lt;$"></SPAN>n<SPAN CLASS="MATH"><IMG
@@ -769,14 +769,14 @@ combineExport -jobname <SPAN CLASS="MATH"><IMG
  SRC="img6.png"
  ALT="$&lt;$"></SPAN>server<SPAN CLASS="MATH"><IMG
  WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$&gt;$"></SPAN> -pipeport <SPAN CLASS="MATH"><IMG
+ WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
  SRC="img6.png"
- ALT="$&lt;$"></SPAN> -pipeport <SPAN CLASS="MATH"><IMG
+ ALT="$&lt;$"></SPAN>n<SPAN CLASS="MATH"><IMG
  WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
  SRC="img7.png"
- ALT="$&gt;$"></SPAN>n<SPAN CLASS="MATH"><IMG
- WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img6.png"
- ALT="$&lt;$"></SPAN> -incremental ]
+ ALT="$&gt;$"></SPAN> -incremental ]
 
 <P>
 
@@ -817,13 +817,41 @@ Overrides -profile settings.
 
 <P>
 </DD>
-<DT><STRONG>-pipehost, -pipeport</STRONG></DT>
+<DT><STRONG>-collapseinlinks</STRONG></DT>
 <DD>
 
 <P>
-Specifies the server-name and port to connect to and export data using the Alvis Pipeline.
-Exports incrementally, ie all changes since last call to combineExport with the same pipehost
-and pipeport.
+Skip inlinks with duplicate anchor-texts (ie just one inlink per unique anchor-text).
+
+<P>
+</DD>
+<DT><STRONG>-nooutlinks</STRONG></DT>
+<DD>
+
+<P>
+Do not include any outlinks in the exported records.
+
+<P>
+</DD>
+<DT><STRONG>-ZebraIndex</STRONG></DT>
+<DD>
+
+<P>
+ZebraIndex sends XML records directly to the Zebra server defined in Combine
+configuration variable 'ZebraHost'.
+It uses the default Zebra configuration: profile=combine, nooutlinks, collapseinlinks
+and is compatible with the direct Zebra indexing done during harvesting when
+'ZebraHost' is defined in the Combine configuration. Requires that the Zebra server
+is running.
+
+<P>
+</DD>
+<DT><STRONG>-xsltscript</STRONG></DT>
+<DD>
+
+<P>
+Generates records in Combine native format and converts them using this XSLT script
+before output. See example scripts in /etc/combine/*.xsl
 
 <P>
 </DD>
@@ -851,6 +879,16 @@ Export just the one record with this MD5 checksum
 
 <P>
 </DD>
+<DT><STRONG>-pipehost, -pipeport</STRONG></DT>
+<DD>
+
+<P>
+Specifies the server-name and port to connect to and export data using the Alvis Pipeline.
+Exports incrementally, ie all changes since last call to combineExport with the same pipehost
+and pipeport.
+
+<P>
+</DD>
 <DT><STRONG>-incremental</STRONG></DT>
 <DD>
 
@@ -859,22 +897,13 @@ Exports incrementally, ie all changes since last call to combineExport using -in
 
 <P>
 </DD>
-<DT><STRONG>-xsltscript</STRONG></DT>
-<DD>
-
-<P>
-Generates records in Combine native format and converts them using this XSLT script
-before output. See example scripts in /etc/combine/*.xsl
-
-<P>
-</DD>
 </DL>
-<H4><A NAME="SECTION05015140000000000000"></A><A NAME="DESCRIPTION"></A><A NAME="26"></A>
+<H4><A NAME="SECTION05015140000000000000"></A><A NAME="DESCRIPTION"></A><A NAME="32"></A>
 <BR>
 DESCRIPTION
 </H4>
 
-<H4><A NAME="SECTION05015150000000000000"></A><A NAME="EXAMPLES"></A><A NAME="28"></A>
+<H4><A NAME="SECTION05015150000000000000"></A><A NAME="EXAMPLES"></A><A NAME="34"></A>
 <BR>
 EXAMPLES
 </H4>
@@ -891,7 +920,7 @@ EXAMPLES
 </PRE>
 <PRE>$weight[\mbox{location}_{j}]$
 </PRE>
-<H4><A NAME="SECTION05015160000000000000"></A><A NAME="SEE_ALSO"></A><A NAME="38"></A>
+<H4><A NAME="SECTION05015160000000000000"></A><A NAME="SEE_ALSO"></A><A NAME="44"></A>
 <BR>
 SEE ALSO
 </H4>
@@ -905,7 +934,7 @@ Alvis XML schema (-profile alvis) at
 
 <P>
 
-<H4><A NAME="SECTION05015170000000000000"></A><A NAME="AUTHOR"></A><A NAME="42"></A>
+<H4><A NAME="SECTION05015170000000000000"></A><A NAME="AUTHOR"></A><A NAME="48"></A>
 <BR>
 AUTHOR
 </H4>
@@ -913,15 +942,15 @@ AUTHOR
 <P>
 Anders Ard&#246;, <SPAN CLASS="MATH"><IMG
  WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
- SRC="img7.png"
- ALT="$&gt;$"></SPAN>anders.ardo@it.lth.se<SPAN CLASS="MATH"><IMG
+ SRC="img6.png"
+ ALT="$&lt;$"></SPAN>anders.ardo@it.lth.se<SPAN CLASS="MATH"><IMG
  WIDTH="18" HEIGHT="31" ALIGN="MIDDLE" BORDER="0"
  SRC="img6.png"
  ALT="$&lt;$"></SPAN>
 
 <P>
 
-<H4><A NAME="SECTION05015180000000000000"></A><A NAME="COPYRIGHT_AND_LICENSE"></A><A NAME="44"></A>
+<H4><A NAME="SECTION05015180000000000000"></A><A NAME="COPYRIGHT_AND_LICENSE"></A><A NAME="50"></A>
 <BR>
 COPYRIGHT AND LICENSE
 </H4>
@@ -3139,7 +3168,7 @@ See the file LICENCE included in the distribution at
 <!--End of Navigation Panel-->
 <ADDRESS>
 root
-2008-10-13
+2008-11-13
 </ADDRESS>
 </BODY>
 </HTML>

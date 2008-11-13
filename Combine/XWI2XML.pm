@@ -60,11 +60,11 @@ our %dcMap;
 ##########################SUBS########################
 
 sub XWI2XML {
-    my ($xwi, $inclHTML, $inclCanonDoc) = @_;
+    my ($xwi, $inclHTML, $inclCanonDoc, $collapseinLinks, $nooutLinks) = @_;
     my $recordid=$xwi->recordid;
     my $Rsummary = '';
     my $md5 = $xwi->md5;
-    my $res = StartTag("documentRecord id=\"$md5\"");
+    my $res = StartTag("documentRecord md5id=\"$md5\" id=\"$recordid\"");
 
     $res .= ToXML('modifiedDate', time2iso($xwi->modifiedDate));
     $res .= ToXML('expiryDate', time2iso($xwi->expiryDate));
@@ -162,7 +162,8 @@ sub XWI2XML {
     $sth = $sv->prepare(qq{SELECT urlstr FROM urls WHERE urls.urlid=?;});
     my $sth1 = $sv->prepare(qq{SELECT md5 FROM recordurl WHERE urlid=?;});
     my %seen = ();
-    while (1) {
+#    while (1) {
+    while (!$nooutLinks) {
 	($urlstr, $netlocid, $urlid, $anchor, $ltype) = $xwi->link_get;
 	last unless ($urlstr || $netlocid);
 	if ( $urlstr eq '' ) {
@@ -198,9 +199,11 @@ sub XWI2XML {
 	$res .= StartTag('inlinks');
 	while (($from,$anchor,$lmd5,$ltype)=$sth->fetchrow_array) {
             $anchor = Encode::decode('utf8',$anchor);
-
-                next if ( defined($seen{$from,$anchor}) || ($anchor eq '') );
+                next if ( defined($seen{$from,$anchor}) || ($anchor eq '') || defined($seen{$anchor}) );
                 $seen{$from,$anchor}=1;
+                if ($collapseinLinks) {
+                  $seen{$anchor}=1;
+                }
                 my $s = $from;
                 $s =~ s|http://([^/:]+).*|$1|;
                 if (defined($servers{$s})) {#from same server as page, just save and put last in list

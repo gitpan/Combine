@@ -2,7 +2,7 @@
 # Exports records from AlvisCombine SQL database in XML-format
 # Takes switches
 
-## $Id: combineExport 245 2007-09-27 06:52:02Z anders $
+## $Id: combineExport 294 2008-11-08 09:59:02Z it-aar $
 
 # Copyright (c) 2004-2005 Anders Ardö
 # 
@@ -25,6 +25,9 @@ my $pipeport;
 my $incremental;
 my $xsltScript;
 my $verbose;
+my $collapseinlinks;
+my $nooutlinks;
+my $ZebraIndex;
 
 use strict;
 use Combine::MySQLhdb;
@@ -44,7 +47,8 @@ GetOptions('configfile:s' => \$configfile, 'database|sql:s' => \$dbase,
            'recordid:i' => \$recidExp, 'md5:s' => \$md5Exp,
 	   'pipehost:s' => \$pipehost, 'pipeport:i' => \$pipeport,
            'incremental' => \$incremental, 'xsltscript:s' => \$xsltScript,
-           'verbose' => \$verbose
+           'verbose' => \$verbose, 'collapseinlinks' => \$collapseinlinks,
+           'nooutlinks' => \$nooutlinks, 'ZebraIndex' => \$ZebraIndex
 	   );
 if ($help) { Getopt::Long::HelpMessage('See man page combineExport'); }
 if (defined($jobname)) { Combine::Config::Init($jobname, $baseConfig); }
@@ -55,6 +59,12 @@ if (defined($dbase)) { warn "Switch 'database' not implemented"; } #ConfigSQL::I
 
 my $baseConfig = Combine::Config::Get('baseConfigDir') . '/'; #'/etc/combine/';
 
+if (defined($ZebraIndex)) {
+  warn "Using default Zebra configuration: profile=combine, nooutlinks, collapseinlinks";
+  $profile='combine';
+  $collapseinlinks=1;
+  $nooutlinks=1;
+}
 #configuration processing
 my $charset = 'UTF-8';
 my $includeHTML=0;
@@ -177,6 +187,10 @@ while ( my ($recordid,$recordmd5,$status)=$sth->fetchrow_array) {
     if (defined($verbose)) { print STDERR "RID=$recordid; Status=$status; No=$n\n"; }
     if ($status eq 'deleted') {
         $rec = "<documentRecord id=\"$recordmd5\" action=\"delete\"></documentRecord>\n";
+    } elsif ( ($ZebraIndex) && (my $zh = Combine::Config::Get('ZebraHost')) ) {
+      require Combine::Zebra;
+      my $xwi = Combine::MySQLhdb::Get($recordid);
+      Combine::Zebra::update($zh,$xwi);
     } elsif ($charset eq 'UTF-8') {
         $rec = toXML($recordid, $includeHTML, $canonicalDoc);
     } elsif  ($charset eq 'LATIN1') {
@@ -200,7 +214,7 @@ if (defined($pipeUpdateLast)) {
 sub toXML {
   my ($recordid,$iHTML,$cDoc) = @_;
   my $xwi = Combine::MySQLhdb::Get($recordid);
-  my $xml = Combine::XWI2XML::XWI2XML($xwi, $iHTML, $cDoc);
+  my $xml = Combine::XWI2XML::XWI2XML($xwi, $iHTML, $cDoc, $collapseinlinks, $nooutlinks);
 
   if ( defined($xsltScript) ) {
     #apply XSLT transformation
@@ -258,11 +272,27 @@ It uses charset UTF-8 per default.
 Selects a specific characterset from UTF-8, iso-latin-1
 Overrides --profile settings.
 
-=item --pipehost, --pipeport
+=item --collapseinlinks
 
-Specifies the server-name and port to connect to and export data using the Alvis Pipeline.
-Exports incrementally, ie all changes since last call to combineExport with the same pipehost
-and pipeport.
+Skip inlinks with duplicate anchor-texts (ie just one inlink per unique anchor-text).
+
+=item --nooutlinks
+
+Do not include any outlinks in the exported records.
+
+=item --ZebraIndex
+
+ZebraIndex sends XML records directly to the Zebra server defined in Combine
+configuration variable 'ZebraHost'.
+It uses the default Zebra configuration: profile=combine, nooutlinks, collapseinlinks
+and is compatible with the direct Zebra indexing done during harvesting when
+'ZebraHost' is defined in the Combine configuration. Requires that the Zebra server
+is running.
+ 
+=item --xsltscript
+
+Generates records in Combine native format and converts them using this XSLT script
+before output. See example scripts in /etc/combine/*.xsl
 
 =item --number
 
@@ -276,14 +306,16 @@ Export just the one record with this recordid
 
 Export just the one record with this MD5 checksum
 
+=item --pipehost, --pipeport
+
+Specifies the server-name and port to connect to and export data using the Alvis Pipeline.
+Exports incrementally, ie all changes since last call to combineExport with the same pipehost
+and pipeport.
+
 =item --incremental
 
 Exports incrementally, ie all changes since last call to combineExport using --incremental
 
-=item --xsltscript
-
-Generates records in Combine native format and converts them using this XSLT script
-before output. See example scripts in /etc/combine/*.xsl
 
 =back
 

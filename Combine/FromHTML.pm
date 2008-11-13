@@ -39,7 +39,7 @@
 # 
 # Copyright (c) 1996-1998 LUB NetLab
 
-# $Id: FromHTML.pm 274 2008-09-26 12:05:02Z anders $
+# $Id: FromHTML.pm 292 2008-11-08 08:54:11Z it-aar $
 
 package Combine::FromHTML;
 
@@ -234,7 +234,8 @@ sub trans {
   }
 
   if ($opt =~ /Text/i) {
-    $xwi->content(\$html);
+    $html =~ s/[\s\240\n]+/ /sg; # compress whitespace??
+    $xwi->text(\$html);
     return $xwi;
   }
 
@@ -281,7 +282,7 @@ my $html_utf8;
     $html = $html_utf8;
   }
   if ( ! Encode::is_utf8($html) ) {
-    print STDERR "WARN HTML content not in UTF-8\n";
+    $log->say('WARN HTML content not in UTF-8');
   }				##
 
   $html =~ s/<script.*?<\/script>/ /sigo; # remove all the scripts (including multiline)
