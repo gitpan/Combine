@@ -1,0 +1,735 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Configuration variables</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,2 --> 
+<meta name="src" content="DocMain.tex"> 
+<meta name="date" content="2008-11-18 10:12:00"> 
+<link rel="stylesheet" type="text/css" href="DocMain.css"> 
+</head><body 
+>
+   <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
+href="DocMainse8.html" >prev</a>] [<a 
+href="DocMainse8.html#tailDocMainse8.html" >prev-tail</a>] [<a 
+href="#tailDocMainse9.html">tail</a>] [<a 
+href="# "  >up</a>] </p></div>
+   <h3 class="sectionHead"><span class="titlemark">9   </span> <a 
+ id="x42-700009"></a>Configuration variables</h3>
+<!--l. 4--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">9.1   </span> <a 
+ id="x42-710009.1"></a>Name/value configuration variables</h4>
+<!--l. 5--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.1   </span> <a 
+ id="x42-720009.1.1"></a>analysePlugin</h5>
+<!--l. 7--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">utilPlugIn.pm.svn-base; utilPlugIn.pm</dd></dl>
+<!--l. 10--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.2   </span> <a 
+ id="x42-730009.1.2"></a>AutoRecycleLinks</h5>
+<!--l. 12--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= 1
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">Enable(1)/disable(0) automatic recycling of new links
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">SD_SQL.pm.svn-base; SD_SQL.pm</dd></dl>
+<!--l. 17--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.3   </span> <a 
+ id="x42-740009.1.3"></a>baseConfigDir</h5>
+<!--l. 19--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= /etc/combine
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">Base directory for configuration files; initialized by Config.pm
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">combineExport.svn-base;              FromHTML.pm;              combineExport;
+     FromHTML.pm.svn-base
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Set by:</span> </dt><dd 
+class="description">Config.pm; Config.pm.svn-base</dd></dl>
+
+<!--l. 25--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.4   </span> <a 
+ id="x42-750009.1.4"></a>classifyPlugIn</h5>
+<!--l. 27--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= Combine::Check_record
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">Which topic classification PlugIn module algorithm to use <br 
+class="newline" />Combine::Check_record and Combine::PosCheck_record included by default <br 
+class="newline" />NEW SVM classifier: Combine::classifySVM <br 
+class="newline" />see classifyPlugInTemplate.pm and documentation to write your own
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">combineReClassify.svn-base; combine; combineReClassify; combine.svn-base</dd></dl>
+<!--l. 32--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.5   </span> <a 
+ id="x42-760009.1.5"></a>configDir</h5>
+<!--l. 34--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= NoDefaultValue
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">Directory for job specific configuration files; taken from &#8217;jobname&#8217;
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">classifySVM.pm.svn-base;                                                    combineUtil;
+     utilPlugIn.pm.svn-base; classifySVM.pm; PosCheck_record.pm; Check_record.pm;
+     Check_record.pm.svn-base;       PosCheck_record.pm.svn-base;       utilPlugIn.pm;
+     combineUtil.svn-base
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Set by:</span> </dt><dd 
+class="description">Config.pm; Config.pm.svn-base</dd></dl>
+<!--l. 40--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.6   </span> <a 
+ id="x42-770009.1.6"></a>doAnalyse</h5>
+<!--l. 42--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= 1
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">Enable(1)/disable(0) analysis of genre, language
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">combine; combine.svn-base</dd></dl>
+
+<!--l. 47--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.7   </span> <a 
+ id="x42-780009.1.7"></a>doCheckRecord</h5>
+<!--l. 49--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">Enable(1)/disable(0) topic classification (focused crawling) <br 
+class="newline" />Generated by combineINIT based on &#8211;topic parameter
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">combine; combine.svn-base; combineReClassify.svn-base; combineReClassify</dd></dl>
+<!--l. 53--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.8   </span> <a 
+ id="x42-790009.1.8"></a>doOAI</h5>
+<!--l. 55--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= 1
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">Use(1)/do not use(0) OAI record status keeping in SQL database
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">MySQLhdb.pm.svn-base; MySQLhdb.pm</dd></dl>
+<!--l. 60--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.9   </span> <a 
+ id="x42-800009.1.9"></a>extractLinksFromText</h5>
+<!--l. 62--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= 1
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">Extract(1)/do not extract(0) links from plain text
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">combine; combine.svn-base</dd></dl>
+<!--l. 67--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.10   </span> <a 
+ id="x42-810009.1.10"></a>HarvesterMaxMissions</h5>
+<!--l. 69--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= 500
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">Number of pages to process before restarting the harvester
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">combine; combine.svn-base</dd></dl>
+
+<!--l. 74--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.11   </span> <a 
+ id="x42-820009.1.11"></a>HarvestRetries</h5>
+<!--l. 76--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= 5
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">combine; combine.svn-base</dd></dl>
+<!--l. 80--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.12   </span> <a 
+ id="x42-830009.1.12"></a>httpProxy</h5>
+<!--l. 82--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= NoDefaultValue
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">Use a proxy server if this is defined (default no proxy)
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">UA.pm; UA.pm.svn-base</dd></dl>
+<!--l. 87--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.13   </span> <a 
+ id="x42-840009.1.13"></a>LogHandle</h5>
+<!--l. 89--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">classifySVM.pm.svn-base;             FromHTML.pm;             classifySVM.pm;
+     PosCheck_record.pm;          Check_record.pm;          Check_record.pm.svn-base;
+     PosCheck_record.pm.svn-base; FromHTML.pm.svn-base
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Set by:</span> </dt><dd 
+class="description">combineReClassify.svn-base; combine; combineReClassify; combine.svn-base</dd></dl>
+<!--l. 93--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.14   </span> <a 
+ id="x42-850009.1.14"></a>Loglev</h5>
+<!--l. 95--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">Logging level (0 (least) - 10 (most))
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">combine; combine.svn-base</dd></dl>
+
+<!--l. 99--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.15   </span> <a 
+ id="x42-860009.1.15"></a>maxUrlLength</h5>
+<!--l. 101--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= 250
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">Maximum length of a URL; longer will be silently discarded
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">selurl.pm.svn-base; selurl.pm</dd></dl>
+<!--l. 106--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.16   </span> <a 
+ id="x42-870009.1.16"></a>MySQLdatabase</h5>
+<!--l. 108--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= NoDefaultValue
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">Identifies MySQL database name, user and host
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">Config.pm; Config.pm.svn-base</dd></dl>
+<!--l. 113--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.17   </span> <a 
+ id="x42-880009.1.17"></a>MySQLfulltext</h5>
+<!--l. 115--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">Enable(1)/disable(0) fulltext-index in MySQL table search
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">MySQLhdb.pm.svn-base; MySQLhdb.pm</dd></dl>
+<!--l. 119--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.18   </span> <a 
+ id="x42-890009.1.18"></a>MySQLhandle</h5>
+<!--l. 121--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">combineSVM.svn-base;         combineExport;         MySQLhdb.pm.svn-base;
+     combineReClassify.svn-base;     combineUtil.svn-base;     classifySVM.pm.svn-base;
+     combineUtil;                                                            RobotRules.pm.svn-base;
+     LogSQL.pm;  combine;  combineExport.svn-base;  RobotRules.pm;  classifySVM.pm;
+     combine.svn-base;      SD_SQL.pm;      combineRank;      combineRank.svn-base;
+     LogSQL.pm.svn-base;   XWI2XML.pm;   combineSVM;   XWI2XML.pm.svn-base;
+     MySQLhdb.pm; SD_SQL.pm.svn-base; combineReClassify
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Set by:</span> </dt><dd 
+class="description">Config.pm; Config.pm.svn-base</dd></dl>
+
+<!--l. 125--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.19   </span> <a 
+ id="x42-900009.1.19"></a>Operator-Email</h5>
+<!--l. 127--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= "YourEmailAdress@YourDomain"
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">Please change
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">RobotRules.pm.svn-base; RobotRules.pm; UA.pm; UA.pm.svn-base</dd></dl>
+<!--l. 132--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.20   </span> <a 
+ id="x42-910009.1.20"></a>Password</h5>
+<!--l. 134--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= "XxXxyYzZ"
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">Password not used yet. (Please change)</dd></dl>
+<!--l. 138--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.21   </span> <a 
+ id="x42-920009.1.21"></a>relTextPlugin</h5>
+<!--l. 140--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">FromHTML.pm.svn-base; FromHTML.pm</dd></dl>
+<!--l. 143--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.22   </span> <a 
+ id="x42-930009.1.22"></a>saveHTML</h5>
+<!--l. 145--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= 1
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">Store(1)/do not store(0) the raw HTML in the database
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">MySQLhdb.pm.svn-base; MySQLhdb.pm</dd></dl>
+<!--l. 150--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.23   </span> <a 
+ id="x42-940009.1.23"></a>SdqRetries</h5>
+<!--l. 152--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= 5</dd></dl>
+
+<!--l. 155--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.24   </span> <a 
+ id="x42-950009.1.24"></a>SummaryLength</h5>
+<!--l. 157--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">How long the summary should be. Use 0 to disable the summarization code
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">FromHTML.pm.svn-base; FromHTML.pm</dd></dl>
+<!--l. 161--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.25   </span> <a 
+ id="x42-960009.1.25"></a>SVMmodel</h5>
+<!--l. 163--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= NoDefaultValue
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">Filename for the SVM model
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">classifySVM.pm.svn-base; classifySVM.pm</dd></dl>
+<!--l. 168--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.26   </span> <a 
+ id="x42-970009.1.26"></a>UAtimeout</h5>
+<!--l. 170--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= 30
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">Time in seconds to wait for a server to respond
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">UA.pm; UA.pm.svn-base</dd></dl>
+<!--l. 175--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.27   </span> <a 
+ id="x42-980009.1.27"></a>UserAgentFollowRedirects</h5>
+<!--l. 177--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">User agent handles redirects (1) or treat redirects as new links (0)
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">UA.pm; UA.pm.svn-base</dd></dl>
+
+<!--l. 181--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.28   </span> <a 
+ id="x42-990009.1.28"></a>UserAgentGetIfModifiedSince</h5>
+<!--l. 183--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= 1
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">If we have seen this page before use Get-If-Modified (1) or not (0)
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">UA.pm; UA.pm.svn-base</dd></dl>
+<!--l. 188--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.29   </span> <a 
+ id="x42-1000009.1.29"></a>useTidy</h5>
+<!--l. 190--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">Use(1)/do not use(0) Tidy to clean the HTML before parsing it
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">FromHTML.pm.svn-base; FromHTML.pm</dd></dl>
+<!--l. 194--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.30   </span> <a 
+ id="x42-1010009.1.30"></a>WaitIntervalExpirationGuaranteed</h5>
+<!--l. 196--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= 315360000
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">UA.pm; UA.pm.svn-base</dd></dl>
+<!--l. 200--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.31   </span> <a 
+ id="x42-1020009.1.31"></a>WaitIntervalHarvesterLockNotFound</h5>
+<!--l. 202--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= 2592000
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">combine; combine.svn-base</dd></dl>
+<!--l. 206--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.32   </span> <a 
+ id="x42-1030009.1.32"></a>WaitIntervalHarvesterLockNotModified</h5>
+<!--l. 208--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= 2592000
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">combine; combine.svn-base</dd></dl>
+
+<!--l. 212--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.33   </span> <a 
+ id="x42-1040009.1.33"></a>WaitIntervalHarvesterLockRobotRules</h5>
+<!--l. 214--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= 2592000
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">combine; combine.svn-base</dd></dl>
+<!--l. 218--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.34   </span> <a 
+ id="x42-1050009.1.34"></a>WaitIntervalHarvesterLockSuccess</h5>
+<!--l. 220--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= 1000000
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">Time in seconds after succesfull download before allowing a page to be
+     downloaded again (around 11 days)
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">combine; combine.svn-base</dd></dl>
+<!--l. 225--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.35   </span> <a 
+ id="x42-1060009.1.35"></a>WaitIntervalHarvesterLockUnavailable</h5>
+<!--l. 227--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= 86400
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">combine; combine.svn-base</dd></dl>
+<!--l. 231--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.36   </span> <a 
+ id="x42-1070009.1.36"></a>WaitIntervalHost</h5>
+<!--l. 233--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= 60
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">Minimum time between accesses to the same host. Must be positive
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">SD_SQL.pm; SD_SQL.pm.svn-base</dd></dl>
+
+<!--l. 238--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.37   </span> <a 
+ id="x42-1080009.1.37"></a>WaitIntervalRrdLockDefault</h5>
+<!--l. 240--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= 86400
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">RobotRules.pm.svn-base; RobotRules.pm</dd></dl>
+<!--l. 244--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.38   </span> <a 
+ id="x42-1090009.1.38"></a>WaitIntervalRrdLockNotFound</h5>
+<!--l. 246--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= 345600
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">RobotRules.pm.svn-base; RobotRules.pm</dd></dl>
+<!--l. 250--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.39   </span> <a 
+ id="x42-1100009.1.39"></a>WaitIntervalRrdLockSuccess</h5>
+<!--l. 252--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= 345600
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">RobotRules.pm.svn-base; RobotRules.pm</dd></dl>
+<!--l. 256--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.40   </span> <a 
+ id="x42-1110009.1.40"></a>WaitIntervalSchedulerGetJcf</h5>
+<!--l. 258--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= 20
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">Time in seconds to wait before making a new reschedule if a reschedule
+     results in an empty ready que
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">combine; combine.svn-base</dd></dl>
+
+<!--l. 263--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.41   </span> <a 
+ id="x42-1120009.1.41"></a>ZebraHost</h5>
+<!--l. 265--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= NoDefaultValue
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">Direct connection to Zebra indexing - for SearchEngine-in-a-box (default
+     no connection)
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">combineExport;        MySQLhdb.pm.svn-base;        combineExport.svn-base;
+     MySQLhdb.pm</dd></dl>
+<!--l. 270--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">9.2   </span> <a 
+ id="x42-1130009.2"></a>Complex configuration variables</h4>
+<!--l. 271--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.2.1   </span> <a 
+ id="x42-1140009.2.1"></a>allow</h5>
+<!--l. 273--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">use either URL or HOST: (obs &#8217;:&#8217;) to match regular expressions to <br 
+class="newline" />either the full URL or the HOST part of a URL. <br 
+class="newline" />Allow crawl of URLs or hostnames that matches these regular expressions
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">selurl.pm.svn-base; selurl.pm</dd></dl>
+<!--l. 277--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.2.2   </span> <a 
+ id="x42-1150009.2.2"></a>binext</h5>
+<!--l. 279--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">Extensions of binary files
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">UA.pm; UA.pm.svn-base</dd></dl>
+<!--l. 283--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.2.3   </span> <a 
+ id="x42-1160009.2.3"></a>converters</h5>
+<!--l. 285--><p class="noindent" >
+
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">Configure which converters can be used to produce a XWI object <br 
+class="newline" />Format: <br 
+class="newline" />1 line per entry <br 
+class="newline" />each entry consists of 3 &#8217;;&#8217; separated fields <br 
+class="newline" />Entries are processed in order and the first match is executed <br 
+class="newline" />external converters have to be found via PATH and executable to be considered a
+     match <br 
+class="newline" />the external converter command should take a filename as parameter and convert
+     that file <br 
+class="newline" />the result should be comming on STDOUT <br 
+class="newline" />mime-type ; External converter command ; Internal converter
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">UA.pm; combine; UA.pm.svn-base; combine.svn-base</dd></dl>
+<!--l. 289--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.2.4   </span> <a 
+ id="x42-1170009.2.4"></a>exclude</h5>
+<!--l. 291--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">Exclude URLs or hostnames that matches these regular expressions <br 
+class="newline" />default: CGI and maps <br 
+class="newline" />default: binary files <br 
+class="newline" />default: Unparsable documents <br 
+class="newline" />default: images <br 
+class="newline" />default: other binary formats <br 
+class="newline" />more excludes in the file config_exclude (automatically updated by other programs)
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">selurl.pm.svn-base; selurl.pm</dd></dl>
+<!--l. 295--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.2.5   </span> <a 
+ id="x42-1180009.2.5"></a>serveralias</h5>
+<!--l. 297--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">List of servernames that are aliases are in the file ./config_serveralias <br 
+class="newline" />(automatically updated by other programs) <br 
+class="newline" />use one server per line <br 
+class="newline" />example <br 
+class="newline" />www.100topwetland.com www.100wetland.com <br 
+class="newline" />means  that  www.100wetland.com  is  replaced  by  www.100topwetland.com  during
+     URL normalization</dd></dl>
+
+<!--l. 300--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.2.6   </span> <a 
+ id="x42-1190009.2.6"></a>sessionids</h5>
+<!--l. 302--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">patterns to recognize and remove sessionids in URLs</dd></dl>
+<!--l. 305--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.2.7   </span> <a 
+ id="x42-1200009.2.7"></a>url</h5>
+<!--l. 307--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">url is just a conatiner for all URL related configuration patterns
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">selurl.pm.svn-base; Config.pm; Config.pm.svn-base; selurl.pm</dd></dl>
+
+   <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
+href="DocMainse8.html" >prev</a>] [<a 
+href="DocMainse8.html#tailDocMainse8.html" >prev-tail</a>] [<a 
+href="DocMainse9.html" >front</a>] [<a 
+href="# "  >up</a>] </p></div>
+<!--l. 2--><p class="indent" >   <a 
+ id="tailDocMainse9.html"></a>    
+</body></html> 

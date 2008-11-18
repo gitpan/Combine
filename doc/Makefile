@@ -45,9 +45,11 @@ PlugInTemplate.tex : ../templates/classifyPlugInTemplate.pm genPlugInTemplate.pl
 	./genPlugInTemplate.pl > PlugInTemplate.tex
 
 html : DocMain.dvi
-	latex2html --split 4 --local_icons DocMain.tex
+	htlatex DocMain.tex "html,2"
 	\rm -rf HTML
-	mv DocMain HTML
+	mkdir HTML
+	mv DocMain*.html DocMain*.png DocMain.css HTML/
 
 clean :
-	\rm -rf HTML *.aux *.log *.dvi DocMain.ps DocMain.pdf *.toc $(GENTEXS)
+	\rm -rf HTML *.aux *.log *.dvi  DocMain*.html DocMain*.png DocMain.css DocMain.ps DocMain.pdf *.toc $(GENTEXS)
+	\rm DocMain.4ct  DocMain.4tc  DocMain.bbl  DocMain.blg  DocMain.idv  DocMain.lg  DocMain.out DocMain.tmp  DocMain.xref

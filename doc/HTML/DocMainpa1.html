@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>I Overview</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,2 --> 
+<meta name="src" content="DocMain.tex"> 
+<meta name="date" content="2008-11-18 10:12:00"> 
+<link rel="stylesheet" type="text/css" href="DocMain.css"> 
+</head><body 
+>
+   <!--l. 25--><div class="crosslinks"><p class="noindent">[<a 
+href="DocMainli1.html" >prev</a>] [<a 
+href="DocMainli1.html#tailDocMainli1.html" >prev-tail</a>] [<a 
+href="#tailDocMainpa1.html">tail</a>] [<a 
+href="DocMain.html#DocMainpa1.html" >up</a>] </p></div>
+   <h1 class="partHead"><span class="titlemark">Part&#x00A0;I<br /></span><a 
+ id="x3-2000I"></a>Overview</h1>
+   <div class="sectionTOCS">
+   <span class="sectionToc" >1 <a 
+href="DocMainse1.html#x4-30001">Introduction</a></span>
+<br />   <span class="sectionToc" >2 <a 
+href="DocMainse2.html#x8-40002">Open source distribution, installation</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >2.1 <a 
+href="DocMainse2.html#x8-50002.1">Installation</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >2.2 <a 
+href="DocMainse2.html#x8-110002.2">Getting started</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >2.3 <a 
+href="DocMainse2.html#x8-120002.3">Online documentation</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >2.4 <a 
+href="DocMainse2.html#x8-130002.4">Use scenarios</a></span>
+<br />   <span class="sectionToc" >3 <a 
+href="DocMainse3.html#x18-190003">Configuration</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >3.1 <a 
+href="DocMainse3.html#x18-200003.1">Configuration files</a></span>
+<br />   <span class="sectionToc" >4 <a 
+href="DocMainse4.html#x19-250004">Crawler internal operation</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.1 <a 
+href="DocMainse4.html#x19-260004.1">URL selection criteria</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.2 <a 
+href="DocMainse4.html#x19-270004.2">Document parsing and information extraction</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.3 <a 
+href="DocMainse4.html#x19-280004.3">URL filtering</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.4 <a 
+href="DocMainse4.html#x19-290004.4">Crawling strategy</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.5 <a 
+href="DocMainse4.html#x19-300004.5">Built-in topic filter &#8211; automated subject classification using string matching</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.6 <a 
+href="DocMainse4.html#x19-360004.6">Built-in topic filter &#8211; automated subject classification using SVM</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.7 <a 
+href="DocMainse4.html#x19-370004.7">Topic filter Plug-In API</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.8 <a 
+href="DocMainse4.html#x19-380004.8">Analysis</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.9 <a 
+href="DocMainse4.html#x19-390004.9">Duplicate detection</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.10 <a 
+href="DocMainse4.html#x19-400004.10">URL recycling</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.11 <a 
+href="DocMainse4.html#x19-410004.11">Database cleaning</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.12 <a 
+href="DocMainse4.html#x19-420004.12">Complete application &#8211; SearchEngine in a Box</a></span>
+<br />   <span class="sectionToc" >5 <a 
+href="DocMainse5.html#x31-430005">Evaluation of automated subject classification</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >5.1 <a 
+href="DocMainse5.html#x31-440005.1">Approaches to automated classification</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >5.2 <a 
+href="DocMainse5.html#x31-460005.2">Evaluation methodology</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >5.3 <a 
+href="DocMainse5.html#x31-500005.3">Results</a></span>
+<br />   <span class="sectionToc" >6 <a 
+href="DocMainse6.html#x34-560006">Performance and scalability</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >6.1 <a 
+href="DocMainse6.html#x34-570006.1">Speed</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >6.2 <a 
+href="DocMainse6.html#x34-580006.2">Space</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >6.3 <a 
+href="DocMainse6.html#x34-590006.3">Crawling strategy</a></span>
+<br />   <span class="sectionToc" >7 <a 
+href="DocMainse7.html#x35-600007">System components</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.1 <a 
+href="DocMainse7.html#x35-610007.1">combineINIT</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.2 <a 
+href="DocMainse7.html#x35-620007.2">combineCtrl</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.3 <a 
+href="DocMainse7.html#x35-630007.3">combineUtil</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.4 <a 
+href="DocMainse7.html#x35-640007.4">combineExport</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.5 <a 
+href="DocMainse7.html#x35-650007.5">Internal executables and Library modules</a></span>
+<br />   <span class="likesectionToc" ><a 
+href="DocMainli2.html#x39-670007.5.1">References</a></span>
+   </div>
+
+
+
+
+
+
+
+
+   <!--l. 30--><div class="crosslinks"><p class="noindent">[<a 
+href="DocMainli1.html" >prev</a>] [<a 
+href="DocMainli1.html#tailDocMainli1.html" >prev-tail</a>] [<a 
+href="DocMainpa1.html" >front</a>] [<a 
+href="DocMain.html#DocMainpa1.html" >up</a>] </p></div>
+<!--l. 30--><p class="indent" >   <a 
+ id="tailDocMainpa1.html"></a>  
+</body></html> 

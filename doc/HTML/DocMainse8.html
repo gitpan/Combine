@@ -1,0 +1,391 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Frequently asked questions</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,2 --> 
+<meta name="src" content="DocMain.tex"> 
+<meta name="date" content="2008-11-18 10:12:00"> 
+<link rel="stylesheet" type="text/css" href="DocMain.css"> 
+</head><body 
+>
+   <!--l. 1--><div class="crosslinks"><p class="noindent">[<a 
+href="#tailDocMainse8.html">tail</a>] [<a 
+href="# "  >up</a>] </p></div>
+   <h3 class="sectionHead"><span class="titlemark">8   </span> <a 
+ id="x41-690008"></a>Frequently asked questions</h3>
+<!--l. 3--><p class="noindent" >
+     <ol  class="enumerate1" >
+     <li 
+  class="enumerate" id="x41-69002x1">What does the message &#8217;Wide character in subroutine entry ...&#8217; mean?
+     <!--l. 6--><p class="noindent" >That something is horribly wrong with the character encoding of this page.
+     </li>
+     <li 
+  class="enumerate" id="x41-69004x2">What  does  the  message  &#8217;Parsing  of  undecoded  UTF-8  will  give  garbage  when
+     decoding entities ...&#8217; mean?
+     <!--l. 10--><p class="noindent" >That something is wrong with character decoding of this page.
+     </li>
+     <li 
+  class="enumerate" id="x41-69006x3">I    can&#8217;t    figure    out    how    to    restrict    the    crawler    to    pages    below
+     &#8217;<span 
+class="ectt-1095">http://www.foo.com/bar/</span>&#8217;?
+     <!--l. 15--><p class="noindent" >Put an appropriate regular expression in the &#x003C;allow&#x003E; section of the configuration
+     file. Appropriate means a Perl regular expression, which means that you have to
+     escape special characters. Try with<br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1095">URL</span><span 
+class="ectt-1095">&#x00A0;http:\/\/www\.foo\.com\/bar\/</span></span></span>
+     </li>
+     <li 
+  class="enumerate" id="x41-69008x4">I have a simple configuration variable set, but Combine does not obey it?
+     <!--l. 25--><p class="noindent" >Check that there are not 2 instances of the same simple configuration variable in the
+     same configuration file. Unfortunately this will break configuration loading.
+
+     </li>
+     <li 
+  class="enumerate" id="x41-69010x5">If there are multiple &#x003C;allow&#x003E; entries, must an URL fit all or any of them?
+     <!--l. 33--><p class="noindent" >A match to any of the entries will make that URL allowable for crawling. You can
+     use any mix of HOST: and URL entries
+     </li>
+     <li 
+  class="enumerate" id="x41-69012x6">It would also be nice to be able to crawl local files.
+     <!--l. 38--><p class="noindent" >Presently the crawler only accepts HTTP, HTTPS, and FTP as protocols.
+     </li>
+     <li 
+  class="enumerate" id="x41-69014x7"><a 
+ id="x41-690137"></a> Crawling of a single host is VERY slow. Is there some way for me to speed the
+     crawler up?
+     <!--l. 45--><p class="noindent" >Yes it&#8217;s one of the built-in limitations to keep the crawler beeing &#8217;nice&#8217;. It will only
+     access a particular server once every 60 seconds by default. You can change the
+     default by adjusting the following configuration variables, but please keep in mind
+     that you increase the load on the server.<br 
+class="newline" />WaitIntervalSchedulerGetJcf=2<br 
+class="newline" />WaitIntervalHost = 5<br 
+class="newline" />
+     </li>
+     <li 
+  class="enumerate" id="x41-69016x8">Is it possible to crawl only one single web-page?
+     <!--l. 55--><p class="noindent" >Use the command:<br 
+class="newline" /><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1095">combine</span><span 
+class="ectt-1095">&#x00A0;--jobname</span><span 
+class="ectt-1095">&#x00A0;XXX</span><span 
+class="ectt-1095">&#x00A0;--harvesturl</span><span 
+class="ectt-1095">&#x00A0;http://www.foo.com/bar.html</span></span></span>
+     </li>
+     <li 
+  class="enumerate" id="x41-69018x9">How can I crawl a fixed number of link steps from a set of seed pages? For example
+     one web-page and all local links on that web-page (and not any further?
+     <!--l. 63--><p class="noindent" >Initialize the database and load the seed pages. Turn of automatic recycling of links
+     by setting the simple configuration variable &#8217;AutoRecycleLinks&#8217; to 0.
+     <!--l. 68--><p class="noindent" >Start crawling and stop when &#8217;<span 
+class="ectt-1095">combineCtrl &#8211;jobname XXX howmany</span>&#8217; equals 0.
+     <!--l. 71--><p class="noindent" >Handle recycling manually using &#8217;combineCtrl, with action &#8217;recyclelinks&#8217;. (Give the
+     command <span 
+class="ectt-1095">combineCtrl &#8211;jobname XXX recyclelinks</span>&#8217;)
+     <!--l. 75--><p class="noindent" >Iterate to the depth of your liking.
+     </li>
+     <li 
+  class="enumerate" id="x41-69020x10">I run combineINIT but the configuration directory is not created?
+     <!--l. 80--><p class="noindent" >You need to run combineINIT as root, due to file protection permissions.
+     </li>
+     <li 
+  class="enumerate" id="x41-69022x11">Where are the logs?
+     <!--l. 85--><p class="noindent" >They are stored in the SQL database &#x003C;jobname&#x003E; in the table <span 
+class="ectt-1095">log</span>.
+     </li>
+     <li 
+  class="enumerate" id="x41-69024x12">What             are             the             main             differences             between
+     Std (<span 
+class="ectt-1095">classifyPlugIn = Combine::Check_record</span>) and PosCheck (<span 
+class="ectt-1095">classifyPlugIn</span>
+     <span 
+class="ectt-1095">= Combine::PosCheck_record</span>) algorithms for automated subject classification?
+
+     <!--l. 92--><p class="noindent" >Std can handle Perl regular expressions in terms and does not take into account if
+     the term is found in the beginning or end of the document. PosCheck can&#8217;t handle
+     Perl regular expressions but is faster, and takes word position and proximity into
+     account.
+     <!--l. 96--><p class="noindent" >For detailed descriptions see sections Algorithm 1 (<a 
+href="DocMainse4.html#x19-340004.5.4">4.5.4<!--tex4ht:ref: std --></a>) Algorithm 2 (<a 
+href="DocMainse4.html#x19-350004.5.5">4.5.5<!--tex4ht:ref: pos --></a>).
+     </li>
+     <li 
+  class="enumerate" id="x41-69026x13">I don&#8217;t understand what this means. Can you explain it to me ? Thank you !
+
+     <table 
+class="verbatim"><tr class="verbatim"><td 
+class="verbatim"><div class="verbatim">
+     40:&#x00A0;sundew[^\s]*=CP.Drosera
+     &#x00A0;<br />40:&#x00A0;tropical&#x00A0;pitcher&#x00A0;plant=CP.Nepenthes
+</div>
+     </td></tr></table>
+     <!--l. 105--><p class="nopar" >
+     <!--l. 107--><p class="noindent" >It&#8217;s part of the topic definition (term list) for the topic &#8217;Carnivorous plants&#8217;. It&#8217;s well
+     described in the documentation, please see section <a 
+href="DocMainse4.html#x19-310004.5.1">4.5.1<!--tex4ht:ref: topicdef --></a>. The strange characters are Perl
+     regular expressions mostly used for truncation etc.
+     </li>
+     <li 
+  class="enumerate" id="x41-69028x14">I want to get all pages about "icecream" from "www.yahoo.com". And I don&#8217;t have
+     clear idea about how to write the topic definition file. Can you show me an
+     example?
+     <!--l. 116--><p class="noindent" >So for getting all pages about &#8217;icecream&#8217; from &#8217;www.yahoo.com&#8217; you have to:
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x41-69030x1">write a topic definition file according to the format above, eg containing topic
+          specific terms. The file is essential a list of terms relevant for the topic.
+          Format of the file is "numeric_importance: term=TopicClass" e.g. "<span 
+class="ectt-1095">100:</span>
+          <span 
+class="ectt-1095">icecream=YahooIce</span>" (Say you call your topic &#8217;YahooIce&#8217;). A few terms might
+          be:<br 
+class="newline" />
+
+          <table 
+class="verbatim"><tr class="verbatim"><td 
+class="verbatim"><div class="verbatim">
+          100:&#x00A0;icecream=YahooIce
+          &#x00A0;<br />100:&#x00A0;ice&#x00A0;cone=YahooIce
+</div>
+          </td></tr></table>
+          <!--l. 125--><p class="nopar" > and so on stored in a file called say TopicYahooIce.txt
+          </li>
+          <li 
+  class="enumerate" id="x41-69032x2">Initialization<br 
+class="newline" /><span 
+class="ectt-1095">sudo combineINIT -jobname cptest -topic TopicYahooIce.txt</span>
+          </li>
+          <li 
+  class="enumerate" id="x41-69034x3">Edit the configuration to only allow crawling of www.yahoo.com Change the &#x003C;allow&#x003E;
+          part in /etc/combine/focustest/combine.cfg from
+
+          <table 
+class="verbatim"><tr class="verbatim"><td 
+class="verbatim"><div class="verbatim">
+          #use&#x00A0;either&#x00A0;URL&#x00A0;or&#x00A0;HOST:&#x00A0;(obs&#x00A0;&#8217;:&#8217;)&#x00A0;to&#x00A0;match&#x00A0;regular&#x00A0;expressions&#x00A0;to&#x00A0;either&#x00A0;the
+          &#x00A0;<br />#full&#x00A0;URL&#x00A0;or&#x00A0;the&#x00A0;HOST&#x00A0;part&#x00A0;of&#x00A0;a&#x00A0;URL.
+          &#x00A0;<br />&#x003C;allow&#x003E;
+          &#x00A0;<br />#Allow&#x00A0;crawl&#x00A0;of&#x00A0;URLs&#x00A0;or&#x00A0;hostnames&#x00A0;that&#x00A0;matches&#x00A0;these&#x00A0;regular&#x00A0;expressions
+          &#x00A0;<br />HOST:&#x00A0;.*$
+          &#x00A0;<br />&#x003C;/allow&#x003E;
+</div>
+          </td></tr></table>
+          <!--l. 141--><p class="nopar" >
+          <!--l. 143--><p class="noindent" >to
+
+          <table 
+class="verbatim"><tr class="verbatim"><td 
+class="verbatim"><div class="verbatim">
+          #use&#x00A0;either&#x00A0;URL&#x00A0;or&#x00A0;HOST:&#x00A0;(obs&#x00A0;&#8217;:&#8217;)&#x00A0;to&#x00A0;match&#x00A0;regular&#x00A0;expressions&#x00A0;to&#x00A0;either&#x00A0;the
+          &#x00A0;<br />#full&#x00A0;URL&#x00A0;or&#x00A0;the&#x00A0;HOST&#x00A0;part&#x00A0;of&#x00A0;a&#x00A0;URL.
+          &#x00A0;<br />&#x003C;allow&#x003E;
+          &#x00A0;<br />#Allow&#x00A0;crawl&#x00A0;of&#x00A0;URLs&#x00A0;or&#x00A0;hostnames&#x00A0;that&#x00A0;matches&#x00A0;these&#x00A0;regular&#x00A0;expressions
+          &#x00A0;<br />HOST:&#x00A0;www\.yahoo\.com$
+          &#x00A0;<br />&#x003C;/allow&#x003E;
+</div>
+          </td></tr></table>
+          <!--l. 152--><p class="nopar" >
+          </li>
+          <li 
+  class="enumerate" id="x41-69036x4">Load some good seed URLs
+          </li>
+          <li 
+  class="enumerate" id="x41-69038x5">Start 1 harvesting process</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x41-69040x15">Why load some good seeds URLs and what the seeds URLs mean.
+     <!--l. 162--><p class="noindent" >This is just a way of telling the crawler where to start.
+     </li>
+     <li 
+  class="enumerate" id="x41-69042x16">My problem is that the installation there requires root access, which I cannot get. Is there
+     a way of running Combine without requiring any root access?
+     <!--l. 170--><p class="noindent" >The are three things that are problematic
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x41-69044x1">Configurations are stored in /etc/combine/...
+          </li>
+          <li 
+  class="enumerate" id="x41-69046x2">Runtime PID files are stored in /var/run/combine
+          </li>
+          <li 
+  class="enumerate" id="x41-69048x3">You have to be able to create MySQL databases accessible by combine</li></ol>
+     <!--l. 177--><p class="noindent" >If you take the source and look how the tests (make test) are made you might find a way to
+     fix the first. Though this probably involves modifying the source - maybe only the
+     Combine/Config.pm
+     <!--l. 180--><p class="noindent" >The second is strictly not necessary and it will run even if /var/run /combine does not
+     exist, although not the command <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1095">combineCtrl</span><span 
+class="ectt-1095">&#x00A0;--jobname</span><span 
+class="ectt-1095">&#x00A0;XXX</span><span 
+class="ectt-1095">&#x00A0;kill</span></span></span>
+     <!--l. 183--><p class="noindent" >On the other hand the third is necessary and I can&#8217;t think of a way around it except
+     making a local installation of MySQL and use that.
+     </li>
+     <li 
+  class="enumerate" id="x41-69050x17">What does the following entries from the log table mean?
+          <ol  class="enumerate2" >
+          <li 
+  class="enumerate" id="x41-69052x1"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1095">|</span><span 
+class="ectt-1095">&#x00A0;5409</span><span 
+class="ectt-1095">&#x00A0;|</span><span 
+class="ectt-1095">&#x00A0;HARVPARS</span><span 
+class="ectt-1095">&#x00A0;1_zltest</span><span 
+class="ectt-1095">&#x00A0;|</span><span 
+class="ectt-1095">&#x00A0;2006-07-14</span><span 
+class="ectt-1095">&#x00A0;15:08:52</span><span 
+class="ectt-1095">&#x00A0;|</span><span 
+class="ectt-1095">&#x00A0;M500;</span><span 
+class="ectt-1095">&#x00A0;SD</span><span 
+class="ectt-1095">&#x00A0;empty,</span><span 
+class="ectt-1095">&#x00A0;sleep</span><span 
+class="ectt-1095">&#x00A0;20</span><span 
+class="ectt-1095">&#x00A0;second...</span><span 
+class="ectt-1095">&#x00A0;|</span></span></span>
+          <!--l. 191--><p class="noindent" >This means that there are no URLs ready for crawling (SD empty). Also you
+          can use combineCtrl to see current status of ready queue etc
+
+          </li>
+          <li 
+  class="enumerate" id="x41-69054x2"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1095">|</span><span 
+class="ectt-1095">&#x00A0;7352</span><span 
+class="ectt-1095">&#x00A0;|</span><span 
+class="ectt-1095">&#x00A0;HARVPARS</span><span 
+class="ectt-1095">&#x00A0;1_wctest</span><span 
+class="ectt-1095">&#x00A0;|</span><span 
+class="ectt-1095">&#x00A0;2006-07-14</span><span 
+class="ectt-1095">&#x00A0;17:00:59</span><span 
+class="ectt-1095">&#x00A0;|</span><span 
+class="ectt-1095">&#x00A0;M500;</span><span 
+class="ectt-1095">&#x00A0;urlid=1;</span><span 
+class="ectt-1095">&#x00A0;netlocid=1;</span><span 
+class="ectt-1095">&#x00A0;http://www.shanghaidaily.com/</span></span></span>
+          <!--l. 198--><p class="noindent" >Crawler process 7352 got a URL (http://www.shanghaidaily.com/) to check
+          (1_wctest is a just a name non significant) M500 is a sequence number for an
+          individual crawler starting at 500 and when it reaches 0 this crawler process is
+          killed and another is created. urlid and netlocid are internal identifiers used in
+          the MySQL tables.
+          </li>
+          <li 
+  class="enumerate" id="x41-69056x3"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1095">|</span><span 
+class="ectt-1095">&#x00A0;7352</span><span 
+class="ectt-1095">&#x00A0;|</span><span 
+class="ectt-1095">&#x00A0;HARVPARS</span><span 
+class="ectt-1095">&#x00A0;1_wctest</span><span 
+class="ectt-1095">&#x00A0;|</span><span 
+class="ectt-1095">&#x00A0;2006-07-14</span><span 
+class="ectt-1095">&#x00A0;17:01:10</span><span 
+class="ectt-1095">&#x00A0;|</span><span 
+class="ectt-1095">&#x00A0;M500;</span><span 
+class="ectt-1095">&#x00A0;RobotRules</span><span 
+class="ectt-1095">&#x00A0;OK,</span><span 
+class="ectt-1095">&#x00A0;OK</span></span></span>
+          <!--l. 207--><p class="noindent" >Crawler process have checked that this URL (identified earlier in the log by
+          pid=7352 and M500) can be crawled according to the Robot Exclusion protocol.
+          </li>
+          <li 
+  class="enumerate" id="x41-69058x4"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1095">|</span><span 
+class="ectt-1095">&#x00A0;7352</span><span 
+class="ectt-1095">&#x00A0;|</span><span 
+class="ectt-1095">&#x00A0;HARVPARS</span><span 
+class="ectt-1095">&#x00A0;1_wctest</span><span 
+class="ectt-1095">&#x00A0;|</span><span 
+class="ectt-1095">&#x00A0;2006-07-14</span><span 
+class="ectt-1095">&#x00A0;17:01:10</span><span 
+class="ectt-1095">&#x00A0;|</span><span 
+class="ectt-1095">&#x00A0;M500;</span><span 
+class="ectt-1095">&#x00A0;HTTP(200</span><span 
+class="ectt-1095">&#x00A0;=</span><span 
+class="ectt-1095">&#x00A0;"OK")</span><span 
+class="ectt-1095">&#x00A0;</span><span 
+class="ectt-1095">&#x00A0;=&#x003E;</span><span 
+class="ectt-1095">&#x00A0;OK</span></span></span>
+          <!--l. 212--><p class="noindent" >It has fetched the page (identified earlier in the log by pid=7352 and M500) OK
+          </li>
+          <li 
+  class="enumerate" id="x41-69060x5"><span class="obeylines-h"><span class="verb"><span 
+class="ectt-1095">|</span><span 
+class="ectt-1095">&#x00A0;7352</span><span 
+class="ectt-1095">&#x00A0;|</span><span 
+class="ectt-1095">&#x00A0;HARVPARS</span><span 
+class="ectt-1095">&#x00A0;1_wctest</span><span 
+class="ectt-1095">&#x00A0;|</span><span 
+class="ectt-1095">&#x00A0;2006-07-14</span><span 
+class="ectt-1095">&#x00A0;17:01:10</span><span 
+class="ectt-1095">&#x00A0;|</span><span 
+class="ectt-1095">&#x00A0;M500;</span><span 
+class="ectt-1095">&#x00A0;Doing:</span><span 
+class="ectt-1095">&#x00A0;text/html;200;0F061033DAF69587170F8E285E950120;Not</span><span 
+class="ectt-1095">&#x00A0;used</span><span 
+class="ectt-1095">&#x00A0;|</span></span></span>
+          <!--l. 217--><p class="noindent" >It is processing the page (in the format text/html) to see if it is of topical interest
+          0F061033DAF69587170F8E285E950120 is the MD5 checksum of the page</li></ol>
+     </li>
+     <li 
+  class="enumerate" id="x41-69062x18">In fact, I want to know which crawled URLs are corresponding to the certain topic class
+     such as CP.Aldrovanda . Can you tell me how can I know ?
+     <!--l. 225--><p class="noindent" >You have to get into the raw MySQL database and perform a query like
+     <!--l. 227--><p class="noindent" >SELECT urls.urlstr FROM urls,recordurl,topic WHERE urls.urlid=recordurl.urlid AND
+     recordurl.recordid=topic.recordid AND topic.notation=&#8217;CP.Aldrovanda&#8217;;
+     <!--l. 230--><p class="noindent" >Table urls contain all URLs seen by the crawler. Table recordurl connect urlid to recordid.
+     recordid is used in all tables with data from the crawled Web pages.
+     </li>
+     <li 
+  class="enumerate" id="x41-69064x19">What is the meaning of the item "ALL" in the notation column of the topic
+     table?
+     <!--l. 236--><p class="noindent" >If you use multiple topics in your topic-definition (ie the string after &#8217;=&#8217;) then all
+     the relevant topic scores for this page is summed and given the topic notation
+     &#8217;ALL&#8217;.
+     <!--l. 240--><p class="noindent" >Just disregard it if you only use one topic-class.
+     </li>
+     <li 
+  class="enumerate" id="x41-69066x20">Combine should crawl all pages underneath <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1095">www.geocities.com/boulevard/newyork/</span></span></span>,
+     but not go outside the domain (i.e. going to <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1095">www.yahoo.com</span></span></span>) but also not going higher in
+     position (i.e. <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1095">www.geocities.com/boulevard/atlanta/</span></span></span>).<br 
+class="newline" />Is it possible to set up Combine like this?
+     <!--l. 249--><p class="noindent" >Yes, change the &#x003C;allow&#x003E;-part of your configuration file combine.cfg to select what URLs
+     should be allowed for crawling (by default everything is allowed). See also section
+     <a 
+href="DocMainse4.html#x19-280004.3">4.3<!--tex4ht:ref: urlfilt --></a>.
+     <!--l. 253--><p class="noindent" >So change<br 
+class="newline" />
+
+     <table 
+class="verbatim"><tr class="verbatim"><td 
+class="verbatim"><div class="verbatim">
+     &#x003C;allow&#x003E;
+     &#x00A0;<br />#Allow&#x00A0;crawl&#x00A0;of&#x00A0;URLs&#x00A0;or&#x00A0;hostnames&#x00A0;that&#x00A0;matches&#x00A0;these&#x00A0;regular&#x00A0;expressions
+     &#x00A0;<br />HOST:&#x00A0;.*$
+     &#x00A0;<br />&#x003C;/allow&#x003E;
+</div>
+     </td></tr></table>
+     <!--l. 259--><p class="nopar" > to something like
+
+     <table 
+class="verbatim"><tr class="verbatim"><td 
+class="verbatim"><div class="verbatim">
+     &#x003C;allow&#x003E;
+     &#x00A0;<br />#Allow&#x00A0;crawl&#x00A0;of&#x00A0;URLs&#x00A0;or&#x00A0;hostnames&#x00A0;that&#x00A0;matches&#x00A0;these&#x00A0;regular&#x00A0;expressions
+     &#x00A0;<br />URL&#x00A0;http:\/\/www\.geocities\.com\/boulevard\/newyork\/
+     &#x00A0;<br />&#x003C;/allow&#x003E;
+</div>
+     </td></tr></table>
+     <!--l. 267--><p class="nopar" >
+     <!--l. 269--><p class="noindent" >(the backslashes are needed since these patterns are in fact Perl regular expressions)
+     </li></ol>
+
+   <!--l. 2--><div class="crosslinks"><p class="noindent">[<a 
+href="DocMainse8.html" >front</a>] [<a 
+href="# "  >up</a>] </p></div>
+<!--l. 2--><p class="indent" >   <a 
+ id="tailDocMainse8.html"></a>  
+</body></html> 

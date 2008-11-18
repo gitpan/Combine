@@ -1,0 +1,471 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>Contents</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,2 --> 
+<meta name="src" content="DocMain.tex"> 
+<meta name="date" content="2008-11-18 10:12:00"> 
+<link rel="stylesheet" type="text/css" href="DocMain.css"> 
+</head><body 
+>
+   <!--l. 21--><div class="crosslinks"><p class="noindent">[<a 
+href="DocMainpa1.html" >next</a>] [<a 
+href="#tailDocMainli1.html">tail</a>] [<a 
+href="DocMain.html#DocMainli1.html" >up</a>] </p></div>
+   <h3 class="likesectionHead"><a 
+ id="x2-1000"></a>Contents</h3>
+   <div class="tableofcontents">
+   <span class="partToc" >I&#x00A0;&#x00A0;<a 
+href="DocMainpa1.html#x3-2000I">Overview</a></span>
+<br />   <span class="sectionToc" >1 <a 
+href="DocMainse1.html#x4-30001">Introduction</a></span>
+<br />   <span class="sectionToc" >2 <a 
+href="DocMainse2.html#x8-40002">Open source distribution, installation</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >2.1 <a 
+href="DocMainse2.html#x8-50002.1">Installation</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >2.1.1 <a 
+href="DocMainse2.html#x8-60002.1.1" id="QQ2-8-7">Installation from source for the impatient</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >2.1.2 <a 
+href="DocMainse2.html#x8-70002.1.2" id="QQ2-8-8">Porting to not supported operating systems - dependencies</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >2.1.3 <a 
+href="DocMainse2.html#x8-80002.1.3" id="QQ2-8-9">Automated Debian/Ubuntu installation</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >2.1.4 <a 
+href="DocMainse2.html#x8-90002.1.4" id="QQ2-8-10">Manual installation</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >2.1.5 <a 
+href="DocMainse2.html#x8-100002.1.5" id="QQ2-8-11">Out-of-the-box installation test</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >2.2 <a 
+href="DocMainse2.html#x8-110002.2">Getting started</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >2.3 <a 
+href="DocMainse2.html#x8-120002.3">Online documentation</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >2.4 <a 
+href="DocMainse2.html#x8-130002.4">Use scenarios</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >2.4.1 <a 
+href="DocMainse2.html#x8-140002.4.1" id="QQ2-8-15">General crawling without restrictions</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >2.4.2 <a 
+href="DocMainse2.html#x8-150002.4.2" id="QQ2-8-16">Focused crawling &#8211; domain restrictions</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >2.4.3 <a 
+href="DocMainse2.html#x8-160002.4.3" id="QQ2-8-17">Focused crawling &#8211; topic specific</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >2.4.4 <a 
+href="DocMainse2.html#x8-170002.4.4" id="QQ2-8-18">Focused crawling in an Alvis system</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >2.4.5 <a 
+href="DocMainse2.html#x8-180002.4.5" id="QQ2-8-19">Crawl one entire site and it&#8217;s outlinks</a></span>
+<br />   <span class="sectionToc" >3 <a 
+href="DocMainse3.html#x18-190003">Configuration</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >3.1 <a 
+href="DocMainse3.html#x18-200003.1">Configuration files</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >3.1.1 <a 
+href="DocMainse3.html#x18-210003.1.1" id="QQ2-18-22">Templates</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >3.1.2 <a 
+href="DocMainse3.html#x18-220003.1.2" id="QQ2-18-23">Global configuration files</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >3.1.3 <a 
+href="DocMainse3.html#x18-230003.1.3" id="QQ2-18-24">Job specific configuration files</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >3.1.4 <a 
+href="DocMainse3.html#x18-240003.1.4" id="QQ2-18-25">Details and default values</a></span>
+<br />   <span class="sectionToc" >4 <a 
+href="DocMainse4.html#x19-250004">Crawler internal operation</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.1 <a 
+href="DocMainse4.html#x19-260004.1">URL selection criteria</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.2 <a 
+href="DocMainse4.html#x19-270004.2">Document parsing and information extraction</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.3 <a 
+href="DocMainse4.html#x19-280004.3">URL filtering</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.4 <a 
+href="DocMainse4.html#x19-290004.4">Crawling strategy</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.5 <a 
+href="DocMainse4.html#x19-300004.5">Built-in topic filter &#8211; automated subject classification using string matching</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >4.5.1 <a 
+href="DocMainse4.html#x19-310004.5.1" id="QQ2-19-34">Topic definition</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >4.5.2 <a 
+href="DocMainse4.html#x19-320004.5.2" id="QQ2-19-35">Topic definition (term triplets) BNF grammar</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >4.5.3 <a 
+href="DocMainse4.html#x19-330004.5.3" id="QQ2-19-36">Term triplet examples</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >4.5.4 <a 
+href="DocMainse4.html#x19-340004.5.4" id="QQ2-19-37">Algorithm 1: plain matching</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >4.5.5 <a 
+href="DocMainse4.html#x19-350004.5.5" id="QQ2-19-38">Algorithm 2: position weighted matching</a></span>
+
+<br />   &#x00A0;<span class="subsectionToc" >4.6 <a 
+href="DocMainse4.html#x19-360004.6">Built-in topic filter &#8211; automated subject classification using SVM</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.7 <a 
+href="DocMainse4.html#x19-370004.7">Topic filter Plug-In API</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.8 <a 
+href="DocMainse4.html#x19-380004.8">Analysis</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.9 <a 
+href="DocMainse4.html#x19-390004.9">Duplicate detection</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.10 <a 
+href="DocMainse4.html#x19-400004.10">URL recycling</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.11 <a 
+href="DocMainse4.html#x19-410004.11">Database cleaning</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >4.12 <a 
+href="DocMainse4.html#x19-420004.12">Complete application &#8211; SearchEngine in a Box</a></span>
+<br />   <span class="sectionToc" >5 <a 
+href="DocMainse5.html#x31-430005">Evaluation of automated subject classification</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >5.1 <a 
+href="DocMainse5.html#x31-440005.1">Approaches to automated classification</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >5.1.1 <a 
+href="DocMainse5.html#x31-450005.1.1" id="QQ2-31-48">Description of the used string-matching algorithm</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >5.2 <a 
+href="DocMainse5.html#x31-460005.2">Evaluation methodology</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >5.2.1 <a 
+href="DocMainse5.html#x31-470005.2.1" id="QQ2-31-50">Evaluation challenge</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >5.2.2 <a 
+href="DocMainse5.html#x31-480005.2.2" id="QQ2-31-51">Evaluation measures used</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >5.2.3 <a 
+href="DocMainse5.html#x31-490005.2.3" id="QQ2-31-52">Data collection</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >5.3 <a 
+href="DocMainse5.html#x31-500005.3">Results</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >5.3.1 <a 
+href="DocMainse5.html#x31-510005.3.1" id="QQ2-31-54">The role of different thesauri terms</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >5.3.2 <a 
+href="DocMainse5.html#x31-520005.3.2" id="QQ2-31-55">Enriching the term list using natural language processing</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >5.3.3 <a 
+href="DocMainse5.html#x31-530005.3.3" id="QQ2-31-56">Importance of HTML structural elements and metadata</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >5.3.4 <a 
+href="DocMainse5.html#x31-540005.3.4" id="QQ2-31-57">Challenges and recommendations for classification of Web pages</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >5.3.5 <a 
+href="DocMainse5.html#x31-550005.3.5" id="QQ2-31-58">Comparing and combining two approaches</a></span>
+<br />   <span class="sectionToc" >6 <a 
+href="DocMainse6.html#x34-560006">Performance and scalability</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >6.1 <a 
+href="DocMainse6.html#x34-570006.1">Speed</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >6.2 <a 
+href="DocMainse6.html#x34-580006.2">Space</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >6.3 <a 
+href="DocMainse6.html#x34-590006.3">Crawling strategy</a></span>
+<br />   <span class="sectionToc" >7 <a 
+href="DocMainse7.html#x35-600007">System components</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.1 <a 
+href="DocMainse7.html#x35-610007.1">combineINIT</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.2 <a 
+href="DocMainse7.html#x35-620007.2">combineCtrl</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.3 <a 
+href="DocMainse7.html#x35-630007.3">combineUtil</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.4 <a 
+href="DocMainse7.html#x35-640007.4">combineExport</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >7.5 <a 
+href="DocMainse7.html#x35-650007.5">Internal executables and Library modules</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >7.5.1 <a 
+href="DocMainse7.html#x35-660007.5.1" id="QQ2-35-73">Library</a></span>
+<br />   <span class="partToc" >II&#x00A0;&#x00A0;<a 
+href="DocMainpa2.html#x40-68000II">Gory details</a></span>
+<br />   <span class="sectionToc" >8 <a 
+href="DocMainse8.html#x41-690008">Frequently asked questions</a></span>
+<br />   <span class="sectionToc" >9 <a 
+href="DocMainse9.html#x42-700009">Configuration variables</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >9.1 <a 
+href="DocMainse9.html#x42-710009.1">Name/value configuration variables</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.1 <a 
+href="DocMainse9.html#x42-720009.1.1" id="QQ2-42-79">analysePlugin</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.2 <a 
+href="DocMainse9.html#x42-730009.1.2" id="QQ2-42-80">AutoRecycleLinks</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.3 <a 
+href="DocMainse9.html#x42-740009.1.3" id="QQ2-42-81">baseConfigDir</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.4 <a 
+href="DocMainse9.html#x42-750009.1.4" id="QQ2-42-82">classifyPlugIn</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.5 <a 
+href="DocMainse9.html#x42-760009.1.5" id="QQ2-42-83">configDir</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.6 <a 
+href="DocMainse9.html#x42-770009.1.6" id="QQ2-42-84">doAnalyse</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.7 <a 
+href="DocMainse9.html#x42-780009.1.7" id="QQ2-42-85">doCheckRecord</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.8 <a 
+href="DocMainse9.html#x42-790009.1.8" id="QQ2-42-86">doOAI</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.9 <a 
+href="DocMainse9.html#x42-800009.1.9" id="QQ2-42-87">extractLinksFromText</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.10 <a 
+href="DocMainse9.html#x42-810009.1.10" id="QQ2-42-88">HarvesterMaxMissions</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.11 <a 
+href="DocMainse9.html#x42-820009.1.11" id="QQ2-42-89">HarvestRetries</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.12 <a 
+href="DocMainse9.html#x42-830009.1.12" id="QQ2-42-90">httpProxy</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.13 <a 
+href="DocMainse9.html#x42-840009.1.13" id="QQ2-42-91">LogHandle</a></span>
+
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.14 <a 
+href="DocMainse9.html#x42-850009.1.14" id="QQ2-42-92">Loglev</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.15 <a 
+href="DocMainse9.html#x42-860009.1.15" id="QQ2-42-93">maxUrlLength</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.16 <a 
+href="DocMainse9.html#x42-870009.1.16" id="QQ2-42-94">MySQLdatabase</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.17 <a 
+href="DocMainse9.html#x42-880009.1.17" id="QQ2-42-95">MySQLfulltext</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.18 <a 
+href="DocMainse9.html#x42-890009.1.18" id="QQ2-42-96">MySQLhandle</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.19 <a 
+href="DocMainse9.html#x42-900009.1.19" id="QQ2-42-97">Operator-Email</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.20 <a 
+href="DocMainse9.html#x42-910009.1.20" id="QQ2-42-98">Password</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.21 <a 
+href="DocMainse9.html#x42-920009.1.21" id="QQ2-42-99">relTextPlugin</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.22 <a 
+href="DocMainse9.html#x42-930009.1.22" id="QQ2-42-100">saveHTML</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.23 <a 
+href="DocMainse9.html#x42-940009.1.23" id="QQ2-42-101">SdqRetries</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.24 <a 
+href="DocMainse9.html#x42-950009.1.24" id="QQ2-42-102">SummaryLength</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.25 <a 
+href="DocMainse9.html#x42-960009.1.25" id="QQ2-42-103">SVMmodel</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.26 <a 
+href="DocMainse9.html#x42-970009.1.26" id="QQ2-42-104">UAtimeout</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.27 <a 
+href="DocMainse9.html#x42-980009.1.27" id="QQ2-42-105">UserAgentFollowRedirects</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.28 <a 
+href="DocMainse9.html#x42-990009.1.28" id="QQ2-42-106">UserAgentGetIfModifiedSince</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.29 <a 
+href="DocMainse9.html#x42-1000009.1.29" id="QQ2-42-107">useTidy</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.30 <a 
+href="DocMainse9.html#x42-1010009.1.30" id="QQ2-42-108">WaitIntervalExpirationGuaranteed</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.31 <a 
+href="DocMainse9.html#x42-1020009.1.31" id="QQ2-42-109">WaitIntervalHarvesterLockNotFound</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.32 <a 
+href="DocMainse9.html#x42-1030009.1.32" id="QQ2-42-110">WaitIntervalHarvesterLockNotModified</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.33 <a 
+href="DocMainse9.html#x42-1040009.1.33" id="QQ2-42-111">WaitIntervalHarvesterLockRobotRules</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.34 <a 
+href="DocMainse9.html#x42-1050009.1.34" id="QQ2-42-112">WaitIntervalHarvesterLockSuccess</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.35 <a 
+href="DocMainse9.html#x42-1060009.1.35" id="QQ2-42-113">WaitIntervalHarvesterLockUnavailable</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.36 <a 
+href="DocMainse9.html#x42-1070009.1.36" id="QQ2-42-114">WaitIntervalHost</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.37 <a 
+href="DocMainse9.html#x42-1080009.1.37" id="QQ2-42-115">WaitIntervalRrdLockDefault</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.38 <a 
+href="DocMainse9.html#x42-1090009.1.38" id="QQ2-42-116">WaitIntervalRrdLockNotFound</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.39 <a 
+href="DocMainse9.html#x42-1100009.1.39" id="QQ2-42-117">WaitIntervalRrdLockSuccess</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.40 <a 
+href="DocMainse9.html#x42-1110009.1.40" id="QQ2-42-118">WaitIntervalSchedulerGetJcf</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.1.41 <a 
+href="DocMainse9.html#x42-1120009.1.41" id="QQ2-42-119">ZebraHost</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >9.2 <a 
+href="DocMainse9.html#x42-1130009.2">Complex configuration variables</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.2.1 <a 
+href="DocMainse9.html#x42-1140009.2.1" id="QQ2-42-121">allow</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.2.2 <a 
+href="DocMainse9.html#x42-1150009.2.2" id="QQ2-42-122">binext</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.2.3 <a 
+href="DocMainse9.html#x42-1160009.2.3" id="QQ2-42-123">converters</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.2.4 <a 
+href="DocMainse9.html#x42-1170009.2.4" id="QQ2-42-124">exclude</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.2.5 <a 
+href="DocMainse9.html#x42-1180009.2.5" id="QQ2-42-125">serveralias</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.2.6 <a 
+href="DocMainse9.html#x42-1190009.2.6" id="QQ2-42-126">sessionids</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >9.2.7 <a 
+href="DocMainse9.html#x42-1200009.2.7" id="QQ2-42-127">url</a></span>
+<br />   <span class="sectionToc" >10 <a 
+href="DocMainse10.html#x43-12100010">Module dependences</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >10.1 <a 
+href="DocMainse10.html#x43-12200010.1">Programs</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.1 <a 
+href="DocMainse10.html#x43-12300010.1.1" id="QQ2-43-130">Check_record.pm.svn-base</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.2 <a 
+href="DocMainse10.html#x43-12400010.1.2" id="QQ2-43-131">CleanXML2CanDoc.pm.svn-base</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.3 <a 
+href="DocMainse10.html#x43-12500010.1.3" id="QQ2-43-132">Config.pm.svn-base</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.4 <a 
+href="DocMainse10.html#x43-12600010.1.4" id="QQ2-43-133">DataBase.pm.svn-base</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.5 <a 
+href="DocMainse10.html#x43-12700010.1.5" id="QQ2-43-134">FromHTML.pm.svn-base</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.6 <a 
+href="DocMainse10.html#x43-12800010.1.6" id="QQ2-43-135">FromImage.pm.svn-base</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.7 <a 
+href="DocMainse10.html#x43-12900010.1.7" id="QQ2-43-136">HTMLExtractor.pm.svn-base</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.8 <a 
+href="DocMainse10.html#x43-13000010.1.8" id="QQ2-43-137">LoadTermList.pm.svn-base</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.9 <a 
+href="DocMainse10.html#x43-13100010.1.9" id="QQ2-43-138">LogSQL.pm.svn-base</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.10 <a 
+href="DocMainse10.html#x43-13200010.1.10" id="QQ2-43-139">Matcher.pm.svn-base</a></span>
+
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.11 <a 
+href="DocMainse10.html#x43-13300010.1.11" id="QQ2-43-140">MySQLhdb.pm.svn-base</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.12 <a 
+href="DocMainse10.html#x43-13400010.1.12" id="QQ2-43-141">PosCheck_record.pm.svn-base</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.13 <a 
+href="DocMainse10.html#x43-13500010.1.13" id="QQ2-43-142">PosMatcher.pm.svn-base</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.14 <a 
+href="DocMainse10.html#x43-13600010.1.14" id="QQ2-43-143">RobotRules.pm.svn-base</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.15 <a 
+href="DocMainse10.html#x43-13700010.1.15" id="QQ2-43-144">SD_SQL.pm.svn-base</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.16 <a 
+href="DocMainse10.html#x43-13800010.1.16" id="QQ2-43-145">UA.pm.svn-base</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.17 <a 
+href="DocMainse10.html#x43-13900010.1.17" id="QQ2-43-146">XWI.pm.svn-base</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.18 <a 
+href="DocMainse10.html#x43-14000010.1.18" id="QQ2-43-147">XWI2XML.pm.svn-base</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.19 <a 
+href="DocMainse10.html#x43-14100010.1.19" id="QQ2-43-148">Zebra.pm.svn-base</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.20 <a 
+href="DocMainse10.html#x43-14200010.1.20" id="QQ2-43-149">classifySVM.pm.svn-base</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.21 <a 
+href="DocMainse10.html#x43-14300010.1.21" id="QQ2-43-150">combine</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.22 <a 
+href="DocMainse10.html#x43-14400010.1.22" id="QQ2-43-151">combine.svn-base</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.23 <a 
+href="DocMainse10.html#x43-14500010.1.23" id="QQ2-43-152">combineCtrl</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.24 <a 
+href="DocMainse10.html#x43-14600010.1.24" id="QQ2-43-153">combineCtrl.svn-base</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.25 <a 
+href="DocMainse10.html#x43-14700010.1.25" id="QQ2-43-154">combineExport</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.26 <a 
+href="DocMainse10.html#x43-14800010.1.26" id="QQ2-43-155">combineExport.svn-base</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.27 <a 
+href="DocMainse10.html#x43-14900010.1.27" id="QQ2-43-156">combineINIT</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.28 <a 
+href="DocMainse10.html#x43-15000010.1.28" id="QQ2-43-157">combineINIT.svn-base</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.29 <a 
+href="DocMainse10.html#x43-15100010.1.29" id="QQ2-43-158">combineRank</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.30 <a 
+href="DocMainse10.html#x43-15200010.1.30" id="QQ2-43-159">combineRank.svn-base</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.31 <a 
+href="DocMainse10.html#x43-15300010.1.31" id="QQ2-43-160">combineReClassify</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.32 <a 
+href="DocMainse10.html#x43-15400010.1.32" id="QQ2-43-161">combineReClassify.svn-base</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.33 <a 
+href="DocMainse10.html#x43-15500010.1.33" id="QQ2-43-162">combineSVM</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.34 <a 
+href="DocMainse10.html#x43-15600010.1.34" id="QQ2-43-163">combineSVM.svn-base</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.35 <a 
+href="DocMainse10.html#x43-15700010.1.35" id="QQ2-43-164">combineUtil</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.36 <a 
+href="DocMainse10.html#x43-15800010.1.36" id="QQ2-43-165">combineUtil.svn-base</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.37 <a 
+href="DocMainse10.html#x43-15900010.1.37" id="QQ2-43-166">selurl.pm.svn-base</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.1.38 <a 
+href="DocMainse10.html#x43-16000010.1.38" id="QQ2-43-167">utilPlugIn.pm.svn-base</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >10.2 <a 
+href="DocMainse10.html#x43-16100010.2">Library modules</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.2.1 <a 
+href="DocMainse10.html#x43-16200010.2.1" id="QQ2-43-169">Check_record.pm</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.2.2 <a 
+href="DocMainse10.html#x43-16300010.2.2" id="QQ2-43-170">CleanXML2CanDoc.pm</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.2.3 <a 
+href="DocMainse10.html#x43-16400010.2.3" id="QQ2-43-171">Config.pm</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.2.4 <a 
+href="DocMainse10.html#x43-16500010.2.4" id="QQ2-43-172">DataBase.pm</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.2.5 <a 
+href="DocMainse10.html#x43-16600010.2.5" id="QQ2-43-173">FromHTML.pm</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.2.6 <a 
+href="DocMainse10.html#x43-16700010.2.6" id="QQ2-43-174">FromImage.pm</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.2.7 <a 
+href="DocMainse10.html#x43-16800010.2.7" id="QQ2-43-175">HTMLExtractor.pm</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.2.8 <a 
+href="DocMainse10.html#x43-16900010.2.8" id="QQ2-43-176">LoadTermList.pm</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.2.9 <a 
+href="DocMainse10.html#x43-17000010.2.9" id="QQ2-43-177">LogSQL.pm</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.2.10 <a 
+href="DocMainse10.html#x43-17100010.2.10" id="QQ2-43-178">Matcher.pm</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.2.11 <a 
+href="DocMainse10.html#x43-17200010.2.11" id="QQ2-43-179">MySQLhdb.pm</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.2.12 <a 
+href="DocMainse10.html#x43-17300010.2.12" id="QQ2-43-180">PosCheck_record.pm</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.2.13 <a 
+href="DocMainse10.html#x43-17400010.2.13" id="QQ2-43-181">PosMatcher.pm</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.2.14 <a 
+href="DocMainse10.html#x43-17500010.2.14" id="QQ2-43-182">RobotRules.pm</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.2.15 <a 
+href="DocMainse10.html#x43-17600010.2.15" id="QQ2-43-183">SD_SQL.pm</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.2.16 <a 
+href="DocMainse10.html#x43-17700010.2.16" id="QQ2-43-184">UA.pm</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.2.17 <a 
+href="DocMainse10.html#x43-17800010.2.17" id="QQ2-43-185">XWI.pm</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.2.18 <a 
+href="DocMainse10.html#x43-17900010.2.18" id="QQ2-43-186">XWI2XML.pm</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.2.19 <a 
+href="DocMainse10.html#x43-18000010.2.19" id="QQ2-43-187">Zebra.pm</a></span>
+
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.2.20 <a 
+href="DocMainse10.html#x43-18100010.2.20" id="QQ2-43-188">classifySVM.pm</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.2.21 <a 
+href="DocMainse10.html#x43-18200010.2.21" id="QQ2-43-189">selurl.pm</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >10.2.22 <a 
+href="DocMainse10.html#x43-18300010.2.22" id="QQ2-43-190">utilPlugIn.pm</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >10.3 <a 
+href="DocMainse10.html#x43-18400010.3">External modules</a></span>
+<br />   <span class="partToc" >III&#x00A0;&#x00A0;<a 
+href="DocMainpa3.html#x44-185000III"> </a></span>
+<br />   <span class="sectionToc" >A <a 
+href="DocMainse11.html#x45-186000A">APPENDIX</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >A.1 <a 
+href="DocMainse11.html#x45-187000A.1">Simple installation test</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.1.1 <a 
+href="DocMainse11.html#x45-188000A.1.1" id="QQ2-45-195">InstallationTest.pl</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >A.2 <a 
+href="DocMainse11.html#x45-189000A.2">Example topic filter plug in</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.2.1 <a 
+href="DocMainse11.html#x45-190000A.2.1" id="QQ2-45-197">classifyPlugInTemplate.pm</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >A.3 <a 
+href="DocMainse11.html#x45-191000A.3">Default configuration files</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.3.1 <a 
+href="DocMainse11.html#x45-192000A.3.1" id="QQ2-45-199">Global</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.3.2 <a 
+href="DocMainse11.html#x45-193000A.3.2" id="QQ2-45-200">Job specific</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >A.4 <a 
+href="DocMainse11.html#x45-194000A.4">SQL database</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.4.1 <a 
+href="DocMainse11.html#x45-195000A.4.1" id="QQ2-45-202">Create database</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.4.2 <a 
+href="DocMainse11.html#x45-196000A.4.2" id="QQ2-45-203">Creating MySQL tables</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.4.3 <a 
+href="DocMainse11.html#x45-197000A.4.3" id="QQ2-45-204">Data tables</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.4.4 <a 
+href="DocMainse11.html#x45-198000A.4.4" id="QQ2-45-205">Administrative tables</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.4.5 <a 
+href="DocMainse11.html#x45-199000A.4.5" id="QQ2-45-206">Create user dbuser with required priviligies</a></span>
+<br />   &#x00A0;<span class="subsectionToc" >A.5 <a 
+href="DocMainse11.html#x45-200000A.5">Manual pages</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.1 <a 
+href="DocMainse11.html#x45-201000A.5.1" id="QQ2-45-208">combineExport</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.2 <a 
+href="DocMainse11.html#x45-210000A.5.2" id="QQ2-45-217">combineCtrl</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.3 <a 
+href="DocMainse11.html#x45-223000A.5.3" id="QQ2-45-230">combine</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.4 <a 
+href="DocMainse11.html#x45-231000A.5.4" id="QQ2-45-238">combineUtil</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.5 <a 
+href="DocMainse11.html#x45-245000A.5.5" id="QQ2-45-252">combineRank</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.6 <a 
+href="DocMainse11.html#x45-256000A.5.6" id="QQ2-45-263">combineSVM</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.7 <a 
+href="DocMainse11.html#x45-264000A.5.7" id="QQ2-45-271">combineReClassify</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.8 <a 
+href="DocMainse11.html#x45-266000A.5.8" id="QQ2-45-273">combineRun</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.9 <a 
+href="DocMainse11.html#x45-273000A.5.9" id="QQ2-45-280">Combine::RobotRules</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.10 <a 
+href="DocMainse11.html#x45-276000A.5.10" id="QQ2-45-283">Combine::Matcher</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.11 <a 
+href="DocMainse11.html#x45-281000A.5.11" id="QQ2-45-288">Combine::FromTeX</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.12 <a 
+href="DocMainse11.html#x45-284000A.5.12" id="QQ2-45-291">Combine::utilPlugIn</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.13 <a 
+href="DocMainse11.html#x45-289000A.5.13" id="QQ2-45-296">Combine::LoadTermList</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.14 <a 
+href="DocMainse11.html#x45-294000A.5.14" id="QQ2-45-301">Combine::SD_SQL</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.15 <a 
+href="DocMainse11.html#x45-299000A.5.15" id="QQ2-45-306">Combine::HTMLExtractor</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.16 <a 
+href="DocMainse11.html#x45-304000A.5.16" id="QQ2-45-311">Combine::XWI</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.17 <a 
+href="DocMainse11.html#x45-325000A.5.17" id="QQ2-45-332">Combine::FromHTML</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.18 <a 
+href="DocMainse11.html#x45-328000A.5.18" id="QQ2-45-335">Combine::classifySVM</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.19 <a 
+href="DocMainse11.html#x45-333000A.5.19" id="QQ2-45-340">Combine::selurl</a></span>
+<br />   &#x00A0;&#x00A0;<span class="subsubsectionToc" >A.5.20 <a 
+href="DocMainse11.html#x45-337000A.5.20" id="QQ2-45-344">Combine::PosMatcher</a></span>
+   </div>
+<!--l. 23--><p class="indent" >
+
+
+   <!--l. 25--><div class="crosslinks"><p class="noindent">[<a 
+href="DocMainpa1.html" >next</a>] [<a 
+href="DocMainli1.html" >front</a>] [<a 
+href="DocMain.html#DocMainli1.html" >up</a>] </p></div>
+<!--l. 25--><p class="indent" >   <a 
+ id="tailDocMainli1.html"></a>  
+</body></html> 

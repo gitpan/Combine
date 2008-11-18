@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"  
+  "http://www.w3.org/TR/html4/loose.dtd">  
+<html > 
+<head><title>System components</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> 
+<meta name="generator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
+<!-- html,2 --> 
+<meta name="src" content="DocMain.tex"> 
+<meta name="date" content="2008-11-18 10:12:00"> 
+<link rel="stylesheet" type="text/css" href="DocMain.css"> 
+</head><body 
+>
+   <!--l. 1--><div class="crosslinks"><p class="noindent">[<a 
+href="DocMainse6.html" >prev</a>] [<a 
+href="DocMainse6.html#tailDocMainse6.html" >prev-tail</a>] [<a 
+href="#tailDocMainse7.html">tail</a>] [<a 
+href="DocMainpa1.html# " >up</a>] </p></div>
+   <h3 class="sectionHead"><span class="titlemark">7   </span> <a 
+ id="x35-600007"></a>System components</h3>
+<!--l. 3--><p class="noindent" >All executables take a mandatory switch <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1095">--jobname</span></span></span> which is used to identify the particular crawl
+job you want as well as the job-specific configuration directory.
+<!--l. 7--><p class="indent" >   Briefly <span 
+class="ectt-1095">combineINIT </span>is used to initialize SQL database and the job specific configuration
+directory. <span 
+class="ectt-1095">combineCtrl </span>controls a Combine crawling job (start, stop, etc.) as well as printing
+some statistics. <span 
+class="ectt-1095">combineExport </span>exports records in various XML formats and <span 
+class="ectt-1095">combineUtil</span>
+provides various utility operations on the Combine database.
+<!--l. 12--><p class="indent" >   Detailed dependency information (section <a 
+href="DocMainse10.html#x43-12100010">10<!--tex4ht:ref: moddep --></a>) can be found in the &#8217;Gory details&#8217;
+section.
+<!--l. 15--><p class="indent" >   In appendix (<a 
+href="DocMainse11.html#x45-200000A.5">A.5<!--tex4ht:ref: manpages --></a>) you&#8217;ll find all the man-pages collected.
+<!--l. 18--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">7.1   </span> <a 
+ id="x35-610007.1"></a>combineINIT</h4>
+<!--l. 19--><p class="noindent" >Creates a MySQL database, database tables and initializes it. If the database exists it is dropped
+and recreated. A job-specific configuration directory is created in <span 
+class="ectt-1095">/etc/combine/ </span>and populated
+with a default configuration file.
+<!--l. 21--><p class="indent" >   If a topic definition filename is given, focused crawling using this topic defintion is enabled
+per default. Otherwise focused crawling is disabled, and Combine works as a general
+crawler.
+<!--l. 23--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">7.2   </span> <a 
+ id="x35-620007.2"></a>combineCtrl</h4>
+<!--l. 25--><p class="noindent" >Implements various control functionality to administer a crawling job, like starting and
+stopping crawlers, injecting URLs into the crawl queue, scheduling newly found links for
+crawling, controlling scheduling, etc. This is the preferred way of controling a crawl
+job.
+<!--l. 28--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">7.3   </span> <a 
+ id="x35-630007.3"></a>combineUtil</h4>
+<!--l. 29--><p class="noindent" >Implements a number of utilities both for extracting information:
+     <ul class="itemize1">
+     <li class="itemize">Global statistics about the database
+     </li>
+     <li class="itemize">matched terms from topic definition
+     </li>
+     <li class="itemize">topic classes assigned to documents</li></ul>
+
+<!--l. 37--><p class="noindent" >and for database maintenance:
+     <ul class="itemize1">
+     <li class="itemize">sanity check and restoration
+     </li>
+     <li class="itemize">deleting records specified by either Web-server, URL path, MD5 checksum, or internal
+     record identifier
+     </li>
+     <li class="itemize">server alias detection and managing</li></ul>
+<!--l. 45--><p class="noindent" >
+   <h4 class="subsectionHead"><span class="titlemark">7.4   </span> <a 
+ id="x35-640007.4"></a>combineExport</h4>
+<!--l. 46--><p class="noindent" >Export of structured records is done according to one of three profiles: <span 
+class="ectt-1095">alvis</span>, <span 
+class="ectt-1095">dc</span>, or <span 
+class="ectt-1095">combine</span>.
+<span 
+class="ectt-1095">alvis </span>and <span 
+class="ectt-1095">combine </span>are very similar XML formats where <span 
+class="ectt-1095">combine </span>is more compact with less
+redundancy and <span 
+class="ectt-1095">alvis </span>contains some more information. <span 
+class="ectt-1095">dc </span>is XML-encoded Dublin Core
+data.
+<!--l. 53--><p class="indent" >   The <span 
+class="ectt-1095">alvis </span>profile format is defined by the Alvis Enriched Document XML
+Schema<span class="footnote-mark"><a 
+href="DocMain36.html#fn26x0"><sup class="textsuperscript">26</sup></a></span><a 
+ id="x35-64001f26"></a>.
+<!--l. 55--><p class="indent" >   For flexibility a switch <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1095">--xsltscript</span></span></span> adds the possibility to filter the output using a XSLT
+script. The script is fed a record according to the <span 
+class="ectt-1095">combine </span>profile and the result is
+exported.
+<!--l. 60--><p class="indent" >   Switches <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1095">--pipehost</span></span></span> and <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1095">--pipeport</span></span></span> makes combineExport send it&#8217;s output directly to an
+Alvis<span class="footnote-mark"><a 
+href="DocMain37.html#fn27x0"><sup class="textsuperscript">27</sup></a></span><a 
+ id="x35-64002f27"></a>
+pipeline reader instead of printing on stdout. This together with the switch <span class="obeylines-h"><span class="verb"><span 
+class="ectt-1095">--incremental</span></span></span>, which just
+exports changes since the last invocation, provides an easy way of keeping an external system like Alvis
+or a Zebra<span class="footnote-mark"><a 
+href="DocMain38.html#fn28x0"><sup class="textsuperscript">28</sup></a></span><a 
+ id="x35-64003f28"></a>
+database updated.
+   <h4 class="subsectionHead"><span class="titlemark">7.5   </span> <a 
+ id="x35-650007.5"></a>Internal executables and Library modules</h4>
+<!--l. 67--><p class="noindent" ><span 
+class="ectt-1095">combine </span>is the main crawling machine in the Combine system and <span 
+class="ectt-1095">combineRun </span>starts, monitors
+and restarts <span 
+class="ectt-1095">combine </span>crawling processes.
+<!--l. 72--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">7.5.1   </span> <a 
+ id="x35-660007.5.1"></a>Library</h5>
+<!--l. 74--><p class="noindent" >Main, crawler-specific, library components are collected in the <span 
+class="ectt-1095">Combine:: </span>Perl name-space.
+
+   <!--l. 1--><div class="crosslinks"><p class="noindent">[<a 
+href="DocMainse6.html" >prev</a>] [<a 
+href="DocMainse6.html#tailDocMainse6.html" >prev-tail</a>] [<a 
+href="DocMainse7.html" >front</a>] [<a 
+href="DocMainpa1.html# " >up</a>] </p></div>
+<!--l. 1--><p class="indent" >   <a 
+ id="tailDocMainse7.html"></a>    
+</body></html> 

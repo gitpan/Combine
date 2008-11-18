@@ -1,3 +1,11 @@
+combine (3.12) intrepid; urgency=low
+
+  * Added code for simple Lucene integration to templates directory.
+    Contributed by Xianghang Liu
+  * Changed documentation HTML-generator to ht4tex
+
+ -- Anders Ardo <anders@eit.lth.se>  Sun, 16 Nov 2008 18:19:21 +0100
+
 combine (3.11) intrepid; urgency=low
 
   * Added switches 'collapseinlinks' and 'nooutlinks' to combineExport
@@ -9,8 +17,9 @@ combine (3.11) intrepid; urgency=low
     configured Zebra server with exported records
   * Improved indexing of PDF documents
   * Handled case when $md5 empty in DeleteKey
+  * Fixed bug in Zebra recordId handling
 
- -- Anders Ardo <anders@dbkit10.eit.lth.se>  Sat, 08 Nov 2008 09:56:01 +0100
+ -- Anders Ardo <anders@eit.lth.se>  Sun, 09 Nov 2008 17:18:10 +0100
 
 combine (3.10) sarge; urgency=low
 
