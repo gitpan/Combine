@@ -2,7 +2,7 @@
 # Exports records from AlvisCombine SQL database in XML-format
 # Takes switches
 
-## $Id: combineExport 296 2008-11-16 17:30:04Z it-aar $
+## $Id: combineExport 301 2008-12-08 13:56:45Z it-aar $
 
 # Copyright (c) 2004-2005 Anders Ardö
 # 
@@ -28,6 +28,7 @@ my $verbose;
 my $collapseinlinks;
 my $nooutlinks;
 my $ZebraIndex;
+my $SolrIndex;
 
 use strict;
 use Combine::MySQLhdb;
@@ -48,7 +49,8 @@ GetOptions('configfile:s' => \$configfile, 'database|sql:s' => \$dbase,
 	   'pipehost:s' => \$pipehost, 'pipeport:i' => \$pipeport,
            'incremental' => \$incremental, 'xsltscript:s' => \$xsltScript,
            'verbose' => \$verbose, 'collapseinlinks' => \$collapseinlinks,
-           'nooutlinks' => \$nooutlinks, 'ZebraIndex' => \$ZebraIndex
+           'nooutlinks' => \$nooutlinks, 'ZebraIndex' => \$ZebraIndex,
+           'SolrIndex' => \$SolrIndex
 	   );
 if ($help) { Getopt::Long::HelpMessage('See man page combineExport'); }
 if (defined($jobname)) { Combine::Config::Init($jobname, $baseConfig); }
@@ -61,6 +63,12 @@ my $baseConfig = Combine::Config::Get('baseConfigDir') . '/'; #'/etc/combine/';
 
 if (defined($ZebraIndex)) {
   warn "Using default Zebra configuration: profile=combine, nooutlinks, collapseinlinks";
+  $profile='combine';
+  $collapseinlinks=1;
+  $nooutlinks=1;
+}
+if (defined($SolrIndex)) {
+  warn "Using default Solr configuration: profile=combine, nooutlinks, collapseinlinks converted by /etc/combine/solr.xsl";
   $profile='combine';
   $collapseinlinks=1;
   $nooutlinks=1;
@@ -191,6 +199,10 @@ while ( my ($recordid,$recordmd5,$status)=$sth->fetchrow_array) {
       require Combine::Zebra;
       my $xwi = Combine::MySQLhdb::Get($recordid);
       Combine::Zebra::update($zh,$xwi);
+    } elsif ( ($SolrIndex) && (my $sh = Combine::Config::Get('SolrHost')) ) {
+      require Combine::Solr;
+      my $xwi = Combine::MySQLhdb::Get($recordid);
+      Combine::Solr::update($sh,$xwi);
     } elsif ($charset eq 'UTF-8') {
         $rec = toXML($recordid, $includeHTML, $canonicalDoc);
     } elsif  ($charset eq 'LATIN1') {
@@ -287,6 +299,15 @@ configuration variable 'ZebraHost'.
 It uses the default Zebra configuration: profile=combine, nooutlinks, collapseinlinks
 and is compatible with the direct Zebra indexing done during harvesting when
 'ZebraHost' is defined in the Combine configuration. Requires that the Zebra server
+is running.
+ 
+=item --SolrIndex
+
+SolrIndex sends XML records directly to the Solr server defined in Combine
+configuration variable 'SolrHost'.
+It uses the default Solr configuration: profile=combine, nooutlinks, collapseinlinks
+and is compatible with the direct Solr indexing done during harvesting when
+'SolrHost' is defined in the Combine configuration. Requires that the Solr server
 is running.
  
 =item --xsltscript

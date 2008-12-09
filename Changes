@@ -1,3 +1,12 @@
+combine (4.001) intrepid; urgency=low
+
+  * New version numbering compatible with CPAN
+  * Integration with Solr enterprise search server (http://lucene.apache.org/solr/)
+    similar to Zebra: new module Solr.pm, configuration variable SolrHost,
+    switch SolrIndexing in combineExport
+
+ -- Anders Ardo <anders@eit.lth.se>  Mon, 8 Dec 2008 14:55:21 +0100
+
 combine (3.12) intrepid; urgency=low
 
   * Added code for simple Lucene integration to templates directory.

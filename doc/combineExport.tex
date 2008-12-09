@@ -59,6 +59,16 @@ and is compatible with the direct Zebra indexing done during harvesting when
 is running.
 
 
+\item[{--SolrIndex}] \mbox{}
+
+SolrIndex sends XML records directly to the Solr server defined in Combine
+configuration variable 'SolrHost'.
+It uses the default Solr configuration: profile=combine, nooutlinks, collapseinlinks
+and is compatible with the direct Solr indexing done during harvesting when
+'SolrHost' is defined in the Combine configuration. Requires that the Solr server
+is running.
+
+
 \item[{--xsltscript}] \mbox{}
 
 Generates records in Combine native format and converts them using this XSLT script

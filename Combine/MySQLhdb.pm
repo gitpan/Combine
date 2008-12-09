@@ -203,6 +203,10 @@ sub Write {
     if (Combine::Config::Get('MySQLfulltext')) {
       $sv->prepare("REPLACE INTO search VALUES (?, ?)")->execute($recordid, Encode::encode('utf8',$title .' '. $ip));
     }
+    if (my $sh = Combine::Config::Get('SolrHost')) {
+      require Combine::Solr;
+      Combine::Solr::update($sh,$xwi);
+    }
 }
 
 sub Delete { #Used??
@@ -230,6 +234,10 @@ sub DeleteKey {
       require Combine::Zebra;
 #Not needed: if ($md5 eq '') { ($md5)=$sv->selectrow_array('SELECT md5 FROM recordurl WHERE recordid=$key'); }
       Combine::Zebra::delete($zh, $md5, $key);
+    }
+    if (my $sh = Combine::Config::Get('SolrHost')) {
+      require Combine::Solr;
+      Combine::Solr::delete($sh, $md5, $key);
     }
 
 #print "MySQLhdb::DeleteKey $key\n";

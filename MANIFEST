@@ -17,6 +17,7 @@ Combine/PosMatcher.pm
 Combine/RobotRules.pm
 Combine/SD_SQL.pm
 Combine/selurl.pm
+Combine/Solr.pm
 Combine/UA.pm
 Combine/utilPlugIn.pm
 Combine/WP7Canonical.pm
@@ -36,6 +37,7 @@ conf/combine2alvis.xsl
 conf/combine2dc.xsl
 conf/default.cfg
 conf/job_default.cfg
+conf/solr.xsl
 conf/SQLstruct.sql
 conf/tidy.cfg
 conf/Topic_carnivor.txt

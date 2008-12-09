@@ -7,7 +7,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
 <!-- html,2 --> 
 <meta name="src" content="DocMain.tex"> 
-<meta name="date" content="2008-11-18 10:12:00"> 
+<meta name="date" content="2008-12-09 09:30:00"> 
 <link rel="stylesheet" type="text/css" href="DocMain.css"> 
 </head><body 
 >
@@ -15,10 +15,10 @@
 href="#tailDocMainse11.html">tail</a>] [<a 
 href="# "  >up</a>] </p></div>
    <h3 class="sectionHead"><span class="titlemark">A   </span> <a 
- id="x45-186000A"></a>APPENDIX</h3>
+ id="x45-189000A"></a>APPENDIX</h3>
 <!--l. 1--><p class="noindent" >
    <h4 class="subsectionHead"><span class="titlemark">A.1   </span> <a 
- id="x45-187000A.1"></a>Simple installation test</h4>
+ id="x45-190000A.1"></a>Simple installation test</h4>
 <!--l. 4--><p class="noindent" >The following simple script is available in the <span 
 class="ectt-1095">doc/InstallationTest.pl </span>file. It must be run as
 &#8217;root&#8217; and tests that basic functions of the Combine installation works.
@@ -27,7 +27,7 @@ exports it as XML. This XML is then compared to a correct XML-record for that
 page.
 <!--l. 12--><p class="noindent" >
    <h5 class="subsubsectionHead"><span class="titlemark">A.1.1   </span> <a 
- id="x45-188000A.1.1"></a>InstallationTest.pl</h5>
+ id="x45-191000A.1.1"></a>InstallationTest.pl</h5>
 
    <table 
 class="verbatim"><tr class="verbatim"><td 
@@ -154,11 +154,11 @@ use&#x00A0;strict;
 </td></tr></table>
 <!--l. 130--><p class="nopar" >
    <h4 class="subsectionHead"><span class="titlemark">A.2   </span> <a 
- id="x45-189000A.2"></a>Example topic filter plug in</h4>
+ id="x45-192000A.2"></a>Example topic filter plug in</h4>
 <!--l. 4--><p class="noindent" >This example gives more details on how to write a topic filter Plug-In.
 <!--l. 7--><p class="noindent" >
    <h5 class="subsubsectionHead"><span class="titlemark">A.2.1   </span> <a 
- id="x45-190000A.2.1"></a>classifyPlugInTemplate.pm</h5>
+ id="x45-193000A.2.1"></a>classifyPlugInTemplate.pm</h5>
 
    <table 
 class="verbatim"><tr class="verbatim"><td 
@@ -245,10 +245,10 @@ class="verbatim"><div class="verbatim">
 </td></tr></table>
 <!--l. 86--><p class="nopar" >
    <h4 class="subsectionHead"><span class="titlemark">A.3   </span> <a 
- id="x45-191000A.3"></a>Default configuration files</h4>
+ id="x45-194000A.3"></a>Default configuration files</h4>
 <!--l. 4--><p class="noindent" >
    <h5 class="subsubsectionHead"><span class="titlemark">A.3.1   </span> <a 
- id="x45-192000A.3.1"></a>Global</h5>
+ id="x45-195000A.3.1"></a>Global</h5>
 
    <table 
 class="verbatim"><tr class="verbatim"><td 
@@ -258,6 +258,10 @@ class="verbatim"><div class="verbatim">
 &#x00A0;<br />#Direct&#x00A0;connection&#x00A0;to&#x00A0;Zebra&#x00A0;indexing&#x00A0;-&#x00A0;for&#x00A0;SearchEngine-in-a-box&#x00A0;(default&#x00A0;no&#x00A0;connection)
 &#x00A0;<br />#@#ZebraHost&#x00A0;=&#x00A0;NoDefaultValue
 &#x00A0;<br />ZebraHost&#x00A0;=
+&#x00A0;<br />
+&#x00A0;<br />#Direct&#x00A0;connection&#x00A0;to&#x00A0;Solr&#x00A0;indexing
+&#x00A0;<br />#@#SolrHost&#x00A0;=&#x00A0;NoDefaultValue
+&#x00A0;<br />SolrHost&#x00A0;=
 &#x00A0;<br />
 &#x00A0;<br />#Enable(1)/disable(0)&#x00A0;fulltext-index&#x00A0;in&#x00A0;MySQL&#x00A0;table&#x00A0;search
 &#x00A0;<br />MySQLfulltext&#x00A0;=&#x00A0;0
@@ -294,11 +298,11 @@ class="verbatim"><div class="verbatim">
 &#x00A0;<br />
 &#x00A0;<br />#Use(1)/do&#x00A0;not&#x00A0;use(0)&#x00A0;OAI&#x00A0;record&#x00A0;status&#x00A0;keeping&#x00A0;in&#x00A0;SQL&#x00A0;database
 &#x00A0;<br />doOAI&#x00A0;=&#x00A0;1
+
 &#x00A0;<br />
 &#x00A0;<br />#Extract(1)/do&#x00A0;not&#x00A0;extract(0)&#x00A0;links&#x00A0;from&#x00A0;plain&#x00A0;text
 &#x00A0;<br />extractLinksFromText&#x00A0;=&#x00A0;1
 &#x00A0;<br />
-
 &#x00A0;<br />#Enable(1)/disable(0)&#x00A0;topic&#x00A0;classification&#x00A0;(focused&#x00A0;crawling)
 &#x00A0;<br />#Generated&#x00A0;by&#x00A0;combineINIT&#x00A0;based&#x00A0;on&#x00A0;--topic&#x00A0;parameter
 &#x00A0;<br />doCheckRecord&#x00A0;=&#x00A0;0
@@ -343,11 +347,11 @@ class="verbatim"><div class="verbatim">
 &#x00A0;<br />WaitIntervalHarvesterLockNotModified&#x00A0;=&#x00A0;2592000
 &#x00A0;<br />WaitIntervalHarvesterLockRobotRules&#x00A0;=&#x00A0;2592000
 &#x00A0;<br />WaitIntervalHarvesterLockUnavailable&#x00A0;=&#x00A0;86400
+
 &#x00A0;<br />WaitIntervalRrdLockDefault&#x00A0;=&#x00A0;86400
 &#x00A0;<br />WaitIntervalRrdLockNotFound&#x00A0;=&#x00A0;345600
 &#x00A0;<br />WaitIntervalRrdLockSuccess&#x00A0;=&#x00A0;345600
 &#x00A0;<br />
-
 &#x00A0;<br />#Time&#x00A0;in&#x00A0;seconds&#x00A0;after&#x00A0;succesfull&#x00A0;download&#x00A0;before&#x00A0;allowing&#x00A0;a&#x00A0;page&#x00A0;to&#x00A0;be&#x00A0;downloaded&#x00A0;again&#x00A0;(around&#x00A0;11&#x00A0;days)
 &#x00A0;<br />WaitIntervalHarvesterLockSuccess&#x00A0;=&#x00A0;1000000
 &#x00A0;<br />
@@ -392,11 +396,11 @@ class="verbatim"><div class="verbatim">
 &#x00A0;<br />psd
 &#x00A0;<br />ram
 &#x00A0;<br />rar
+
 &#x00A0;<br />raw
 &#x00A0;<br />rmd
 &#x00A0;<br />rmx
 &#x00A0;<br />sav
-
 &#x00A0;<br />sdd
 &#x00A0;<br />shar
 &#x00A0;<br />tar
@@ -441,11 +445,11 @@ class="verbatim"><div class="verbatim">
 &#x00A0;<br />application/pdf&#x00A0;;&#x00A0;pstotext&#x00A0;;&#x00A0;Text
 &#x00A0;<br />application/postscript&#x00A0;;&#x00A0;pstotext&#x00A0;;&#x00A0;Text
 &#x00A0;<br />application/msword&#x00A0;;&#x00A0;antiword&#x00A0;-t&#x00A0;;&#x00A0;Text
+
 &#x00A0;<br />application/vnd.ms-excel&#x00A0;;&#x00A0;xlhtml&#x00A0;-fw&#x00A0;;&#x00A0;HTML
 &#x00A0;<br />application/vnd.ms-powerpoint&#x00A0;;&#x00A0;ppthtml&#x00A0;;&#x00A0;HTML
 &#x00A0;<br />application/rtf&#x00A0;;&#x00A0;unrtf&#x00A0;--nopict&#x00A0;--html&#x00A0;;&#x00A0;HTML
 &#x00A0;<br />image/gif&#x00A0;;&#x00A0;;&#x00A0;Image
-
 &#x00A0;<br />image/jpeg&#x00A0;;&#x00A0;;&#x00A0;Image
 &#x00A0;<br />image/tiff&#x00A0;;&#x00A0;;&#x00A0;Image
 &#x00A0;<br />&#x003C;/converters&#x003E;
@@ -460,9 +464,9 @@ class="verbatim"><div class="verbatim">
 &#x00A0;<br />&#x003C;/url&#x003E;
 </div>
 </td></tr></table>
-<!--l. 208--><p class="nopar" >
+<!--l. 212--><p class="nopar" >
    <h5 class="subsubsectionHead"><span class="titlemark">A.3.2   </span> <a 
- id="x45-193000A.3.2"></a>Job specific</h5>
+ id="x45-196000A.3.2"></a>Job specific</h5>
 
    <table 
 class="verbatim"><tr class="verbatim"><td 
@@ -546,12 +550,12 @@ class="verbatim"><div class="verbatim">
 &#x00A0;<br />&#x003C;/url&#x003E;
 </div>
 </td></tr></table>
-<!--l. 288--><p class="nopar" >
+<!--l. 292--><p class="nopar" >
    <h4 class="subsectionHead"><span class="titlemark">A.4   </span> <a 
- id="x45-194000A.4"></a>SQL database</h4>
+ id="x45-197000A.4"></a>SQL database</h4>
 <!--l. 3--><p class="noindent" >
    <h5 class="subsubsectionHead"><span class="titlemark">A.4.1   </span> <a 
- id="x45-195000A.4.1"></a>Create database</h5>
+ id="x45-198000A.4.1"></a>Create database</h5>
 <!--l. 4--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
 class="ectt-1095">DROP</span><span 
 class="ectt-1095">&#x00A0;DATABASE</span><span 
@@ -571,7 +575,7 @@ class="ectt-1095">USE</span><span
 class="ectt-1095">&#x00A0;$database;</span></span></span><br 
 class="newline" />
    <h5 class="subsubsectionHead"><span class="titlemark">A.4.2   </span> <a 
- id="x45-196000A.4.2"></a>Creating MySQL tables</h5>
+ id="x45-199000A.4.2"></a>Creating MySQL tables</h5>
 
 <!--l. 8--><p class="noindent" ><span class="obeylines-h"><span class="verb"><span 
 class="ectt-1095">All</span><span 
@@ -741,7 +745,7 @@ class="ectt-1095">&#x00A0;port,</span><span
 class="ectt-1095">&#x00A0;last</span></span></span><br 
 class="newline" />
    <h5 class="subsubsectionHead"><span class="titlemark">A.4.3   </span> <a 
- id="x45-197000A.4.3"></a>Data tables</h5>
+ id="x45-200000A.4.3"></a>Data tables</h5>
 
    <table 
 class="verbatim"><tr class="verbatim"><td 
@@ -867,7 +871,7 @@ CREATE&#x00A0;TABLE&#x00A0;search&#x00A0;(
 <!--l. 124--><p class="nopar" >
 <!--l. 126--><p class="noindent" >
    <h5 class="subsubsectionHead"><span class="titlemark">A.4.4   </span> <a 
- id="x45-198000A.4.4"></a>Administrative tables</h5>
+ id="x45-201000A.4.4"></a>Administrative tables</h5>
 
    <table 
 class="verbatim"><tr class="verbatim"><td 
@@ -1089,7 +1093,7 @@ CREATE&#x00A0;TABLE&#x00A0;exports&#x00A0;(
 <!--l. 271--><p class="nopar" >
 <!--l. 273--><p class="noindent" >
    <h5 class="subsubsectionHead"><span class="titlemark">A.4.5   </span> <a 
- id="x45-199000A.4.5"></a>Create user dbuser with required priviligies</h5>
+ id="x45-202000A.4.5"></a>Create user dbuser with required priviligies</h5>
 
    <table 
 class="verbatim"><tr class="verbatim"><td 
@@ -1110,16 +1114,16 @@ GRANT&#x00A0;SELECT,INSERT,UPDATE,DELETE,CREATE,CREATE&#x00A0;TEMPORARY&#x00A0;T
 <!--l. 282--><p class="nopar" >
 <!--l. 47--><p class="noindent" >
    <h4 class="subsectionHead"><span class="titlemark">A.5   </span> <a 
- id="x45-200000A.5"></a>Manual pages</h4>
+ id="x45-203000A.5"></a>Manual pages</h4>
 <!--l. 1--><p class="noindent" >
    <h5 class="subsubsectionHead"><span class="titlemark">A.5.1   </span> <a 
- id="x45-201000A.5.1"></a>combineExport</h5>
+ id="x45-204000A.5.1"></a>combineExport</h5>
 <!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-202000A.5.1"></a><span 
+ id="x45-205000A.5.1"></a><span 
 class="ecbx-1095">NAME</span></span>
    combineExport - export records in XML from Combine database
 <!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-203000A.5.1"></a><span 
+ id="x45-206000A.5.1"></a><span 
 class="ecbx-1095">SYNOPSIS</span></span>
    combineExport &#8211;jobname <span 
 class="cmmi-10x-x-109">&#x003C;</span>name<span 
@@ -1135,7 +1139,7 @@ class="cmmi-10x-x-109">&#x003E; </span>&#8211;md5 <span
 class="cmmi-10x-x-109">&#x003C;</span>MD5<span 
 class="cmmi-10x-x-109">&#x003E; </span>&#8211;incremental &#8211;xsltscript ...]
 <!--l. 11--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-204000A.5.1"></a><span 
+ id="x45-207000A.5.1"></a><span 
 class="ecbx-1095">OPTIONS AND ARGUMENTS</span></span>
    jobname is used to find the appropriate configuration (mandatory)
 <!--l. 16--><p class="indent" >
@@ -1175,44 +1179,54 @@ class="description">
      configuration. Requires that the Zebra server is running.
      </dd><dt class="description">
 <span 
+class="ecbx-1095">&#8211;SolrIndex</span> </dt><dd 
+class="description">
+     <!--l. 64--><p class="noindent" >SolrIndex  sends  XML  records  directly  to  the  Solr  server  defined  in  Combine
+     configuration   variable   &#8217;SolrHost&#8217;.   It   uses   the   default   Solr   configuration:
+     profile=combine,  nooutlinks,  collapseinlinks  and  is  compatible  with  the  direct
+     Solr indexing done during harvesting when &#8217;SolrHost&#8217; is defined in the Combine
+     configuration. Requires that the Solr server is running.
+     </dd><dt class="description">
+<span 
 class="ecbx-1095">&#8211;xsltscript</span> </dt><dd 
 class="description">
-     <!--l. 64--><p class="noindent" >Generates records in Combine native format and converts them using this XSLT
+     <!--l. 74--><p class="noindent" >Generates records in Combine native format and converts them using this XSLT
      script before output. See example scripts in /etc/combine/*.xsl
      </dd><dt class="description">
 <span 
 class="ecbx-1095">&#8211;number</span> </dt><dd 
 class="description">
-     <!--l. 70--><p class="noindent" >the max number of records to be exported
+     <!--l. 80--><p class="noindent" >the max number of records to be exported
      </dd><dt class="description">
 <span 
 class="ecbx-1095">&#8211;recordid</span> </dt><dd 
 class="description">
-     <!--l. 75--><p class="noindent" >Export just the one record with this recordid
+     <!--l. 85--><p class="noindent" >Export just the one record with this recordid
      </dd><dt class="description">
 <span 
 class="ecbx-1095">&#8211;md5</span> </dt><dd 
 class="description">
-     <!--l. 80--><p class="noindent" >Export just the one record with this MD5 checksum
+     <!--l. 90--><p class="noindent" >Export just the one record with this MD5 checksum
      </dd><dt class="description">
 <span 
 class="ecbx-1095">&#8211;pipehost, &#8211;pipeport</span> </dt><dd 
 class="description">
-     <!--l. 85--><p class="noindent" >Specifies the server-name and port to connect to and export data using the Alvis
+     <!--l. 95--><p class="noindent" >Specifies the server-name and port to connect to and export data using the Alvis
      Pipeline. Exports incrementally, ie all changes since last call to combineExport with
      the same pipehost and pipeport.
      </dd><dt class="description">
 <span 
 class="ecbx-1095">&#8211;incremental</span> </dt><dd 
 class="description">
-     <!--l. 92--><p class="noindent" >Exports  incrementally,  ie  all  changes  since  last  call  to  combineExport  using
+     <!--l. 102--><p class="noindent" >Exports  incrementally,  ie  all  changes  since  last  call  to  combineExport  using
      &#8211;incremental
      </dd></dl>
-<!--l. 95--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-205000A.5.1"></a><span 
+
+<!--l. 105--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-208000A.5.1"></a><span 
 class="ecbx-1095">DESCRIPTION</span></span>
-<!--l. 96--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-206000A.5.1"></a><span 
+<!--l. 106--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-209000A.5.1"></a><span 
 class="ecbx-1095">EXAMPLES</span></span>
 
    <table 
@@ -1222,7 +1236,7 @@ class="verbatim"><div class="verbatim">
 &#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;combineExport&#x00A0;--jobname&#x00A0;atest&#x00A0;&#x003E;&#x00A0;recs.xml
 </div>
 </td></tr></table>
-<!--l. 100--><p class="nopar" >
+<!--l. 110--><p class="nopar" >
 
    <table 
 class="verbatim"><tr class="verbatim"><td 
@@ -1231,7 +1245,7 @@ class="verbatim"><div class="verbatim">
 &#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;combineExport&#x00A0;--jobname&#x00A0;atest&#x00A0;--number&#x00A0;10
 </div>
 </td></tr></table>
-<!--l. 104--><p class="nopar" >
+<!--l. 114--><p class="nopar" >
 
    <table 
 class="verbatim"><tr class="verbatim"><td 
@@ -1240,7 +1254,7 @@ class="verbatim"><div class="verbatim">
 &#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;combineExport&#x00A0;--jobname&#x00A0;atest&#x00A0;--profile&#x00A0;combine&#x00A0;--charset&#x00A0;utf8&#x00A0;&#x003E;&#x00A0;Zebrarecs.xml
 </div>
 </td></tr></table>
-<!--l. 108--><p class="nopar" >
+<!--l. 118--><p class="nopar" >
 
    <table 
 class="verbatim"><tr class="verbatim"><td 
@@ -1250,25 +1264,25 @@ class="verbatim"><div class="verbatim">
 &#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;combineExport&#x00A0;--jobname&#x00A0;atest&#x00A0;--pipehost&#x00A0;localhost&#x00A0;--pipeport&#x00A0;6234
 </div>
 </td></tr></table>
-<!--l. 113--><p class="nopar" >
-<!--l. 114--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-207000A.5.1"></a><span 
+<!--l. 123--><p class="nopar" >
+<!--l. 124--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-210000A.5.1"></a><span 
 class="ecbx-1095">SEE ALSO</span></span>
    Combine configuration documentation in <span 
 class="ecti-1095">/usr/share/doc/combine/</span>.
-<!--l. 121--><p class="indent" >   Alvis XML schema (&#8211;profile alvis) at <span 
+<!--l. 131--><p class="indent" >   Alvis XML schema (&#8211;profile alvis) at <span 
 class="ecss-1095">http://project.alvis.info/alvis_docs/enriched-document.xsd</span>
-<!--l. 124--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-208000A.5.1"></a><span 
+<!--l. 134--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-211000A.5.1"></a><span 
 class="ecbx-1095">AUTHOR</span></span>
    Anders Ardö, <span 
 class="cmmi-10x-x-109">&#x003C;</span>anders.ardo@it.lth.se<span 
 class="cmmi-10x-x-109">&#x003E;</span>
-<!--l. 129--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-209000A.5.1"></a><span 
+<!--l. 139--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-212000A.5.1"></a><span 
 class="ecbx-1095">COPYRIGHT AND LICENSE</span></span>
    Copyright (C) 2005 - 2006 Anders Ardö
-<!--l. 136--><p class="indent" >   This library is free software; you can redistribute it and/or modify it under the same terms as
+<!--l. 146--><p class="indent" >   This library is free software; you can redistribute it and/or modify it under the same terms as
 Perl itself, either Perl version 5.8.4 or, at your option, any later version of Perl 5 you may have
 available.
 
@@ -1279,15 +1293,15 @@ class="verbatim"><div class="verbatim">
 &#x00A0;<br />&#x00A0;L&#x003C;http://combine.it.lth.se/&#x003E;
 </div>
 </td></tr></table>
-<!--l. 143--><p class="nopar" > __________________________________________________________________________
+<!--l. 153--><p class="nopar" > __________________________________________________________________________
    <h5 class="subsubsectionHead"><span class="titlemark">A.5.2   </span> <a 
- id="x45-210000A.5.2"></a>combineCtrl</h5>
+ id="x45-213000A.5.2"></a>combineCtrl</h5>
 <!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-211000A.5.2"></a><span 
+ id="x45-214000A.5.2"></a><span 
 class="ecbx-1095">NAME</span></span>
    combineCtrl - controls a Combine crawling job
 <!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-212000A.5.2"></a><span 
+ id="x45-215000A.5.2"></a><span 
 class="ecbx-1095">SYNOPSIS</span></span>
    combineCtrl <span 
 class="cmmi-10x-x-109">&#x003C;</span>action<span 
@@ -1297,11 +1311,11 @@ class="cmmi-10x-x-109">&#x003E;</span>
 <!--l. 13--><p class="indent" >   where action can be one of start, kill, load, recyclelinks, reharvest, stat, howmany, records,
 hosts, initMemoryTables, open, stop, pause, continue
 <!--l. 16--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-213000A.5.2"></a><span 
+ id="x45-216000A.5.2"></a><span 
 class="ecbx-1095">OPTIONS AND ARGUMENTS</span></span>
    jobname is used to find the appropriate configuration (mandatory)
 <!--l. 21--><p class="indent" >   <span class="likesubparagraphHead"><a 
- id="x45-214000A.5.2"></a><span 
+ id="x45-217000A.5.2"></a><span 
 class="ecbx-1095">Actions starting/killing crawlers</span></span>
      <dl class="description"><dt class="description">
 <span 
@@ -1318,7 +1332,7 @@ class="description">
      <!--l. 32--><p class="noindent" >kills all active crawlers (and their associated combineRun monitors) for jobname
      </dd></dl>
 <!--l. 35--><p class="indent" >   <span class="likesubparagraphHead"><a 
- id="x45-215000A.5.2"></a><span 
+ id="x45-218000A.5.2"></a><span 
 class="ecbx-1095">Actions loading or recycling URLs for crawling</span></span>
      <dl class="description"><dt class="description">
 <span 
@@ -1340,7 +1354,7 @@ class="description">
      changed)
      </dd></dl>
 <!--l. 55--><p class="indent" >   <span class="likesubparagraphHead"><a 
- id="x45-216000A.5.2"></a><span 
+ id="x45-219000A.5.2"></a><span 
 class="ecbx-1095">Actions for controlling scheduling of URLs</span></span>
      <dl class="description"><dt class="description">
 <span 
@@ -1364,7 +1378,7 @@ class="description">
      <!--l. 75--><p class="noindent" >continues URL scheduling after a pause
      </dd></dl>
 <!--l. 78--><p class="indent" >   <span class="likesubparagraphHead"><a 
- id="x45-217000A.5.2"></a><span 
+ id="x45-220000A.5.2"></a><span 
 class="ecbx-1095">Misc actions</span></span>
      <dl class="description"><dt class="description">
 <span 
@@ -1395,14 +1409,14 @@ class="description">
      <!--l. 103--><p class="noindent" >initializes the administrative MySQL tables that are kept in memory
      </dd></dl>
 <!--l. 106--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-218000A.5.2"></a><span 
+ id="x45-221000A.5.2"></a><span 
 class="ecbx-1095">DESCRIPTION</span></span>
    Implements various control functionality to administer a crawling job, like starting and
 stoping crawlers, injecting URLs into the crawl queue, scheduling newly found links for crawling,
 controlling scheduling, etc.
 <!--l. 115--><p class="indent" >   This is the preferred way of controling a crawl job.
 <!--l. 117--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-219000A.5.2"></a><span 
+ id="x45-222000A.5.2"></a><span 
 class="ecbx-1095">EXAMPLES</span></span>
      <dl class="description"><dt class="description">
 <span 
@@ -1430,20 +1444,20 @@ class="description">
      <!--l. 137--><p class="noindent" >See how many URLs that are eligible for crawling right now.
      </dd></dl>
 <!--l. 140--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-220000A.5.2"></a><span 
+ id="x45-223000A.5.2"></a><span 
 class="ecbx-1095">SEE ALSO</span></span>
    combine
 <!--l. 147--><p class="indent" >   Combine configuration documentation in <span 
 class="ecti-1095">/usr/share/doc/combine/</span>.
 <!--l. 149--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-221000A.5.2"></a><span 
+ id="x45-224000A.5.2"></a><span 
 class="ecbx-1095">AUTHOR</span></span>
    Anders Ardö, <span 
 class="cmmi-10x-x-109">&#x003C;</span>anders.ardo@it.lth.se<span 
 class="cmmi-10x-x-109">&#x003E;</span>
 
 <!--l. 154--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-222000A.5.2"></a><span 
+ id="x45-225000A.5.2"></a><span 
 class="ecbx-1095">COPYRIGHT AND LICENSE</span></span>
    Copyright (C) 2005 Anders Ardö
 <!--l. 161--><p class="indent" >   This library is free software; you can redistribute it and/or modify it under the same terms as
@@ -1453,13 +1467,363 @@ available.
 class="ecss-1095">http://combine.it.lth.se/</span>
 <!--l. 6--><p class="indent" >   _________________________________________________________________________________________________________________
    <h5 class="subsubsectionHead"><span class="titlemark">A.5.3   </span> <a 
- id="x45-223000A.5.3"></a>combine</h5>
+ id="x45-226000A.5.3"></a>combineRun</h5>
 <!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-224000A.5.3"></a><span 
+ id="x45-227000A.5.3"></a><span 
+class="ecbx-1095">NAME</span></span>
+   combineRun - starts, monitors and restarts a combine harvesting process
+<!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-228000A.5.3"></a><span 
+class="ecbx-1095">SYNOPSIS</span></span>
+   combineRun <span 
+class="cmmi-10x-x-109">&#x003C;</span>pidfile<span 
+class="cmmi-10x-x-109">&#x003E; &#x003C;</span>combine command to run<span 
+class="cmmi-10x-x-109">&#x003E;</span>
+<!--l. 11--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-229000A.5.3"></a><span 
+class="ecbx-1095">DESCRIPTION</span></span>
+   Starts a program and monitors it in order to make sure there is alsways a copy running. If the
+program dies it will be restarted with the same parameters. Used by <span 
+class="ectt-1095">combineCtrl </span>when starting
+combine crawling.
+<!--l. 18--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-230000A.5.3"></a><span 
+class="ecbx-1095">SEE ALSO</span></span>
+   combineCtrl
+<!--l. 23--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-231000A.5.3"></a><span 
+class="ecbx-1095">AUTHOR</span></span>
+   Anders Ardö, <span 
+class="cmmi-10x-x-109">&#x003C;</span>anders.ardo@it.lth.se<span 
+class="cmmi-10x-x-109">&#x003E;</span>
+<!--l. 28--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-232000A.5.3"></a><span 
+class="ecbx-1095">COPYRIGHT AND LICENSE</span></span>
+   Copyright (C) 2005 Anders Ardö
+<!--l. 35--><p class="indent" >   This library is free software; you can redistribute it and/or modify it under the same terms as
+Perl itself, either Perl version 5.8.4 or, at your option, any later version of Perl 5 you may have
+available.
+<!--l. 41--><p class="indent" >   See the file LICENCE included in the distribution at <span 
+class="ecss-1095">http://combine.it.lth.se/</span>
+<!--l. 9--><p class="indent" >   _________________________________________________________________________________________________________________
+   <h5 class="subsubsectionHead"><span class="titlemark">A.5.4   </span> <a 
+ id="x45-233000A.5.4"></a>combineReClassify</h5>
+
+<!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-234000A.5.4"></a><span 
+class="ecbx-1095">NAME</span></span>
+   combineReClassify - main program that reanalyse records in a combine database
+<!--l. 8--><p class="indent" >   Algorithm: select relevant records based on cls parameter for each record get record from
+database delete analyse infor from the record analyse the record if still_relevant save in
+database
+<!--l. 12--><p class="indent" >   _________________________________________________________________________________________________________________
+   <h5 class="subsubsectionHead"><span class="titlemark">A.5.5   </span> <a 
+ id="x45-235000A.5.5"></a>combineSVM</h5>
+<!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-236000A.5.5"></a><span 
+class="ecbx-1095">NAME</span></span>
+   combineSVM - generate a SVM model from good and bad examples
+<!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-237000A.5.5"></a><span 
+class="ecbx-1095">SYNOPSIS</span></span>
+   combineSVM &#8211;jobname <span 
+class="cmmi-10x-x-109">&#x003C;</span>name<span 
+class="cmmi-10x-x-109">&#x003E; </span>[&#8211;good <span 
+class="cmmi-10x-x-109">&#x003C;</span>good-file<span 
+class="cmmi-10x-x-109">&#x003E;</span>] [&#8211;bad <span 
+class="cmmi-10x-x-109">&#x003C;</span>bad-file<span 
+class="cmmi-10x-x-109">&#x003E;</span>] [&#8211;train
+<span 
+class="cmmi-10x-x-109">&#x003C;</span>model-file<span 
+class="cmmi-10x-x-109">&#x003E;</span>] [&#8211;help]
+<!--l. 11--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-238000A.5.5"></a><span 
+class="ecbx-1095">OPTIONS AND ARGUMENTS</span></span>
+   jobname is used to find the appropriate configuration (mandatory)
+<!--l. 18--><p class="indent" >   good is the name of a file with good URLs, one per line. Default &#8217;goodURL.txt&#8217;
+<!--l. 22--><p class="indent" >   bad is the name of a file with bad URLs, one per line. Default &#8217;badURL.txt&#8217;
+<!--l. 26--><p class="indent" >   train is the name of the file where the trained SVM model will be stored. Default
+&#8217;SVMmodel.txt&#8217;
+<!--l. 28--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-239000A.5.5"></a><span 
+class="ecbx-1095">DESCRIPTION</span></span>
+   Takes two files, one with positive examples (good) and one with negative examples
+(bad) and trains a SVM classifier using these. The resulting model is stored in the file
+<span 
+class="cmmi-10x-x-109">&#x003C;</span>train<span 
+class="cmmi-10x-x-109">&#x003E;</span>.
+<!--l. 36--><p class="indent" >   The example files should contain one URL per line and nothing else.
+<!--l. 38--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-240000A.5.5"></a><span 
+class="ecbx-1095">SEE ALSO</span></span>
+   combine
+<!--l. 45--><p class="indent" >   Combine configuration documentation in <span 
+class="ecti-1095">/usr/share/doc/combine/</span>.
+<!--l. 47--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-241000A.5.5"></a><span 
+class="ecbx-1095">AUTHOR</span></span>
+   Ignacio Garcia Dorado Anders Ardö, <span 
+class="cmmi-10x-x-109">&#x003C;</span>anders.ardo@it.lth.se<span 
+class="cmmi-10x-x-109">&#x003E;</span>
+
+<!--l. 53--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-242000A.5.5"></a><span 
+class="ecbx-1095">COPYRIGHT AND LICENSE</span></span>
+   Copyright (C) 2008 Ignacio Garcia Dorado, Anders Ardö
+<!--l. 60--><p class="indent" >   This library is free software; you can redistribute it and/or modify it under the same terms as
+Perl itself, either Perl version 5.8.4 or, at your option, any later version of Perl 5 you may have
+available.
+<!--l. 66--><p class="indent" >   See the file LICENCE included in the distribution at <span 
+class="ecss-1095">http://combine.it.lth.se/</span>
+<!--l. 15--><p class="indent" >   _________________________________________________________________________________________________________________
+   <h5 class="subsubsectionHead"><span class="titlemark">A.5.6   </span> <a 
+ id="x45-243000A.5.6"></a>combineRank</h5>
+<!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-244000A.5.6"></a><span 
+class="ecbx-1095">NAME</span></span>
+   combineRank - calculates various Ranks for a Combine crawled database
+<!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-245000A.5.6"></a><span 
+class="ecbx-1095">SYNOPSIS</span></span>
+   combineRank <span 
+class="cmmi-10x-x-109">&#x003C;</span>action<span 
+class="cmmi-10x-x-109">&#x003E; </span>&#8211;jobname <span 
+class="cmmi-10x-x-109">&#x003C;</span>name<span 
+class="cmmi-10x-x-109">&#x003E; </span>&#8211;verbose
+<!--l. 13--><p class="indent" >   where action can be one of PageRank, PageRankBL, NetLocRank, and exportLinkGraph.
+Results on STDOUT.
+<!--l. 16--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-246000A.5.6"></a><span 
+class="ecbx-1095">OPTIONS AND ARGUMENTS</span></span>
+   jobname is used to find the appropriate configuration (mandatory)
+<!--l. 23--><p class="indent" >   verbose enables printing of ranks to STDOUT as SQL INSERT statements
+<!--l. 25--><p class="indent" >   <span class="likesubparagraphHead"><a 
+ id="x45-247000A.5.6"></a><span 
+class="ecbx-1095">Actions calculating variants of PageRank</span></span>
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">PageRank</span> </dt><dd 
+class="description">
+     <!--l. 30--><p class="noindent" >calculate standard PageRank
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">PageRankBL</span> </dt><dd 
+class="description">
+     <!--l. 35--><p class="noindent" >calculate PageRanks with backlinks added for each link
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">NetLocRank</span> </dt><dd 
+class="description">
+     <!--l. 40--><p class="noindent" >calculate SiteRank for each site and a local DocRank for documents within each site.
+     Global ranks are then calulated as SiteRank * DocRank
+     </dd></dl>
+
+<!--l. 44--><p class="indent" >   <span class="likesubparagraphHead"><a 
+ id="x45-248000A.5.6"></a><span 
+class="ecbx-1095">Actions exporting link data</span></span>
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">exportLinkGraph</span> </dt><dd 
+class="description">
+     <!--l. 49--><p class="noindent" >export linkgraph from Combine database
+     </dd></dl>
+<!--l. 52--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-249000A.5.6"></a><span 
+class="ecbx-1095">DESCRIPTION</span></span>
+   Implements calculation of different variants of PageRank.
+<!--l. 59--><p class="indent" >   Results are written to STDOUT and can be huge for large databases.
+<!--l. 63--><p class="indent" >   Linkgraph is exported in ASCII as a sparse matrix, one row per line. First integer is the ID
+(urlid) of a page with links. The rest of integers on the line are IDs for pages linked to. Ie
+121 5624 23416 51423 267178 means that page 121 links to pages 5624 23416 51423
+267178
+<!--l. 69--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-250000A.5.6"></a><span 
+class="ecbx-1095">EXAMPLES</span></span>
+     <dl class="description"><dt class="description">
+<span 
+class="ectt-1095">combineRank &#8211;jobname aatest &#8211;verbose PageRankBL</span> </dt><dd 
+class="description">
+     <!--l. 74--><p class="noindent" >calculate PageRank with backlinks, result on STDOUT
+     </dd><dt class="description">
+<span 
+class="ectt-1095">combineRank &#8211;jobname aatest &#8211;verbose exportLinkGraph</span> </dt><dd 
+class="description">
+     <!--l. 79--><p class="noindent" >export the linkgraph to STDOUT
+     </dd></dl>
+<!--l. 82--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-251000A.5.6"></a><span 
+class="ecbx-1095">SEE ALSO</span></span>
+   combine
+<!--l. 89--><p class="indent" >   Combine configuration documentation in <span 
+class="ecti-1095">/usr/share/doc/combine/</span>.
+<!--l. 91--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-252000A.5.6"></a><span 
+class="ecbx-1095">AUTHOR</span></span>
+   Anders Ardö, <span 
+class="cmmi-10x-x-109">&#x003C;</span>anders.ardo@it.lth.se<span 
+class="cmmi-10x-x-109">&#x003E;</span>
+<!--l. 96--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-253000A.5.6"></a><span 
+class="ecbx-1095">COPYRIGHT AND LICENSE</span></span>
+   Copyright (C) 2006 Anders Ardö
+<!--l. 103--><p class="indent" >   This library is free software; you can redistribute it and/or modify it under the same terms as
+Perl itself, either Perl version 5.8.4 or, at your option, any later version of Perl 5 you may have
+available.
+<!--l. 109--><p class="indent" >   See the file LICENCE included in the distribution at <span 
+class="ecss-1095">http://combine.it.lth.se/</span>
+<!--l. 18--><p class="indent" >   _________________________________________________________________________________________________________________
+
+   <h5 class="subsubsectionHead"><span class="titlemark">A.5.7   </span> <a 
+ id="x45-254000A.5.7"></a>combineUtil</h5>
+<!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-255000A.5.7"></a><span 
+class="ecbx-1095">NAME</span></span>
+   combineUtil - various operations on the Combine database
+<!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-256000A.5.7"></a><span 
+class="ecbx-1095">SYNOPSIS</span></span>
+   combineUtil <span 
+class="cmmi-10x-x-109">&#x003C;</span>action<span 
+class="cmmi-10x-x-109">&#x003E; </span>&#8211;jobname <span 
+class="cmmi-10x-x-109">&#x003C;</span>name<span 
+class="cmmi-10x-x-109">&#x003E;</span>
+<!--l. 13--><p class="indent" >   where action can be one of stats, termstat, classtat, sanity, all, serveralias, resetOAI,
+restoreSanity, deleteNetLoc, deletePath, deleteMD5, deleteRecordid, addAlias
+<!--l. 18--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-257000A.5.7"></a><span 
+class="ecbx-1095">OPTIONS AND ARGUMENTS</span></span>
+   jobname is used to find the appropriate configuration (mandatory)
+<!--l. 23--><p class="indent" >   <span class="likesubparagraphHead"><a 
+ id="x45-258000A.5.7"></a><span 
+class="ecbx-1095">Actions listing statistics</span></span>
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">stats</span> </dt><dd 
+class="description">
+     <!--l. 28--><p class="noindent" >Global statistics about the database
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">termstat</span> </dt><dd 
+class="description">
+     <!--l. 33--><p class="noindent" >generates statistics about the terms from topic ontology matched in documents (can
+     be long output)
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">classtat</span> </dt><dd 
+class="description">
+     <!--l. 39--><p class="noindent" >generates statistics about the topic classes assigned to documents
+     </dd></dl>
+<!--l. 42--><p class="indent" >   <span class="likesubparagraphHead"><a 
+ id="x45-259000A.5.7"></a><span 
+class="ecbx-1095">Actions for sanity controlls</span></span>
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">sanity</span> </dt><dd 
+class="description">
+     <!--l. 47--><p class="noindent" >Performs various sanity checks on the database
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">restoreSanity</span> </dt><dd 
+class="description">
+     <!--l. 52--><p class="noindent" >Deletes records which sanity checks finds insane
+
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">resetOAI</span> </dt><dd 
+class="description">
+     <!--l. 57--><p class="noindent" >Removes  all  history  (ie  &#8217;deleted&#8217;  records)  from  the  OAI  table.  This  is  done  by
+     removing the OAI table and recreating it from the existing database.
+     </dd></dl>
+<!--l. 62--><p class="indent" >   <span class="likesubparagraphHead"><a 
+ id="x45-260000A.5.7"></a><span 
+class="ecbx-1095">Action all</span></span>
+   Does the actions: stats, sanity, classtat, termstat
+<!--l. 67--><p class="indent" >   <span class="likesubparagraphHead"><a 
+ id="x45-261000A.5.7"></a><span 
+class="ecbx-1095">Actions for deleting records</span></span>
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">deleteNetLoc</span> </dt><dd 
+class="description">
+     <!--l. 72--><p class="noindent" >Deletes all records matching the &#8217;,&#8217;-separated list of server net-locations (server-names
+     optionally with port) in the switch &#8211;netlocstr. Net-locations can include SQL wild
+     cards (&#8217;%&#8217;).
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">deletePath</span> </dt><dd 
+class="description">
+     <!--l. 79--><p class="noindent" >Deletes  all  records  matching  the  &#8217;,&#8217;-separated  list  of  URl  paths  (excluding
+     net-locations) in the switch &#8211;pathsubstr. Paths can include SQL wild cards (&#8217;%&#8217;).
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">deleteMD5</span> </dt><dd 
+class="description">
+     <!--l. 85--><p class="noindent" >Delete the record which has the MD5 in switch &#8211;md5
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">deleteRecordid</span> </dt><dd 
+class="description">
+     <!--l. 90--><p class="noindent" >Delete the record which has the recordid in switch &#8211;recordid
+     </dd></dl>
+<!--l. 93--><p class="indent" >   <span class="likesubparagraphHead"><a 
+ id="x45-262000A.5.7"></a><span 
+class="ecbx-1095">Actions for handling server aliases</span></span>
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">serverAlias</span> </dt><dd 
+class="description">
+     <!--l. 98--><p class="noindent" >Detect server aliases in the current database and do a &#8217;addAlias&#8217; on each detected
+     alias.
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">addAlias</span> </dt><dd 
+class="description">
+     <!--l. 104--><p class="noindent" >Manually add a serveralias to the system. Requires switches &#8211;aliases and &#8211;preferred
+     </dd></dl>
+
+<!--l. 108--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-263000A.5.7"></a><span 
+class="ecbx-1095">DESCRIPTION</span></span>
+   Does various statistics generation as well as performing sanity checks on the database
+<!--l. 113--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-264000A.5.7"></a><span 
+class="ecbx-1095">EXAMPLES</span></span>
+     <dl class="description"><dt class="description">
+<span 
+class="ectt-1095">combineUtil termstat &#8211;jobname aatest</span> </dt><dd 
+class="description">
+     <!--l. 118--><p class="noindent" >Generate matched term statistics
+     </dd></dl>
+<!--l. 121--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-265000A.5.7"></a><span 
+class="ecbx-1095">SEE ALSO</span></span>
+   combine
+<!--l. 128--><p class="indent" >   Combine configuration documentation in <span 
+class="ecti-1095">/usr/share/doc/combine/</span>.
+<!--l. 130--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-266000A.5.7"></a><span 
+class="ecbx-1095">AUTHOR</span></span>
+   Anders Ardö, <span 
+class="cmmi-10x-x-109">&#x003C;</span>anders.ardo@it.lth.se<span 
+class="cmmi-10x-x-109">&#x003E;</span>
+<!--l. 135--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-267000A.5.7"></a><span 
+class="ecbx-1095">COPYRIGHT AND LICENSE</span></span>
+   Copyright (C) 2005 Anders Ardö
+<!--l. 142--><p class="indent" >   This library is free software; you can redistribute it and/or modify it under the same terms as
+Perl itself, either Perl version 5.8.4 or, at your option, any later version of Perl 5 you may have
+available.
+<!--l. 148--><p class="indent" >   See the file LICENCE included in the distribution at <span 
+class="ecss-1095">http://combine.it.lth.se/</span>
+<!--l. 21--><p class="indent" >   _________________________________________________________________________________________________________________
+   <h5 class="subsubsectionHead"><span class="titlemark">A.5.8   </span> <a 
+ id="x45-268000A.5.8"></a>combine</h5>
+<!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-269000A.5.8"></a><span 
 class="ecbx-1095">NAME</span></span>
    Combine - Focused Web crawler framework
 <!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-225000A.5.3"></a><span 
+ id="x45-270000A.5.8"></a><span 
 class="ecbx-1095">SYNOPSIS</span></span>
    combine &#8211;jobname <span 
 class="cmmi-10x-x-109">&#x003C;</span>name<span 
@@ -1467,12 +1831,13 @@ class="cmmi-10x-x-109">&#x003E; </span>&#8211;logname <span
 class="cmmi-10x-x-109">&#x003C;</span>id<span 
 class="cmmi-10x-x-109">&#x003E;</span>
 <!--l. 11--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-226000A.5.3"></a><span 
+ id="x45-271000A.5.8"></a><span 
 class="ecbx-1095">OPTIONS AND ARGUMENTS</span></span>
    jobname is used to find the appropriate configuration (mandatory)
 <!--l. 18--><p class="indent" >   logname is used as identifier in the log (in MySQL table log)
+
 <!--l. 20--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-227000A.5.3"></a><span 
+ id="x45-272000A.5.8"></a><span 
 class="ecbx-1095">DESCRIPTION</span></span>
    Does crawling, parsing, optional topic-check and stores in MySQL database Normally started
 with the <span 
@@ -1521,19 +1886,19 @@ class="verbatim"><div class="verbatim">
 <!--l. 56--><p class="nopar" >
 <!--l. 59--><p class="indent" >   For more complex jobs you have to edit the job configuration file.
 <!--l. 61--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-228000A.5.3"></a><span 
+ id="x45-273000A.5.8"></a><span 
 class="ecbx-1095">SEE ALSO</span></span>
    combineINIT, combineCtrl
 <!--l. 68--><p class="indent" >   Combine configuration documentation in <span 
 class="ecti-1095">/usr/share/doc/combine/</span>.
 <!--l. 70--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-229000A.5.3"></a><span 
+ id="x45-274000A.5.8"></a><span 
 class="ecbx-1095">AUTHOR</span></span>
    Anders Ardö, <span 
 class="cmmi-10x-x-109">&#x003C;</span>anders.ardo@it.lth.se<span 
 class="cmmi-10x-x-109">&#x003E;</span>
 <!--l. 75--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-230000A.5.3"></a><span 
+ id="x45-275000A.5.8"></a><span 
 class="ecbx-1095">COPYRIGHT AND LICENSE</span></span>
    Copyright (C) 2005 Anders Ardö
 <!--l. 82--><p class="indent" >   This library is free software; you can redistribute it and/or modify it under the same terms as
@@ -1541,385 +1906,23 @@ Perl itself, either Perl version 5.8.4 or, at your option, any later version of 
 available.
 <!--l. 88--><p class="indent" >   See the file LICENCE included in the distribution at <span 
 class="ecss-1095">http://combine.it.lth.se/</span>
-<!--l. 9--><p class="indent" >   _________________________________________________________________________________________________________________
-   <h5 class="subsubsectionHead"><span class="titlemark">A.5.4   </span> <a 
- id="x45-231000A.5.4"></a>combineUtil</h5>
-<!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-232000A.5.4"></a><span 
-class="ecbx-1095">NAME</span></span>
-   combineUtil - various operations on the Combine database
-<!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-233000A.5.4"></a><span 
-class="ecbx-1095">SYNOPSIS</span></span>
-   combineUtil <span 
-class="cmmi-10x-x-109">&#x003C;</span>action<span 
-class="cmmi-10x-x-109">&#x003E; </span>&#8211;jobname <span 
-class="cmmi-10x-x-109">&#x003C;</span>name<span 
-class="cmmi-10x-x-109">&#x003E;</span>
-<!--l. 13--><p class="indent" >   where action can be one of stats, termstat, classtat, sanity, all, serveralias, resetOAI,
-restoreSanity, deleteNetLoc, deletePath, deleteMD5, deleteRecordid, addAlias
-<!--l. 18--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-234000A.5.4"></a><span 
-class="ecbx-1095">OPTIONS AND ARGUMENTS</span></span>
-   jobname is used to find the appropriate configuration (mandatory)
-
-<!--l. 23--><p class="indent" >   <span class="likesubparagraphHead"><a 
- id="x45-235000A.5.4"></a><span 
-class="ecbx-1095">Actions listing statistics</span></span>
-     <dl class="description"><dt class="description">
-<span 
-class="ecbx-1095">stats</span> </dt><dd 
-class="description">
-     <!--l. 28--><p class="noindent" >Global statistics about the database
-     </dd><dt class="description">
-<span 
-class="ecbx-1095">termstat</span> </dt><dd 
-class="description">
-     <!--l. 33--><p class="noindent" >generates statistics about the terms from topic ontology matched in documents (can
-     be long output)
-     </dd><dt class="description">
-<span 
-class="ecbx-1095">classtat</span> </dt><dd 
-class="description">
-     <!--l. 39--><p class="noindent" >generates statistics about the topic classes assigned to documents
-     </dd></dl>
-<!--l. 42--><p class="indent" >   <span class="likesubparagraphHead"><a 
- id="x45-236000A.5.4"></a><span 
-class="ecbx-1095">Actions for sanity controlls</span></span>
-     <dl class="description"><dt class="description">
-<span 
-class="ecbx-1095">sanity</span> </dt><dd 
-class="description">
-     <!--l. 47--><p class="noindent" >Performs various sanity checks on the database
-     </dd><dt class="description">
-<span 
-class="ecbx-1095">restoreSanity</span> </dt><dd 
-class="description">
-     <!--l. 52--><p class="noindent" >Deletes records which sanity checks finds insane
-     </dd><dt class="description">
-<span 
-class="ecbx-1095">resetOAI</span> </dt><dd 
-class="description">
-     <!--l. 57--><p class="noindent" >Removes  all  history  (ie  &#8217;deleted&#8217;  records)  from  the  OAI  table.  This  is  done  by
-     removing the OAI table and recreating it from the existing database.
-     </dd></dl>
-<!--l. 62--><p class="indent" >   <span class="likesubparagraphHead"><a 
- id="x45-237000A.5.4"></a><span 
-class="ecbx-1095">Action all</span></span>
-   Does the actions: stats, sanity, classtat, termstat
-<!--l. 67--><p class="indent" >   <span class="likesubparagraphHead"><a 
- id="x45-238000A.5.4"></a><span 
-class="ecbx-1095">Actions for deleting records</span></span>
-     <dl class="description"><dt class="description">
-<span 
-class="ecbx-1095">deleteNetLoc</span> </dt><dd 
-class="description">
-     <!--l. 72--><p class="noindent" >Deletes all records matching the &#8217;,&#8217;-separated list of server net-locations (server-names
-     optionally with port) in the switch &#8211;netlocstr. Net-locations can include SQL wild
-     cards (&#8217;%&#8217;).
-
-     </dd><dt class="description">
-<span 
-class="ecbx-1095">deletePath</span> </dt><dd 
-class="description">
-     <!--l. 79--><p class="noindent" >Deletes  all  records  matching  the  &#8217;,&#8217;-separated  list  of  URl  paths  (excluding
-     net-locations) in the switch &#8211;pathsubstr. Paths can include SQL wild cards (&#8217;%&#8217;).
-     </dd><dt class="description">
-<span 
-class="ecbx-1095">deleteMD5</span> </dt><dd 
-class="description">
-     <!--l. 85--><p class="noindent" >Delete the record which has the MD5 in switch &#8211;md5
-     </dd><dt class="description">
-<span 
-class="ecbx-1095">deleteRecordid</span> </dt><dd 
-class="description">
-     <!--l. 90--><p class="noindent" >Delete the record which has the recordid in switch &#8211;recordid
-     </dd></dl>
-<!--l. 93--><p class="indent" >   <span class="likesubparagraphHead"><a 
- id="x45-239000A.5.4"></a><span 
-class="ecbx-1095">Actions for handling server aliases</span></span>
-     <dl class="description"><dt class="description">
-<span 
-class="ecbx-1095">serverAlias</span> </dt><dd 
-class="description">
-     <!--l. 98--><p class="noindent" >Detect server aliases in the current database and do a &#8217;addAlias&#8217; on each detected
-     alias.
-     </dd><dt class="description">
-<span 
-class="ecbx-1095">addAlias</span> </dt><dd 
-class="description">
-     <!--l. 104--><p class="noindent" >Manually add a serveralias to the system. Requires switches &#8211;aliases and &#8211;preferred
-     </dd></dl>
-<!--l. 108--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-240000A.5.4"></a><span 
-class="ecbx-1095">DESCRIPTION</span></span>
-   Does various statistics generation as well as performing sanity checks on the database
-<!--l. 113--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-241000A.5.4"></a><span 
-class="ecbx-1095">EXAMPLES</span></span>
-     <dl class="description"><dt class="description">
-<span 
-class="ectt-1095">combineUtil termstat &#8211;jobname aatest</span> </dt><dd 
-class="description">
-     <!--l. 118--><p class="noindent" >Generate matched term statistics
-     </dd></dl>
-<!--l. 121--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-242000A.5.4"></a><span 
-class="ecbx-1095">SEE ALSO</span></span>
-   combine
-<!--l. 128--><p class="indent" >   Combine configuration documentation in <span 
-class="ecti-1095">/usr/share/doc/combine/</span>.
-
-<!--l. 130--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-243000A.5.4"></a><span 
-class="ecbx-1095">AUTHOR</span></span>
-   Anders Ardö, <span 
-class="cmmi-10x-x-109">&#x003C;</span>anders.ardo@it.lth.se<span 
-class="cmmi-10x-x-109">&#x003E;</span>
-<!--l. 135--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-244000A.5.4"></a><span 
-class="ecbx-1095">COPYRIGHT AND LICENSE</span></span>
-   Copyright (C) 2005 Anders Ardö
-<!--l. 142--><p class="indent" >   This library is free software; you can redistribute it and/or modify it under the same terms as
-Perl itself, either Perl version 5.8.4 or, at your option, any later version of Perl 5 you may have
-available.
-<!--l. 148--><p class="indent" >   See the file LICENCE included in the distribution at <span 
-class="ecss-1095">http://combine.it.lth.se/</span>
-<!--l. 12--><p class="indent" >   _________________________________________________________________________________________________________________
-   <h5 class="subsubsectionHead"><span class="titlemark">A.5.5   </span> <a 
- id="x45-245000A.5.5"></a>combineRank</h5>
-<!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-246000A.5.5"></a><span 
-class="ecbx-1095">NAME</span></span>
-   combineRank - calculates various Ranks for a Combine crawled database
-<!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-247000A.5.5"></a><span 
-class="ecbx-1095">SYNOPSIS</span></span>
-   combineRank <span 
-class="cmmi-10x-x-109">&#x003C;</span>action<span 
-class="cmmi-10x-x-109">&#x003E; </span>&#8211;jobname <span 
-class="cmmi-10x-x-109">&#x003C;</span>name<span 
-class="cmmi-10x-x-109">&#x003E; </span>&#8211;verbose
-<!--l. 13--><p class="indent" >   where action can be one of PageRank, PageRankBL, NetLocRank, and exportLinkGraph.
-Results on STDOUT.
-<!--l. 16--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-248000A.5.5"></a><span 
-class="ecbx-1095">OPTIONS AND ARGUMENTS</span></span>
-   jobname is used to find the appropriate configuration (mandatory)
-<!--l. 23--><p class="indent" >   verbose enables printing of ranks to STDOUT as SQL INSERT statements
-<!--l. 25--><p class="indent" >   <span class="likesubparagraphHead"><a 
- id="x45-249000A.5.5"></a><span 
-class="ecbx-1095">Actions calculating variants of PageRank</span></span>
-     <dl class="description"><dt class="description">
-<span 
-class="ecbx-1095">PageRank</span> </dt><dd 
-class="description">
-     <!--l. 30--><p class="noindent" >calculate standard PageRank
-     </dd><dt class="description">
-<span 
-class="ecbx-1095">PageRankBL</span> </dt><dd 
-class="description">
-     <!--l. 35--><p class="noindent" >calculate PageRanks with backlinks added for each link
-     </dd><dt class="description">
-<span 
-class="ecbx-1095">NetLocRank</span> </dt><dd 
-class="description">
-     <!--l. 40--><p class="noindent" >calculate SiteRank for each site and a local DocRank for documents within each site.
-     Global ranks are then calulated as SiteRank * DocRank
-     </dd></dl>
-
-<!--l. 44--><p class="indent" >   <span class="likesubparagraphHead"><a 
- id="x45-250000A.5.5"></a><span 
-class="ecbx-1095">Actions exporting link data</span></span>
-     <dl class="description"><dt class="description">
-<span 
-class="ecbx-1095">exportLinkGraph</span> </dt><dd 
-class="description">
-     <!--l. 49--><p class="noindent" >export linkgraph from Combine database
-     </dd></dl>
-<!--l. 52--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-251000A.5.5"></a><span 
-class="ecbx-1095">DESCRIPTION</span></span>
-   Implements calculation of different variants of PageRank.
-<!--l. 59--><p class="indent" >   Results are written to STDOUT and can be huge for large databases.
-<!--l. 63--><p class="indent" >   Linkgraph is exported in ASCII as a sparse matrix, one row per line. First integer is the ID
-(urlid) of a page with links. The rest of integers on the line are IDs for pages linked to. Ie
-121 5624 23416 51423 267178 means that page 121 links to pages 5624 23416 51423
-267178
-<!--l. 69--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-252000A.5.5"></a><span 
-class="ecbx-1095">EXAMPLES</span></span>
-     <dl class="description"><dt class="description">
-<span 
-class="ectt-1095">combineRank &#8211;jobname aatest &#8211;verbose PageRankBL</span> </dt><dd 
-class="description">
-     <!--l. 74--><p class="noindent" >calculate PageRank with backlinks, result on STDOUT
-     </dd><dt class="description">
-<span 
-class="ectt-1095">combineRank &#8211;jobname aatest &#8211;verbose exportLinkGraph</span> </dt><dd 
-class="description">
-     <!--l. 79--><p class="noindent" >export the linkgraph to STDOUT
-     </dd></dl>
-<!--l. 82--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-253000A.5.5"></a><span 
-class="ecbx-1095">SEE ALSO</span></span>
-   combine
-<!--l. 89--><p class="indent" >   Combine configuration documentation in <span 
-class="ecti-1095">/usr/share/doc/combine/</span>.
-<!--l. 91--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-254000A.5.5"></a><span 
-class="ecbx-1095">AUTHOR</span></span>
-   Anders Ardö, <span 
-class="cmmi-10x-x-109">&#x003C;</span>anders.ardo@it.lth.se<span 
-class="cmmi-10x-x-109">&#x003E;</span>
-<!--l. 96--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-255000A.5.5"></a><span 
-class="ecbx-1095">COPYRIGHT AND LICENSE</span></span>
-   Copyright (C) 2006 Anders Ardö
-<!--l. 103--><p class="indent" >   This library is free software; you can redistribute it and/or modify it under the same terms as
-Perl itself, either Perl version 5.8.4 or, at your option, any later version of Perl 5 you may have
-available.
-<!--l. 109--><p class="indent" >   See the file LICENCE included in the distribution at <span 
-class="ecss-1095">http://combine.it.lth.se/</span>
-<!--l. 15--><p class="indent" >   _________________________________________________________________________________________________________________
-
-   <h5 class="subsubsectionHead"><span class="titlemark">A.5.6   </span> <a 
- id="x45-256000A.5.6"></a>combineSVM</h5>
-<!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-257000A.5.6"></a><span 
-class="ecbx-1095">NAME</span></span>
-   combineSVM - generate a SVM model from good and bad examples
-<!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-258000A.5.6"></a><span 
-class="ecbx-1095">SYNOPSIS</span></span>
-   combineSVM &#8211;jobname <span 
-class="cmmi-10x-x-109">&#x003C;</span>name<span 
-class="cmmi-10x-x-109">&#x003E; </span>[&#8211;good <span 
-class="cmmi-10x-x-109">&#x003C;</span>good-file<span 
-class="cmmi-10x-x-109">&#x003E;</span>] [&#8211;bad <span 
-class="cmmi-10x-x-109">&#x003C;</span>bad-file<span 
-class="cmmi-10x-x-109">&#x003E;</span>] [&#8211;train
-<span 
-class="cmmi-10x-x-109">&#x003C;</span>model-file<span 
-class="cmmi-10x-x-109">&#x003E;</span>] [&#8211;help]
-<!--l. 11--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-259000A.5.6"></a><span 
-class="ecbx-1095">OPTIONS AND ARGUMENTS</span></span>
-   jobname is used to find the appropriate configuration (mandatory)
-<!--l. 18--><p class="indent" >   good is the name of a file with good URLs, one per line. Default &#8217;goodURL.txt&#8217;
-<!--l. 22--><p class="indent" >   bad is the name of a file with bad URLs, one per line. Default &#8217;badURL.txt&#8217;
-<!--l. 26--><p class="indent" >   train is the name of the file where the trained SVM model will be stored. Default
-&#8217;SVMmodel.txt&#8217;
-<!--l. 28--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-260000A.5.6"></a><span 
-class="ecbx-1095">DESCRIPTION</span></span>
-   Takes two files, one with positive examples (good) and one with negative examples
-(bad) and trains a SVM classifier using these. The resulting model is stored in the file
-<span 
-class="cmmi-10x-x-109">&#x003C;</span>train<span 
-class="cmmi-10x-x-109">&#x003E;</span>.
-<!--l. 36--><p class="indent" >   The example files should contain one URL per line and nothing else.
-<!--l. 38--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-261000A.5.6"></a><span 
-class="ecbx-1095">SEE ALSO</span></span>
-   combine
-<!--l. 45--><p class="indent" >   Combine configuration documentation in <span 
-class="ecti-1095">/usr/share/doc/combine/</span>.
-<!--l. 47--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-262000A.5.6"></a><span 
-class="ecbx-1095">AUTHOR</span></span>
-   Ignacio Garcia Dorado Anders Ardö, <span 
-class="cmmi-10x-x-109">&#x003C;</span>anders.ardo@it.lth.se<span 
-class="cmmi-10x-x-109">&#x003E;</span>
-<!--l. 53--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-263000A.5.6"></a><span 
-class="ecbx-1095">COPYRIGHT AND LICENSE</span></span>
-   Copyright (C) 2008 Ignacio Garcia Dorado, Anders Ardö
-<!--l. 60--><p class="indent" >   This library is free software; you can redistribute it and/or modify it under the same terms as
-Perl itself, either Perl version 5.8.4 or, at your option, any later version of Perl 5 you may have
-available.
-<!--l. 66--><p class="indent" >   See the file LICENCE included in the distribution at <span 
-class="ecss-1095">http://combine.it.lth.se/</span>
-<!--l. 18--><p class="indent" >   _________________________________________________________________________________________________________________
-
-   <h5 class="subsubsectionHead"><span class="titlemark">A.5.7   </span> <a 
- id="x45-264000A.5.7"></a>combineReClassify</h5>
-<!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-265000A.5.7"></a><span 
-class="ecbx-1095">NAME</span></span>
-   combineReClassify - main program that reanalyse records in a combine database
-<!--l. 8--><p class="indent" >   Algorithm: select relevant records based on cls parameter for each record get record from
-database delete analyse infor from the record analyse the record if still_relevant save in
-database
-<!--l. 21--><p class="indent" >   _________________________________________________________________________________________________________________
-   <h5 class="subsubsectionHead"><span class="titlemark">A.5.8   </span> <a 
- id="x45-266000A.5.8"></a>combineRun</h5>
-<!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-267000A.5.8"></a><span 
-class="ecbx-1095">NAME</span></span>
-   combineRun - starts, monitors and restarts a combine harvesting process
-<!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-268000A.5.8"></a><span 
-class="ecbx-1095">SYNOPSIS</span></span>
-   combineRun <span 
-class="cmmi-10x-x-109">&#x003C;</span>pidfile<span 
-class="cmmi-10x-x-109">&#x003E; &#x003C;</span>combine command to run<span 
-class="cmmi-10x-x-109">&#x003E;</span>
-<!--l. 11--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-269000A.5.8"></a><span 
-class="ecbx-1095">DESCRIPTION</span></span>
-   Starts a program and monitors it in order to make sure there is alsways a copy running. If the
-program dies it will be restarted with the same parameters. Used by <span 
-class="ectt-1095">combineCtrl </span>when starting
-combine crawling.
-<!--l. 18--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-270000A.5.8"></a><span 
-class="ecbx-1095">SEE ALSO</span></span>
-   combineCtrl
-<!--l. 23--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-271000A.5.8"></a><span 
-class="ecbx-1095">AUTHOR</span></span>
-   Anders Ardö, <span 
-class="cmmi-10x-x-109">&#x003C;</span>anders.ardo@it.lth.se<span 
-class="cmmi-10x-x-109">&#x003E;</span>
-<!--l. 28--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-272000A.5.8"></a><span 
-class="ecbx-1095">COPYRIGHT AND LICENSE</span></span>
-   Copyright (C) 2005 Anders Ardö
-<!--l. 35--><p class="indent" >   This library is free software; you can redistribute it and/or modify it under the same terms as
-Perl itself, either Perl version 5.8.4 or, at your option, any later version of Perl 5 you may have
-available.
-<!--l. 41--><p class="indent" >   See the file LICENCE included in the distribution at <span 
-class="ecss-1095">http://combine.it.lth.se/</span>
 <!--l. 24--><p class="indent" >   _________________________________________________________________________________________________________________
-
    <h5 class="subsubsectionHead"><span class="titlemark">A.5.9   </span> <a 
- id="x45-273000A.5.9"></a>Combine::RobotRules</h5>
+ id="x45-276000A.5.9"></a>Combine::PosMatcher</h5>
 <!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-274000A.5.9"></a><span 
+ id="x45-277000A.5.9"></a><span 
 class="ecbx-1095">NAME</span></span>
-   RobotRules.pm
+   PosMatcher
 <!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-275000A.5.9"></a><span 
-class="ecbx-1095">AUTHOR</span></span>
-   Anders Ardo version 1.0 2004-02-19
-<!--l. 27--><p class="indent" >   _________________________________________________________________________________________________________________
-   <h5 class="subsubsectionHead"><span class="titlemark">A.5.10   </span> <a 
- id="x45-276000A.5.10"></a>Combine::Matcher</h5>
-<!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-277000A.5.10"></a><span 
-class="ecbx-1095">NAME</span></span>
-   Matcher
-<!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-278000A.5.10"></a><span 
+ id="x45-278000A.5.9"></a><span 
 class="ecbx-1095">DESCRIPTION</span></span>
-   This a module in the DESIRE automatic classification system. Copyright 1999. Modified in
-the ALVIS project. Copyright 2004
-<!--l. 14--><p class="indent" >   Exported routines: 1. Fetching text: These routines all extract texts from a document (either
-a Combine XWI datastructure or a WWW-page identified by a URL. They all return: $meta,
-$head, $text, $url, $title, $size $meta: Metadata from document $head: Important text from
-document $text: Plain text from document $url: URL of the document $title: HTML title of the
-document $size: The size of the document
+   This a module in the DESIRE automatic classification system. Copyright 1999.
+<!--l. 13--><p class="indent" >   Exported routines: 1. Fetching text: These routines all extract texts from a document (either
+a Combine record, a Combine XWI datastructure or a WWW-page identified by a
+URL. They all return: $meta, $head, $text, $url, $title, $size $meta: Metadata from
+document $head: Important text from document $text: Plain text from document
+$url: URL of the document $title: HTML title of the document $size: The size of the
+document
 
    <table 
 class="verbatim"><tr class="verbatim"><td 
@@ -1930,7 +1933,7 @@ class="verbatim"><div class="verbatim">
 &#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;$simple:&#x00A0;1=do&#x00A0;simple&#x00A0;loading;&#x00A0;0=advanced&#x00A0;loading&#x00A0;(might&#x00A0;induce&#x00A0;errors)
 </div>
 </td></tr></table>
-<!--l. 31--><p class="nopar" >
+<!--l. 30--><p class="nopar" >
 
    <table 
 class="verbatim"><tr class="verbatim"><td 
@@ -1940,7 +1943,7 @@ class="verbatim"><div class="verbatim">
 &#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;$xwi&#x00A0;is&#x00A0;a&#x00A0;Combine&#x00A0;XWI&#x00A0;datastructure
 </div>
 </td></tr></table>
-<!--l. 36--><p class="nopar" >
+<!--l. 35--><p class="nopar" >
 
    <table 
 class="verbatim"><tr class="verbatim"><td 
@@ -1950,262 +1953,78 @@ class="verbatim"><div class="verbatim">
 &#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;$url&#x00A0;is&#x00A0;the&#x00A0;URL&#x00A0;for&#x00A0;the&#x00A0;page&#x00A0;to&#x00A0;extract&#x00A0;text&#x00A0;from
 </div>
 </td></tr></table>
-<!--l. 41--><p class="nopar" >
-<!--l. 44--><p class="indent" >   2. Term matcher accepts a text as a (reference) parameter, matches each term in
+<!--l. 40--><p class="nopar" >
+<!--l. 43--><p class="indent" >   2. Term matcher accepts a text as a (reference) parameter, matches each term in
 Term against text Matches are recorded in an associative array with class as key and
 summed weight as value. Match parameters: $text, $termlist $text: text to match
 against the termlist $termlist: object pointer to a LoadTermList object with a termlist
 loaded output: %score: an associative array with classifications as keys and scores as
 values
-<!--l. 54--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-279000A.5.10"></a><span 
+<!--l. 55--><p class="indent" >   3. Heuristics: sum scores down the classification tree to the leafs cleanEiTree parameters:
+%res - an associative array from Match output: %res - same array
+<!--l. 60--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-279000A.5.9"></a><span 
 class="ecbx-1095">AUTHOR</span></span>
-   Anders Ardö <span 
+   Anders Ardö, <span 
 class="cmmi-10x-x-109">&#x003C;</span>anders.ardo@it.lth.se<span 
 class="cmmi-10x-x-109">&#x003E;</span>
-<!--l. 59--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-280000A.5.10"></a><span 
+<!--l. 65--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-280000A.5.9"></a><span 
 class="ecbx-1095">COPYRIGHT AND LICENSE</span></span>
    Copyright (C) 2005,2006 Anders Ardö
-<!--l. 66--><p class="indent" >   This library is free software; you can redistribute it and/or modify it under the same terms as
+<!--l. 72--><p class="indent" >   This library is free software; you can redistribute it and/or modify it under the same terms as
 Perl itself, either Perl version 5.8.4 or, at your option, any later version of Perl 5 you may have
 available.
-<!--l. 72--><p class="indent" >   See the file LICENCE included in the distribution at <span 
+<!--l. 78--><p class="indent" >   See the file LICENCE included in the distribution at <span 
 class="ecss-1095">http://combine.it.lth.se/</span>
+<!--l. 27--><p class="indent" >   _________________________________________________________________________________________________________________
+   <h5 class="subsubsectionHead"><span class="titlemark">A.5.10   </span> <a 
+ id="x45-281000A.5.10"></a>Combine::selurl</h5>
+<!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-282000A.5.10"></a><span 
+class="ecbx-1095">NAME</span></span>
+   selurl - Normalise and validate URIs for harvesting
+<!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-283000A.5.10"></a><span 
+class="ecbx-1095">INTRODUCTION</span></span>
+   Selurl selects and normalises URIs on basis of both general practice (hostname lowercasing,
+portnumber substsitution etc.) and Combine-specific handling (aplpying config_allow,
+config_exclude, config_serveralias and other relevant config settings).
+<!--l. 16--><p class="indent" >   The Config settings catered for currently are:
+<!--l. 20--><p class="indent" >   maxUrlLength - the maximum length of an unnormalised URL allow - Perl regular
+to identify allowed URLs exclude - Perl regular expressions to exclude URLs from
+harvesting serveralias - Aliases of server names sessionids - List sessionid markers to be
+removed
+
+<!--l. 28--><p class="indent" >   A selurl object can hold a single URL and has methods to obtain its subparts
+as defined in URI.pm, plus some methods to normalise and validate it in Combine
+context.
+<!--l. 32--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-284000A.5.10"></a><span 
+class="ecbx-1095">BUGS</span></span>
+   Currently, the only schemes supported are http, https and ftp. Others may or may not work
+correctly. For one thing, we assume the scheme has an internet hostname/port.
+<!--l. 41--><p class="indent" >   clone() will only return a copy of the real URI object, not a new selurl.
+<!--l. 46--><p class="indent" >   URI URI-escapes the strings fed into it by new() once. Existing percent signs in the input are
+left untouched, which implicates that:
+<!--l. 51--><p class="indent" >   (a) there is no risk of double-encoding; and
+<!--l. 55--><p class="indent" >   (b) if the original contained an inadvertent sequence that could be interpreted as an escape
+sequence, uri_unescape will not render the original input (e.g. url_with_%66_in_it goes
+whoop) If you know that the original has not yet been escaped and wish to safeguard potential
+percent signs, you&#8217;ll have to escape them (and only them) once before you offer it to
+new().
+<!--l. 64--><p class="indent" >   A problem with URI is, that its object is not a hash we can piggyback our data on, so I had
+to resort to AUTOLOAD to emulate inheritance. I find this ugly, but well, this *is* Perl, so
+what&#8217;d you expect?
 <!--l. 30--><p class="indent" >   _________________________________________________________________________________________________________________
    <h5 class="subsubsectionHead"><span class="titlemark">A.5.11   </span> <a 
- id="x45-281000A.5.11"></a>Combine::FromTeX</h5>
+ id="x45-285000A.5.11"></a>Combine::XWI</h5>
 <!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-282000A.5.11"></a><span 
-class="ecbx-1095">NAME</span></span>
-   Combine::FromTeX.pm - TeX parser in combine package
-<!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-283000A.5.11"></a><span 
-class="ecbx-1095">AUTHOR</span></span>
-
-   <table 
-class="verbatim"><tr class="verbatim"><td 
-class="verbatim"><div class="verbatim">
-&#x00A0;Anders&#x00A0;Ardø&#x00A0;2000-06-11
-</div>
-</td></tr></table>
-<!--l. 9--><p class="nopar" > __________________________________________________________________________
-   <h5 class="subsubsectionHead"><span class="titlemark">A.5.12   </span> <a 
- id="x45-284000A.5.12"></a>Combine::utilPlugIn</h5>
-<!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-285000A.5.12"></a><span 
-class="ecbx-1095">NAME</span></span>
-   utilPlugIn
-<!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-286000A.5.12"></a><span 
-class="ecbx-1095">DESCRIPTION</span></span>
-   Utilities for: * extracting text from XWI&#8217;s * SVM classification * language and country
-identification
-<!--l. 14--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-287000A.5.12"></a><span 
-class="ecbx-1095">AUTHOR</span></span>
-   Ignacio Garcia Dorado Anders Ardö <span 
-class="cmmi-10x-x-109">&#x003C;</span>anders.ardo@eit.lth.se<span 
-class="cmmi-10x-x-109">&#x003E;</span>
-<!--l. 20--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-288000A.5.12"></a><span 
-class="ecbx-1095">COPYRIGHT AND LICENSE</span></span>
-   Copyright (C) 2008 Ignacio Garcia Dorado, Anders Ardö
-<!--l. 27--><p class="indent" >   This library is free software; you can redistribute it and/or modify it under the same terms as
-Perl itself, either Perl version 5.8.4 or, at your option, any later version of Perl 5 you may have
-available.
-<!--l. 33--><p class="indent" >   See the file LICENCE included in the distribution at <span 
-class="ecss-1095">http://combine.it.lth.se/</span>
-<!--l. 36--><p class="indent" >   _________________________________________________________________________________________________________________
-   <h5 class="subsubsectionHead"><span class="titlemark">A.5.13   </span> <a 
- id="x45-289000A.5.13"></a>Combine::LoadTermList</h5>
-<!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-290000A.5.13"></a><span 
-class="ecbx-1095">NAME</span></span>
-   LoadTermList
-<!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-291000A.5.13"></a><span 
-class="ecbx-1095">DESCRIPTION</span></span>
-   This a module in the DESIRE automatic classification system. Copyright 1999.
-<!--l. 13--><p class="indent" >   LoadTermList - A class for loading and storing a stoplist with single words a termlist with
-classifications and weights
-
-   <table 
-class="verbatim"><tr class="verbatim"><td 
-class="verbatim"><div class="verbatim">
-&#x00A0;Subroutines:
-&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;LoadStopWordList(StopWordListFileName)
-&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;loads&#x00A0;a&#x00A0;list&#x00A0;of&#x00A0;stopwords,&#x00A0;one&#x00A0;per&#x00A0;line,&#x00A0;from
-&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;the&#x00A0;file&#x00A0;StopWordListFileName.
-</div>
-</td></tr></table>
-<!--l. 22--><p class="nopar" >
-
-   <table 
-class="verbatim"><tr class="verbatim"><td 
-class="verbatim"><div class="verbatim">
-&#x00A0;&#x00A0;&#x00A0;EraseStopWordList
-&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;clears&#x00A0;the&#x00A0;stopword&#x00A0;list
-</div>
-</td></tr></table>
-<!--l. 26--><p class="nopar" >
-
-   <table 
-class="verbatim"><tr class="verbatim"><td 
-class="verbatim"><div class="verbatim">
-&#x00A0;Subroutines:
-&#x00A0;<br />&#x00A0;&#x00A0;LoadTermList(TermListFileName)&#x00A0;-&#x00A0;loads&#x00A0;TermClass&#x00A0;from&#x00A0;file
-&#x00A0;<br />&#x00A0;&#x00A0;LoadTermListStemmed(TermListFileName)&#x00A0;-&#x00A0;same&#x00A0;plus&#x00A0;stems&#x00A0;terms
-</div>
-</td></tr></table>
-<!--l. 31--><p class="nopar" >
-
-   <table 
-class="verbatim"><tr class="verbatim"><td 
-class="verbatim"><div class="verbatim">
-&#x00A0;Input:&#x00A0;A&#x00A0;formatted&#x00A0;term-list&#x00A0;including&#x00A0;weights&#x00A0;and&#x00A0;classifications
-&#x00A0;<br />&#x00A0;&#x00A0;Format:&#x00A0;&#x00A0;&#x003C;weight&#x003E;:&#x00A0;&#x003C;term_reg_exp&#x003E;=[&#x003C;classification&#x003E;,&#x00A0;]+
-&#x00A0;<br />&#x00A0;&#x00A0;weight&#x00A0;can&#x00A0;be&#x00A0;a&#x00A0;positive&#x00A0;or&#x00A0;negative&#x00A0;number
-&#x00A0;<br />&#x00A0;&#x00A0;term_reg_exp&#x00A0;can&#x00A0;be&#x00A0;words,&#x00A0;phrases,&#x00A0;boolean&#x00A0;expressions&#x00A0;(with&#x00A0;@and
-&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;as&#x00A0;operator)&#x00A0;on&#x00A0;term_reg_exp&#x00A0;or&#x00A0;Perl&#x00A0;regular&#x00A0;expressions
-</div>
-</td></tr></table>
-<!--l. 38--><p class="nopar" >
-<!--l. 39--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-292000A.5.13"></a><span 
-class="ecbx-1095">AUTHOR</span></span>
-   Anders Ardö <span 
-class="cmmi-10x-x-109">&#x003C;</span>Anders.Ardo@it.lth.se<span 
-class="cmmi-10x-x-109">&#x003E;</span>
-<!--l. 44--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-293000A.5.13"></a><span 
-class="ecbx-1095">COPYRIGHT AND LICENSE</span></span>
-   Copyright (C) 2005,2006 Anders Ardö
-<!--l. 51--><p class="indent" >   This library is free software; you can redistribute it and/or modify it under the same terms as
-Perl itself, either Perl version 5.8.4 or, at your option, any later version of Perl 5 you may have
-available.
-<!--l. 57--><p class="indent" >   See the file LICENCE included in the distribution at <span 
-class="ecss-1095">http://combine.it.lth.se/</span>
-<!--l. 39--><p class="indent" >   _________________________________________________________________________________________________________________
-   <h5 class="subsubsectionHead"><span class="titlemark">A.5.14   </span> <a 
- id="x45-294000A.5.14"></a>Combine::SD_SQL</h5>
-<!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-295000A.5.14"></a><span 
-class="ecbx-1095">NAME</span></span>
-   SD_SQL
-<!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-296000A.5.14"></a><span 
-class="ecbx-1095">DESCRIPTION</span></span>
-   Reimplementation of sd.pl SD.pm and SDQ.pm using MySQL contains both recyc and
-guard
-<!--l. 14--><p class="indent" >   Basic idea is to have a table (urldb) that contains most URLs ever inserted into the system
-together with a lock (the guard function) and a boolean harvest-flag. Also in this table
-is the host part together with its lock. URLs are selected from this table based on
-urllock, netloclock and harvest and inserted into a queue (table que). URLs from this
-queue are then given out to harvesters. The queue is implemented as: # The admin
-table can be used to generate sequence numbers like this: #mysql<span 
-class="cmmi-10x-x-109">&#x003E; </span>update admin set
-queid=LAST_INSERT_ID(queid+1); # and used to extract the next URL from the queue
-#mysql<span 
-class="cmmi-10x-x-109">&#x003E; </span>select host,url from que where queid=LAST_INSERT_ID(); # When the queue is
-empty it is filled from table urldb. Several different algorithms can be used to fill it (round-robin,
-most urls, longest time since harvest, ...). Since the harvest-flag and guard-lock are not
-updated until the actual harvest is done it is OK to delete the queue and regenerate it
-anytime.
-
-<!--l. 33--><p class="indent" >   ########################## #Questions, ideas, TODOs, etc #Split
-table urldb into 2 tables - one for urls and one for hosts??? #Less efficient when filling que;
-more efficient when updating netloclock #Datastruktur TABLE hosts: create table
-hosts( host varchar(50) not null default &#8221;, netloclock int not null, retries int not null
-default 0, ant int not null default 0, primary key (host), key (ant), key (netloclock)
-);
-<!--l. 50--><p class="indent" >   ############# Handle to many retries?
-
-   <table 
-class="verbatim"><tr class="verbatim"><td 
-class="verbatim"><div class="verbatim">
-&#x00A0;&#x00A0;&#x00A0;&#x00A0;algorithm&#x00A0;takes&#x00A0;an&#x00A0;url&#x00A0;from&#x00A0;the&#x00A0;host&#x00A0;that&#x00A0;was&#x00A0;accessed&#x00A0;longest&#x00A0;ago
-&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;($hostid,$url)=SELECT&#x00A0;host,url,id&#x00A0;FROM&#x00A0;hosts,urls&#x00A0;WHERE
-&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;hosts.hostlock&#x00A0;&#x003C;&#x00A0;UNIX_TIMESTAMP()
-&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;hosts.host=urls.host&#x00A0;AND
-&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;urls.urllock&#x00A0;&#x003C;&#x00A0;UNIX_TIMESTAMP()&#x00A0;AND
-&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;urls.harvest=1&#x00A0;ORDER&#x00A0;BY&#x00A0;hostlock&#x00A0;LIMIT&#x00A0;1;
-</div>
-</td></tr></table>
-<!--l. 60--><p class="nopar" >
-
-   <table 
-class="verbatim"><tr class="verbatim"><td 
-class="verbatim"><div class="verbatim">
-&#x00A0;&#x00A0;&#x00A0;&#x00A0;algorithm&#x00A0;takes&#x00A0;an&#x00A0;url&#x00A0;from&#x00A0;the&#x00A0;host&#x00A0;with&#x00A0;most&#x00A0;URLs
-&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;($hostid,$url)=SELECT&#x00A0;host,url,id&#x00A0;FROM&#x00A0;hosts,urls&#x00A0;WHERE
-&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;hosts.hostlock&#x00A0;&#x003C;&#x00A0;UNIX_TIMESTAMP()
-&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;hosts.host=urls.host&#x00A0;AND
-&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;urls.urllock&#x00A0;&#x003C;&#x00A0;UNIX_TIMESTAMP()&#x00A0;AND
-&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;urls.harvest=1&#x00A0;ORDER&#x00A0;BY&#x00A0;host.ant&#x00A0;DESC&#x00A0;LIMIT&#x00A0;1;
-</div>
-</td></tr></table>
-<!--l. 68--><p class="nopar" >
-
-   <table 
-class="verbatim"><tr class="verbatim"><td 
-class="verbatim"><div class="verbatim">
-&#x00A0;&#x00A0;&#x00A0;&#x00A0;algorithm&#x00A0;takes&#x00A0;an&#x00A0;url&#x00A0;from&#x00A0;any&#x00A0;available&#x00A0;host
-&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;($hostid,$url)=SELECT&#x00A0;host,url,id&#x00A0;FROM&#x00A0;hosts,urls&#x00A0;WHERE
-&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;hosts.hostlock&#x00A0;&#x003C;&#x00A0;UNIX_TIMESTAMP()
-&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;hosts.host=urls.host&#x00A0;AND
-&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;urls.urllock&#x00A0;&#x003C;&#x00A0;UNIX_TIMESTAMP()&#x00A0;AND
-&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;urls.harvest=1&#x00A0;LIMIT&#x00A0;1;
-</div>
-</td></tr></table>
-<!--l. 76--><p class="nopar" >
-<!--l. 77--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-297000A.5.14"></a><span 
-class="ecbx-1095">AUTHOR</span></span>
-   Anders Ardö <span 
-class="cmmi-10x-x-109">&#x003C;</span>anders.ardo@it.lth.se<span 
-class="cmmi-10x-x-109">&#x003E;</span>
-<!--l. 82--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-298000A.5.14"></a><span 
-class="ecbx-1095">COPYRIGHT AND LICENSE</span></span>
-   Copyright (C) 2005,2006 Anders Ardö
-<!--l. 89--><p class="indent" >   This library is free software; you can redistribute it and/or modify it under the same terms as
-Perl itself, either Perl version 5.8.4 or, at your option, any later version of Perl 5 you may have
-available.
-<!--l. 95--><p class="indent" >   See the file LICENCE included in the distribution at <span 
-class="ecss-1095">http://combine.it.lth.se/</span>
-<!--l. 42--><p class="indent" >   _________________________________________________________________________________________________________________
-   <h5 class="subsubsectionHead"><span class="titlemark">A.5.15   </span> <a 
- id="x45-299000A.5.15"></a>Combine::HTMLExtractor</h5>
-<!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-300000A.5.15"></a><span 
-class="ecbx-1095">NAME</span></span>
-   HTMLExtractor
-<!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-301000A.5.15"></a><span 
-class="ecbx-1095">DESCRIPTION</span></span>
-   Adopted from HTML::LinkExtractor - Extract links from an HTML document by D.H
-(PodMaster)
-<!--l. 14--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-302000A.5.15"></a><span 
-class="ecbx-1095">AUTHOR Anders Ardo</span></span>
-   D.H (PodMaster)
-<!--l. 19--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-303000A.5.15"></a><span 
-class="ecbx-1095">LICENSE</span></span>
-   Copyright (c) 2003 by D.H. (PodMaster). All rights reserved.
-<!--l. 27--><p class="indent" >   This module is free software; you can redistribute it and/or modify it under the same terms
-as Perl itself. The LICENSE file contains the full text of the license.
-<!--l. 45--><p class="indent" >   _________________________________________________________________________________________________________________
-
-   <h5 class="subsubsectionHead"><span class="titlemark">A.5.16   </span> <a 
- id="x45-304000A.5.16"></a>Combine::XWI</h5>
-<!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-305000A.5.16"></a><span 
+ id="x45-286000A.5.11"></a><span 
 class="ecbx-1095">NAME</span></span>
    XWI.pm - class for internal representation of a document record
 <!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-306000A.5.16"></a><span 
+ id="x45-287000A.5.11"></a><span 
 class="ecbx-1095">SYNOPSIS</span></span>
 
    <table 
@@ -2274,18 +2093,18 @@ class="verbatim"><div class="verbatim">
 </td></tr></table>
 <!--l. 37--><p class="nopar" >
 <!--l. 38--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-307000A.5.16"></a><span 
+ id="x45-288000A.5.11"></a><span 
 class="ecbx-1095">DESCRIPTION</span></span>
    Provides methods for storing and retrieving structured records representing crawled
 documents.
 <!--l. 44--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-308000A.5.16"></a><span 
+ id="x45-289000A.5.11"></a><span 
 class="ecbx-1095">METHODS</span></span>
 <!--l. 45--><p class="indent" >   <span class="likesubparagraphHead"><a 
- id="x45-309000A.5.16"></a><span 
+ id="x45-290000A.5.11"></a><span 
 class="ecbx-1095">new()</span></span>
 <!--l. 46--><p class="indent" >   <span class="likesubparagraphHead"><a 
- id="x45-310000A.5.16"></a><span 
+ id="x45-291000A.5.11"></a><span 
 class="ecbx-1095">XXX($val)</span></span>
    Saves $val using AUTOLOAD. Can later be retrieved, eg
 
@@ -2299,23 +2118,23 @@ class="verbatim"><div class="verbatim">
 <!--l. 54--><p class="nopar" >
 <!--l. 57--><p class="indent" >   will set $t to &#8217;My value&#8217;
 <!--l. 59--><p class="indent" >   <span class="likesubparagraphHead"><a 
- id="x45-311000A.5.16"></a><span 
+ id="x45-292000A.5.11"></a><span 
 class="ecbx-1095">*_reset()</span></span>
    Forget all values.
 <!--l. 64--><p class="indent" >   <span class="likesubparagraphHead"><a 
- id="x45-312000A.5.16"></a><span 
+ id="x45-293000A.5.11"></a><span 
 class="ecbx-1095">*_rewind()</span></span>
    *_get will start with the first value.
 <!--l. 69--><p class="indent" >   <span class="likesubparagraphHead"><a 
- id="x45-313000A.5.16"></a><span 
+ id="x45-294000A.5.11"></a><span 
 class="ecbx-1095">*_add</span></span>
    stores values into the datastructure
 <!--l. 74--><p class="indent" >   <span class="likesubparagraphHead"><a 
- id="x45-314000A.5.16"></a><span 
+ id="x45-295000A.5.11"></a><span 
 class="ecbx-1095">*_get</span></span>
    retrieves values from the datastructure
 <!--l. 79--><p class="indent" >   <span class="likesubparagraphHead"><a 
- id="x45-315000A.5.16"></a><span 
+ id="x45-296000A.5.11"></a><span 
 class="ecbx-1095">meta_reset() / meta_rewind() / meta_add() / meta_get()</span></span>
    Stores the content of Meta-tags
 <!--l. 86--><p class="indent" >   Takes/Returns 2 parameters: Name, Content
@@ -2342,32 +2161,32 @@ class="verbatim"><div class="verbatim">
 </td></tr></table>
 <!--l. 99--><p class="nopar" >
 <!--l. 100--><p class="indent" >   <span class="likesubparagraphHead"><a 
- id="x45-316000A.5.16"></a><span 
+ id="x45-297000A.5.11"></a><span 
 class="ecbx-1095">xmeta_reset() / xmeta_rewind() / xmeta_add() / xmeta_get()</span></span>
    Extended information from Meta-tags. Not used.
 <!--l. 105--><p class="indent" >   <span class="likesubparagraphHead"><a 
- id="x45-317000A.5.16"></a><span 
+ id="x45-298000A.5.11"></a><span 
 class="ecbx-1095">url_remove() / url_reset() / url_rewind() / url_add() / url_get()</span></span>
    Stores all URLs (ie if multiple URLs for the same page) for this record
 <!--l. 112--><p class="indent" >   Takes/Returns 1 parameter: URL
 <!--l. 114--><p class="indent" >   <span class="likesubparagraphHead"><a 
- id="x45-318000A.5.16"></a><span 
+ id="x45-299000A.5.11"></a><span 
 class="ecbx-1095">heading_reset() / heading_rewind() / heading_add() / heading_get()</span></span>
    Stores headings from HTML documents
 <!--l. 121--><p class="indent" >   Takes/Returns 1 parameter: Heading text
 <!--l. 123--><p class="indent" >   <span class="likesubparagraphHead"><a 
- id="x45-319000A.5.16"></a><span 
+ id="x45-300000A.5.11"></a><span 
 class="ecbx-1095">link_reset() / link_rewind() / link_add() / link_get()</span></span>
    Stores links from documents
 <!--l. 130--><p class="indent" >   Takes/Returns 5 parameters: URL, netlocid, urlid, Anchor text, Link type
 <!--l. 132--><p class="indent" >   <span class="likesubparagraphHead"><a 
- id="x45-320000A.5.16"></a><span 
+ id="x45-301000A.5.11"></a><span 
 class="ecbx-1095">robot_reset() / robot_rewind() / robot_add() / robot_get()</span></span>
    Stores calculated information, like genre, language, etc
 <!--l. 139--><p class="indent" >   Takes/Returns 2 parameters Name, Value. Both are strings with max length Name: 15,
 Value: 20
 <!--l. 141--><p class="indent" >   <span class="likesubparagraphHead"><a 
- id="x45-321000A.5.16"></a><span 
+ id="x45-302000A.5.11"></a><span 
 class="ecbx-1095">topic_reset() / topic_rewind() / topic_add() / topic_get()</span></span>
    Stores result of topic classification.
 <!--l. 148--><p class="indent" >   Takes/Returns 5 parameters: Class, Absolute score, Normalized score, Terms, Algorithm
@@ -2378,12 +2197,12 @@ id
 <!--l. 161--><p class="indent" >   Normalized score and Terms are optional and may be replaced with 0, and &#8221; respectively
 
 <!--l. 163--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-322000A.5.16"></a><span 
+ id="x45-303000A.5.11"></a><span 
 class="ecbx-1095">SEE ALSO</span></span>
    Combine focused crawler main site <span 
 class="ecss-1095">http://combine.it.lth.se/</span>
 <!--l. 168--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-323000A.5.16"></a><span 
+ id="x45-304000A.5.11"></a><span 
 class="ecbx-1095">AUTHOR</span></span>
    Yong Cao <span 
 class="cmmi-10x-x-109">&#x003C;</span>tsao@munin.ub2.lu.se<span 
@@ -2392,7 +2211,7 @@ class="cmmi-10x-x-109">&#x003E; </span>v0.05 1997-03-13
 class="cmmi-10x-x-109">&#x003C;</span>anders.ardo@it.lth.se<span 
 class="cmmi-10x-x-109">&#x003E;</span>
 <!--l. 177--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-324000A.5.16"></a><span 
+ id="x45-305000A.5.11"></a><span 
 class="ecbx-1095">COPYRIGHT AND LICENSE</span></span>
    Copyright (C) 2005,2006 Anders Ardö
 <!--l. 184--><p class="indent" >   This library is free software; you can redistribute it and/or modify it under the same terms as
@@ -2400,15 +2219,216 @@ Perl itself, either Perl version 5.8.4 or, at your option, any later version of 
 available.
 <!--l. 190--><p class="indent" >   See the file LICENCE included in the distribution at <span 
 class="ecss-1095">http://combine.it.lth.se/</span>
-<!--l. 48--><p class="indent" >   _________________________________________________________________________________________________________________
-   <h5 class="subsubsectionHead"><span class="titlemark">A.5.17   </span> <a 
- id="x45-325000A.5.17"></a>Combine::FromHTML</h5>
+<!--l. 33--><p class="indent" >   _________________________________________________________________________________________________________________
+   <h5 class="subsubsectionHead"><span class="titlemark">A.5.12   </span> <a 
+ id="x45-306000A.5.12"></a>Combine::Matcher</h5>
 <!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-326000A.5.17"></a><span 
+ id="x45-307000A.5.12"></a><span 
+class="ecbx-1095">NAME</span></span>
+   Matcher
+<!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-308000A.5.12"></a><span 
+class="ecbx-1095">DESCRIPTION</span></span>
+   This a module in the DESIRE automatic classification system. Copyright 1999. Modified in
+the ALVIS project. Copyright 2004
+<!--l. 14--><p class="indent" >   Exported routines: 1. Fetching text: These routines all extract texts from a document (either
+a Combine XWI datastructure or a WWW-page identified by a URL. They all return: $meta,
+$head, $text, $url, $title, $size $meta: Metadata from document $head: Important text from
+document $text: Plain text from document $url: URL of the document $title: HTML title of the
+document $size: The size of the document
+
+   <table 
+class="verbatim"><tr class="verbatim"><td 
+class="verbatim"><div class="verbatim">
+&#x00A0;&#x00A0;&#x00A0;Common&#x00A0;input&#x00A0;parameters:
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;$DoStem:&#x00A0;1=do&#x00A0;stemming;&#x00A0;0=no&#x00A0;stemming
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;$stoplist:&#x00A0;object&#x00A0;pointer&#x00A0;to&#x00A0;a&#x00A0;LoadTermList&#x00A0;object&#x00A0;with&#x00A0;a&#x00A0;stoplist&#x00A0;loaded
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;$simple:&#x00A0;1=do&#x00A0;simple&#x00A0;loading;&#x00A0;0=advanced&#x00A0;loading&#x00A0;(might&#x00A0;induce&#x00A0;errors)
+</div>
+</td></tr></table>
+<!--l. 31--><p class="nopar" >
+
+   <table 
+class="verbatim"><tr class="verbatim"><td 
+class="verbatim"><div class="verbatim">
+&#x00A0;getTextXWI
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;parameters:&#x00A0;$xwi,&#x00A0;$DoStem,&#x00A0;$stoplist,&#x00A0;$simple
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;$xwi&#x00A0;is&#x00A0;a&#x00A0;Combine&#x00A0;XWI&#x00A0;datastructure
+</div>
+</td></tr></table>
+<!--l. 36--><p class="nopar" >
+
+   <table 
+class="verbatim"><tr class="verbatim"><td 
+class="verbatim"><div class="verbatim">
+&#x00A0;getTextURL
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;parameters:&#x00A0;$url,&#x00A0;$DoStem,&#x00A0;$stoplist,&#x00A0;$simple
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;$url&#x00A0;is&#x00A0;the&#x00A0;URL&#x00A0;for&#x00A0;the&#x00A0;page&#x00A0;to&#x00A0;extract&#x00A0;text&#x00A0;from
+</div>
+</td></tr></table>
+<!--l. 41--><p class="nopar" >
+<!--l. 44--><p class="indent" >   2. Term matcher accepts a text as a (reference) parameter, matches each term in
+Term against text Matches are recorded in an associative array with class as key and
+summed weight as value. Match parameters: $text, $termlist $text: text to match
+against the termlist $termlist: object pointer to a LoadTermList object with a termlist
+loaded output: %score: an associative array with classifications as keys and scores as
+values
+<!--l. 54--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-309000A.5.12"></a><span 
+class="ecbx-1095">AUTHOR</span></span>
+   Anders Ardö <span 
+class="cmmi-10x-x-109">&#x003C;</span>anders.ardo@it.lth.se<span 
+class="cmmi-10x-x-109">&#x003E;</span>
+<!--l. 59--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-310000A.5.12"></a><span 
+class="ecbx-1095">COPYRIGHT AND LICENSE</span></span>
+   Copyright (C) 2005,2006 Anders Ardö
+<!--l. 66--><p class="indent" >   This library is free software; you can redistribute it and/or modify it under the same terms as
+Perl itself, either Perl version 5.8.4 or, at your option, any later version of Perl 5 you may have
+available.
+<!--l. 72--><p class="indent" >   See the file LICENCE included in the distribution at <span 
+class="ecss-1095">http://combine.it.lth.se/</span>
+<!--l. 36--><p class="indent" >   _________________________________________________________________________________________________________________
+   <h5 class="subsubsectionHead"><span class="titlemark">A.5.13   </span> <a 
+ id="x45-311000A.5.13"></a>Combine::FromTeX</h5>
+<!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-312000A.5.13"></a><span 
+class="ecbx-1095">NAME</span></span>
+   Combine::FromTeX.pm - TeX parser in combine package
+<!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-313000A.5.13"></a><span 
+class="ecbx-1095">AUTHOR</span></span>
+
+   <table 
+class="verbatim"><tr class="verbatim"><td 
+class="verbatim"><div class="verbatim">
+&#x00A0;Anders&#x00A0;Ardø&#x00A0;2000-06-11
+</div>
+</td></tr></table>
+<!--l. 9--><p class="nopar" > __________________________________________________________________________
+   <h5 class="subsubsectionHead"><span class="titlemark">A.5.14   </span> <a 
+ id="x45-314000A.5.14"></a>Combine::SD_SQL</h5>
+<!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-315000A.5.14"></a><span 
+class="ecbx-1095">NAME</span></span>
+   SD_SQL
+<!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-316000A.5.14"></a><span 
+class="ecbx-1095">DESCRIPTION</span></span>
+   Reimplementation of sd.pl SD.pm and SDQ.pm using MySQL contains both recyc and
+guard
+<!--l. 14--><p class="indent" >   Basic idea is to have a table (urldb) that contains most URLs ever inserted into the system
+together with a lock (the guard function) and a boolean harvest-flag. Also in this table
+is the host part together with its lock. URLs are selected from this table based on
+urllock, netloclock and harvest and inserted into a queue (table que). URLs from this
+queue are then given out to harvesters. The queue is implemented as: # The admin
+table can be used to generate sequence numbers like this: #mysql<span 
+class="cmmi-10x-x-109">&#x003E; </span>update admin set
+queid=LAST_INSERT_ID(queid+1); # and used to extract the next URL from the queue
+#mysql<span 
+class="cmmi-10x-x-109">&#x003E; </span>select host,url from que where queid=LAST_INSERT_ID(); # When the queue is
+empty it is filled from table urldb. Several different algorithms can be used to fill it (round-robin,
+most urls, longest time since harvest, ...). Since the harvest-flag and guard-lock are not
+updated until the actual harvest is done it is OK to delete the queue and regenerate it
+anytime.
+<!--l. 33--><p class="indent" >   ########################## #Questions, ideas, TODOs, etc #Split
+table urldb into 2 tables - one for urls and one for hosts??? #Less efficient when filling que;
+more efficient when updating netloclock #Datastruktur TABLE hosts: create table
+hosts( host varchar(50) not null default &#8221;, netloclock int not null, retries int not null
+default 0, ant int not null default 0, primary key (host), key (ant), key (netloclock)
+);
+<!--l. 50--><p class="indent" >   ############# Handle to many retries?
+
+   <table 
+class="verbatim"><tr class="verbatim"><td 
+class="verbatim"><div class="verbatim">
+&#x00A0;&#x00A0;&#x00A0;&#x00A0;algorithm&#x00A0;takes&#x00A0;an&#x00A0;url&#x00A0;from&#x00A0;the&#x00A0;host&#x00A0;that&#x00A0;was&#x00A0;accessed&#x00A0;longest&#x00A0;ago
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;($hostid,$url)=SELECT&#x00A0;host,url,id&#x00A0;FROM&#x00A0;hosts,urls&#x00A0;WHERE
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;hosts.hostlock&#x00A0;&#x003C;&#x00A0;UNIX_TIMESTAMP()
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;hosts.host=urls.host&#x00A0;AND
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;urls.urllock&#x00A0;&#x003C;&#x00A0;UNIX_TIMESTAMP()&#x00A0;AND
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;urls.harvest=1&#x00A0;ORDER&#x00A0;BY&#x00A0;hostlock&#x00A0;LIMIT&#x00A0;1;
+</div>
+</td></tr></table>
+<!--l. 60--><p class="nopar" >
+
+   <table 
+class="verbatim"><tr class="verbatim"><td 
+class="verbatim"><div class="verbatim">
+&#x00A0;&#x00A0;&#x00A0;&#x00A0;algorithm&#x00A0;takes&#x00A0;an&#x00A0;url&#x00A0;from&#x00A0;the&#x00A0;host&#x00A0;with&#x00A0;most&#x00A0;URLs
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;($hostid,$url)=SELECT&#x00A0;host,url,id&#x00A0;FROM&#x00A0;hosts,urls&#x00A0;WHERE
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;hosts.hostlock&#x00A0;&#x003C;&#x00A0;UNIX_TIMESTAMP()
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;hosts.host=urls.host&#x00A0;AND
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;urls.urllock&#x00A0;&#x003C;&#x00A0;UNIX_TIMESTAMP()&#x00A0;AND
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;urls.harvest=1&#x00A0;ORDER&#x00A0;BY&#x00A0;host.ant&#x00A0;DESC&#x00A0;LIMIT&#x00A0;1;
+</div>
+</td></tr></table>
+<!--l. 68--><p class="nopar" >
+
+   <table 
+class="verbatim"><tr class="verbatim"><td 
+class="verbatim"><div class="verbatim">
+&#x00A0;&#x00A0;&#x00A0;&#x00A0;algorithm&#x00A0;takes&#x00A0;an&#x00A0;url&#x00A0;from&#x00A0;any&#x00A0;available&#x00A0;host
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;($hostid,$url)=SELECT&#x00A0;host,url,id&#x00A0;FROM&#x00A0;hosts,urls&#x00A0;WHERE
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;hosts.hostlock&#x00A0;&#x003C;&#x00A0;UNIX_TIMESTAMP()
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;hosts.host=urls.host&#x00A0;AND
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;urls.urllock&#x00A0;&#x003C;&#x00A0;UNIX_TIMESTAMP()&#x00A0;AND
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;urls.harvest=1&#x00A0;LIMIT&#x00A0;1;
+</div>
+</td></tr></table>
+<!--l. 76--><p class="nopar" >
+<!--l. 77--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-317000A.5.14"></a><span 
+class="ecbx-1095">AUTHOR</span></span>
+   Anders Ardö <span 
+class="cmmi-10x-x-109">&#x003C;</span>anders.ardo@it.lth.se<span 
+class="cmmi-10x-x-109">&#x003E;</span>
+<!--l. 82--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-318000A.5.14"></a><span 
+class="ecbx-1095">COPYRIGHT AND LICENSE</span></span>
+   Copyright (C) 2005,2006 Anders Ardö
+<!--l. 89--><p class="indent" >   This library is free software; you can redistribute it and/or modify it under the same terms as
+Perl itself, either Perl version 5.8.4 or, at your option, any later version of Perl 5 you may have
+available.
+<!--l. 95--><p class="indent" >   See the file LICENCE included in the distribution at <span 
+class="ecss-1095">http://combine.it.lth.se/</span>
+<!--l. 42--><p class="indent" >   _________________________________________________________________________________________________________________
+   <h5 class="subsubsectionHead"><span class="titlemark">A.5.15   </span> <a 
+ id="x45-319000A.5.15"></a>Combine::utilPlugIn</h5>
+<!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-320000A.5.15"></a><span 
+class="ecbx-1095">NAME</span></span>
+   utilPlugIn
+<!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-321000A.5.15"></a><span 
+class="ecbx-1095">DESCRIPTION</span></span>
+   Utilities for: * extracting text from XWI&#8217;s * SVM classification * language and country
+identification
+<!--l. 14--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-322000A.5.15"></a><span 
+class="ecbx-1095">AUTHOR</span></span>
+   Ignacio Garcia Dorado Anders Ardö <span 
+class="cmmi-10x-x-109">&#x003C;</span>anders.ardo@eit.lth.se<span 
+class="cmmi-10x-x-109">&#x003E;</span>
+
+<!--l. 20--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-323000A.5.15"></a><span 
+class="ecbx-1095">COPYRIGHT AND LICENSE</span></span>
+   Copyright (C) 2008 Ignacio Garcia Dorado, Anders Ardö
+<!--l. 27--><p class="indent" >   This library is free software; you can redistribute it and/or modify it under the same terms as
+Perl itself, either Perl version 5.8.4 or, at your option, any later version of Perl 5 you may have
+available.
+<!--l. 33--><p class="indent" >   See the file LICENCE included in the distribution at <span 
+class="ecss-1095">http://combine.it.lth.se/</span>
+<!--l. 45--><p class="indent" >   _________________________________________________________________________________________________________________
+   <h5 class="subsubsectionHead"><span class="titlemark">A.5.16   </span> <a 
+ id="x45-324000A.5.16"></a>Combine::FromHTML</h5>
+<!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-325000A.5.16"></a><span 
 class="ecbx-1095">NAME</span></span>
    Combine::FromHTML.pm - HTML parser in combine package
 <!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-327000A.5.17"></a><span 
+ id="x45-326000A.5.16"></a><span 
 class="ecbx-1095">AUTHOR</span></span>
    Yong Cao <span 
 class="cmmi-10x-x-109">&#x003C;</span>tsao@munin.ub2.lu.se<span 
@@ -2430,27 +2450,130 @@ class="cmsy-10x-x-109">\</span>240
 matching (which can be introduced by decoding html entities) added compress blanks and
 remove CRs to metadata-content Anders Ardö 2004-04 Changed extraction process
 dramatically
+<!--l. 48--><p class="indent" >   _________________________________________________________________________________________________________________
+   <h5 class="subsubsectionHead"><span class="titlemark">A.5.17   </span> <a 
+ id="x45-327000A.5.17"></a>Combine::RobotRules</h5>
+<!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-328000A.5.17"></a><span 
+class="ecbx-1095">NAME</span></span>
+   RobotRules.pm
+<!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-329000A.5.17"></a><span 
+class="ecbx-1095">AUTHOR</span></span>
+   Anders Ardo version 1.0 2004-02-19
 <!--l. 51--><p class="indent" >   _________________________________________________________________________________________________________________
    <h5 class="subsubsectionHead"><span class="titlemark">A.5.18   </span> <a 
- id="x45-328000A.5.18"></a>Combine::classifySVM</h5>
+ id="x45-330000A.5.18"></a>Combine::HTMLExtractor</h5>
 <!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-329000A.5.18"></a><span 
+ id="x45-331000A.5.18"></a><span 
 class="ecbx-1095">NAME</span></span>
-   classifySVM
+   HTMLExtractor
 
 <!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-330000A.5.18"></a><span 
+ id="x45-332000A.5.18"></a><span 
+class="ecbx-1095">DESCRIPTION</span></span>
+   Adopted from HTML::LinkExtractor - Extract links from an HTML document by D.H
+(PodMaster)
+<!--l. 14--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-333000A.5.18"></a><span 
+class="ecbx-1095">AUTHOR Anders Ardo</span></span>
+   D.H (PodMaster)
+<!--l. 19--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-334000A.5.18"></a><span 
+class="ecbx-1095">LICENSE</span></span>
+   Copyright (c) 2003 by D.H. (PodMaster). All rights reserved.
+<!--l. 27--><p class="indent" >   This module is free software; you can redistribute it and/or modify it under the same terms
+as Perl itself. The LICENSE file contains the full text of the license.
+<!--l. 54--><p class="indent" >   _________________________________________________________________________________________________________________
+   <h5 class="subsubsectionHead"><span class="titlemark">A.5.19   </span> <a 
+ id="x45-335000A.5.19"></a>Combine::LoadTermList</h5>
+<!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-336000A.5.19"></a><span 
+class="ecbx-1095">NAME</span></span>
+   LoadTermList
+<!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-337000A.5.19"></a><span 
+class="ecbx-1095">DESCRIPTION</span></span>
+   This a module in the DESIRE automatic classification system. Copyright 1999.
+<!--l. 13--><p class="indent" >   LoadTermList - A class for loading and storing a stoplist with single words a termlist with
+classifications and weights
+
+   <table 
+class="verbatim"><tr class="verbatim"><td 
+class="verbatim"><div class="verbatim">
+&#x00A0;Subroutines:
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;LoadStopWordList(StopWordListFileName)
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;loads&#x00A0;a&#x00A0;list&#x00A0;of&#x00A0;stopwords,&#x00A0;one&#x00A0;per&#x00A0;line,&#x00A0;from
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;the&#x00A0;file&#x00A0;StopWordListFileName.
+</div>
+</td></tr></table>
+<!--l. 22--><p class="nopar" >
+
+   <table 
+class="verbatim"><tr class="verbatim"><td 
+class="verbatim"><div class="verbatim">
+&#x00A0;&#x00A0;&#x00A0;EraseStopWordList
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;clears&#x00A0;the&#x00A0;stopword&#x00A0;list
+</div>
+</td></tr></table>
+<!--l. 26--><p class="nopar" >
+
+   <table 
+class="verbatim"><tr class="verbatim"><td 
+class="verbatim"><div class="verbatim">
+&#x00A0;Subroutines:
+&#x00A0;<br />&#x00A0;&#x00A0;LoadTermList(TermListFileName)&#x00A0;-&#x00A0;loads&#x00A0;TermClass&#x00A0;from&#x00A0;file
+&#x00A0;<br />&#x00A0;&#x00A0;LoadTermListStemmed(TermListFileName)&#x00A0;-&#x00A0;same&#x00A0;plus&#x00A0;stems&#x00A0;terms
+</div>
+</td></tr></table>
+<!--l. 31--><p class="nopar" >
+
+   <table 
+class="verbatim"><tr class="verbatim"><td 
+class="verbatim"><div class="verbatim">
+&#x00A0;Input:&#x00A0;A&#x00A0;formatted&#x00A0;term-list&#x00A0;including&#x00A0;weights&#x00A0;and&#x00A0;classifications
+&#x00A0;<br />&#x00A0;&#x00A0;Format:&#x00A0;&#x00A0;&#x003C;weight&#x003E;:&#x00A0;&#x003C;term_reg_exp&#x003E;=[&#x003C;classification&#x003E;,&#x00A0;]+
+&#x00A0;<br />&#x00A0;&#x00A0;weight&#x00A0;can&#x00A0;be&#x00A0;a&#x00A0;positive&#x00A0;or&#x00A0;negative&#x00A0;number
+&#x00A0;<br />&#x00A0;&#x00A0;term_reg_exp&#x00A0;can&#x00A0;be&#x00A0;words,&#x00A0;phrases,&#x00A0;boolean&#x00A0;expressions&#x00A0;(with&#x00A0;@and
+&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;as&#x00A0;operator)&#x00A0;on&#x00A0;term_reg_exp&#x00A0;or&#x00A0;Perl&#x00A0;regular&#x00A0;expressions
+</div>
+</td></tr></table>
+<!--l. 38--><p class="nopar" >
+<!--l. 39--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-338000A.5.19"></a><span 
+class="ecbx-1095">AUTHOR</span></span>
+   Anders Ardö <span 
+class="cmmi-10x-x-109">&#x003C;</span>Anders.Ardo@it.lth.se<span 
+class="cmmi-10x-x-109">&#x003E;</span>
+<!--l. 44--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-339000A.5.19"></a><span 
+class="ecbx-1095">COPYRIGHT AND LICENSE</span></span>
+   Copyright (C) 2005,2006 Anders Ardö
+<!--l. 51--><p class="indent" >   This library is free software; you can redistribute it and/or modify it under the same terms as
+Perl itself, either Perl version 5.8.4 or, at your option, any later version of Perl 5 you may have
+available.
+<!--l. 57--><p class="indent" >   See the file LICENCE included in the distribution at <span 
+class="ecss-1095">http://combine.it.lth.se/</span>
+<!--l. 57--><p class="indent" >   _________________________________________________________________________________________________________________
+   <h5 class="subsubsectionHead"><span class="titlemark">A.5.20   </span> <a 
+ id="x45-340000A.5.20"></a>Combine::classifySVM</h5>
+<!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-341000A.5.20"></a><span 
+class="ecbx-1095">NAME</span></span>
+   classifySVM
+<!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
+ id="x45-342000A.5.20"></a><span 
 class="ecbx-1095">DESCRIPTION</span></span>
    Classification plugin module using SVM (implementation SVMLight)
 <!--l. 13--><p class="indent" >   Uses SVM model loaded from file pointed to by configuration variable &#8217;SVMmodel&#8217;
 <!--l. 15--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-331000A.5.18"></a><span 
+ id="x45-343000A.5.20"></a><span 
 class="ecbx-1095">AUTHOR</span></span>
    Ignacio Garcia Dorado Anders Ardö <span 
 class="cmmi-10x-x-109">&#x003C;</span>anders.ardo@eit.lth.se<span 
 class="cmmi-10x-x-109">&#x003E;</span>
 <!--l. 21--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-332000A.5.18"></a><span 
+ id="x45-344000A.5.20"></a><span 
 class="ecbx-1095">COPYRIGHT AND LICENSE</span></span>
    Copyright (C) 2008 Ignacio Garcia Dorado, Anders Ardö
 <!--l. 28--><p class="indent" >   This library is free software; you can redistribute it and/or modify it under the same terms as
@@ -2458,116 +2581,7 @@ Perl itself, either Perl version 5.8.4 or, at your option, any later version of 
 available.
 <!--l. 34--><p class="indent" >   See the file LICENCE included in the distribution at <span 
 class="ecss-1095">http://combine.it.lth.se/</span>
-<!--l. 54--><p class="indent" >   _________________________________________________________________________________________________________________
-   <h5 class="subsubsectionHead"><span class="titlemark">A.5.19   </span> <a 
- id="x45-333000A.5.19"></a>Combine::selurl</h5>
-<!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-334000A.5.19"></a><span 
-class="ecbx-1095">NAME</span></span>
-   selurl - Normalise and validate URIs for harvesting
-<!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-335000A.5.19"></a><span 
-class="ecbx-1095">INTRODUCTION</span></span>
-   Selurl selects and normalises URIs on basis of both general practice (hostname lowercasing,
-portnumber substsitution etc.) and Combine-specific handling (aplpying config_allow,
-config_exclude, config_serveralias and other relevant config settings).
-<!--l. 16--><p class="indent" >   The Config settings catered for currently are:
-<!--l. 20--><p class="indent" >   maxUrlLength - the maximum length of an unnormalised URL allow - Perl regular
-to identify allowed URLs exclude - Perl regular expressions to exclude URLs from
-harvesting serveralias - Aliases of server names sessionids - List sessionid markers to be
-removed
-<!--l. 28--><p class="indent" >   A selurl object can hold a single URL and has methods to obtain its subparts
-as defined in URI.pm, plus some methods to normalise and validate it in Combine
-context.
-<!--l. 32--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-336000A.5.19"></a><span 
-class="ecbx-1095">BUGS</span></span>
-   Currently, the only schemes supported are http, https and ftp. Others may or may not work
-correctly. For one thing, we assume the scheme has an internet hostname/port.
-<!--l. 41--><p class="indent" >   clone() will only return a copy of the real URI object, not a new selurl.
-<!--l. 46--><p class="indent" >   URI URI-escapes the strings fed into it by new() once. Existing percent signs in the input are
-left untouched, which implicates that:
-<!--l. 51--><p class="indent" >   (a) there is no risk of double-encoding; and
 
-<!--l. 55--><p class="indent" >   (b) if the original contained an inadvertent sequence that could be interpreted as an escape
-sequence, uri_unescape will not render the original input (e.g. url_with_%66_in_it goes
-whoop) If you know that the original has not yet been escaped and wish to safeguard potential
-percent signs, you&#8217;ll have to escape them (and only them) once before you offer it to
-new().
-<!--l. 64--><p class="indent" >   A problem with URI is, that its object is not a hash we can piggyback our data on, so I had
-to resort to AUTOLOAD to emulate inheritance. I find this ugly, but well, this *is* Perl, so
-what&#8217;d you expect?
-<!--l. 57--><p class="indent" >   _________________________________________________________________________________________________________________
-   <h5 class="subsubsectionHead"><span class="titlemark">A.5.20   </span> <a 
- id="x45-337000A.5.20"></a>Combine::PosMatcher</h5>
-<!--l. 1--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-338000A.5.20"></a><span 
-class="ecbx-1095">NAME</span></span>
-   PosMatcher
-<!--l. 6--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-339000A.5.20"></a><span 
-class="ecbx-1095">DESCRIPTION</span></span>
-   This a module in the DESIRE automatic classification system. Copyright 1999.
-<!--l. 13--><p class="indent" >   Exported routines: 1. Fetching text: These routines all extract texts from a document (either
-a Combine record, a Combine XWI datastructure or a WWW-page identified by a
-URL. They all return: $meta, $head, $text, $url, $title, $size $meta: Metadata from
-document $head: Important text from document $text: Plain text from document
-$url: URL of the document $title: HTML title of the document $size: The size of the
-document
-
-   <table 
-class="verbatim"><tr class="verbatim"><td 
-class="verbatim"><div class="verbatim">
-&#x00A0;&#x00A0;&#x00A0;Common&#x00A0;input&#x00A0;parameters:
-&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;$DoStem:&#x00A0;1=do&#x00A0;stemming;&#x00A0;0=no&#x00A0;stemming
-&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;$stoplist:&#x00A0;object&#x00A0;pointer&#x00A0;to&#x00A0;a&#x00A0;LoadTermList&#x00A0;object&#x00A0;with&#x00A0;a&#x00A0;stoplist&#x00A0;loaded
-&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;$simple:&#x00A0;1=do&#x00A0;simple&#x00A0;loading;&#x00A0;0=advanced&#x00A0;loading&#x00A0;(might&#x00A0;induce&#x00A0;errors)
-</div>
-</td></tr></table>
-<!--l. 30--><p class="nopar" >
-
-   <table 
-class="verbatim"><tr class="verbatim"><td 
-class="verbatim"><div class="verbatim">
-&#x00A0;getTextXWI
-&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;parameters:&#x00A0;$xwi,&#x00A0;$DoStem,&#x00A0;$stoplist,&#x00A0;$simple
-&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;$xwi&#x00A0;is&#x00A0;a&#x00A0;Combine&#x00A0;XWI&#x00A0;datastructure
-</div>
-</td></tr></table>
-<!--l. 35--><p class="nopar" >
-
-   <table 
-class="verbatim"><tr class="verbatim"><td 
-class="verbatim"><div class="verbatim">
-&#x00A0;getTextURL
-&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;parameters:&#x00A0;$url,&#x00A0;$DoStem,&#x00A0;$stoplist,&#x00A0;$simple
-&#x00A0;<br />&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;&#x00A0;$url&#x00A0;is&#x00A0;the&#x00A0;URL&#x00A0;for&#x00A0;the&#x00A0;page&#x00A0;to&#x00A0;extract&#x00A0;text&#x00A0;from
-</div>
-</td></tr></table>
-<!--l. 40--><p class="nopar" >
-<!--l. 43--><p class="indent" >   2. Term matcher accepts a text as a (reference) parameter, matches each term in
-Term against text Matches are recorded in an associative array with class as key and
-summed weight as value. Match parameters: $text, $termlist $text: text to match
-against the termlist $termlist: object pointer to a LoadTermList object with a termlist
-loaded output: %score: an associative array with classifications as keys and scores as
-values
-<!--l. 55--><p class="indent" >   3. Heuristics: sum scores down the classification tree to the leafs cleanEiTree parameters:
-%res - an associative array from Match output: %res - same array
-<!--l. 60--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-340000A.5.20"></a><span 
-class="ecbx-1095">AUTHOR</span></span>
-   Anders Ardö, <span 
-class="cmmi-10x-x-109">&#x003C;</span>anders.ardo@it.lth.se<span 
-class="cmmi-10x-x-109">&#x003E;</span>
-<!--l. 65--><p class="noindent" ><span class="paragraphHead"><a 
- id="x45-341000A.5.20"></a><span 
-class="ecbx-1095">COPYRIGHT AND LICENSE</span></span>
-   Copyright (C) 2005,2006 Anders Ardö
-<!--l. 72--><p class="indent" >   This library is free software; you can redistribute it and/or modify it under the same terms as
-Perl itself, either Perl version 5.8.4 or, at your option, any later version of Perl 5 you may have
-available.
-<!--l. 78--><p class="indent" >   See the file LICENCE included in the distribution at <span 
-class="ecss-1095">http://combine.it.lth.se/</span>
 <!--l. 60--><p class="indent" >   _________________________________________________________________________________________________________________
    <!--l. 51--><div class="crosslinks"><p class="noindent">[<a 
 href="DocMainse11.html" >front</a>] [<a 
