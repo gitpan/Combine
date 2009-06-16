@@ -177,8 +177,8 @@ sub _parsola {
 		if ($Tag eq 'img') {
 		    #extract ALT-text
 		    if (exists $T->[2]->{alt}) {
-			$tottext .= '[' . $T->[2]->{alt} . ']';
-		    } else { $tottext .= '[IMG]'; }
+			$tottext .= '[' . $T->[2]->{alt} . '] ';
+		    } ##else { $tottext .= '[IMG]'; }
 		}
             }elsif($Tag eq 'meta') {
                 $NL = $T->[2]; #                $NL = $T->return_attr();
@@ -206,7 +206,7 @@ sub _parsola {
 ## Text?
         }elsif($T->[0] eq 'T') { #        }elsif($T->is_text) {
             $TEXT[-1]->{_TEXT} .= $T->[-2] if @TEXT; #            $TEXT[-1]->{_TEXT} .= $T->as_is if @TEXT;
-	    $tottext .=  $T->[-2]; #	    $tottext .=  $T->as_is;
+	    $tottext .=  $T->[-2] . ' '; #	    $tottext .=  $T->as_is;
 	    if ( $inHeading ) { $headtext .= $T->[-2]; } #	    if ( $h ne '' ) { $headtext .= $T->as_is . '; '; }
 ## Declaration?
         }elsif($T->[0] eq 'D') { #        }elsif($T->is_declaration) {

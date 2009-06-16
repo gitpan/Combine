@@ -20,12 +20,6 @@ GetOptions('configfile:s' => \$configfile, 'enableprint', => \$enableprint,
 	   'showtext' => \$showtext, 'url:s' => \$doURL);
 
 use Cwd;
-#useTidy?
-eval {require HTML::Tidy;};
-if ($@) {
-   my $conffile= getcwd . '/blib/conf/' . $jobname . '/combine.cfg';
-   system("echo 'useTidy=0' >> $conffile");  
-}# else { print " ok\n"; }
 
 Combine::Config::Init($jobname,getcwd . '/blib/conf');
 

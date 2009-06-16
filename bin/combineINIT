@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-## $Id: combineINIT 286 2008-10-13 09:13:26Z it-aar $
+## $Id: combineINIT 308 2009-06-15 08:18:24Z it-aar $
 
 # Copyright (c) 1996-1998 LUB NetLab, 2002-2005 Anders Ardö
 # 
@@ -150,8 +150,8 @@ $res = $sv->do(qq{CREATE TABLE meta (
 
 $res = $sv->do(qq{CREATE TABLE analys (
   recordid int(11) NOT NULL default '0',
-  name varchar(15) NOT NULL,
-  value varchar(20),
+  name varchar(100) NOT NULL,
+  value varchar(100),
   KEY recordid (recordid)
 ) ENGINE=MyISAM DEFAULT CHARACTER SET=utf8;});
 
@@ -236,6 +236,7 @@ $res = $sv->do(qq{CREATE TABLE urldb (
   urllock int(11) NOT NULL default '0',
   harvest tinyint(1) NOT NULL default '0',
   retries int(11) NOT NULL default '0',
+  score int(11) NOT NULL default '0',
   PRIMARY KEY  (urlid),
   KEY netlocid (netlocid),
   KEY harvest (harvest)
@@ -269,6 +270,7 @@ $res = $sv->do(qq{CREATE TABLE admin (
   schedulealgorithm enum('default','bigdefault','advanced') default 'default',
   queid int(11) NOT NULL default '0'
 ) ENGINE=MEMORY DEFAULT CHARACTER SET=utf8;});
+##advanced means use config variable SchedulingAlgorithm
 ##Initialise admin to 'open' status
 $res = $sv->do(qq{INSERT INTO admin VALUES ('open','default',0)});
 

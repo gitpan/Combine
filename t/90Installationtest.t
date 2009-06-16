@@ -54,7 +54,7 @@ if ($olen == $len) {
 __END__
 <?xml version="1.0" encoding="UTF-8"?>
 <documentCollection version="1.1" xmlns="http://alvis.info/enriched/">
-<documentRecord id="80AC707F96BC57DFEF78C815F6FABD57">
+<documentRecord id="1">
 <acquisition>
 <acquisitionData>
 <modifiedDate>2006-12-05 13:20:25</modifiedDate>
@@ -95,6 +95,7 @@ BNsj/GGG4LBWrarhSw+0OiOIidZjmzGPeh15WL6ICS7zFUjT/AiuBXeRbwHj870/AeRYaTupAQAA
 <analysis>
 <property name="topLevelDomain">se</property>
 <property name="univ">1</property>
+<property name="country">Sweden</property>
 <property name="language">en</property>
 <topic absoluteScore="1000" relativeScore="99415">
     <class>ALL</class>

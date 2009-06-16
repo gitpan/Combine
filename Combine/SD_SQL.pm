@@ -1,4 +1,4 @@
-## $Id: SD_SQL.pm 152 2006-09-27 13:10:57Z anders $
+## $Id: SD_SQL.pm 313 2009-06-15 09:35:47Z it-aar $
 
 # 2002-2006 Anders Ardö
 # 
@@ -21,6 +21,7 @@ sub new {
     my $self = {
 	dbcon => $sv,
         recyclelinks => $recyclelinks,
+        waitIntervalHost => $waitIntervalHost,
 	};
 
 # Prepare handles for all SQL statements and save them in %{$self}
@@ -33,11 +34,10 @@ sub new {
     $self->{updateRetries} = $sv->prepare(qq{UPDATE netlocs SET retries=? WHERE netlocid=?;});
 
 #Statement handles for get
-##    $self->{getStatus} = $self->{dbcon}->prepare(qq{SELECT status FROM admin;}); #schedulealgorithm enum('default','bigdefault',
     $self->{getStatus} = $self->{dbcon}->prepare(qq{SELECT status,schedulealgorithm FROM admin;});
     $self->{updateAlg} = $self->{dbcon}->prepare(qq{UPDATE admin SET schedulealgorithm=?});
 
-    $self->{updateHosts} = $sv->prepare(qq{UPDATE urldb SET netloclock=UNIX_TIMESTAMP()+$waitIntervalHost WHERE netlocid=?;});
+#    $self->{updateHosts} = $sv->prepare(qq{UPDATE urldb SET netloclock=UNIX_TIMESTAMP()+$waitIntervalHost WHERE netlocid=?;});
     $self->{updateUrls} = $sv->prepare(qq{UPDATE urldb SET urllock=UNIX_TIMESTAMP()+?, harvest=0 WHERE urlid=?;});
     $self->{setQueId} = $sv->prepare(qq{UPDATE admin SET queid=LAST_INSERT_ID(queid+1);});
 #    $self->{getUrl} = $sv->prepare(qq{SELECT netlocid,urlid FROM que WHERE queid=LAST_INSERT_ID();});
@@ -51,11 +51,13 @@ sub new {
     $self->{deleteQue} = $sv->prepare(qq{DELETE FROM que;});
     $self->{resetQueId} = $sv->prepare(qq{UPDATE admin SET queid=0;});
     $self->{resetId} = $sv->prepare(qq{ALTER TABLE que AUTO_INCREMENT=0;});
+
+#fill que in URL scheduling order
     $self->{fillQue} = $sv->prepare(qq{INSERT INTO que SELECT netlocid,urlid,NULL
          FROM urldb WHERE netloclock < UNIX_TIMESTAMP() AND
          urllock < UNIX_TIMESTAMP() AND 
          harvest=1 GROUP BY netlocid;});
-#SELECT host,hostlock,sum(1) as no FROM urldb WHERE hostlock < UNIX_TIMESTAMP() AND urllock < UNIX_TIMESTAMP() AND harvest=1 group by host order by no DESC;
+#SELECT host,hostlock,sum(1) as nbrhost FROM urldb WHERE hostlock < UNIX_TIMESTAMP() AND urllock < UNIX_TIMESTAMP() AND harvest=1 GROUP BY host ORDER BY nbrhost DESC;
 #Ger en lista sorterad med den host som har flest URLer først
 
     $self->{fillBigQue} = $sv->prepare(qq{INSERT INTO que SELECT netlocid,urlid,NULL
@@ -112,14 +114,13 @@ sub get_url {
 #    print "In GetUrl ...";
 ##Combine getStatus and setQueId in one query??
     if ( $status eq 'open' ) {
-
 	$self->{setQueId}->execute;
 	$self->{getUrl}->execute;
 	($hostid,$urlid,$url_str, $netlocStr, $urlPath)=$self->{getUrl}->fetchrow_array;
 #	print "Got: ($hostid,$urlid,$url_str, $netlocStr, $urlPath)\n";
 	if (!defined($hostid)) { ($hostid,$urlid,$url_str, $netlocStr, $urlPath)=generateQue($self,$schedAlg); }
 
-	if ($schedAlg ne 'bigdefault') {$self->{updateHosts}->execute($hostid);}
+	$self->{updateHostLock}->execute($self->{waitIntervalHost},$hostid);
 	$self->{updateUrls}->execute($InProgress,$urlid);
     }
     if ( !defined($urlid) ) { 
@@ -155,12 +156,8 @@ sub generateQue {
 	$self->{deleteQue}->execute;
 	$self->{resetQueId}->execute;
 	$self->{resetId}->execute;
-        if ($alg ne 'bigdefault') {$r = $self->{fillQue}->execute;}
-        else {$r = $self->{fillBigQue}->execute;} #$r gives no of inserted lines
-#        print "SD fillque: $r\n";
-        #ORIG	$self->{fillQue}->execute;
-        if ($r > 100) { $self->{updateAlg}->execute('bigdefault'); }
-        else { $self->{updateAlg}->execute('default'); }
+        $self->{fillQue}->execute; #ORIG
+#FIX SQL query dependent on configVar ScheduleAlgorithm!!!!!!!!!!
 
 	# extract URL from que to return
 	$self->{setQueId}->execute;
@@ -174,39 +171,28 @@ sub generateQue {
 sub UpdateLastCheckTime {
     # do this in lock by checking the code (304)??
     my ($self,$urlid) = @_;
-    $self->{dbcon}->do(qq{UPDATE recordurl set lastchecked=NOW() where urlid='$urlid';});
+    $self->{dbcon}->do(qq{UPDATE recordurl SET lastchecked=NOW() WHERE urlid='$urlid';});
 }
 
 sub lock {
     my ($self,$netlocid,$urlid,$time,$code) = @_;
+#        my $sdqRetries = 10;
 # lock $url for $time seconds
-       $self->{updateUrlsLock}->execute($time,$urlid);
+    $self->{updateUrlsLock}->execute($time,$urlid);
 
 # Compatibility functions
 #  handle deletions when to many retries (nrt=1000)???
 #  handle $code ...
-    $failcnt = $self->{updateUrlsLock}->{'mysql_insertid'}; #May be version dependent????KOLLA
     if ( ($code eq '408') || &HTTP::Status::is_server_error($code) ) {
         my $RetryDelay=18000;
-#        my $sdqRetries = 10;
-        $self->{updateRetries}->execute($failcnt+1, $netlocid);
-        $self->{getStatus}->execute;
-        my ($status,$schedAlg)=$self->{getStatus}->fetchrow_array;
-        if ($schedAlg ne 'bigdefault') {
-          # lock $netlocid for $time seconds
-          $self->{updateHostLock}->execute($failcnt*$RetryDelay, $netlocid);
-        } else {
-          # lock URLS $netlocid for $time extra seconds
-          $self->{updateHostUrlLock}->execute($failcnt*$RetryDelay, $netlocid);
-        }
-        
+        #$self->{updateRetries}->execute($failcnt+1, $netlocid);
+	# lock $netlocid for $RetryDelay seconds
+	$self->{updateHostLock}->execute($RetryDelay, $netlocid);
+
+# increase failcnt        
 #       if ( $failcnt > $sqdRetries ) { #delete host
 #?????????
 #       }
-    } elsif ($failcnt != 0) {
-        $url =~ m/http:\/\/([^\/]+)\//;
-        $netlocid=$1;
-        $self->{updateRetries}->execute(0, $netlocid);
     }
 
     return;
@@ -214,16 +200,8 @@ sub lock {
 
 sub hostlock {
     my ($self,$netlocid,$time) = @_;
-    $self->{getStatus}->execute;
-    my ($status,$schedAlg)=$self->{getStatus}->fetchrow_array;
-    if ($schedAlg ne 'bigdefault') {
-        # lock $netlocid for $time seconds
-        $self->{updateHostLock}->execute($time, $netlocid);
-    } else {
-        # lock URLS $netlocid for $time extra seconds
-        $self->{updateHostUrlLock}->execute($time, $netlocid);
-    }
-#?    $failcnt = $self->{updateUrlsLock}->{'mysql_insertid'}; #May be version dependent
+    # lock $netlocid for $time seconds
+    $self->{updateHostLock}->execute($time, $netlocid);
 #?    $self->{updateRetries}->execute($failcnt+1, $host);
     return;
 }
@@ -270,6 +248,7 @@ sub initMemoryTables {
 	$self->{getStatus}->execute;
 	($status,$tmp)=$self->{getStatus}->fetchrow_array;
 	if ( $status eq '' ) {
+#!#Use value from ConfigVar SchedulingAlgorithm
 	    $self->{dbcon}->do(qq{INSERT INTO admin VALUES ('open','default',0);});
 	    warn("Memory table 'admin' initialised to ('open','default',0)");
 	}

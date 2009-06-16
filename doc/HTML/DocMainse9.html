@@ -7,7 +7,7 @@
 <meta name="originator" content="TeX4ht (http://www.cse.ohio-state.edu/~gurari/TeX4ht/)"> 
 <!-- html,2 --> 
 <meta name="src" content="DocMain.tex"> 
-<meta name="date" content="2008-12-09 09:30:00"> 
+<meta name="date" content="2009-06-16 09:20:00"> 
 <link rel="stylesheet" type="text/css" href="DocMain.css"> 
 </head><body 
 >
@@ -103,8 +103,8 @@ class="description">Directory for job specific configuration files; taken from &
 class="ecbx-1095">Used by:</span> </dt><dd 
 class="description">classifySVM.pm.svn-base;                                                    combineUtil;
      utilPlugIn.pm.svn-base; classifySVM.pm; PosCheck_record.pm; Check_record.pm;
-     Check_record.pm.svn-base;       PosCheck_record.pm.svn-base;       utilPlugIn.pm;
-     combineUtil.svn-base
+     combineCountry.pl;     combineCountry.pl.svn-base;     Check_record.pm.svn-base;
+     PosCheck_record.pm.svn-base; utilPlugIn.pm; combineUtil.svn-base
      </dd><dt class="description">
 <span 
 class="ecbx-1095">Set by:</span> </dt><dd 
@@ -295,12 +295,12 @@ class="description">MySQLhdb.pm.svn-base; MySQLhdb.pm</dd></dl>
 <span 
 class="ecbx-1095">Used by:</span> </dt><dd 
 class="description">combineSVM.svn-base;         combineExport;         MySQLhdb.pm.svn-base;
-     combineReClassify.svn-base;     combineUtil.svn-base;     classifySVM.pm.svn-base;
-     combineUtil;                                                            RobotRules.pm.svn-base;
+     combineReClassify.svn-base;         combineCountry.pl;         combineUtil.svn-base;
+     classifySVM.pm.svn-base;             combineUtil;             RobotRules.pm.svn-base;
      LogSQL.pm;  combine;  combineExport.svn-base;  classifySVM.pm;  RobotRules.pm;
      combine.svn-base;      SD_SQL.pm;      combineRank;      combineRank.svn-base;
-     LogSQL.pm.svn-base;   XWI2XML.pm;   combineSVM;   XWI2XML.pm.svn-base;
-     MySQLhdb.pm; SD_SQL.pm.svn-base; combineReClassify
+     LogSQL.pm.svn-base;  XWI2XML.pm;  combineSVM;  combineCountry.pl.svn-base;
+     XWI2XML.pm.svn-base; MySQLhdb.pm; SD_SQL.pm.svn-base; combineReClassify
      </dd><dt class="description">
 <span 
 class="ecbx-1095">Set by:</span> </dt><dd 
@@ -336,16 +336,24 @@ class="ecbx-1095">Description:</span> </dt><dd
 class="description">Password not used yet. (Please change)</dd></dl>
 <!--l. 138--><p class="noindent" >
    <h5 class="subsubsectionHead"><span class="titlemark">9.1.21   </span> <a 
- id="x42-920009.1.21"></a>relTextPlugin</h5>
+ id="x42-920009.1.21"></a>PattiSpecial</h5>
 <!--l. 140--><p class="noindent" >
      <dl class="description"><dt class="description">
 <span 
 class="ecbx-1095">Used by:</span> </dt><dd 
-class="description">FromHTML.pm.svn-base; FromHTML.pm</dd></dl>
+class="description">combine; combine.svn-base</dd></dl>
 <!--l. 143--><p class="noindent" >
    <h5 class="subsubsectionHead"><span class="titlemark">9.1.22   </span> <a 
- id="x42-930009.1.22"></a>saveHTML</h5>
+ id="x42-930009.1.22"></a>relTextPlugin</h5>
 <!--l. 145--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">FromHTML.pm.svn-base; FromHTML.pm</dd></dl>
+<!--l. 148--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.23   </span> <a 
+ id="x42-940009.1.23"></a>saveHTML</h5>
+<!--l. 150--><p class="noindent" >
      <dl class="description"><dt class="description">
 <span 
 class="ecbx-1095">Default value</span> </dt><dd 
@@ -358,19 +366,31 @@ class="description">Store(1)/do not store(0) the raw HTML in the database
 <span 
 class="ecbx-1095">Used by:</span> </dt><dd 
 class="description">MySQLhdb.pm.svn-base; MySQLhdb.pm</dd></dl>
-<!--l. 150--><p class="noindent" >
-   <h5 class="subsubsectionHead"><span class="titlemark">9.1.23   </span> <a 
- id="x42-940009.1.23"></a>SdqRetries</h5>
-<!--l. 152--><p class="noindent" >
+
+<!--l. 155--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.24   </span> <a 
+ id="x42-950009.1.24"></a>SchedulingAlgorithm</h5>
+<!--l. 157--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= default
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Description:</span> </dt><dd 
+class="description">URL scheduling algorithm</dd></dl>
+<!--l. 161--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.25   </span> <a 
+ id="x42-960009.1.25"></a>SdqRetries</h5>
+<!--l. 163--><p class="noindent" >
      <dl class="description"><dt class="description">
 <span 
 class="ecbx-1095">Default value</span> </dt><dd 
 class="description">= 5</dd></dl>
-
-<!--l. 155--><p class="noindent" >
-   <h5 class="subsubsectionHead"><span class="titlemark">9.1.24   </span> <a 
- id="x42-950009.1.24"></a>SolrHost</h5>
-<!--l. 157--><p class="noindent" >
+<!--l. 166--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.26   </span> <a 
+ id="x42-970009.1.26"></a>SolrHost</h5>
+<!--l. 168--><p class="noindent" >
      <dl class="description"><dt class="description">
 <span 
 class="ecbx-1095">Default value</span> </dt><dd 
@@ -384,10 +404,10 @@ class="description">Direct connection to Solr indexing
 class="ecbx-1095">Used by:</span> </dt><dd 
 class="description">combineExport;        MySQLhdb.pm.svn-base;        combineExport.svn-base;
      MySQLhdb.pm</dd></dl>
-<!--l. 162--><p class="noindent" >
-   <h5 class="subsubsectionHead"><span class="titlemark">9.1.25   </span> <a 
- id="x42-960009.1.25"></a>SummaryLength</h5>
-<!--l. 164--><p class="noindent" >
+<!--l. 173--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.27   </span> <a 
+ id="x42-980009.1.27"></a>SummaryLength</h5>
+<!--l. 175--><p class="noindent" >
      <dl class="description"><dt class="description">
 <span 
 class="ecbx-1095">Description:</span> </dt><dd 
@@ -396,14 +416,15 @@ class="description">How long the summary should be. Use 0 to disable the summari
 <span 
 class="ecbx-1095">Used by:</span> </dt><dd 
 class="description">FromHTML.pm.svn-base; FromHTML.pm</dd></dl>
-<!--l. 168--><p class="noindent" >
-   <h5 class="subsubsectionHead"><span class="titlemark">9.1.26   </span> <a 
- id="x42-970009.1.26"></a>SVMmodel</h5>
-<!--l. 170--><p class="noindent" >
+<!--l. 179--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.28   </span> <a 
+ id="x42-990009.1.28"></a>SVMmodel</h5>
+<!--l. 181--><p class="noindent" >
      <dl class="description"><dt class="description">
 <span 
 class="ecbx-1095">Default value</span> </dt><dd 
 class="description">= NoDefaultValue
+
      </dd><dt class="description">
 <span 
 class="ecbx-1095">Description:</span> </dt><dd 
@@ -412,10 +433,10 @@ class="description">Filename for the SVM model
 <span 
 class="ecbx-1095">Used by:</span> </dt><dd 
 class="description">classifySVM.pm.svn-base; classifySVM.pm</dd></dl>
-<!--l. 175--><p class="noindent" >
-   <h5 class="subsubsectionHead"><span class="titlemark">9.1.27   </span> <a 
- id="x42-980009.1.27"></a>UAtimeout</h5>
-<!--l. 177--><p class="noindent" >
+<!--l. 186--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.29   </span> <a 
+ id="x42-1000009.1.29"></a>UAtimeout</h5>
+<!--l. 188--><p class="noindent" >
      <dl class="description"><dt class="description">
 <span 
 class="ecbx-1095">Default value</span> </dt><dd 
@@ -428,11 +449,10 @@ class="description">Time in seconds to wait for a server to respond
 <span 
 class="ecbx-1095">Used by:</span> </dt><dd 
 class="description">UA.pm; UA.pm.svn-base</dd></dl>
-
-<!--l. 182--><p class="noindent" >
-   <h5 class="subsubsectionHead"><span class="titlemark">9.1.28   </span> <a 
- id="x42-990009.1.28"></a>UserAgentFollowRedirects</h5>
-<!--l. 184--><p class="noindent" >
+<!--l. 193--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.30   </span> <a 
+ id="x42-1010009.1.30"></a>UserAgentFollowRedirects</h5>
+<!--l. 195--><p class="noindent" >
      <dl class="description"><dt class="description">
 <span 
 class="ecbx-1095">Description:</span> </dt><dd 
@@ -441,10 +461,10 @@ class="description">User agent handles redirects (1) or treat redirects as new l
 <span 
 class="ecbx-1095">Used by:</span> </dt><dd 
 class="description">UA.pm; UA.pm.svn-base</dd></dl>
-<!--l. 188--><p class="noindent" >
-   <h5 class="subsubsectionHead"><span class="titlemark">9.1.29   </span> <a 
- id="x42-1000009.1.29"></a>UserAgentGetIfModifiedSince</h5>
-<!--l. 190--><p class="noindent" >
+<!--l. 199--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.31   </span> <a 
+ id="x42-1020009.1.31"></a>UserAgentGetIfModifiedSince</h5>
+<!--l. 201--><p class="noindent" >
      <dl class="description"><dt class="description">
 <span 
 class="ecbx-1095">Default value</span> </dt><dd 
@@ -457,10 +477,10 @@ class="description">If we have seen this page before use Get-If-Modified (1) or 
 <span 
 class="ecbx-1095">Used by:</span> </dt><dd 
 class="description">UA.pm; UA.pm.svn-base</dd></dl>
-<!--l. 195--><p class="noindent" >
-   <h5 class="subsubsectionHead"><span class="titlemark">9.1.30   </span> <a 
- id="x42-1010009.1.30"></a>useTidy</h5>
-<!--l. 197--><p class="noindent" >
+<!--l. 206--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.32   </span> <a 
+ id="x42-1030009.1.32"></a>useTidy</h5>
+<!--l. 208--><p class="noindent" >
      <dl class="description"><dt class="description">
 <span 
 class="ecbx-1095">Description:</span> </dt><dd 
@@ -469,10 +489,11 @@ class="description">Use(1)/do not use(0) Tidy to clean the HTML before parsing i
 <span 
 class="ecbx-1095">Used by:</span> </dt><dd 
 class="description">FromHTML.pm.svn-base; FromHTML.pm</dd></dl>
-<!--l. 201--><p class="noindent" >
-   <h5 class="subsubsectionHead"><span class="titlemark">9.1.31   </span> <a 
- id="x42-1020009.1.31"></a>WaitIntervalExpirationGuaranteed</h5>
-<!--l. 203--><p class="noindent" >
+
+<!--l. 212--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.33   </span> <a 
+ id="x42-1040009.1.33"></a>WaitIntervalExpirationGuaranteed</h5>
+<!--l. 214--><p class="noindent" >
      <dl class="description"><dt class="description">
 <span 
 class="ecbx-1095">Default value</span> </dt><dd 
@@ -481,35 +502,10 @@ class="description">= 315360000
 <span 
 class="ecbx-1095">Used by:</span> </dt><dd 
 class="description">UA.pm; UA.pm.svn-base</dd></dl>
-<!--l. 207--><p class="noindent" >
-   <h5 class="subsubsectionHead"><span class="titlemark">9.1.32   </span> <a 
- id="x42-1030009.1.32"></a>WaitIntervalHarvesterLockNotFound</h5>
-<!--l. 209--><p class="noindent" >
-     <dl class="description"><dt class="description">
-<span 
-class="ecbx-1095">Default value</span> </dt><dd 
-class="description">= 2592000
-     </dd><dt class="description">
-<span 
-class="ecbx-1095">Used by:</span> </dt><dd 
-class="description">combine; combine.svn-base</dd></dl>
-
-<!--l. 213--><p class="noindent" >
-   <h5 class="subsubsectionHead"><span class="titlemark">9.1.33   </span> <a 
- id="x42-1040009.1.33"></a>WaitIntervalHarvesterLockNotModified</h5>
-<!--l. 215--><p class="noindent" >
-     <dl class="description"><dt class="description">
-<span 
-class="ecbx-1095">Default value</span> </dt><dd 
-class="description">= 2592000
-     </dd><dt class="description">
-<span 
-class="ecbx-1095">Used by:</span> </dt><dd 
-class="description">combine; combine.svn-base</dd></dl>
-<!--l. 219--><p class="noindent" >
+<!--l. 218--><p class="noindent" >
    <h5 class="subsubsectionHead"><span class="titlemark">9.1.34   </span> <a 
- id="x42-1050009.1.34"></a>WaitIntervalHarvesterLockRobotRules</h5>
-<!--l. 221--><p class="noindent" >
+ id="x42-1050009.1.34"></a>WaitIntervalHarvesterLockNotFound</h5>
+<!--l. 220--><p class="noindent" >
      <dl class="description"><dt class="description">
 <span 
 class="ecbx-1095">Default value</span> </dt><dd 
@@ -518,10 +514,34 @@ class="description">= 2592000
 <span 
 class="ecbx-1095">Used by:</span> </dt><dd 
 class="description">combine; combine.svn-base</dd></dl>
-<!--l. 225--><p class="noindent" >
+<!--l. 224--><p class="noindent" >
    <h5 class="subsubsectionHead"><span class="titlemark">9.1.35   </span> <a 
- id="x42-1060009.1.35"></a>WaitIntervalHarvesterLockSuccess</h5>
-<!--l. 227--><p class="noindent" >
+ id="x42-1060009.1.35"></a>WaitIntervalHarvesterLockNotModified</h5>
+<!--l. 226--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= 2592000
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">combine; combine.svn-base</dd></dl>
+<!--l. 230--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.36   </span> <a 
+ id="x42-1070009.1.36"></a>WaitIntervalHarvesterLockRobotRules</h5>
+<!--l. 232--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= 2592000
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">combine; combine.svn-base</dd></dl>
+<!--l. 236--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.37   </span> <a 
+ id="x42-1080009.1.37"></a>WaitIntervalHarvesterLockSuccess</h5>
+<!--l. 238--><p class="noindent" >
      <dl class="description"><dt class="description">
 <span 
 class="ecbx-1095">Default value</span> </dt><dd 
@@ -531,14 +551,15 @@ class="description">= 1000000
 class="ecbx-1095">Description:</span> </dt><dd 
 class="description">Time in seconds after succesfull download before allowing a page to be
      downloaded again (around 11 days)
+
      </dd><dt class="description">
 <span 
 class="ecbx-1095">Used by:</span> </dt><dd 
 class="description">combine; combine.svn-base</dd></dl>
-<!--l. 232--><p class="noindent" >
-   <h5 class="subsubsectionHead"><span class="titlemark">9.1.36   </span> <a 
- id="x42-1070009.1.36"></a>WaitIntervalHarvesterLockUnavailable</h5>
-<!--l. 234--><p class="noindent" >
+<!--l. 243--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.38   </span> <a 
+ id="x42-1090009.1.38"></a>WaitIntervalHarvesterLockUnavailable</h5>
+<!--l. 245--><p class="noindent" >
      <dl class="description"><dt class="description">
 <span 
 class="ecbx-1095">Default value</span> </dt><dd 
@@ -547,11 +568,10 @@ class="description">= 86400
 <span 
 class="ecbx-1095">Used by:</span> </dt><dd 
 class="description">combine; combine.svn-base</dd></dl>
-
-<!--l. 238--><p class="noindent" >
-   <h5 class="subsubsectionHead"><span class="titlemark">9.1.37   </span> <a 
- id="x42-1080009.1.37"></a>WaitIntervalHost</h5>
-<!--l. 240--><p class="noindent" >
+<!--l. 249--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.39   </span> <a 
+ id="x42-1100009.1.39"></a>WaitIntervalHost</h5>
+<!--l. 251--><p class="noindent" >
      <dl class="description"><dt class="description">
 <span 
 class="ecbx-1095">Default value</span> </dt><dd 
@@ -564,10 +584,10 @@ class="description">Minimum time between accesses to the same host. Must be posi
 <span 
 class="ecbx-1095">Used by:</span> </dt><dd 
 class="description">SD_SQL.pm; SD_SQL.pm.svn-base</dd></dl>
-<!--l. 245--><p class="noindent" >
-   <h5 class="subsubsectionHead"><span class="titlemark">9.1.38   </span> <a 
- id="x42-1090009.1.38"></a>WaitIntervalRrdLockDefault</h5>
-<!--l. 247--><p class="noindent" >
+<!--l. 256--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.40   </span> <a 
+ id="x42-1110009.1.40"></a>WaitIntervalRrdLockDefault</h5>
+<!--l. 258--><p class="noindent" >
      <dl class="description"><dt class="description">
 <span 
 class="ecbx-1095">Default value</span> </dt><dd 
@@ -576,22 +596,10 @@ class="description">= 86400
 <span 
 class="ecbx-1095">Used by:</span> </dt><dd 
 class="description">RobotRules.pm.svn-base; RobotRules.pm</dd></dl>
-<!--l. 251--><p class="noindent" >
-   <h5 class="subsubsectionHead"><span class="titlemark">9.1.39   </span> <a 
- id="x42-1100009.1.39"></a>WaitIntervalRrdLockNotFound</h5>
-<!--l. 253--><p class="noindent" >
-     <dl class="description"><dt class="description">
-<span 
-class="ecbx-1095">Default value</span> </dt><dd 
-class="description">= 345600
-     </dd><dt class="description">
-<span 
-class="ecbx-1095">Used by:</span> </dt><dd 
-class="description">RobotRules.pm.svn-base; RobotRules.pm</dd></dl>
-<!--l. 257--><p class="noindent" >
-   <h5 class="subsubsectionHead"><span class="titlemark">9.1.40   </span> <a 
- id="x42-1110009.1.40"></a>WaitIntervalRrdLockSuccess</h5>
-<!--l. 259--><p class="noindent" >
+<!--l. 262--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.41   </span> <a 
+ id="x42-1120009.1.41"></a>WaitIntervalRrdLockNotFound</h5>
+<!--l. 264--><p class="noindent" >
      <dl class="description"><dt class="description">
 <span 
 class="ecbx-1095">Default value</span> </dt><dd 
@@ -601,10 +609,22 @@ class="description">= 345600
 class="ecbx-1095">Used by:</span> </dt><dd 
 class="description">RobotRules.pm.svn-base; RobotRules.pm</dd></dl>
 
-<!--l. 263--><p class="noindent" >
-   <h5 class="subsubsectionHead"><span class="titlemark">9.1.41   </span> <a 
- id="x42-1120009.1.41"></a>WaitIntervalSchedulerGetJcf</h5>
-<!--l. 265--><p class="noindent" >
+<!--l. 268--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.42   </span> <a 
+ id="x42-1130009.1.42"></a>WaitIntervalRrdLockSuccess</h5>
+<!--l. 270--><p class="noindent" >
+     <dl class="description"><dt class="description">
+<span 
+class="ecbx-1095">Default value</span> </dt><dd 
+class="description">= 345600
+     </dd><dt class="description">
+<span 
+class="ecbx-1095">Used by:</span> </dt><dd 
+class="description">RobotRules.pm.svn-base; RobotRules.pm</dd></dl>
+<!--l. 274--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.43   </span> <a 
+ id="x42-1140009.1.43"></a>WaitIntervalSchedulerGetJcf</h5>
+<!--l. 276--><p class="noindent" >
      <dl class="description"><dt class="description">
 <span 
 class="ecbx-1095">Default value</span> </dt><dd 
@@ -618,10 +638,10 @@ class="description">Time in seconds to wait before making a new reschedule if a 
 <span 
 class="ecbx-1095">Used by:</span> </dt><dd 
 class="description">combine; combine.svn-base</dd></dl>
-<!--l. 270--><p class="noindent" >
-   <h5 class="subsubsectionHead"><span class="titlemark">9.1.42   </span> <a 
- id="x42-1130009.1.42"></a>ZebraHost</h5>
-<!--l. 272--><p class="noindent" >
+<!--l. 281--><p class="noindent" >
+   <h5 class="subsubsectionHead"><span class="titlemark">9.1.44   </span> <a 
+ id="x42-1150009.1.44"></a>ZebraHost</h5>
+<!--l. 283--><p class="noindent" >
      <dl class="description"><dt class="description">
 <span 
 class="ecbx-1095">Default value</span> </dt><dd 
@@ -636,13 +656,14 @@ class="description">Direct connection to Zebra indexing - for SearchEngine-in-a-
 class="ecbx-1095">Used by:</span> </dt><dd 
 class="description">combineExport;        MySQLhdb.pm.svn-base;        combineExport.svn-base;
      MySQLhdb.pm</dd></dl>
-<!--l. 277--><p class="noindent" >
+<!--l. 288--><p class="noindent" >
    <h4 class="subsectionHead"><span class="titlemark">9.2   </span> <a 
- id="x42-1140009.2"></a>Complex configuration variables</h4>
-<!--l. 278--><p class="noindent" >
+ id="x42-1160009.2"></a>Complex configuration variables</h4>
+
+<!--l. 289--><p class="noindent" >
    <h5 class="subsubsectionHead"><span class="titlemark">9.2.1   </span> <a 
- id="x42-1150009.2.1"></a>allow</h5>
-<!--l. 280--><p class="noindent" >
+ id="x42-1170009.2.1"></a>allow</h5>
+<!--l. 291--><p class="noindent" >
      <dl class="description"><dt class="description">
 <span 
 class="ecbx-1095">Description:</span> </dt><dd 
@@ -653,11 +674,10 @@ class="newline" />Allow crawl of URLs or hostnames that matches these regular ex
 <span 
 class="ecbx-1095">Used by:</span> </dt><dd 
 class="description">selurl.pm.svn-base; selurl.pm</dd></dl>
-
-<!--l. 284--><p class="noindent" >
+<!--l. 295--><p class="noindent" >
    <h5 class="subsubsectionHead"><span class="titlemark">9.2.2   </span> <a 
- id="x42-1160009.2.2"></a>binext</h5>
-<!--l. 286--><p class="noindent" >
+ id="x42-1180009.2.2"></a>binext</h5>
+<!--l. 297--><p class="noindent" >
      <dl class="description"><dt class="description">
 <span 
 class="ecbx-1095">Description:</span> </dt><dd 
@@ -666,10 +686,10 @@ class="description">Extensions of binary files
 <span 
 class="ecbx-1095">Used by:</span> </dt><dd 
 class="description">UA.pm; UA.pm.svn-base</dd></dl>
-<!--l. 290--><p class="noindent" >
+<!--l. 301--><p class="noindent" >
    <h5 class="subsubsectionHead"><span class="titlemark">9.2.3   </span> <a 
- id="x42-1170009.2.3"></a>converters</h5>
-<!--l. 292--><p class="noindent" >
+ id="x42-1190009.2.3"></a>converters</h5>
+<!--l. 303--><p class="noindent" >
      <dl class="description"><dt class="description">
 <span 
 class="ecbx-1095">Description:</span> </dt><dd 
@@ -688,10 +708,11 @@ class="newline" />mime-type ; External converter command ; Internal converter
 <span 
 class="ecbx-1095">Used by:</span> </dt><dd 
 class="description">UA.pm; combine; UA.pm.svn-base; combine.svn-base</dd></dl>
-<!--l. 296--><p class="noindent" >
+<!--l. 307--><p class="noindent" >
    <h5 class="subsubsectionHead"><span class="titlemark">9.2.4   </span> <a 
- id="x42-1180009.2.4"></a>exclude</h5>
-<!--l. 298--><p class="noindent" >
+ id="x42-1200009.2.4"></a>exclude</h5>
+<!--l. 309--><p class="noindent" >
+
      <dl class="description"><dt class="description">
 <span 
 class="ecbx-1095">Description:</span> </dt><dd 
@@ -706,11 +727,10 @@ class="newline" />more excludes in the file config_exclude (automatically update
 <span 
 class="ecbx-1095">Used by:</span> </dt><dd 
 class="description">selurl.pm.svn-base; selurl.pm</dd></dl>
-
-<!--l. 302--><p class="noindent" >
+<!--l. 313--><p class="noindent" >
    <h5 class="subsubsectionHead"><span class="titlemark">9.2.5   </span> <a 
- id="x42-1190009.2.5"></a>serveralias</h5>
-<!--l. 304--><p class="noindent" >
+ id="x42-1210009.2.5"></a>serveralias</h5>
+<!--l. 315--><p class="noindent" >
      <dl class="description"><dt class="description">
 <span 
 class="ecbx-1095">Description:</span> </dt><dd 
@@ -721,18 +741,18 @@ class="newline" />example <br
 class="newline" />www.100topwetland.com www.100wetland.com <br 
 class="newline" />means  that  www.100wetland.com  is  replaced  by  www.100topwetland.com  during
      URL normalization</dd></dl>
-<!--l. 307--><p class="noindent" >
+<!--l. 318--><p class="noindent" >
    <h5 class="subsubsectionHead"><span class="titlemark">9.2.6   </span> <a 
- id="x42-1200009.2.6"></a>sessionids</h5>
-<!--l. 309--><p class="noindent" >
+ id="x42-1220009.2.6"></a>sessionids</h5>
+<!--l. 320--><p class="noindent" >
      <dl class="description"><dt class="description">
 <span 
 class="ecbx-1095">Description:</span> </dt><dd 
 class="description">patterns to recognize and remove sessionids in URLs</dd></dl>
-<!--l. 312--><p class="noindent" >
+<!--l. 323--><p class="noindent" >
    <h5 class="subsubsectionHead"><span class="titlemark">9.2.7   </span> <a 
- id="x42-1210009.2.7"></a>url</h5>
-<!--l. 314--><p class="noindent" >
+ id="x42-1230009.2.7"></a>url</h5>
+<!--l. 325--><p class="noindent" >
      <dl class="description"><dt class="description">
 <span 
 class="ecbx-1095">Description:</span> </dt><dd 

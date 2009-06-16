@@ -1,3 +1,23 @@
+combine (4.003) karmic; urgency=low
+
+  * Added extra space when concatenating extracted text in HTMLExtractor.pm
+  * Bugfix certain special characters in regexp when optimizing meta/title
+    in generated XML
+  * Added extra field, score, in table urldb to support new URL
+    scheduling algoritms
+  * Added support for new URL scheduling algorithms
+
+ -- Anders Ardo <anders@nike>  Mon, 15 Jun 2009 10:22:38 +0200
+
+combine (4.002) intrepid; urgency=low
+
+  * Fixed tests 05MySQL och 90Installationtest
+  * Added support for exceptions to GeoIP, config-file server2country
+  * Now handles special characters when using files for external parsers
+  * Disabled warnings for unknown config variables
+
+ -- Anders Ardo <anders@dbkit10.eit.lth.se>  Mon, 30 Mar 2009 09:09:35 +0200
+
 combine (4.001) intrepid; urgency=low
 
   * New version numbering compatible with CPAN

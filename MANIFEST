@@ -25,6 +25,7 @@ Combine/XWI2XML.pm
 Combine/XWI.pm
 Combine/Zebra.pm
 bin/combine
+bin/combineCountry.pl
 bin/combineCtrl
 bin/combineExport
 bin/combineINIT

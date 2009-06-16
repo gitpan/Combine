@@ -125,8 +125,9 @@ sub XWI2XML {
       my @ip = split(/\s+/,substr(${$xwi->text},0,100),5);
       my ($head,$t) = split(/;/, $xwi->heading_get, 2);
       my $ip = join(' ', $ip[0], $ip[1], $ip[2], $ip[3]);
-      if ( $ip =~ /$head/ ) { $res .= ToXMLAttr('meta',"name=\"title\"", $ip); }
-      else  { $res .= ToXMLAttr('meta',"name=\"title\"", $head . ' ' . $ip); }
+#      if ( $ip =~ /$head/ ) { $res .= ToXMLAttr('meta',"name=\"title\"", $ip); }
+#      else  { $res .= ToXMLAttr('meta',"name=\"title\"", $head . ' ' . $ip); }
+       $res .= ToXMLAttr('meta',"name=\"title\"", $head . ' ' . $ip);
     }
     my ($name,$content);
     while (1) {

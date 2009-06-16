@@ -1,4 +1,4 @@
-## $Id: utilPlugIn.pm 275 2008-09-26 12:08:04Z anders $
+## $Id: utilPlugIn.pm 305 2009-03-30 07:24:01Z it-aar $
 
 # See the file LICENCE included in the distribution.
 # Ignacio Garcia Dorado 2008, and Anders Ardö 2008
@@ -15,6 +15,7 @@ my $svm;
 my %term_set;
 my $stoplist;
 my $geoinfo;
+my %server2country;
 
 #######################################
 #Analyze
@@ -31,28 +32,55 @@ sub analyse {
       Locale::Country::rename_country('gb' => 'Great Britain');
       Locale::Country::rename_country('tw' => 'Taiwan');
       $geoinfo = Geo::IP->new(GEOIP_STANDARD);
+      my $configDir = Combine::Config::Get('configDir');
+#      print "INIT server2country\n";
+      if ( open(TT,"<$configDir/server2country") ) {
+	  while (<TT>) { 
+	      next if (/^\s*#/);
+	      next if (/^\s*$/);
+	      s/[\n\r\f]//g;
+	      if (/^([^\s]+)\s+(.*)\s*$/) {
+		  my $server=$1;
+		  my $country=$2;
+		  $server =~ s|^([^/]+)/.*$|$1|; #clean up
+		  #do server translation
+		  $server = $Combine::Config::serverbyalias{$server} || $server;
+		  $server2country{$server}=$country;
+	      }
+	  }
+	  close(TT);
+      }
     }
 
    my $url = $xwi->url;
+	#print "Doing $url\n";
    if ($url =~ m|http://([^/]+)/|) {
-        my $country;
+        my $country='';
         my $host=$1;
         $host =~ s/:\d+$//;
         $host =~ s/%..$//;
         $host =~ m/\.([a-z]+)$/;
         my $topdom = $1;
 
-        if ( $host =~ /^[\d\.]+$/ ) {
-          $country = $geoinfo->country_name_by_addr($host);
-#         print "IP: $n -> $country\n";
+	if (defined($server2country{$host})) {
+	    $country=$server2country{$host};
+	    #print "server2country: $host => $country\n";
+        } elsif ( $host =~ /^[\d\.]+$/ ) {
+	    $country = $geoinfo->country_name_by_addr($host);
+         #print "IP: $host -> $country\n";
         } elsif ( (length($topdom)==2) && !(($topdom eq 'tv') || ($topdom eq 'nu') || ($topdom eq 'to')) ) {
-           $country = code2country($topdom);
+	    $country = code2country($topdom);
+         #print "topdom: $host -> $country\n";
         } elsif ( ($topdom eq 'gov') || ($topdom eq 'edu') ) {
-           $country = 'United States';
+	    $country = 'United States';
+         #print "gov,edu: $host -> $country\n";
         } else {
-           $country = $geoinfo->country_name_by_name($host);
+	    $country = $geoinfo->country_name_by_name($host);
+         #print "geoip: $host -> $country\n";
         }
-    if ($country ne '') { $xwi->robot_add('country', $country); }
+         #print "Got: $host -> $country\n";
+	if ($country ne '') { $xwi->robot_add('country', $country); }
+	else  { $xwi->robot_add('country', 'NotKnown'); }
    }
 
 #Language of content

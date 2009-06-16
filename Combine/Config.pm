@@ -1,6 +1,6 @@
 # Copyright (c) 2004, 2005 Anders Ardö
 
-## $Id: Config.pm 301 2008-12-08 13:56:45Z it-aar $
+## $Id: Config.pm 308 2009-06-15 08:18:24Z it-aar $
 # 
 # See the file LICENCE included in the distribution.
 
@@ -9,7 +9,7 @@ package Combine::Config;
 use strict;
 use Config::General qw(SaveConfigString);
 
-our $VERSION = '4.001';
+our $VERSION = '4.003';
 our %serverbypreferred = ();
 our %serverbyalias     = ();
 our @allow = ();
@@ -210,7 +210,7 @@ sub Get {
     }
     my $value = $configValues{$name};
     if (!defined($value)) {
-	warn  "**ERROR: Undefined Combine configuration parameter $name\n";
+#	warn  "**ERROR: Undefined Combine configuration parameter $name\n";
         #Return undefined if value not available
 	return undef;
     }

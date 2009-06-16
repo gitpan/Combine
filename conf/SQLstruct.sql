@@ -77,8 +77,8 @@ CREATE TABLE meta (
 
 CREATE TABLE analys (
   recordid int(11) NOT NULL default '0',
-  name varchar(15) NOT NULL,
-  value varchar(20),
+  name varchar(100) NOT NULL,
+  value varchar(100),
   KEY recordid (recordid)
 ) ENGINE=MyISAM DEFAULT CHARACTER SET=utf8;
 
@@ -161,6 +161,7 @@ CREATE TABLE urldb (
   urllock int(11) NOT NULL default '0',
   harvest tinyint(1) NOT NULL default '0',
   retries int(11) NOT NULL default '0',
+  score int(11) NOT NULL default '0',
   PRIMARY KEY  (urlid),
   KEY netlocid (netlocid),
   KEY harvest (harvest)
@@ -190,6 +191,7 @@ CREATE TABLE admin (
   queid int(11) NOT NULL default '0'
 ) ENGINE=MEMORY DEFAULT CHARACTER SET=utf8;
 
+#advanced means use config variable SchedulingAlgorithm
 #Initialise admin to 'open' status
 INSERT INTO admin VALUES ('open','default',0)
 CREATE TABLE log (

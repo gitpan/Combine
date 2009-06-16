@@ -23,10 +23,12 @@ my %tables = (
   robotrules => 1,
   oai => 1,
   exports => 1,
+  localtags => 1,
+  search => 1,
 );
 my $noOfTables = scalar(keys %tables);
 
-use Test::More tests => 23 ;
+use Test::More tests => 25 ;
 #diag('Ignore mkdir and chmod errors');
 
 use DBI;

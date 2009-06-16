@@ -1,4 +1,6 @@
-## $Id: combineReClassify 253 2007-10-19 08:16:02Z anders $
+#! /usr/bin/perl
+
+## $Id: combineReClassify 307 2009-05-27 11:02:52Z it-aar $
 
 # Copyright (c) 2002-2005 Anders Ardö
 #

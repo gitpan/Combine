@@ -85,8 +85,8 @@ CREATE TABLE meta (
 \begin{verbatim}
 CREATE TABLE analys (
   recordid int(11) NOT NULL default '0',
-  name varchar(15) NOT NULL,
-  value varchar(20),
+  name varchar(100) NOT NULL,
+  value varchar(100),
   KEY recordid (recordid)
 ) ENGINE=MyISAM DEFAULT CHARACTER SET=utf8;
 \end{verbatim}
@@ -186,6 +186,7 @@ CREATE TABLE urldb (
   urllock int(11) NOT NULL default '0',
   harvest tinyint(1) NOT NULL default '0',
   retries int(11) NOT NULL default '0',
+  score int(11) NOT NULL default '0',
   PRIMARY KEY  (urlid),
   KEY netlocid (netlocid),
   KEY harvest (harvest)
@@ -222,6 +223,7 @@ CREATE TABLE admin (
 ) ENGINE=MEMORY DEFAULT CHARACTER SET=utf8;
 \end{verbatim}
 
+\verb+advanced means use config variable SchedulingAlgorithm+\\
 \verb+Initialise admin to 'open' status+\\
 \verb+INSERT INTO admin VALUES ('open','default',0)+\\
 \begin{verbatim}
