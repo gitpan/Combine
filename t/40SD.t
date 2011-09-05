@@ -14,12 +14,12 @@ require Combine::selurl;
 
 my $sd = new  Combine::SD_SQL;
 my @urls=(
-  'http://www.it.lth.se',  'http://www.it.lth.se/',
-  'http://www.it.lth.se:80/',  'http://www.it.lth.se:80',
+  'http://www.eit.lth.se',  'http://www.eit.lth.se/',
+  'http://www.eit.lth.se:80/',  'http://www.eit.lth.se:80',
   'http://www.lth.se/dark',
-  'http://www.it.lth.se/anders/',
+  'http://www.eit.lth.se/staff/anders.ardo',
   'http://www.lth.se/anders/CV.html',
-  'http://www.it.lth.se:88/anders/',
+  'http://www.eit.lth.se:88/anders/',
 	  );
 my %normURLs;
 
@@ -42,7 +42,7 @@ while (1) {
    $i = scalar(keys %normURLs);
    if ($i == 0) { last; } elsif ($url_str eq '') {
        if ($t-- == 0) { last; }
-       diag ("Sleep 30 s -- $i URLs to go\n"); sleep(31);
+       diag ("Sleep 30 s -- $i URLs to go (t=$t)\n"); sleep(31);
    }
 }
 is($i,0,'Scheduling');

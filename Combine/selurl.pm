@@ -357,7 +357,8 @@ sub cleanquery
   if($opt{'cleansessions'} == 1)
   {
       my $c = Combine::Config::Get('url');
-      %sessid = %{${%{$c}}{'sessionids'}};
+#      %sessid = %{${%{$c}}{'sessionids'}}; #Problems with Ubuntu 9.10
+       %sessid = %{$c->{'sessionids'}};
   }
 
 #OLD

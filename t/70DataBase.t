@@ -46,14 +46,12 @@ Combine::Config::Set('LogHandle', $log);
 my $xhdb = new Combine::DataBase( $xwi, $sv, $log);
 
 my($recordid, $recordid1, $recordid2, $md5, $uid1, $uid2, $md52, $md51);
-#New MD5 for this record is 830DDABE10FF2F3A8B5054BBD606C259 calculated in Combine::DataBase
 
 $xhdb->insert; #CASE 5
 my $sth =  $sv->prepare(qq{SELECT recordid,md5 FROM recordurl});
 $sth->execute;
 ($recordid,$md5) = $sth->fetchrow_array();
-#is($md5,'71701223CA83546F151B17C493B64E55', 'md5');
-is($md5,'830DDABE10FF2F3A8B5054BBD606C259', 'md5 CASE 5');
+is($md5,'4A71E83AE8E353A06D19FACB2EC4A3F6', 'md5 CASE 5');
 my ($t,$t5) = $sth->fetchrow_array();
 ok(!defined($t), 'num records case 5');
 
@@ -61,8 +59,7 @@ $xhdb->insert; #CASE 1
 $sth =  $sv->prepare(qq{SELECT recordid,md5 FROM recordurl});
 $sth->execute;
 ($recordid,$md5) = $sth->fetchrow_array();
-#is($md5,'71701223CA83546F151B17C493B64E55', 'md5');
-is($md5,'830DDABE10FF2F3A8B5054BBD606C259', 'md5 CASE 1');
+is($md5,'4A71E83AE8E353A06D19FACB2EC4A3F6', 'md5 CASE 1');
 ($t,$t5) = $sth->fetchrow_array();
 ok(!defined($t), 'num records case 1');
 
@@ -74,7 +71,7 @@ $xhdb->insert; #CASE 4
 $sth =  $sv->prepare(qq{SELECT recordid,md5 FROM recordurl});
 $sth->execute;
 ($recordid,$md5) = $sth->fetchrow_array();
-is($md5,'082247E3E13DE8C0E2C79C7C5497C856', 'md5 CASE 4');
+is($md5,'F619D8E87F5AFC7C2F75A5C7062C67DF', 'md5 CASE 4');
 ($t,$t5) = $sth->fetchrow_array();
 ok(!defined($t), 'num records case 4');
 
@@ -104,7 +101,7 @@ $xhdb->delete;
 $sth =  $sv->prepare(qq{SELECT recordid,urlid,md5 FROM recordurl});
 $sth->execute;
 ($recordid,$uid1,$md5) = $sth->fetchrow_array();
-is($md5,'082247E3E13DE8C0E2C79C7C5497C856', 'md5 1 del');
+is($md5,'F619D8E87F5AFC7C2F75A5C7062C67DF', 'md5 1 del');
 is($uid1, 8, 'uid after 1 del');
 ($t,$t5) = $sth->fetchrow_array();
 ok(!defined($t), 'num records 1 del');

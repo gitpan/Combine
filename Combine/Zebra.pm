@@ -4,6 +4,7 @@ package Combine::Zebra;
 #Mike Taylor, Index Data ApS.
 
 use strict;
+use Encode;
 use Combine::XWI2XML;
 require ZOOM;
 
@@ -31,7 +32,7 @@ sub update {
     eval {
 	my $p = $conn->package();
 	$p->option(action => "specialUpdate");
-	$p->option(record => $xml);
+	$p->option(record => Encode::encode('utf8',$xml));
 	$p->send("update");
 #	print STDERR "sent package specialUpdate ... ";
 	$p->destroy();

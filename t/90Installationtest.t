@@ -65,11 +65,12 @@ __END__
   </urls>
 </acquisitionData>
 <originalDocument mimeType="text/html" compression="gzip" encoding="base64" charSet="UTF-8">
-H4sIAAAAAAAAA4WQsU7DMBCG9zzF4bmpBV2QcDKQVKJSKR2CEKObXBSrjm3sSyFvT0yCQGJgusG/
-//u+E1flU1G9HrfwUD3u4fh8v98VwFLOXzYF52VVzg+b9Q3n2wPLE9FRr+NA2UyDFGnMdyaQ1FqS
-sgYIA0FrPRS2PymDgs+hRPRIEozsMWNnHN+tbwKD2hpCQxkrpDfqYr0dAjgtDYUVlN4G9HIFB3RT
-qMPAvns6Ipfi26Au09e5I61Gh78aCT+IR947qDvpA1I2UJvexg6+CJxsM0ad6/8kpkQiXB5XSWUC
-BNsj/GGG4LBWrarhSw+0OiOIidZjmzGPeh15WL6ICS7zFUjT/AiuBXeRbwHj870/AeRYaTupAQAA
+H4sIAAAAAAAA/4WQT2sCMRDF7/sppjm7BisFS7MLupvigq4KscVjqiMbjMmSpH/89s26LS300NPA
+zJs37zfsplwVYrfmMBfLBay3s0VVAEkpfR4XlJai7Afj4S08KiM1pbwmeZKwrp3HwqdlLKISC55X
+xgeptQzKGgjoAxytg8KeX5RBRntRwpZcTKGeLnlGTnh5t+7gCRSrWvBaZKSQzqg36+yrh1ZLE/wA
+Smc9OjmAGls0oUFPvn3mQqxTvtlWT3HVmhDHqbi0+Msx4EegTTjrB9g30nkMmfI2nUzu7tNRZ0R7
+ioTNVuUOYqMZ/ccSFVHf5t1JqYwHb88If7KDb3GvjmoPV0zQ6oQJk9A4PGbEoR52uUj+BciozAcg
+zeEHdMho252iXbZr1uvjPwFiQ73puQEAAA==
 </originalDocument>
 <canonicalDocument>  
   <section>
@@ -97,18 +98,18 @@ BNsj/GGG4LBWrarhSw+0OiOIidZjmzGPeh15WL6ICS7zFUjT/AiuBXeRbwHj870/AeRYaTupAQAA
 <property name="univ">1</property>
 <property name="country">Sweden</property>
 <property name="language">en</property>
-<topic absoluteScore="1000" relativeScore="99415">
+<topic absoluteScore="1000" relativeScore="170526">
     <class>ALL</class>
   </topic>
-<topic absoluteScore="375" relativeScore="37281">
+<topic absoluteScore="375" relativeScore="63947">
     <class>CP.Drosera</class>
     <terms>drosera</terms>
   </topic>
-<topic absoluteScore="375" relativeScore="37281">
+<topic absoluteScore="375" relativeScore="63947">
     <class>CP.Nepenthes</class>
     <terms>nepenthe</terms>
   </topic>
-<topic absoluteScore="250" relativeScore="24854">
+<topic absoluteScore="250" relativeScore="42632">
     <class>CP</class>
     <terms>carnivorous plant</terms>
     <terms>carnivor</terms>

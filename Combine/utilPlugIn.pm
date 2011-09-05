@@ -1,4 +1,4 @@
-## $Id: utilPlugIn.pm 305 2009-03-30 07:24:01Z it-aar $
+## $Id: utilPlugIn.pm 319 2009-11-20 15:45:12Z it-aar $
 
 # See the file LICENCE included in the distribution.
 # Ignacio Garcia Dorado 2008, and Anders Ardö 2008
@@ -86,9 +86,9 @@ sub analyse {
 #Language of content
     my $text;
     if (defined($xwi->text)) { $text = substr(${$xwi->text},0,5000); } else { return; }
-    use Lingua::Identify qw(:language_identification);
+    require Lingua::Identify;
     if (length($text)<1000) {$text .= ' ' . $xwi->title;}
-    my $lang = langof($text); # gives the most probable language
+    my $lang = Lingua::Identify::langof($text); # gives the most probable language
     if ($lang ne '') { $xwi->robot_add('language', $lang); }
 
 ##Plugin for more analysis

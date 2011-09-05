@@ -1,5 +1,5 @@
 # Copyright (c) 2004, 2005 Anders Ardö
-## $Id: DataBase.pm 286 2008-10-13 09:13:26Z it-aar $
+## $Id: DataBase.pm 326 2011-05-27 07:44:58Z it-aar $
 
 # 
 # See the file LICENCE included in the distribution.
@@ -59,7 +59,7 @@ sub insert {
     my $md5D = new Digest::MD5;
     $md5D->reset;
     if ( length($xwi->text) > 0 ) {
-	my $text = ${$xwi->text};
+	my $text = ${$xwi->text} . $xwi->title;
 	$text =~ s/[\s\n\r]+//g;
 	$md5D->add(encode_utf8($text)); #use only visible text without whitespace
     } else {

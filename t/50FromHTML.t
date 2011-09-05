@@ -57,25 +57,25 @@ my %testurls;
   'Heading m öäåÖÄÅ' => 'heading'
   );
 
-%{$testurls{'http://combine.it.lth.se/CombineTests/base.html'}} =
- ('url' => 'http://combine.it.lth.se/CombineTests/base.html',
-  'title' => 'Jane Larsen',
-  'type' => 'text/html',
-  'metagenerator' => "HKN's preprocessor",
-  'metacontent-type' => "text/html",
-  "http://www.lu.se/" => 'Lund University',
-  'http://spider.chemphys.lu.se/kfpeople/people.pl' => 'Current members',
-  'http://spider.chemphys.lu.se/kfpeople/' => 'People',
-  'http://spider.chemphys.lu.se/kfpubs/search.pl?authors=larsen,j' => 'Publications',
-  'mailto:spcatch1098@hotmail.com' => 'this address',
-  'http://spider.chemphys.lu.se/kfpeople/people.pl?id=93ed948a&isrobot=foo' => 'Email for bots',
-  'http://spider.chemphys.lu.se/kfpeople/mail_links.pl?id=bdbd' => 'email',
-  'http://www.chemphys.lu.se/chemphyslogo.gif' => 'Department of Chemical Physics',
-  'http://spider.chemphys.lu.se/kfpeople/mugshots/jane.jpg' => '[Jane :-) ]',
-#  'Jane Larsen' => 'heading',
-#  'People at Chemical Physics' => 'heading'
-  'Jane Larsen; People at Chemical Physics' => 'heading'
-  );
+#%{$testurls{'http://combine.it.lth.se/CombineTests/base.html'}} =
+# ('url' => 'http://combine.it.lth.se/CombineTests/base.html',
+#  'title' => 'Jane Larsen',
+#  'type' => 'text/html',
+#  'metagenerator' => "HKN's preprocessor",
+#  'metacontent-type' => "text/html",
+#  "http://www.lu.se/" => 'Lund University',
+#  'http://spider.chemphys.lu.se/kfpeople/people.pl' => 'Current members',
+#  'http://spider.chemphys.lu.se/kfpeople/' => 'People',
+#  'http://spider.chemphys.lu.se/kfpubs/search.pl?authors=larsen,j' => 'Publications',
+#  'mailto:spcatch1098@hotmail.com' => 'this address',
+#  'http://spider.chemphys.lu.se/kfpeople/people.pl?id=93ed948a&isrobot=foo' => 'Email for bots',
+#  'http://spider.chemphys.lu.se/kfpeople/mail_links.pl?id=bdbd' => 'email',
+#  'http://www.chemphys.lu.se/chemphyslogo.gif' => 'Department of Chemical Physics',
+#  'http://spider.chemphys.lu.se/kfpeople/mugshots/jane.jpg' => '[Jane :-) ]',
+##  'Jane Larsen' => 'heading',
+##  'People at Chemical Physics' => 'heading'
+#  'Jane Larsen; People at Chemical Physics' => 'heading'
+#  );
 
 %{$testurls{'http://combine.it.lth.se/CombineTests/metatest.html'}} =
  ('url' => 'http://combine.it.lth.se/CombineTests/metatest.html',

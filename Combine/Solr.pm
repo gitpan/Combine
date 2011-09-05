@@ -19,6 +19,7 @@ use XML::LibXSLT;
 use XML::LibXML;
 use LWP::UserAgent;
 use HTTP::Request::Common;
+use Encode;
 
 sub update {
   my ($solrhost, $xwi) = @_;
@@ -26,11 +27,11 @@ sub update {
 
   my $parser = XML::LibXML->new();
   my $xslt = XML::LibXSLT->new();
-  my $source = $parser->parse_string($xml);
+  my $source = $parser->parse_string(Encode::encode('utf8',$xml));
   my $style_doc = $parser->parse_file('/etc/combine/solr.xsl'); #!!!!????
   my $stylesheet = $xslt->parse_stylesheet($style_doc);
   my $results = $stylesheet->transform($source);
-  $xml = '<add>' . $stylesheet->output_string($results) .'</add>';
+  $xml = '<add>' . $stylesheet->output_as_bytes($results) .'</add>';
 
   my $ua = LWP::UserAgent->new;
   my $url = $solrhost;

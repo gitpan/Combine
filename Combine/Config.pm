@@ -1,6 +1,6 @@
 # Copyright (c) 2004, 2005 Anders Ardö
 
-## $Id: Config.pm 308 2009-06-15 08:18:24Z it-aar $
+## $Id: Config.pm 326 2011-05-27 07:44:58Z it-aar $
 # 
 # See the file LICENCE included in the distribution.
 
@@ -9,7 +9,7 @@ package Combine::Config;
 use strict;
 use Config::General qw(SaveConfigString);
 
-our $VERSION = '4.003';
+our $VERSION = '4.005';
 our %serverbypreferred = ();
 our %serverbyalias     = ();
 our @allow = ();
@@ -26,7 +26,7 @@ sub _private_initConfig_ {
     my $conf = new Config::General(-ConfigFile => "$baseConfigDir/default.cfg",
                    -BackslashEscape => 0,
                    -MergeDuplicateBlocks => 1,
-                   -AutoTrue => 1,
+                   -AutoTrue => 1
        );
         my %defConf = $conf->getall;
 #use Data::Dumper; print "Dumping Default\n"; print Dumper(\%defConf);
@@ -34,7 +34,7 @@ sub _private_initConfig_ {
     $conf = new Config::General(-ConfigFile => "$configDir/combine.cfg",
                    -BackslashEscape => 0,
                    -MergeDuplicateBlocks => 1,
-                   -AutoTrue => 1,
+                   -AutoTrue => 1
        );
     %configValues = $conf->getall;
 #Merge
@@ -64,6 +64,7 @@ sub _private_initConfig_ {
 	}
     }
 
+    $configValues{'jobname'} = $jobname;
     $configValues{'configDir'} = $configDir;
     $configValues{'baseConfigDir'} = $baseConfigDir;
 #    open CONF, "<$baseConfigDir/$jobname/$configFile" or

@@ -84,7 +84,7 @@ sub check {
     my $req = new HTTP::Request 'GET' => $url_robots;
     my $resp = $ua->request($req);
     if ($resp->is_success) {
-	my $txt = $resp->content;
+	my $txt = $resp->decoded_content;
 #	 print "robots.txt file\n$txt\n";
 	@rules = &rule($txt);
 	if ( $#rules == -1 ) { @rules = (''); }

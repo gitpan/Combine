@@ -198,23 +198,24 @@ sub XWI2XML {
         my @internalLinks =();
         my %inlinkHosts;
 	$res .= StartTag('inlinks');
-	while (($from,$anchor,$lmd5,$ltype)=$sth->fetchrow_array) {
-            $anchor = Encode::decode('utf8',$anchor);
-                next if ( defined($seen{$from,$anchor}) || ($anchor eq '') || defined($seen{$anchor}) );
-                $seen{$from,$anchor}=1;
-                if ($collapseinLinks) {
-                  $seen{$anchor}=1;
-                }
-                my $s = $from;
-                $s =~ s|http://([^/:]+).*|$1|;
-                if (defined($servers{$s})) {#from same server as page, just save and put last in list
-                    my $tres = StartTag('link' . " type=\"$ltype\"");
-	            $tres .= ToXML('anchorText',$anchor);
-	            $tres .= ToXMLAttr('location', "documentId=\"$lmd5\"", $from);
-	            $tres .= EndTag('link');
-                    push(@internalLinks,$tres);
-                    next;
-                }
+	my $atmp;
+	while (($from,$atmp,$lmd5,$ltype)=$sth->fetchrow_array) {
+            $anchor = Encode::decode('utf8',$atmp);
+	    next if ( defined($seen{$from,$anchor}) || ($anchor eq '') || defined($seen{$anchor}) );
+	    $seen{$from,$anchor}=1;
+	    if ($collapseinLinks) {
+		$seen{$anchor}=1;
+	    }
+	    my $s = $from;
+	    $s =~ s|http://([^/:]+).*|$1|;
+	    if (defined($servers{$s})) {#from same server as page, just save and put last in list
+		my $tres = StartTag('link' . " type=\"$ltype\"");
+		$tres .= ToXML('anchorText',$anchor);
+		$tres .= ToXMLAttr('location', "documentId=\"$lmd5\"", $from);
+		$tres .= EndTag('link');
+		push(@internalLinks,$tres);
+		next;
+	    }
             $inlinkHosts{$s}=1;
             $res .= StartTag('link' . " type=\"$ltype\"");
 	    $res .= ToXML('anchorText',$anchor);

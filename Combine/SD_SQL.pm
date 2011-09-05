@@ -1,4 +1,4 @@
-## $Id: SD_SQL.pm 313 2009-06-15 09:35:47Z it-aar $
+## $Id: SD_SQL.pm 325 2011-05-26 14:26:00Z it-aar $
 
 # 2002-2006 Anders Ardö
 # 
@@ -49,8 +49,8 @@ sub new {
     $self->{lockTables} = $sv->prepare(qq{LOCK TABLES admin WRITE, que WRITE, urldb READ LOCAL, urls READ LOCAL, netlocs READ LOCAL;});
     $self->{unlockTables} = $sv->prepare(qq{UNLOCK TABLES;});
     $self->{deleteQue} = $sv->prepare(qq{DELETE FROM que;});
-    $self->{resetQueId} = $sv->prepare(qq{UPDATE admin SET queid=0;});
-    $self->{resetId} = $sv->prepare(qq{ALTER TABLE que AUTO_INCREMENT=0;});
+    $self->{resetQueId} = $sv->prepare(qq{UPDATE admin SET queid=LAST_INSERT_ID(0);});
+    $self->{resetId} = $sv->prepare(qq{ALTER TABLE que AUTO_INCREMENT=1;});
 
 #fill que in URL scheduling order
     $self->{fillQue} = $sv->prepare(qq{INSERT INTO que SELECT netlocid,urlid,NULL

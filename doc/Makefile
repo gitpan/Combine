@@ -52,4 +52,4 @@ html : DocMain.dvi
 
 clean :
 	\rm -rf HTML *.aux *.log *.dvi  DocMain*.html DocMain*.png DocMain.css DocMain.ps DocMain.pdf *.toc $(GENTEXS)
-	\rm DocMain.4ct  DocMain.4tc  DocMain.bbl  DocMain.blg  DocMain.idv  DocMain.lg  DocMain.out DocMain.tmp  DocMain.xref
+	\rm -f DocMain.4ct  DocMain.4tc  DocMain.bbl  DocMain.blg  DocMain.idv  DocMain.lg  DocMain.out DocMain.tmp  DocMain.xref
